@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'cloudinary',
+    'crispy_forms',
 ]
 
 SITE_ID = 1
