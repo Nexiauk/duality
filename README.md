@@ -6,7 +6,7 @@ INSERT PICTURE HERE
 
 This app has been created as a project during my [Code Institute](https://codeinstitute.net/) Level 5 Web App Development course.
 
-# Duality Blurb
+## **Duality Blurb**
 The barriers between universes have collapsed - chaos reigns!
 
 Step into the multiverse and collect Heroes and Villains from across realities.  
