@@ -341,7 +341,7 @@ Represents a timed shop event including multiple characters.
         int user_id FK "References USER.id, on_delete=CASCADE"  
         int character_id FK "References CHARACTERS.id, on_delete=PROTECT"  
         datetime date_purchased "DateTimeField(auto_now_add=True)"  
-        float price_paid "FloatField"  
+        decimal price_paid "DecimalField"  
     **}**  
     ARCHETYPE **{**  
         int id PK  
@@ -361,7 +361,7 @@ Represents a timed shop event including multiple characters.
         boolean in_rotation "BooleanField, default=True"  
         string availability "CharField with choices (Available, Unavailable, New, Coming Soon)"  
         int rarity "PositiveIntegerField (0 Common, 1 Uncommon, 2 Rare, 3 Epic, 4 Legendary, 5 Mythic)"  
-        float price "FloatField"  
+        decimal price "DecimalField"  
         string name "CharField"  
         int archetype_id FK "References ARCHETYPE.id, on_delete=PROTECT"  
         json powerstats "JSONField, (Intelligence, Strength, Speed, Durability, Power, Combat)"  
