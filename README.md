@@ -264,31 +264,39 @@ This Entity Relationship Diagram for Duality was created using [Mermaid](https:/
 ### *Model Relationship Declaration*
 
 ---
-USER ||--o{ USER_CARD : "purchases"
-
+**USER ||--o{ USER_CARD : "purchases"**
 Each user can purchase one or more cards.  
-UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials, email, and display information.
+UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials and email address.
 
 ---
 
-**USER_CARD }o--|| CHARACTERS : "is based on"**
-
+**USER_CARD }o--|| CHARACTER_CARDS : "is based on"**
 Each UserCard is based on exactly one character.  
-This links a purchased card to a specific character, capturing the stats, rarity, and metadata associated with that character.
+This links a purchased card to a specific character, capturing its stats, rarity, archetype and other metadata.
 
 ---
 
 **CHARACTERS }|--|| ARCHETYPE : "belongs to"**
-
 Each character belongs to exactly one archetype.  
-Archetypes store literary classifications (like “The Hero” or “The Shadow”) and rationale for the character’s narrative role, while CHARACTERS hold detailed stats, biography, appearance, work, connections, and images.
+Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traiditional archetype traits for that classification. CHARACTER_CARDS stores global availability for shop rotations and links to the archetype and rarity tables.
 
 ---
 
-**SHOP_ROTATION }|--o{ CHARACTERS : "includes"**
+**CHARACTER_CARDS }|--|| RARITY : "has"**
+Each character is assigned exactly one rarity.
+RARITY defines the classification (Common, Uncommon, Rare, Epic, Legendary, Mythic), a numerical level, and a base price. This allows characters to be consistently valued and ordered in the shop.
 
-Each shop rotation includes one or more characters.  
-Rotations represent limited-time shop events where users can acquire characters, storing start and end times, quantity available, and the set of characters included.
+---
+
+**SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"**
+Each shop scheduler (rotation) must include one or more schedule items.
+SHOP_SCHEDULE_ITEMS links a rotation to the characters available during that event and stores per-rotation metadata, such as sale prices.
+
+---
+
+**SHOP_SCHEDULE_ITEMS }o--|| CHARACTER_CARDS : "includes"**
+Each schedule item corresponds to exactly one character.
+This join table allows a character to appear in multiple rotations over time, while also tracking rotation-specific details like sale price.
 
 ---
 
@@ -300,77 +308,102 @@ Stores login and display information for players.
 ---
 
 **USER_CARD Model**
-
 Represents a card purchased by a user.  
-**Key fields:** foreign keys to USER and CHARACTERS, date purchased, price paid.
+**Key fields:** foreign keys to USER and CHARACTERS, date purchased, price paid.  
+
+Each entry links a purchase to a specific character and records the price at the time of purchase.
 
 ---
 
-**CHARACTERS Model**
+**CHARACTER_CARDS Model**
 
-Represents superheroes or villains.  
-**Key fields:** name, slug, rarity, availability, in rotation, price, foreign key to ARCHETYPE, and detailed JSON fields for powerstats, appearance, biography, work, connections, and images.
+Represents the base characters available in the system.  
+**Key fields:**
+* can_participate_in_rotation (boolean, default=True) → global eligibility for shop rotations
+* Foreign keys to ARCHETYPE and RARITY → classify characters and determine rarity-based ordering or pricing  
+
+Detailed attributes like powerstats, appearance, biography, work, connections, and images are stored in a JSON file.
 
 ---
 
 **ARCHETYPE Model**
-
 Represents literary archetypes for characters.  
-**Key fields:** literary archetype name and rationale.
+**Key fields:** literary archetype name and archetype_traits.  
+This allows characters to be categorized narratively (e.g., “The Hero,” “The Shadow”).
 
 ---
 
-**SHOP_ROTATION Model**
+**SHOP_SCHEDULER Model**
+Represents a timed shop rotation.  
+**Key fields:** start_time, end_time, and rotation_type.  
 
-Represents a timed shop event including multiple characters.  
-**Key fields:** start and end times, quantity, and many-to-many relationship with CHARACTERS.
+Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
 
-### 
+---
+
+**SHOP_SCHEDULE_ITEMS Model**
+Acts as a join table linking SHOP_SCHEDULER and CHARACTER_CARDS.  
+**Key fields:** foreign keys to SHOP_SCHEDULER and CHARACTER_CARDS, plus sale_price.
+
+Each row = one character in one rotation.  
+Supports assigning any subset of characters to any rotation independently.  
+Enables per-rotation pricing or other metadata without affecting the base character record.
 
 ### *Model Fields*
+```
+erDiagram
+    USER ||--o{ USER_CARDS : "purchases"
+    USER_CARDS }o--|| CHARACTER_CARDS : "is based on"
+    CHARACTER_CARDS }|--|| ARCHETYPE : "belongs to"
+    CHARACTER_CARDS }|--|| RARITY : "has"
+    SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"
+    SHOP_SCHEDULE_ITEMS }o--|| CHARACTER_CARDS : "includes"
 
- USER **{**  
-        int id PK  
-        string username "CharField:unique"  
-        string email "EmailField:EmailValidator"  
-        string password "CharField"  
-        string display_name "CharField"  
-    **}**  
-    USER_CARD **{**  
-        int id PK  
-        int user_id FK "References USER.id, on_delete=CASCADE"  
-        int character_id FK "References CHARACTERS.id, on_delete=PROTECT"  
-        datetime date_purchased "DateTimeField(auto_now_add=True)"  
-        decimal price_paid "DecimalField"  
-    **}**  
-    ARCHETYPE **{**  
-        int id PK  
-        string literary_archetype "CharField"  
-        string rationale "TextField"  
-    **}**  
-    SHOP_ROTATION **{**  
-        int id PK  
-        int character_ids "ArrayField"  
-        datetime start_time "DateTimeField(auto_now_add=True)"  
-        datetime end_time "DateTimeField"  
-        int quantity "PositiveIntegerField"  
-    **}**  
-    CHARACTERS **{**  
-        int id PK  
-        string slug "SlugField"  
-        boolean in_rotation "BooleanField, default=True"  
-        string availability "CharField with choices (Available, Unavailable, New, Coming Soon)"  
-        int rarity "PositiveIntegerField (0 Common, 1 Uncommon, 2 Rare, 3 Epic, 4 Legendary, 5 Mythic)"  
-        decimal price "DecimalField"  
-        string name "CharField"  
-        int archetype_id FK "References ARCHETYPE.id, on_delete=PROTECT"  
-        json powerstats "JSONField, (Intelligence, Strength, Speed, Durability, Power, Combat)"  
-        json appearance "JSONField, (Gender, Race, Height[], Weight[], eyeColor, hairColor)"  
-        json biography "JSONField, (fullName, alterEgos, aliases[], placeOfBirth, firstAppearance, publisher, alignment)"  
-        json work "JSONField, (occupation, base)"  
-        json connections "JSONField, (groupAffiliation, relatives)"  
-        json images "JSONField, (xs, sm, md, lg)"  
-    **}**
+    USER {
+        int id PK
+        string username "CharField:unique"
+        string email "EmailField:EmailValidator"
+        string password "CharField"
+        string display_name "CharField"
+    }
+    USER_CARDS {
+        int id PK
+        int user_id FK "References USER.id, on_delete=CASCADE"
+        int character_id FK "References CHARACTER_CARDS.id, on_delete=PROTECT"
+        datetime date_purchased "DateTimeField(auto_now_add=True)"
+        decimal purchase_price "DecimalField"
+    }
+    ARCHETYPE {
+        int id PK
+        string literary_archetype "CharField"
+        string archetype_traits "TextField"
+    }
+    RARITY {
+        int id PK
+        string name "CharField (Common, Uncommon, Rare, Epic, Legendary, Mythic)"
+        int level "PositiveIntegerField (0-5)"
+        decimal price "DecimalField"
+    }
+    SHOP_SCHEDULER {
+        int id PK
+        datetime start_time "DateTimeField(auto_now_add=True)"
+        datetime end_time "DateTimeField"
+        string rotation_type "CharField"
+    }
+    SHOP_SCHEDULE_ITEMS {
+        int id PK
+        int shop_scheduler_id FK "References SHOP_SCHEDULER.id"
+        int character_id FK "References CHARACTER_CARDS.id"
+        decimal sale_price "DecimalField"
+    }
+    CHARACTER_CARDS {
+        int id PK
+        boolean can_participate_in_rotation "default=True"
+        int archetype_id FK "References ARCHETYPE.id, on_delete=PROTECT"
+        int rarity_id FK "References RARITY.id, on_delete=PROTECT"
+    } 
+```
+
 
 ### 
 
@@ -378,20 +411,24 @@ Represents a timed shop event including multiple characters.
 
 ### *Cardinalities Table*
 
-| From | To | Cardinality | Description |
-| :---- | :---- | :---- | :---- |
-| USER | USER_CARD | 1..* → 1 | Each user can purchase one or more cards; each card belongs to exactly one user. |
-| USER_CARD | CHARACTERS | 1 → 1 | Each UserCard is based on exactly one character; each character can appear on one or more cards. |
-| CHARACTERS | ARCHETYPE | 1 → 1 | Each character belongs to exactly one archetype; each archetype can have zero or more characters. |
-| SHOP_ROTATION | CHARACTERS | 1..* → 1..* | Each shop rotation includes one or more characters; each character can appear in one or more rotations. |
+## Table of Cardinalities
 
-Legend / Notes
+| From                  | To                    | Cardinality | Description |
+|-----------------------|----------------------|-------------|-------------|
+| USER                  | USER_CARDS           | 1 → 0..*    | Each user can purchase zero or more cards; each card belongs to exactly one user. |
+| USER_CARDS            | CHARACTER_CARDS      | 1 → 1       | Each UserCard is based on exactly one character; each character can appear on one or more user cards. |
+| CHARACTER_CARDS       | ARCHETYPE            | 1 → 1       | Each character belongs to exactly one archetype; each archetype can have zero or more characters. |
+| CHARACTER_CARDS       | RARITY               | 1 → 1       | Each character has exactly one rarity; each rarity classification can be assigned to zero or more characters. |
+| SHOP_SCHEDULER        | SHOP_SCHEDULE_ITEMS  | 1 → 1..*    | Each shop scheduler must include one or more schedule items; each schedule item belongs to exactly one scheduler. |
+| SHOP_SCHEDULE_ITEMS   | CHARACTER_CARDS      | 1 → 1       | Each schedule item includes exactly one character; each character can appear in zero or more schedule items. |
 
-- `1` → Exactly one  
-- `1..*` → One or more  
-- `0..*` → Zero or more
+### Legend / Notes
 
-### 
+- **1 → 1** : exactly one  
+- **1 → 0..*** : one or more or zero, depending on context  
+- **1..* → 1** : one or more on one side, exactly one on the other  
+- **0..*** : zero or more  
+
 
 ## **Testing**
 
