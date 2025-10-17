@@ -261,93 +261,68 @@ This Entity Relationship Diagram for Duality was created using [Mermaid](https:/
 
 ### *Entity Relationship Diagram*
 
-### *Model Relationship Declaration*
+### *Models*
 
----
-**USER ||--o{ USER_CARD : "purchases"**
-Each user can purchase one or more cards.  
-UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials and email address.
-
----
-
-**USER_CARD }o--|| CHARACTER_CARDS : "is based on"**
-Each UserCard is based on exactly one character.  
-This links a purchased card to a specific character, capturing its stats, rarity, archetype and other metadata.
-
----
-
-**CHARACTERS }|--|| ARCHETYPE : "belongs to"**
-Each character belongs to exactly one archetype.  
-Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traiditional archetype traits for that classification. CHARACTER_CARDS stores global availability for shop rotations and links to the archetype and rarity tables.
-
----
-
-**CHARACTER_CARDS }|--|| RARITY : "has"**
-Each character is assigned exactly one rarity.
-RARITY defines the classification (Common, Uncommon, Rare, Epic, Legendary, Mythic), a numerical level, and a base price. This allows characters to be consistently valued and ordered in the shop.
-
----
-
-**SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"**
-Each shop scheduler (rotation) must include one or more schedule items.
-SHOP_SCHEDULE_ITEMS links a rotation to the characters available during that event and stores per-rotation metadata, such as sale prices.
-
----
-
-**SHOP_SCHEDULE_ITEMS }o--|| CHARACTER_CARDS : "includes"**
-Each schedule item corresponds to exactly one character.
-This join table allows a character to appear in multiple rotations over time, while also tracking rotation-specific details like sale price.
-
----
-
-**USER Model**
-
+**USER Model**  
 Stores login and display information for players.  
-**Key fields:** username (unique), email, password, display name.
+
+**Key fields:** 
+* username (unique)
+* email
+* password
 
 ---
 
-**USER_CARD Model**
-Represents a card purchased by a user.  
-**Key fields:** foreign keys to USER and CHARACTERS, date purchased, price paid.  
+**USER_CARD Model**  
+Represents a card purchased by a user. Each entry links a purchase to a specific character and records the price at the time of purchase.  
 
-Each entry links a purchase to a specific character and records the price at the time of purchase.
+**Key fields:** 
+* foreign keys to USER and CHARACTERS
+* date purchased *
+* price paid.  
 
 ---
 
-**CHARACTER_CARDS Model**
-
+**CHARACTER_CARDS Model**  
 Represents the base characters available in the system.  
 **Key fields:**
-* can_participate_in_rotation (boolean, default=True) → global eligibility for shop rotations
-* Foreign keys to ARCHETYPE and RARITY → classify characters and determine rarity-based ordering or pricing  
+* ID (PK)
+* Name
+* can_participate_in_rotation (boolean, default=True) - global eligibility for shop rotations
+* Foreign keys to ARCHETYPE and RARITY - classify characters and determine rarity-based ordering or pricing  
 
 Detailed attributes like powerstats, appearance, biography, work, connections, and images are stored in a JSON file.
 
 ---
 
-**ARCHETYPE Model**
-Represents literary archetypes for characters.  
-**Key fields:** literary archetype name and archetype_traits.  
-This allows characters to be categorized narratively (e.g., “The Hero,” “The Shadow”).
+**ARCHETYPE Model**  
+Represents literary archetypes for characters. This allows characters to be categorized narratively (e.g., "The Hero," or "The Shadow").
+
+**Key fields:** 
+* literary archetype name
+* archetype_traits.  
 
 ---
 
-**SHOP_SCHEDULER Model**
-Represents a timed shop rotation.  
-**Key fields:** start_time, end_time, and rotation_type.  
+**SHOP_SCHEDULER Model**  
+Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
 
-Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
+**Key fields:** 
+* start_time
+* end_time
+* rotation_type
 
 ---
 
-**SHOP_SCHEDULE_ITEMS Model**
+**SHOP_SCHEDULE_ITEMS Model**  
 Acts as a join table linking SHOP_SCHEDULER and CHARACTER_CARDS.  
-**Key fields:** foreign keys to SHOP_SCHEDULER and CHARACTER_CARDS, plus sale_price.
-
 Each row = one character in one rotation.  
 Supports assigning any subset of characters to any rotation independently.  
 Enables per-rotation pricing or other metadata without affecting the base character record.
+
+**Key fields:** 
+* foreign keys to SHOP_SCHEDULER and CHARACTER_CARDS
+* sale_price.
 
 ### *Model Fields*
 ```
@@ -357,7 +332,7 @@ erDiagram
     CHARACTER_CARDS }|--|| ARCHETYPE : "belongs to"
     CHARACTER_CARDS }|--|| RARITY : "has"
     SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"
-    SHOP_SCHEDULE_ITEMS }o--|| CHARACTER_CARDS : "includes"
+    CHARACTER_CARDS o{--|| SHOP_SCHEDULE_ITEMS : "appears in"
 
     USER {
         int id PK
@@ -398,37 +373,59 @@ erDiagram
     }
     CHARACTER_CARDS {
         int id PK
+        string name "CharField"
         boolean can_participate_in_rotation "default=True"
-        int archetype_id FK "References ARCHETYPE.id, on_delete=PROTECT"
-        int rarity_id FK "References RARITY.id, on_delete=PROTECT"
+        int archetype FK "References ARCHETYPE.id, on_delete=PROTECT"
+        int rarity FK "References RARITY.id, on_delete=PROTECT"
     } 
 ```
 
+### *Model Relationship Declaration*
+---
+**USER ||--o{ USER_CARD : "purchases"**
+Each user can purchase zero or more user_cards. 
+User cards belong to exactly one user.
+UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials and email address.
 
-### 
+---
 
-### 
+**USER_CARD }o--|| CHARACTER_CARDS : "is based on"**
+Each UserCard is based on exactly one character.  
+A character card can have zero or more user cards associated with it.
+This links a purchased card to a specific character, capturing its stats, rarity, archetype and other metadata.
 
-### *Cardinalities Table*
+---
 
-## Table of Cardinalities
+**CHARACTERS }|--|| ARCHETYPE : "belongs to"**
+Each character belongs to exactly one archetype.  
+An Archetype is assigned to one or more characters.
+A character must have an archetype.
+Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traditional archetype traits for that classification. CHARACTER_CARDS stores global availability for shop rotations and links to the archetype and rarity tables.
 
-| From                  | To                    | Cardinality | Description |
-|-----------------------|----------------------|-------------|-------------|
-| USER                  | USER_CARDS           | 1 → 0..*    | Each user can purchase zero or more cards; each card belongs to exactly one user. |
-| USER_CARDS            | CHARACTER_CARDS      | 1 → 1       | Each UserCard is based on exactly one character; each character can appear on one or more user cards. |
-| CHARACTER_CARDS       | ARCHETYPE            | 1 → 1       | Each character belongs to exactly one archetype; each archetype can have zero or more characters. |
-| CHARACTER_CARDS       | RARITY               | 1 → 1       | Each character has exactly one rarity; each rarity classification can be assigned to zero or more characters. |
-| SHOP_SCHEDULER        | SHOP_SCHEDULE_ITEMS  | 1 → 1..*    | Each shop scheduler must include one or more schedule items; each schedule item belongs to exactly one scheduler. |
-| SHOP_SCHEDULE_ITEMS   | CHARACTER_CARDS      | 1 → 1       | Each schedule item includes exactly one character; each character can appear in zero or more schedule items. |
+---
 
-### Legend / Notes
+**CHARACTER_CARDS }|--|| RARITY : "has"**
+Each character is assigned exactly one rarity.
+Rarity is assigned to one or more character cards.
+Character cards must have a rarity.
+RARITY defines the classification (Common, Uncommon, Rare, Epic, Legendary, Mythic), a numerical level, and a base price. This allows characters to be consistently valued and ordered in the shop.
 
-- **1 → 1** : exactly one  
-- **1 → 0..*** : one or more or zero, depending on context  
-- **1..* → 1** : one or more on one side, exactly one on the other  
-- **0..*** : zero or more  
+---
 
+**SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"**
+A schop scheduler must include one or more schedule items.
+One or more shop schedule items belong to a shop scheduler.
+A shop scheduler must have at least one schedule item.
+Stores per-rotation metadata, such as sale prices.
+
+---
+
+**CHARACTER_CARDS 0{--||SHOP_SCHEDULE_ITEMS "appears in"**
+Each character card can appear in zero or more schedule items.
+Each schedule items corresponds to exactly one character. 
+Characters can appear multiple times over time, but only once per shop scheduler. Also tracks rotation-specific details like sale price.
+
+---
 
 ## **Testing**
 
