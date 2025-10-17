@@ -283,7 +283,7 @@ Represents a card purchased by a user. Each entry links a purchase to a specific
 
 ---
 
-**CHARACTER_CARDS Model**  
+**CHARACTER_CARD Model**  
 Represents the base characters available in the system.  
 **Key fields:**
 * ID (PK)
@@ -315,24 +315,24 @@ Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHE
 ---
 
 **SHOP_SCHEDULE_ITEMS Model**  
-Acts as a join table linking SHOP_SCHEDULER and CHARACTER_CARDS.  
+Acts as a join table linking SHOP_SCHEDULER and CHARACTER_CARD.  
 Each row = one character in one rotation.  
 Supports assigning any subset of characters to any rotation independently.  
 Enables per-rotation pricing or other metadata without affecting the base character record.
 
 **Key fields:** 
-* foreign keys to SHOP_SCHEDULER and CHARACTER_CARDS
+* foreign keys to SHOP_SCHEDULER and CHARACTER_CARD
 * sale_price.
 
 ### *Model Fields*
 ```
 erDiagram
     USER ||--o{ USER_CARDS : "purchases"
-    USER_CARDS }o--|| CHARACTER_CARDS : "is based on"
-    CHARACTER_CARDS }|--|| ARCHETYPE : "belongs to"
-    CHARACTER_CARDS }|--|| RARITY : "has"
+    USER_CARDS }o--|| CHARACTER_CARD : "is based on"
+    CHARACTER_CARD }|--|| ARCHETYPE : "belongs to"
+    CHARACTER_CARD }|--|| RARITY : "has"
     SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"
-    CHARACTER_CARDS o{--|| SHOP_SCHEDULE_ITEMS : "appears in"
+    CHARACTER_CARD o{--|| SHOP_SCHEDULE_ITEMS : "appears in"
 
     USER {
         int id PK
@@ -344,7 +344,7 @@ erDiagram
     USER_CARDS {
         int id PK
         int user_id FK "References USER.id, on_delete=CASCADE"
-        int character_id FK "References CHARACTER_CARDS.id, on_delete=PROTECT"
+        int character_id FK "References CHARACTER_CARD.id, on_delete=PROTECT"
         datetime date_purchased "DateTimeField(auto_now_add=True)"
         decimal purchase_price "DecimalField"
     }
@@ -368,10 +368,10 @@ erDiagram
     SHOP_SCHEDULE_ITEMS {
         int id PK
         int shop_scheduler_id FK "References SHOP_SCHEDULER.id"
-        int character_id FK "References CHARACTER_CARDS.id"
+        int character_id FK "References CHARACTER_CARD.id"
         decimal sale_price "DecimalField"
     }
-    CHARACTER_CARDS {
+    CHARACTER_CARD {
         int id PK
         string name "CharField"
         boolean can_participate_in_rotation "default=True"
@@ -389,7 +389,7 @@ UserCards store purchase details such as which character was bought, the price p
 
 ---
 
-**USER_CARD }o--|| CHARACTER_CARDS : "is based on"**
+**USER_CARD }o--|| CHARACTER_CARD : "is based on"**
 Each UserCard is based on exactly one character.  
 A character card can have zero or more user cards associated with it.
 This links a purchased card to a specific character, capturing its stats, rarity, archetype and other metadata.
@@ -400,11 +400,11 @@ This links a purchased card to a specific character, capturing its stats, rarity
 Each character belongs to exactly one archetype.  
 An Archetype is assigned to one or more characters.
 A character must have an archetype.
-Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traditional archetype traits for that classification. CHARACTER_CARDS stores global availability for shop rotations and links to the archetype and rarity tables.
+Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traditional archetype traits for that classification. CHARACTER_CARD stores global availability for shop rotations and links to the archetype and rarity tables.
 
 ---
 
-**CHARACTER_CARDS }|--|| RARITY : "has"**
+**CHARACTER_CARD }|--|| RARITY : "has"**
 Each character is assigned exactly one rarity.
 Rarity is assigned to one or more character cards.
 Character cards must have a rarity.
@@ -420,7 +420,7 @@ Stores per-rotation metadata, such as sale prices.
 
 ---
 
-**CHARACTER_CARDS 0{--||SHOP_SCHEDULE_ITEMS "appears in"**
+**CHARACTER_CARD 0{--||SHOP_SCHEDULE_ITEMS "appears in"**
 Each character card can appear in zero or more schedule items.
 Each schedule items corresponds to exactly one character. 
 Characters can appear multiple times over time, but only once per shop scheduler. Also tracks rotation-specific details like sale price.

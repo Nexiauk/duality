@@ -10,7 +10,7 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
-class CharacterCards(models.Model):
+class CharacterCard(models.Model):
     """
     Represents different characters that
     are used across the shop and binder apps.
