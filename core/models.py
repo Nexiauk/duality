@@ -86,7 +86,11 @@ class Rarity(models.Model):
     level = models.PositiveIntegerField(
         _("Rarity Level")
     )
-    price = models.DecimalField(_("Price by Rarity"), max_digits=5, decimal_places=2)
+    price = models.DecimalField(
+        _("Price by Rarity"),
+        max_digits=5,
+        decimal_places=2
+        )
 
     class Meta:
         ordering = ["-level"]
