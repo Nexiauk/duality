@@ -28,9 +28,39 @@ class CharacterCards(models.Model):
         "Archetype"), on_delete=models.PROTECT)
 
     rarity = models.ForeignKey(
-        "core.Rarity", verbose_name=_("Rarity"), on_delete=models.PROTECT)
-    
+        "core.Rarity",
+        verbose_name=_("Rarity"),
+        on_delete=models.PROTECT
+    )
+
     class Meta:
         ordering = ["name"]
         verbose_name = "Character"
         verbose_name_plural = "Characters"
+
+    def __str__(self):
+        """Returns the character's name as its string representation"""
+        return self.name
+
+
+class Archetype(models.Model):
+    """
+    Represents literary archetypes and
+    traits linked to each character in the
+    CharacterCards model.
+
+    Meta:
+        Orders ascending by literary_archetype
+    """
+    literary_archetype = models.CharField(
+        _("Literary Archetype"),
+        max_length=150
+    )
+    archetype_traits = models.TextField(_("Archetype Traits"))
+
+    class Meta:
+        ordering = ["literary_archetype"]
+
+    def __str__(self):
+        """Returns the archetype as its string representation"""
+        return self.literary_archetype
