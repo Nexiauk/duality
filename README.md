@@ -449,6 +449,30 @@ Characters can appear multiple times over time, but only once per shop scheduler
 
 #### **Unit Testing**
 
+The project includes comprehensive unit tests for models and views using Django's `TestCase`. Key areas covered:
+
+### Core Template & View Tests
+- Confirms that the home page (`index`) loads successfully.
+- Checks that the correct template (`core/index.html`) is used.
+- Verifies page content rendering.
+
+### CharacterCard Model Tests
+- Ensures `CharacterCard` verbose names (singular/plural) are correct.
+- Validates character creation and attributes (name, rotation eligibility).
+- Confirms correct association with `Archetype` and `Rarity`.
+- Checks character ordering and string representation.
+
+### Rarity Model Tests
+- Validates rarity attributes: name, level, price.
+- Checks verbose names (singular/plural) and ordering.
+- Confirms string representation returns the rarity name.
+
+### Archetype Model Tests
+- Ensures archetype attributes (name, traits) are correct.
+- Checks verbose names (singular/plural) and ordering.
+- Confirms string representation returns the archetype name.
+
+
 ## **Technology Used**
 
 * [Adobe Color](https://color.adobe.com/)  
