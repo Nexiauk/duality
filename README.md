@@ -514,6 +514,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Working with JSON Data in Python 
     * [realpython.com](https://realpython.com/python-json/)
     * [geeksforgeeks](https://www.geeksforgeeks.org/python/json-loads-in-python/)
+    * [stackoverflow](https://stackoverflow.com/questions/20199126/reading-json-from-a-file)
 
 
 ## **Interesting Bugs**

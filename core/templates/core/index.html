@@ -2,7 +2,15 @@
 {% load static %}
 
 {% block content %}
+
+{% comment %} {% for character in characters %}
+  <li>{{ character.name }} - {{ character.archetype }}</li>
+{% endfor %} {% endcomment %}
+
+
 {% for character in characters %}
 <li>{{character.name}}</li>
 {% endfor %}
+
+
 {% endblock content %}
