@@ -515,6 +515,10 @@ The project includes comprehensive unit tests for models and views using Django'
     * [realpython.com](https://realpython.com/python-json/)
     * [geeksforgeeks](https://www.geeksforgeeks.org/python/json-loads-in-python/)
     * [stackoverflow](https://stackoverflow.com/questions/20199126/reading-json-from-a-file)
+* Help generating random choices from a list of objects
+    * [geeksforgeeks](https://www.geeksforgeeks.org/python/python-select-random-value-from-a-list/)
+    * [W3 Schools](https://www.w3schools.com/python/ref_random_choices.asp)
+
 
 
 ## **Interesting Bugs**
