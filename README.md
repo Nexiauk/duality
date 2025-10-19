@@ -263,7 +263,7 @@ This Entity Relationship Diagram for Duality was created using [Mermaid](https:/
 
 ### *Models*
 
-**USER Model**  
+#### **USER Model**  
 Stores login and display information for players.  
 
 **Key fields:** 
@@ -273,7 +273,7 @@ Stores login and display information for players.
 
 ---
 
-**USER_CARD Model**  
+#### **USER_CARD Model**  
 Represents a card purchased by a user. Each entry links a purchase to a specific character and records the price at the time of purchase.  
 
 **Key fields:** 
@@ -283,7 +283,7 @@ Represents a card purchased by a user. Each entry links a purchase to a specific
 
 ---
 
-**CHARACTER_CARD Model**  
+#### **CHARACTER_CARD Model**  
 Represents the base characters available in the system.  
 **Key fields:**
 * ID (PK)
@@ -295,7 +295,7 @@ Detailed attributes like powerstats, appearance, biography, work, connections, a
 
 ---
 
-**ARCHETYPE Model**  
+#### **ARCHETYPE Model**  
 Represents literary archetypes for characters. This allows characters to be categorized narratively (e.g., "The Hero," or "The Shadow").
 
 **Key fields:** 
@@ -304,7 +304,7 @@ Represents literary archetypes for characters. This allows characters to be cate
 
 ---
 
-**SHOP_SCHEDULER Model**  
+#### **SHOP_SCHEDULER Model**  
 Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
 
 **Key fields:** 
@@ -314,7 +314,7 @@ Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHE
 
 ---
 
-**SHOP_SCHEDULE_ITEMS Model**  
+#### **SHOP_SCHEDULE_ITEMS Model**  
 Acts as a join table linking SHOP_SCHEDULER and CHARACTER_CARD.  
 Each row = one character in one rotation.  
 Supports assigning any subset of characters to any rotation independently.  
@@ -441,33 +441,36 @@ Characters can appear multiple times over time, but only once per shop scheduler
 
 #### **CI Python Linter**
 
+#### **JSONLint**
+Used to format and validate JSON. 
+
 #### **The WAVE Webb Accessibility Evaluation Tool**
 
 #### **Chrome Lighthouse**
 
-#### **Manual Testing**
+### **Manual Testing**
 
-#### **Unit Testing**
+### **Unit Testing**
 
 The project includes comprehensive unit tests for models and views using Django's `TestCase`. Key areas covered:
 
-### Core Template & View Tests
+#### Core Template & View Tests
 - Confirms that the home page (`index`) loads successfully.
 - Checks that the correct template (`core/index.html`) is used.
 - Verifies page content rendering.
 
-### CharacterCard Model Tests
+#### CharacterCard Model Tests
 - Ensures `CharacterCard` verbose names (singular/plural) are correct.
 - Validates character creation and attributes (name, rotation eligibility).
 - Confirms correct association with `Archetype` and `Rarity`.
 - Checks character ordering and string representation.
 
-### Rarity Model Tests
+#### Rarity Model Tests
 - Validates rarity attributes: name, level, price.
 - Checks verbose names (singular/plural) and ordering.
 - Confirms string representation returns the rarity name.
 
-### Archetype Model Tests
+#### Archetype Model Tests
 - Ensures archetype attributes (name, traits) are correct.
 - Checks verbose names (singular/plural) and ordering.
 - Confirms string representation returns the archetype name.
@@ -482,18 +485,23 @@ The project includes comprehensive unit tests for models and views using Django'
 * [Bootstrap Studio](https://bootstrapstudio.io/)  
 * [Canva](https://www.canva.com/en_gb/)  
 * [Cloudinary](https://cloudinary.com/)  
+* [CSS3](https://www.css3.info/)
 * [Crispy Forms](https://django-crispy-forms.readthedocs.io/)  
 * [DJ-database-url](https://pypi.org/project/dj-database-url/)  
-* [Django](https://www.djangoproject.com/)  
+* [Django 5.2.7](https://www.djangoproject.com/)  
 * [Django allauth](https://docs.allauth.org/)  
+* [Github](https://github.com/)
+* [Github Desktop](https://desktop.github.com/download/)
 * [Google Docs](https://docs.google.com/)  
 * [Google Drive](https://drive.google.com/drive/quota)  
 * [Google Fonts](https://fonts.google.com/)  
 * [Gunicorn](https://gunicorn.org/)  
+* [HTML5](https://www.w3schools.com/html/)
 * [Javascript](https://www.w3schools.com/js/)  
 * [Mermaid](https://mermaid.js.org/)  
 * [Paint.NET](http://Paint.NET)  
 * [Psycopg2](https://pypi.org/project/psycopg2/)  
+* [Python 3.13](https://www.python.org/)
 * [Superhero API](https://www.superheroapi.com/)  
 * [Visual Studio Code](https://code.visualstudio.com/)  
 * [Whitenoise](https://whitenoise.readthedocs.io/en/stable/django.html)
@@ -502,7 +510,10 @@ The project includes comprehensive unit tests for models and views using Django'
 
 * [Django Docs](https://www.djangoproject.com/)  
 * [W3Schools](https://www.w3schools.com/)  
-* Badges on images in Bootstrap \- [stackoverflow](https://stackoverflow.com/questions/32815975/how-to-place-a-badge-in-lower-right-corner-of-an-img-in-bootstrap)
+* Badges on images in Bootstrap - [stackoverflow](https://stackoverflow.com/questions/32815975/how-to-place-a-badge-in-lower-right-corner-of-an-img-in-bootstrap)
+* Working with JSON Data in Python 
+    * [realpython.com](https://realpython.com/python-json/)
+    * [geeksforgeeks](https://www.geeksforgeeks.org/python/json-loads-in-python/)
 
 
 ## **Interesting Bugs**

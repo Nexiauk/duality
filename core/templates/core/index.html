@@ -2,5 +2,7 @@
 {% load static %}
 
 {% block content %}
-Test content
+{% for character in characters %}
+<li>{{character.name}}</li>
+{% endfor %}
 {% endblock content %}
