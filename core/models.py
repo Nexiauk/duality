@@ -21,6 +21,7 @@ class CharacterCard(models.Model):
         verbose_name: Singular name of the model.
         verbose_name_plural: Plural name of the model
     """
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(_("Character Name"), max_length=50)
     can_participate_in_rotation = models.BooleanField(
         _("Can participate in shop rotations"), default=True

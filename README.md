@@ -193,6 +193,33 @@ Wireframes were produced using [Bootstrap Studio](https://bootstrapstudio.io/), 
 
 ### *Users*
 
+### *Characters*
+The characters were extracted from a JSON file provided by a [github hosted superhero-api file](https://akabab.github.io/superhero-api/api/all.json) based on [superheroapi.com](https://superheroapi.com/). Their IDs ranged from 1-731, but there were only 563 characters in the file in total. I decided to keep the characters in the JSON file within the project and only store uique key data in the CHARACTER_CARD model, such as ID, name, rotation status, as well as foreign keys to other data models, such as rarity and archetype. This kept the data clean and following best practice in regards to relational databases.
+
+Using ChatGPT and Gemini, we created mapping logic to assign one of the 12 Hero's Journey archetypes to every character in the file. 
+
+## Final Archetype Mapping Logic (Strict Shapeshifter Model)
+
+| Priority | Alignment | Power (P) / Combat (C) | Intelligence (I) | Additional Rule | Final Archetype |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| P1 | Any | Any | Any | Name or Occupation contains strict shapeshifter keyword | **Shapeshifter** |
+| P2 | Any | Any | Any | Occupation contains "Temptress" keyword | **Temptress** |
+| P3 | Good/Neutral | Any | Any | Occupation contains "soldier" or "vigilante" (Override) | **Hero** |
+| P4 | Good | P >= 90 or C >= 90 | Any | (Highest tier of pure power) | **Hero** |
+| P5 | Bad | P >= 75 or C >= 75 | Any | (Highest tier of pure power) | **Destroyer** |
+| P6 | Good | 75 <= P <= 89 or 75 <= C <= 89 | Any | (High-power sidekicks/lieutenants) | **Innocent / Warrior** |
+| P7 | Bad | Any | I >= 70 | (Evil mastermind) | **Shadow** |
+| P8 | Good | 40 <= P <= 74 | I >= 70 | (Strategic support, e.g., Oracle) | **Mentor** |
+| P9 | Neutral | 40 <= P <= 70 | I >= 70 | (Neutral scientist or inventor) | **Creator** |
+| P10 | Neutral | 40 <= P <= 70 | 40 <= I <= 74 | (Neutral guardian) | **Threshold Guardian** |
+| P11 | Bad | 40 <= P <= 74 | Any | (Must also have moderate speed, or Trickster keyword) | **Trickster** |
+| P12 | Good | P < 40 | 40 <= I <= 74 | (Information gatherer) | **Herald** |
+| P13 | Good | 40 <= P <= 74 or 40 <= C <= 74 | Any | (Default for moderate power Good characters) | **Ally** |
+| P14 | Good/Neutral | P < 30 | I < 40 | (Vulnerable figures) | **Innocent** |
+| P15 | Default | - | - | (Fallback for unclassified characters) | **Ally/Shadow/Threshold Guardian** |
+
+
+
 ### *Cards*
 Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations.
 
