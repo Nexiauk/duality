@@ -545,6 +545,11 @@ The project includes comprehensive unit tests for models and views using Django'
 * Help generating random choices from a list of objects
     * [geeksforgeeks](https://www.geeksforgeeks.org/python/python-select-random-value-from-a-list/)
     * [W3 Schools](https://www.w3schools.com/python/ref_random_choices.asp)
+* Help understanding how to write a custom management command for importing json data into a model table:
+    * [geeksforgeeks - how to import json to django model](https://www.geeksforgeeks.org/python/how-to-import-a-json-file-to-a-django-model/)
+    * [codementor - data import from json](https://www.codementor.io/@happinessnwosuc/data-import-from-url-local-csv-and-json-files-into-db-django-app-d9z43iqbx)
+    * [geeksforgeeks - custom management commands](https://www.geeksforgeeks.org/python/custom-django-management-commands/)
+
 
 
 
