@@ -12,7 +12,7 @@ import json
 class Command(BaseCommand):
     help = "Imports character objects from legends.json file"
 
-    def handle(self):
+    def handle(self, *args, **kwargs):
         """
         Imports character data from a raw json file into the 
         CharacterCard model.
