@@ -5,8 +5,8 @@ import random
 
 def home_view(request):
     page_url = "core/index.html"
-    FILE_PATH = Path(__file__).parent/"data"/"legends.json"
-    with open(FILE_PATH, "r", encoding="utf-8") as json_file:
+    file_path = Path(__file__).parent/"data"/"legends.json"
+    with open(file_path, "r", encoding="utf-8") as json_file:
         json_data=json.load(json_file)
         res = random.sample(json_data,12)
     context = {
