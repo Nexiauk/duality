@@ -4,6 +4,7 @@ from a json file
 """
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError
+from pathlib import Path
 from core.models import CharacterCard
 import json
 
@@ -25,7 +26,8 @@ class Command(BaseCommand):
         An error is raised if the file isn't found.
         """
         try:
-            with open("legends.json") as json_file:
+            FILE_PATH = Path(__file__).parent.parent.parent/"data"/"legends.json"
+            with open(FILE_PATH, "r", encoding="utf-8") as json_file:
                 json_data = json.load(json_file)
         except (FileNotFoundError, json.JSONDecodeError, PermissionError) as e:
                 raise Exception(f"Failed to load JSON file {e}")
