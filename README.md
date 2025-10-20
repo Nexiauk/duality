@@ -550,6 +550,7 @@ The project includes comprehensive unit tests for models and views using Django'
     * [codementor - data import from json](https://www.codementor.io/@happinessnwosuc/data-import-from-url-local-csv-and-json-files-into-db-django-app-d9z43iqbx)
     * [geeksforgeeks - custom management commands](https://www.geeksforgeeks.org/python/custom-django-management-commands/)
 * Help understanding pathlib.Path - [geeksforgeeks](https://www.geeksforgeeks.org/python/get-parent-of-current-directory-using-python/)
+* Handle() method typeError - [stackoverflow](https://stackoverflow.com/questions/41401202/django-command-throws-typeerror-handle-got-an-unexpected-keyword-argument)
 
 
 

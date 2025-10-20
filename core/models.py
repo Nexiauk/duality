@@ -32,7 +32,8 @@ class CharacterCard(models.Model):
     rarity = models.ForeignKey(
         "core.Rarity",
         verbose_name=_("Rarity"),
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        null=True
     )
 
     class Meta:
