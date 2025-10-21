@@ -194,14 +194,45 @@ Wireframes were produced using [Bootstrap Studio](https://bootstrapstudio.io/), 
 ### *Users*
 
 ### *Characters*
-The characters were extracted from a JSON file provided by a [github hosted superhero-api file](https://akabab.github.io/superhero-api/api/all.json) based on [superheroapi.com](https://superheroapi.com/). Their IDs ranged from 1-731, but there were only 563 characters in the file in total. I decided to keep the characters in the JSON file within the project and only store uique key data in the CHARACTER_CARD model, such as ID, name, rotation status, as well as foreign keys to other data models, such as rarity and archetype. This kept the data clean and following best practice in regards to relational databases.
+The characters were extracted from a JSON file provided by a [github hosted superhero-api file](https://akabab.github.io/superhero-api/api/all.json) based on [superheroapi.com](https://superheroapi.com/). Their IDs ranged from 1-731, but there were only 563 characters in the file in total. I decided to keep the characters in the JSON file within the project and only store unique key data in the CHARACTER_CARD model, such as ID, name, rotation status, as well as foreign keys to other data models, such as rarity and archetype. This kept the data clean and following best practice in regards to relational databases.
 
 Using ChatGPT and Gemini, we created mapping logic to assign one of the 12 Hero's Journey archetypes to every character in the file. 
 
-## Final Archetype Mapping Logic (Strict Shapeshifter Model)
+#### **Archetype Mapping Logic**
 
+This map classifies characters based on a priority system that favors established narrative roles and keywords over raw power statistics.
 
+| \# | Archetype | Alignment | Quantitative Criteria | Core Narrative Role | Shadow Side |
+| :---- | :---- | :---- | :---- | :---- | :---- |
+| **1** | **Hero** 🦸‍♂️ | Good | **P \>= 90 or C \>= 90** (or heroic occupation override) | The protagonist; figure of **ultimate power** and moral virtue. | Arrogance, debilitating savior complex. |
+| **2** | **Destroyer** 💥 | Bad | **P \>= 75 or C \>= 75** (or 'tyrant' keyword override) | The primary antagonist defined by **overwhelming physical force** and annihilation. | Mindless violence, self-destruction. |
+| **3** | **Shadow** ⚔️ | Bad | **I \>= 70** (or 'mastermind' keyword override) | The **cunning, intellectual villain**; the strategist and manipulator behind the scenes. | Isolation, paranoia, underestimating simplicity. |
+| **4** | **Mentor** 🧙‍♀️ | Good | **I \>= 70 and P 40–74** (or 'professor' keyword override) | The **wise guide** who provides wisdom and strategy; non-combative support. | Manipulative teacher, paralyzing fear of direct action. |
+| **5** | **Ally** 🤝 | Good | **P 40–74** (or 'sidekick' keyword override) | The **loyal companion** providing reliable skills and essential emotional grounding. | Overdependence, jealousy toward the Hero. |
+| **6** | **Innocent / Warrior** 🛡️ | Good | **75 \<= P/C \< 90** (or 'lieutenant' keyword override) | A **powerful, specialized soldier** or high-power sidekick; secondary combat asset. | Over-reliance on violence, used as an expendable asset. |
+| **7** | **Threshold Guardian** ⚖️ | Neutral | **P 40–70 and I 40–74** (or 'guard' keyword override) | A morally ambiguous figure who **tests the hero’s resolve** before a major transition. | Petty obstructionism, gatekeeping. |
+| **8** | **Trickster** 🦊 | Bad/Neutral | **P 40–74 \+ High Speed** (or 'jester' keyword override) | The **chaos agent**; a disruptive figure using speed, deception, and mischief to challenge order. | Destructive chaos, deceit for selfish gain. |
+| **9** | **Shapeshifter** 💋 | Any | **Override P1:** Name/Occupation keywords | The **elusive figure** whose primary power is changing form, creating tension and doubt. | Betrayal, identity loss, moral duplicity. |
+| **10** | **Temptress** 💃 | Any | **Override P2:** Occupation keywords | The **seductress or enchanter** who poses a dangerous distraction to the hero. | Obsession, weaponized desire. |
+| **11** | **Creator** 💡 | Neutral | **I \>= 70 and P 40–70** (or 'inventor' keyword override) | The **intellectual neutral force**; the inventor or builder who controls technology and discovery. | Losing control of inventions, moral ambiguity. |
+| **12** | **Herald** 🕊️ | Good | **P \< 40 and I 40–74** (or 'messenger' keyword override) | The **messenger** who delivers the call to adventure or initiates the journey. | False prophecy, inability to act. |
+| **13** | **Innocent** 👶 | Good/Neutral | **P \< 30 and I \< 40** (or 'civilian' keyword override) | The **moral compass** or vulnerable figure who symbolizes hope and needs protection. | Denial, self-destruction. |
 
+#### **Quantitative Criteria Key**
+
+This table defines the abbreviations used in the **Quantitative Criteria** column of the Archetype Model Reference. These values correspond directly to the character's **Powerstats** data.
+
+| Abbreviation | Full Stat Name | Definition |
+| :---- | :---- | :---- |
+| **P** | **Power** | A character's potential for destructive force, energy projection, or non-physical abilities. |
+| **C** | **Combat** | A character's effectiveness in unarmed fighting; their training and skill in battle. |
+| **I** | **Intelligence** | A character's mental capacity, strategic skill, planning ability, and knowledge. |
+| **S** | **Speed** | How fast a character can move, react, and process information. |
+
+#### **Interpretation Notes**
+
+* **P/C**: Used in the Innocent / Warrior criteria (75 \<= P/C \< 90\) and means either the Power **or** Combat stat meets the criteria.  
+* **Numeric Ranges**: All quantitative rules use a 0-100 scale, where **90-100** is considered *Ultimate*, **75-89** is *High*, and **40-74** is *Moderate*.
 
 
 ### *Cards*
@@ -267,176 +298,131 @@ Extra card content
 * 1v1 card battles  
 * Audio effects
 
-## **Database Schema**
+## **Models and Data Relationships**
+### *Entity Relationship Diagram*
 This Entity Relationship Diagram for Duality was created using [Mermaid](https://mermaid.js.org/)’s built-in ERD diagramming tool. [ChatGPT](https://openai.com/index/chatgpt/) was used to double check my logic.
 
-### *Entity Relationship Diagram*
+### *Overview*
+This section contains the Django models for the Duality LC application, a card-collecting platform where collectors can purchase Legends cards and store them in an online binder.
 
-### *Models*
-
-#### **USER Model**  
-Stores login and display information for players.  
-
-**Key fields:** 
-* username (unique)
-* email
-* password
-
----
-
-#### **USER_CARD Model**  
-Represents a card purchased by a user. Each entry links a purchase to a specific character and records the price at the time of purchase.  
-
-**Key fields:** 
-* foreign keys to USER and CHARACTERS
-* date purchased *
-* price paid.  
-
----
-
-#### **CHARACTER_CARD Model**  
-Represents the base characters available in the system.  
-**Key fields:**
-* ID (PK)
-* Name
-* can_participate_in_rotation (boolean, default=True) - global eligibility for shop rotations
-* Foreign keys to ARCHETYPE and RARITY - classify characters and determine rarity-based ordering or pricing  
-
-Detailed attributes like powerstats, appearance, biography, work, connections, and images are stored in a JSON file.
-
----
-
-#### **ARCHETYPE Model**  
-Represents literary archetypes for characters. This allows characters to be categorized narratively (e.g., "The Hero," or "The Shadow").
-
-**Key fields:** 
-* literary archetype name
-* archetype_traits.  
-
----
-
-#### **SHOP_SCHEDULER Model**  
-Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
-
-**Key fields:** 
-* start_time
-* end_time
-* rotation_type
-
----
-
-#### **SHOP_SCHEDULE_ITEMS Model**  
-Acts as a join table linking SHOP_SCHEDULER and CHARACTER_CARD.  
+Models include:
+* **CharacterCard**: Stores the base Legends stored in the system and their basic information - extended data is kept in a JSON file(legends.json)
+* **Archetype**: Represents literary archetypes for characters based on the Hero's Journey concept. This allows characters to be categorised narratively (e.g., "The Hero," or "The Shadow").
+* **Rarity**: Determines the rarity of character cards and sets a price accordingly
+* **ShopScheduler**: Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
+* **ShopScheduleItems**: Acts as a join table linking ShopScheduler and CharacterCard.  
 Each row = one character in one rotation.  
 Supports assigning any subset of characters to any rotation independently.  
 Enables per-rotation pricing or other metadata without affecting the base character record.
+* **UserCards** Stores details of the character cards that a user has purchased, including the date and time it was bought, and the purchase price at the time.
 
-**Key fields:** 
-* foreign keys to SHOP_SCHEDULER and CHARACTER_CARD
-* sale_price.
+### *Model Relationships (ERD Notation)*
+**USER ||--o{ USER_CARDS : "purchases"**  
+* Each user can purchase zero or more user_cards.  
+* User cards belong to exactly one user.  
+* UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials and email address.
 
+---
+
+**USER_CARDS }o--|| CHARACTER_CARD : "is based on"**  
+* Each UserCard is based on exactly one character.  
+* A character card can have zero or more user cards associated with it.  
+* This links a purchased card to a specific character, capturing its stats, rarity, archetype and other metadata.
+
+---
+
+**CHARACTER_CARD }|--|| ARCHETYPE : "belongs to"**  
+* Each character belongs to exactly one archetype.  
+* An Archetype is assigned to one or more characters.  
+* A character must have an archetype.  
+* Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traditional archetype traits for that classification. 
+* CHARACTER_CARD stores global availability for shop rotations and links to the archetype and rarity tables.
+
+---
+
+**CHARACTER_CARD }|--|| RARITY : "has"**  
+* Each character is assigned exactly one rarity.  
+* Rarity is assigned to one or more character cards.  
+* Character cards must have a rarity.  
+* RARITY defines the classification (Common, Uncommon, Rare, Epic, Legendary, Mythic), a numerical level, and a base price. This allows characters to be consistently valued and ordered in the shop.
+
+---
+
+**SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"**  
+* A shop scheduler must include one or more schedule items.  
+* One or more shop schedule items belong to a shop scheduler.  
+* A shop scheduler must have at least one schedule item.  
+* Stores per-rotation metadata, such as sale prices.
+
+---
+
+**CHARACTER_CARD 0{--||SHOP_SCHEDULE_ITEMS "appears in"**  
+* Each character card can appear in zero or more schedule items.  
+* Each schedule items corresponds to exactly one character. 
+* Characters can appear multiple times over time, but only once per shop scheduler. 
+* Also tracks rotation-specific details like sale price.
+
+---
 ### *Model Fields*
-```
-erDiagram
-    USER ||--o{ USER_CARDS : "purchases"
-    USER_CARDS }o--|| CHARACTER_CARD : "is based on"
-    CHARACTER_CARD }|--|| ARCHETYPE : "belongs to"
-    CHARACTER_CARD }|--|| RARITY : "has"
-    SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"
-    CHARACTER_CARD o{--|| SHOP_SCHEDULE_ITEMS : "appears in"
 
-    USER {
-        int id PK
-        string username "CharField:unique"
-        string email "EmailField:EmailValidator"
-        string password "CharField"
-        string display_name "CharField"
-    }
-    USER_CARDS {
-        int id PK
-        int user_id FK "References USER.id, on_delete=CASCADE"
-        int character_id FK "References CHARACTER_CARD.id, on_delete=PROTECT"
-        datetime date_purchased "DateTimeField(auto_now_add=True)"
-        decimal purchase_price "DecimalField"
-    }
-    ARCHETYPE {
-        int id PK
-        string literary_archetype "CharField"
-        string archetype_traits "TextField"
-    }
-    RARITY {
-        int id PK
-        string name "CharField (Common, Uncommon, Rare, Epic, Legendary, Mythic)"
-        int level "PositiveIntegerField (0-5)"
-        decimal price "DecimalField"
-    }
-    SHOP_SCHEDULER {
-        int id PK
-        datetime start_time "DateTimeField(auto_now_add=True)"
-        datetime end_time "DateTimeField"
-        string rotation_type "CharField"
-    }
-    SHOP_SCHEDULE_ITEMS {
-        int id PK
-        int shop_scheduler_id FK "References SHOP_SCHEDULER.id"
-        int character_id FK "References CHARACTER_CARD.id"
-        decimal sale_price "DecimalField"
-    }
-    CHARACTER_CARD {
-        int id PK
-        string name "CharField"
-        boolean can_participate_in_rotation "default=True"
-        int archetype FK "References ARCHETYPE.id, on_delete=PROTECT"
-        int rarity FK "References RARITY.id, on_delete=PROTECT"
-    } 
-```
-
-### *Model Relationship Declaration*
----
-**USER ||--o{ USER_CARD : "purchases"**
-Each user can purchase zero or more user_cards. 
-User cards belong to exactly one user.
-UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials and email address.
+**USER_CARDS**
+| Column Name    | Type     | Constraints / Notes                         |
+| -------------- | -------- | ------------------------------------------- |
+| id             | int      | PK                                          |
+| user_id        | int      | FK → `USER.id`, on_delete=CASCADE           |
+| character_id   | int      | FK → `CHARACTER_CARD.id`, on_delete=PROTECT |
+| date_purchased | datetime | DateTimeField(auto_now_add=True)            |
+| purchase_price | decimal  | DecimalField                                |
 
 ---
 
-**USER_CARD }o--|| CHARACTER_CARD : "is based on"**
-Each UserCard is based on exactly one character.  
-A character card can have zero or more user cards associated with it.
-This links a purchased card to a specific character, capturing its stats, rarity, archetype and other metadata.
+**ARCHETYPE**
+| Column Name        | Type   | Constraints / Notes |
+| ------------------ | ------ | ------------------- |
+| id                 | int    | PK                  |
+| literary_archetype | string | CharField           |
+| archetype_traits   | string | TextField           |
 
 ---
 
-**CHARACTERS }|--|| ARCHETYPE : "belongs to"**
-Each character belongs to exactly one archetype.  
-An Archetype is assigned to one or more characters.
-A character must have an archetype.
-Archetypes store literary classifications (like “The Hero” or “The Shadow”) and traditional archetype traits for that classification. CHARACTER_CARD stores global availability for shop rotations and links to the archetype and rarity tables.
+**RARITY**
+| Column Name | Type    | Constraints / Notes                                         |
+| ----------- | ------- | ----------------------------------------------------------- |
+| id          | int     | PK                                                          |
+| name        | string  | CharField (Common, Uncommon, Rare, Epic, Legendary, Mythic) |
+| level       | int     | PositiveIntegerField (0-5)                                  |
+| price       | decimal | DecimalField                                                |
 
 ---
 
-**CHARACTER_CARD }|--|| RARITY : "has"**
-Each character is assigned exactly one rarity.
-Rarity is assigned to one or more character cards.
-Character cards must have a rarity.
-RARITY defines the classification (Common, Uncommon, Rare, Epic, Legendary, Mythic), a numerical level, and a base price. This allows characters to be consistently valued and ordered in the shop.
+**SHOP_SCHEDULER**
+| Column Name   | Type     | Constraints / Notes              |
+| ------------- | -------- | -------------------------------- |
+| id            | int      | PK                               |
+| start_time    | datetime | DateTimeField(auto_now_add=True) |
+| end_time      | datetime | DateTimeField                    |
+| rotation_type | string   | CharField                        |
 
 ---
 
-**SHOP_SCHEDULER ||--|{ SHOP_SCHEDULE_ITEMS : "has"**
-A schop scheduler must include one or more schedule items.
-One or more shop schedule items belong to a shop scheduler.
-A shop scheduler must have at least one schedule item.
-Stores per-rotation metadata, such as sale prices.
+**SHOP_SCHEDULE_ITEMS**
+| Column Name       | Type    | Constraints / Notes      |
+| ----------------- | ------- | ------------------------ |
+| id                | int     | PK                       |
+| shop_scheduler_id | int     | FK → `SHOP_SCHEDULER.id` |
+| character_id      | int     | FK → `CHARACTER_CARD.id` |
+| sale_price        | decimal | DecimalField             |
 
 ---
 
-**CHARACTER_CARD 0{--||SHOP_SCHEDULE_ITEMS "appears in"**
-Each character card can appear in zero or more schedule items.
-Each schedule items corresponds to exactly one character. 
-Characters can appear multiple times over time, but only once per shop scheduler. Also tracks rotation-specific details like sale price.
-
----
+**CHARACTER_CARD**
+| Column Name                 | Type    | Constraints / Notes                    |
+| --------------------------- | ------- | -------------------------------------- |
+| id                          | int     | PK                                     |
+| name                        | string  | CharField                              |
+| can_participate_in_rotation | boolean | default=True                           |
+| archetype                   | int     | FK → `ARCHETYPE.id`, on_delete=PROTECT |
+| rarity                      | int     | FK → `RARITY.id`, on_delete=PROTECT    |
 
 ## **Testing**
 
@@ -453,6 +439,7 @@ Characters can appear multiple times over time, but only once per shop scheduler
 #### **CI Python Linter**
 * **Core App**
     * import.py - all clear, no errors found
+    * rarity-calculation.py - all clear, no errors found
 * **Shop App**
 * **Binder App**
 * **Root Directory Files**
