@@ -14,12 +14,14 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         """
-        Imports character data from a raw json file into the 
+        Imports character data from a raw json file into the
         CharacterCard model.
-        Reads the JSON file with multiple character objects, each with a unique ID
-        and creates corresponding records in the CharacterCard table.
+        Reads the JSON file with multiple character objects,
+        each with a unique ID and creates corresponding records
+        in the CharacterCard table.
 
-        Fields in the json file that don't exist in the Django model are ignored.
+        Fields in the json file that don't exist in the Django
+        model are ignored.
         The JSON id field is mapped directly to the CharacterCard
         Primary Key.
 
@@ -31,9 +33,18 @@ class Command(BaseCommand):
             with open(file_path, "r", encoding="utf-8") as json_file:
                 json_data = json.load(json_file)
                 archetype_map = {
-                    "Hero": 1, "Mentor": 2, "Shadow": 3, "Trickster": 4,
-                    "Shapeshifter": 5, "Threshold Guardian": 6, "Herald": 7, "Ally": 8,
-                    "Temptress": 9, " Creator": 10, "Innocent": 11, "Innocent / Warrior": 12,
+                    "Hero": 1,
+                    "Mentor": 2,
+                    "Shadow": 3,
+                    "Trickster": 4,
+                    "Shapeshifter": 5,
+                    "Threshold Guardian": 6,
+                    "Herald": 7,
+                    "Ally": 8,
+                    "Temptress": 9,
+                    "Creator": 10,
+                    "Innocent": 11,
+                    "Innocent / Warrior": 12,
                     "Destroyer": 13
                 }
         except (FileNotFoundError, json.JSONDecodeError, PermissionError) as e:
