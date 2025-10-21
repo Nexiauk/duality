@@ -10,10 +10,21 @@ class ArchetypeAdmin(admin.ModelAdmin):
     """
     list_display = ("id", "literary_archetype", "archetype_traits")
 
+@admin.action(description="Update rotation status")
+def update_rotation_status(modeladmin, request, queryset):
+    """
+    Admin action to approve selected Fableseed instances.
+
+    Sets the approval_status of the selected Fableseed objects to 1.
+    """
+    queryset.update(can_participate_in_rotation=0)
+
 @admin.register(CharacterCard)
 class CharacterCardAmin(admin.ModelAdmin):
     list_display = ("id", "name", "archetype", "rarity", "can_participate_in_rotation")
     list_filter = ("archetype",)
+    actions = [update_rotation_status]
+    
 
 
     

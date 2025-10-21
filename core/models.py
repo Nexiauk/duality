@@ -64,7 +64,7 @@ class Archetype(models.Model):
     archetype_traits = models.TextField(_("Archetype Traits"))
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["literary_archetype"]
         verbose_name = "Archetype"
         verbose_name_plural = "Archetypes"
 
