@@ -40,8 +40,11 @@ class Command(BaseCommand):
             raise Exception(f"Failed to load JSON file {e}")
         try:
             for item in json_data:
-                archetype_name = item["Archetype"]
-                archetype_number = archetype_map[archetype_name]
+                archetype_name = item["archetype"]
+                if archetype_name:
+                    archetype_number = archetype_map[archetype_name]
+                else:
+                    archetype_number = 14
                 CharacterCard.objects.get_or_create(
                     id=item['id'],
                     name=item['name'],
