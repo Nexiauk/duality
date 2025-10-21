@@ -35,7 +35,13 @@ class Command(BaseCommand):
         The JSON id field is mapped directly to the CharacterCard
         Primary Key.
 
-        An error is raised if the file isn't found.
+        An error is raised if the file isn't found, or if rows
+        cannot be created in the table.
+
+        Maps archetype string data to existing archetype primary
+        keys in the archetype table.
+        Maps characters without archetypes to a placeholder
+        archetype record.
         """
         try:
             file_path = Path(__file__).parent.parent.parent / \
@@ -65,7 +71,7 @@ class Command(BaseCommand):
                 if archetype_name:
                     archetype_number = archetype_map[archetype_name]
                 else:
-                    archetype_number = 14
+                    archetype_number = 14 
                 CharacterCard.objects.get_or_create(
                     id=item['id'],
                     name=item['name'],
