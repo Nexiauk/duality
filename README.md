@@ -451,6 +451,11 @@ Characters can appear multiple times over time, but only once per shop scheduler
 #### **The JSHint Validation Service**
 
 #### **CI Python Linter**
+* **Core App**
+    * import.py - all clear, no errors found
+* **Shop App**
+* **Binder App**
+* **Root Directory Files**
 
 #### **JSONLint**
 Used to format and validate JSON. 

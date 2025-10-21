@@ -10,6 +10,16 @@ import json
 
 
 class Command(BaseCommand):
+    """
+    Django management command to import character data from a JSON file.
+
+    Uses 'legends.json' located in the data directory. Maps archetype names
+    to their corresponding numeric IDs and creates CharacterCard objects
+    for each entry in the JSON.
+
+    Inherits from BaseCommand.
+    """
+
     help = "Imports character objects from legends.json file"
 
     def handle(self, *args, **kwargs):
