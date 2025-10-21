@@ -26,17 +26,26 @@ class Command(BaseCommand):
         An error is raised if the file isn't found.
         """
         try:
-            file_path = Path(__file__).parent.parent.parent/"data"/"legends.json"
+            file_path = Path(__file__).parent.parent.parent / \
+                "data"/"legends.json"
             with open(file_path, "r", encoding="utf-8") as json_file:
                 json_data = json.load(json_file)
+                archetype_map = {
+                    "Hero": 1, "Mentor": 2, "Shadow": 3, "Trickster": 4,
+                    "Shapeshifter": 5, "Threshold Guardian": 6, "Herald": 7, "Ally": 8,
+                    "Temptress": 9, " Creator": 10, "Innocent": 11, "Innocent / Warrior": 12,
+                    "Destroyer": 13
+                }
         except (FileNotFoundError, json.JSONDecodeError, PermissionError) as e:
-                raise Exception(f"Failed to load JSON file {e}")
+            raise Exception(f"Failed to load JSON file {e}")
         try:
-                for item in json_data:
-                    CharacterCard.objects.get_or_create(
-                        id = item['id'],
-                        name = item['name'],
-                    )
+            for item in json_data:
+                archetype_name = item["Archetype"]
+                archetype_number = archetype_map[archetype_name]
+                CharacterCard.objects.get_or_create(
+                    id=item['id'],
+                    name=item['name'],
+                    archetype_id=archetype_number
+                )
         except (ValueError, IntegrityError) as e:
-             raise Exception(f"Failed to create character card {e}")
-            
+            raise Exception(f"Failed to create character card {e}")

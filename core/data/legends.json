@@ -158,7 +158,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/3-abin-sur.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/3-abin-sur.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 4,
@@ -540,7 +540,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/11-agent-zero.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/11-agent-zero.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 12,
@@ -593,7 +593,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/12-air-walker.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/12-air-walker.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Herald"
   },
   {
     "id": 13,
@@ -811,7 +811,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/17-alfred-pennyworth.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/17-alfred-pennyworth.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 18,
@@ -1245,7 +1245,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/29-annihilus.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/29-annihilus.jpg"
     },
-    "archetype": "Shadow"
+    "archetype": "Destroyer"
   },
   {
     "id": 30,
@@ -1470,7 +1470,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/34-anti-venom.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/34-anti-venom.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 35,
@@ -2344,7 +2344,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/56-aurora.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/56-aurora.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 57,
@@ -2563,7 +2563,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/61-banshee.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/61-banshee.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 62,
@@ -2780,7 +2780,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/68-batgirl-vi.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/68-batgirl-vi.jpg"
     },
-    "archetype": "Innocent / Warrior"
+    "archetype": "Innocent"
   },
   {
     "id": 69,
@@ -2997,7 +2997,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/72-battlestar.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/72-battlestar.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 73,
@@ -3337,7 +3337,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/80-beyonder.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/80-beyonder.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 81,
@@ -3550,7 +3550,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/84-bill-harken.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/84-bill-harken.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 87,
@@ -3603,7 +3603,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/87-bionic-woman.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/87-bionic-woman.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 88,
@@ -3709,7 +3709,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/92-bishop.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/92-bishop.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 93,
@@ -4030,7 +4030,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/99-black-cat.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/99-black-cat.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Temptress"
   },
   {
     "id": 100,
@@ -4196,7 +4196,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/103-black-lightning.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/103-black-lightning.jpg"
     },
-    "archetype": "Innocent / Warrior"
+    "archetype": "Mentor"
   },
   {
     "id": 104,
@@ -4363,7 +4363,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/106-black-panther.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/106-black-panther.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 107,
@@ -4589,7 +4589,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/111-blackwulf.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/111-blackwulf.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 112,
@@ -4856,7 +4856,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/119-blob.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/119-blob.jpg"
     },
-    "archetype": "Trickster"
+    "archetype": "Shadow"
   },
   {
     "id": 120,
@@ -5015,7 +5015,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/126-blue-beetle-iii.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/126-blue-beetle-iii.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 127,
@@ -5344,7 +5344,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/139-brundlefly.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/139-brundlefly.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 140,
@@ -5844,7 +5844,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/149-captain-america.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/149-captain-america.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 150,
@@ -6401,7 +6401,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/165-catwoman.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/165-catwoman.jpg"
     },
-    "archetype": "Innocent / Warrior"
+    "archetype": "Temptress"
   },
   {
     "id": 167,
@@ -6898,7 +6898,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/178-claire-bennet.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/178-claire-bennet.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 180,
@@ -7339,7 +7339,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/195-cyborg-superman.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/195-cyborg-superman.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Herald"
   },
   {
     "id": 196,
@@ -7506,7 +7506,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/200-daphne-powell.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/200-daphne-powell.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 201,
@@ -7734,7 +7734,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/204-darkseid.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/204-darkseid.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Shadow"
   },
   {
     "id": 206,
@@ -7894,7 +7894,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/208-darth-vader.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/208-darth-vader.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Shadow"
   },
   {
     "id": 209,
@@ -8001,7 +8001,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/210-data.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/210-data.jpg"
     },
-    "archetype": "Mentor"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 211,
@@ -8173,7 +8173,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/213-deadpool.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/213-deadpool.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 214,
@@ -8336,7 +8336,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/216-deathstroke.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/216-deathstroke.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Creator"
   },
   {
     "id": 217,
@@ -8601,7 +8601,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/221-doc-samson.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/221-doc-samson.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 222,
@@ -9479,7 +9479,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/239-elle-bishop.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/239-elle-bishop.jpg"
     },
-    "archetype": "Trickster"
+    "archetype": "Shadow"
   },
   {
     "id": 240,
@@ -9640,7 +9640,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/242-enchantress.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/242-enchantress.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 245,
@@ -9962,7 +9962,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/251-falcon.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/251-falcon.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 252,
@@ -10282,7 +10282,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/258-firelord.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/258-firelord.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Herald"
   },
   {
     "id": 259,
@@ -10337,7 +10337,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/259-firestar.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/259-firestar.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 260,
@@ -10390,7 +10390,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/260-firestorm.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/260-firestorm.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 261,
@@ -10776,7 +10776,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/269-franklin-richards.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/269-franklin-richards.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 270,
@@ -11315,7 +11315,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/285-gladiator.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/285-gladiator.jpg"
     },
-    "archetype": "Threshold Guardian"
+    "archetype": "Herald"
   },
   {
     "id": 286,
@@ -11652,7 +11652,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/296-gravity.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/296-gravity.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 297,
@@ -11986,7 +11986,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/305-guy-gardner.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/305-guy-gardner.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 306,
@@ -12205,7 +12205,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/309-harley-quinn.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/309-harley-quinn.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Trickster"
   },
   {
     "id": 310,
@@ -12641,7 +12641,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/321-hela.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/321-hela.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Shadow"
   },
   {
     "id": 322,
@@ -12867,7 +12867,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/327-hit-girl.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/327-hit-girl.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 330,
@@ -13094,7 +13094,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/334-huntress.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/334-huntress.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 335,
@@ -13371,7 +13371,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/339-iceman.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/339-iceman.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 340,
@@ -14338,7 +14338,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/358-jennifer-kale.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/358-jennifer-kale.jpg"
     },
-    "archetype": "Mentor"
+    "archetype": "Innocent"
   },
   {
     "id": 360,
@@ -14501,7 +14501,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/364-jim-powell.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/364-jim-powell.jpg"
     },
-    "archetype": "Innocent"
+    "archetype": "Hero"
   },
   {
     "id": 365,
@@ -14554,7 +14554,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/365-jj-powell.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/365-jj-powell.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 367,
@@ -14664,7 +14664,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/no-portrait.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/no-portrait.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 370,
@@ -14722,7 +14722,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/370-joker.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/370-joker.jpg"
     },
-    "archetype": "Shadow"
+    "archetype": "Trickster"
   },
   {
     "id": 371,
@@ -14937,7 +14937,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/374-juggernaut.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/374-juggernaut.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 375,
@@ -15213,7 +15213,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/381-katniss-everdeen.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/381-katniss-everdeen.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 382,
@@ -15328,7 +15328,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/383-kick-ass.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/383-kick-ass.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 384,
@@ -16244,7 +16244,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/402-leech.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/402-leech.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 403,
@@ -16857,7 +16857,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/414-loki.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/414-loki.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Trickster"
   },
   {
     "id": 415,
@@ -17350,7 +17350,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/425-magus.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/425-magus.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Shadow"
   },
   {
     "id": 426,
@@ -17403,7 +17403,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/426-man-of-miracles.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/426-man-of-miracles.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 427,
@@ -18508,7 +18508,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/449-micah-sanders.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/449-micah-sanders.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Innocent"
   },
   {
     "id": 450,
@@ -18997,7 +18997,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/459-mister-mxyzptlk.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/459-mister-mxyzptlk.jpg"
     },
-    "archetype": "Destroyer"
+    "archetype": "Trickster"
   },
   {
     "id": 460,
@@ -19171,7 +19171,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/462-mockingbird.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/462-mockingbird.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 463,
@@ -19657,7 +19657,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/476-mr-incredible.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/476-mr-incredible.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 477,
@@ -20045,7 +20045,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/484-namorita.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/484-namorita.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 485,
@@ -20313,7 +20313,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/490-nightcrawler.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/490-nightcrawler.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 491,
@@ -20429,7 +20429,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/492-niki-sanders.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/492-niki-sanders.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 493,
@@ -20535,7 +20535,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/495-northstar.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/495-northstar.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 496,
@@ -20981,7 +20981,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/505-oracle.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/505-oracle.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 506,
@@ -21512,7 +21512,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/521-plastique.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/521-plastique.jpg"
     },
-    "archetype": "Trickster"
+    "archetype": "Shadow"
   },
   {
     "id": 522,
@@ -21623,7 +21623,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/523-polaris.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/523-polaris.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 524,
@@ -21788,7 +21788,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/527-professor-x.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/527-professor-x.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 528,
@@ -21899,7 +21899,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/529-psylocke.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/529-psylocke.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 530,
@@ -22077,7 +22077,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/532-pyro.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/532-pyro.jpg"
     },
-    "archetype": "Trickster"
+    "archetype": "Shadow"
   },
   {
     "id": 533,
@@ -22130,7 +22130,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/533-q.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/533-q.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 535,
@@ -22238,7 +22238,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/536-quicksilver.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/536-quicksilver.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 537,
@@ -22558,7 +22558,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/542-raven.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/542-raven.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 543,
@@ -22722,7 +22722,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/546-red-hood.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/546-red-hood.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 547,
@@ -23449,7 +23449,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/563-robin-iii.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/563-robin-iii.jpg"
     },
-    "archetype": "Innocent / Warrior"
+    "archetype": "Innocent"
   },
   {
     "id": 564,
@@ -23505,7 +23505,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/564-robin-v.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/564-robin-v.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 565,
@@ -23613,7 +23613,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/566-rocket-raccoon.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/566-rocket-raccoon.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 567,
@@ -23734,7 +23734,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/no-portrait.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/no-portrait.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 569,
@@ -24003,7 +24003,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/573-sasquatch.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/573-sasquatch.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 574,
@@ -24551,7 +24551,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/583-sentry.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/583-sentry.jpg"
     },
-    "archetype": "Threshold Guardian"
+    "archetype": "Herald"
   },
   {
     "id": 584,
@@ -24721,7 +24721,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/586-shadowcat.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/586-shadowcat.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Mentor"
   },
   {
     "id": 587,
@@ -25202,7 +25202,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/598-silver-surfer.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/598-silver-surfer.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Herald"
   },
   {
     "id": 599,
@@ -25637,7 +25637,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/608-sobek.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/608-sobek.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 609,
@@ -25967,7 +25967,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/615-speedy.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/615-speedy.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 618,
@@ -26140,7 +26140,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/620-spider-man.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/620-spider-man.jpg"
     },
-    "archetype": "Innocent / Warrior"
+    "archetype": "Mentor"
   },
   {
     "id": 623,
@@ -26462,7 +26462,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/631-stardust.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/631-stardust.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Herald"
   },
   {
     "id": 632,
@@ -26628,7 +26628,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/634-static.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/634-static.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent"
   },
   {
     "id": 635,
@@ -27412,7 +27412,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/648-synch.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/648-synch.jpg"
     },
-    "archetype": "Mentor"
+    "archetype": "Innocent"
   },
   {
     "id": 649,
@@ -27893,7 +27893,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/657-the-comedian.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/657-the-comedian.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 658,
@@ -28493,7 +28493,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/671-toxin.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/671-toxin.jpg"
     },
-    "archetype": "Innocent / Warrior"
+    "archetype": "Hero"
   },
   {
     "id": 672,
@@ -28554,7 +28554,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/672-toxin.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/672-toxin.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 676,
@@ -28662,7 +28662,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/677-triton.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/677-triton.jpg"
     },
-    "archetype": "Herald"
+    "archetype": "Ally"
   },
   {
     "id": 678,
@@ -29214,7 +29214,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/690-venompool.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/690-venompool.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Threshold Guardian"
   },
   {
     "id": 692,
@@ -30072,7 +30072,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/714-winter-soldier.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/714-winter-soldier.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 716,
@@ -30126,7 +30126,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/716-wolfsbane.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/716-wolfsbane.jpg"
     },
-    "archetype": "Ally"
+    "archetype": "Mentor"
   },
   {
     "id": 717,
@@ -30190,7 +30190,7 @@
       "md": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/717-wolverine.jpg",
       "lg": "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/lg/717-wolverine.jpg"
     },
-    "archetype": "Hero"
+    "archetype": "Innocent / Warrior"
   },
   {
     "id": 718,
