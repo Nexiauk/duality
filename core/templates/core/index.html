@@ -9,8 +9,8 @@
 
 
 {% for character in characters %}
-<li>{{character.name}}</li>
+<li>{{character.model.name}}</li>
+<li>{{character.json.slug}}</li>
+
 {% endfor %}
-
-
 {% endblock content %}

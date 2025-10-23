@@ -436,7 +436,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 #### **The JSHint Validation Service**
 
-#### **CI Python Linter**
+#### [**CI Python Linter**](https://pep8ci.herokuapp.com/)
 * **Core App**
     * import.py - all clear, no errors found
     * rarity-calculation.py - all clear, no errors found
@@ -444,8 +444,8 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * **Binder App**
 * **Root Directory Files**
 
-#### **JSONLint**
-Used to format and validate JSON. 
+#### [**JSONLint**](https://jsonlint.com/)
+* legends.json file is valid.
 
 #### **The WAVE Webb Accessibility Evaluation Tool**
 
