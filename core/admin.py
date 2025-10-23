@@ -21,8 +21,8 @@ def update_rotation_status(modeladmin, request, queryset):
 
 @admin.register(CharacterCard)
 class CharacterCardAmin(admin.ModelAdmin):
-    list_display = ("id", "name", "archetype", "rarity", "can_participate_in_rotation")
-    list_filter = ("archetype",)
+    list_display = ("name", "archetype", "rarity", "can_participate_in_rotation")
+    list_filter = ("archetype", "rarity",)
     actions = [update_rotation_status]
     
 @admin.register(Rarity)

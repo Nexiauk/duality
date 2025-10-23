@@ -386,12 +386,12 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ---
 
 **RARITY**
-| Column Name | Type    | Constraints / Notes                                         |
-| ----------- | ------- | ----------------------------------------------------------- |
-| id          | int     | PK                                                          |
-| name        | string  | CharField (Common, Uncommon, Rare, Epic, Legendary, Mythic) |
-| level       | int     | PositiveIntegerField (0-5)                                  |
-| price       | decimal | DecimalField                                                |
+| Column Name | Type    | Constraints / Notes                                                       |
+| ----------- | ------- | ------------------------------------------------------------------------- |
+| id          | int     | PK                                                                        |
+| name        | string  | CharField (Common, Uncommon, Rare, Epic, Legendary, Mythic) Unique = True |
+| level       | int     | PositiveIntegerField (0-5), Unique=True                                   |
+| price       | decimal | DecimalField                                                              |
 
 ---
 
@@ -452,6 +452,9 @@ Used to format and validate JSON.
 #### **Chrome Lighthouse**
 
 ### **Manual Testing**
+* Tested characters imported safely after running import.py and that archetypes were allocated to all characters - checked via Django admin. Exception errors raise if the file doesn't exist at the specified path, if the JSON data is malformed, or if the OS denies permissions. Exception errors also raise if invalid values or if bad values violate database rules.
+
+* Tested that rarities were assigned to all characters after running rarity-update.py - checked via Django admin. Built-in logic to compare id and name from the JSON file, to id and name in the CharacterCard model table. Exception errors raise if the CharacterCard doesn't exist, and any characters not allocated a rarity will print to the terminal.
 
 ### **Unit Testing**
 
@@ -527,6 +530,7 @@ The project includes comprehensive unit tests for models and views using Django'
     * [geeksforgeeks - custom management commands](https://www.geeksforgeeks.org/python/custom-django-management-commands/)
 * Help understanding pathlib.Path - [geeksforgeeks](https://www.geeksforgeeks.org/python/get-parent-of-current-directory-using-python/)
 * Handle() method typeError - [stackoverflow](https://stackoverflow.com/questions/41401202/django-command-throws-typeerror-handle-got-an-unexpected-keyword-argument)
+* Help with filtering out a particular record in order to update it - [stackoverflow](https://stackoverflow.com/questions/2712682/how-to-select-a-record-and-update-it-with-a-single-queryset-in-django)
 
 
 
