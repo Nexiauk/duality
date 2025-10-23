@@ -1,8 +1,9 @@
 """
-Custom management command to import character data
-from a json file
+Custom management command to grab the nested powerstat
+dictionary of each character in the json file and calculate
+an overall power rating based on totalling their powerstats.
 """
-from django.core.management.base import BaseCommandcalc
+from django.core.management.base import BaseCommand
 from pathlib import Path
 import json
 
