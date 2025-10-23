@@ -46,5 +46,9 @@ class Command(BaseCommand):
                             CharacterCard.objects.filter(id=id).update(
                                 rarity=Rarity.objects.get(name="Mythic")
                             )
+                    else:
+                        print(
+                            f"Character with ID{id} was not allocated a rarity. name didn't match")
+
                 except CharacterCard.DoesNotExist:
                     print(f"Character with ID{id} not found")
