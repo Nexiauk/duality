@@ -25,6 +25,7 @@ class CharacterCardAmin(admin.ModelAdmin):
     list_filter = ("archetype",)
     actions = [update_rotation_status]
     
-
-
+@admin.register(Rarity)
+class RarityAdmin(admin.ModelAdmin):
+    list_display = ("name", "level", "price")
     

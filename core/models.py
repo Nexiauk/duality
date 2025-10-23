@@ -84,9 +84,9 @@ class Rarity(models.Model):
         verbose_name: Singular name of the model.
         verbose_name_plural: Plural name of the model
     """
-    name = models.CharField(_("Rarity Name"), max_length=50)
+    name = models.CharField(_("Rarity Name"), max_length=50, unique=True)
     level = models.PositiveIntegerField(
-        _("Rarity Level")
+        _("Rarity Level"), unique=True
     )
     price = models.DecimalField(
         _("Price by Rarity"),

@@ -2,10 +2,8 @@
 Custom management command to import character data
 from a json file
 """
-from django.core.management.base import BaseCommand
-from django.db import IntegrityError
+from django.core.management.base import BaseCommandcalc
 from pathlib import Path
-from core.models import CharacterCard
 import json
 
 
