@@ -1,7 +1,6 @@
 """
-Custom management command to update characters
-in the CharacterCard model with a rarity from the
-Rarity model.
+Custom Django management command to assign a rarity to each character
+in the CharacterCard model based on their total power.
 """
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError
@@ -11,6 +10,24 @@ import json
 
 
 class Command(BaseCommand):
+    """
+The command reads character data from `legends.json` and does the following:
+
+1. Iterates over each character in the JSON file.
+2. For each character, retrieves the corresponding CharacterCard record by ID.
+3. Checks that the name in the JSON matches the database record.
+   - If the name doesn't match, a warning is printed and the record is skipped.
+4. Calculates the total power as the sum of all values in the `powerstats`
+dictionary.
+5. Assigns a rarity based on the total power thresholds:
+   - 0–160       → Common
+   - 161–260     → Uncommon
+   - 261–360     → Rare
+   - 361–460     → Epic
+   - 461–560     → Legendary
+   - 561–660     → Mythic
+6. If a CharacterCard with the given ID does not exist, a warning is printed.
+"""
     def handle(self, *args, **kwargs):
         file_path = Path(__file__).parent.parent.parent/"data"/"legends.json"
         with open(file_path, "r", encoding="utf-8") as json_file:
@@ -48,7 +65,7 @@ class Command(BaseCommand):
                             )
                     else:
                         print(
-                            f"Character with ID{id} was not allocated a rarity. name didn't match")
+                            f"Character {id} was not allocated a rarity.")
 
                 except CharacterCard.DoesNotExist:
                     print(f"Character with ID{id} not found")
