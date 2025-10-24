@@ -3,11 +3,6 @@
 
 {% block content %}
 
-{% comment %} {% for character in characters %}
-  <li>{{ character.name }} - {{ character.archetype }}</li>
-{% endfor %} {% endcomment %}
-
-
 {% for character in characters %}
 <li>{{character.model.name}}</li>
 <li>{{character.json.slug}}</li>

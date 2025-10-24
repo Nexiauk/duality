@@ -1,3 +1,8 @@
+"""
+AppConfig for the Core app with a
+defined ready method for loading data
+into a global variable.
+"""
 from django.apps import AppConfig
 import json
 from pathlib import Path
@@ -8,6 +13,15 @@ class CoreConfig(AppConfig):
     name = 'core'
 
     def ready(self):
+        """
+        Ready method to invoke startup logic -
+        opens the legends JSON file as read-only and
+        stores the data on a global variable in datastore.py
+        for use across all apps.
+
+        Reduces inefficency of loading data from the
+        json file in views.
+        """
         file_path = Path(__file__).parent/"data"/"legends.json"
         with open(file_path, "r", encoding="utf-8") as json_file:
             json_data = json.load(json_file)
