@@ -14,8 +14,17 @@
     text-align: center;
 }
 
+/* Block and height/width applied so the entire nav item becomes clickable */
+.nav-link {
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .nav-item:hover {
-    background-color: var(--fuschia-blue);
+    background-color: var(--ecstatic-red);
+    cursor: pointer;
 }
 
 /* Custom class to set the base colour of the yang side of the svg path */
@@ -41,18 +50,28 @@
 /* media query for screens 1024px and up*/
 @media screen and (min-width:1024px) {
     @media screen and (min-width:1024px) {
-    .navbar-nav {
-        width: 90%;
+        .navbar-nav {
+            width: 90%;
+        }
     }
-}
+
+    /* Skew transform applied to create forward-leaning nav items */
+    .nav-item {
+        background-color: var(--skylla);
+        transform: skew(-30deg);
+    }
+
+    /* Opposite skew applied to the nav link so the text looks straight */
     .nav-link {
-        background-color: var(--ecstatic-red);
-        
+        transform: skew(30deg);
+        display: inline-block;
+        text-decoration: none;
     }
+
 }
 
 /* media query for screens 1440px and up*/
-    @media screen and (min-width:1440px) {
+@media screen and (min-width:1440px) {
     .navbar-nav {
         width: 80%;
     }
