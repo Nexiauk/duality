@@ -19,12 +19,16 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
+<!-- Classes set on body to work with mt-auto on footer to ensure it stays at the bottom. -->
 
 <body class="d-flex flex-column min-vh-100">
     <header>
-        <nav class="navbar navbar-expand-md bg-dark py-3" data-bs-theme="dark">
+        <!-- Navbar links collapsed on small screen sizes, expands at large-->
+        <nav class="navbar navbar-expand-lg bg-dark py-3" data-bs-theme="dark">
+            <!-- Navbar brand flexed to allow the icon and text to sit next to each other -->
             <div class="container-fluid"><a class="navbar-brand d-flex align-items-center" href="#">
-                <span
+                    <!-- Yin Yang svg icon for the Navbar Brand -->
+                    <span
                         class="bs-icon bs-icon-circle bs-icon-primary align-items-center me-2 bs-icon yang-colour"><svg
                             xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" fill="currentColor"
                             class="bi bi-yin-yang" viewBox="0 0 16 16">
@@ -32,24 +36,30 @@
                             <path
                                 d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M1 8a7 7 0 0 1 7-7 3.5 3.5 0 1 1 0 7 3.5 3.5 0 1 0 0 7 7 7 0 0 1-7-7m7 4.667a1.167 1.167 0 1 1 0-2.334 1.167 1.167 0 0 1 0 2.334" />
                         </svg></span>
-                        
-                        <span class="d-none d-md-block">Duality: Legends Unchained</span><span
-                        class="d-md-none">Duality: LC</span></a><button data-bs-toggle="collapse" class="navbar-toggler"
-                    data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span
-                        class="navbar-toggler-icon"></span></button>
+                    <!-- Full title displays from medium sized screens and up. hidden on small screens. -->
+                    <span class="d-none d-md-block">Duality: Legends Unchained</span>
+                    <!-- Shortened title displays on small screens, hidden from medium up. -->
+                    <span class="d-md-none">Duality: LC</span></a>
+                    <!-- Navbar toggler button for collapsed nav on small screens -->
+                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span
+                        class="visually-hidden">Toggle
+                        navigation</span>
+                    <span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav text-center gap-lg-5 ms-auto">
+                    <!-- Nav link unordered list using ms-auto to push it to the right -->
+                    <ul class="navbar-nav text-center gap-3 ms-auto">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Binder</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Login/Logout/Register</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main class="container-fluid">
+        <!-- Page-specific content to be inserted here -->
         {% block content %}
         {% endblock content %}
     </main>
@@ -57,7 +67,7 @@
         <div class="container">
             <div class="row row-cols-1 row-cols-md-3">
                 <div class="col">
-                    <p class="text-body my-2">Copyright&nbsp;© 2025 Brand</p>
+                    <p class="text-body my-2">Copyright&nbsp;© 2025 Lucy Sears</p>
                 </div>
                 <div class="col">
                     <ul class="list-inline my-2">
@@ -91,6 +101,7 @@
                     </ul>
                 </div>
                 <div class="col">
+                    <!-- Unordered list for links to terms and policies -->
                     <ul class="list-inline my-2">
                         <li class="list-inline-item"><a class="link-body-emphasis" href="#">Privacy Policy</a></li>
                         <li class="list-inline-item"><a class="link-body-emphasis" href="#">Terms of Use</a></li>

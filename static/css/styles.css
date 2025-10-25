@@ -1,11 +1,59 @@
+/* Variables for website colour scheme */
+:root {
+    --fuschia-blue: #845ABF;
+    --eclectic: #AAB1BF;
+    --skylla: #2182BF;
+    --nasturtium-shoot: #88A649;
+    --ecstatic-red: #A6121F;
+}
+
+/* Allocates available horizontal space in the nav bar equally between nav items */
+.nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-item:hover {
+    background-color: var(--fuschia-blue);
+}
+
 /* Custom class to set the base colour of the yang side of the svg path */
 .yang-colour {
     color: white;
     transition: color 0.3s;
 }
-/* Applies hover styling to the svg yin yang icon */
+
+/* Applies hover styling to the yin yang SVG icon */
 .yang-colour:hover {
     background-color: white;
-    color: rgb(33,37,41);
+    color: rgb(33, 37, 41);
     border-radius: 50%;
+}
+
+/* Media query for screens 768px and up */
+@media screen and (min-width:768px) {
+    .navbar-nav {
+        width: 40%;
+    }
+}
+
+/* media query for screens 1024px and up*/
+@media screen and (min-width:1024px) {
+    @media screen and (min-width:1024px) {
+    .navbar-nav {
+        width: 90%;
+    }
+}
+    .nav-link {
+        background-color: var(--ecstatic-red);
+        
+    }
+}
+
+/* media query for screens 1440px and up*/
+    @media screen and (min-width:1440px) {
+    .navbar-nav {
+        width: 80%;
+    }
 }
