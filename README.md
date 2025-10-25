@@ -553,3 +553,4 @@ The project includes comprehensive unit tests for models and views using Django'
 ### *Media*
 
 * Media for 731 superheroes and villains - [SuperHeroAPI](https://www.superheroapi.com/)
+* Socials icons for the Footer - [Bootstrap Icons](https://icons.getbootstrap.com/)
