@@ -7,6 +7,8 @@
     --ecstatic-red: #A6121F;
 }
 
+
+
 /* Allocates available horizontal space in the nav bar equally between nav items */
 .nav-item {
     flex-basis: 0;
@@ -38,6 +40,18 @@
     background-color: white;
     color: rgb(33, 37, 41);
     border-radius: 50%;
+}
+
+/* Hover colour for the round socials icons */
+.socials-hover:hover {
+    background-color: var(--ecstatic-red);
+    border-radius: 50%;
+}
+
+/* Hover colour for the square socials icon */
+.socials-hover-square:hover {
+    background-color: var(--ecstatic-red);
+    border-radius: 5%;
 }
 
 /* Media query for screens 768px and up */
