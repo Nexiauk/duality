@@ -27,6 +27,11 @@
 .nav-item:hover {
     background-color: var(--ecstatic-red);
     cursor: pointer;
+    transition: 0.5s ease-in;
+}
+
+.nav-link:hover {
+    font-weight: bold;
 }
 
 /* Custom class to set the base colour of the yang side of the svg path */
