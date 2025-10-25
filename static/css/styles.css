@@ -1,0 +1,11 @@
+/* Custom class to set the base colour of the yang side of the svg path */
+.yang-colour {
+    color: white;
+    transition: color 0.3s;
+}
+/* Applies hover styling to the svg yin yang icon */
+.yang-colour:hover {
+    background-color: white;
+    color: rgb(33,37,41);
+    border-radius: 50%;
+}
