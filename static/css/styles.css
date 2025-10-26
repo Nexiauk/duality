@@ -7,8 +7,6 @@
     --ecstatic-red: #A6121F;
 }
 
-
-
 /* Allocates available horizontal space in the nav bar equally between nav items */
 .nav-item {
     flex-basis: 0;
@@ -45,6 +43,14 @@
     background-color: white;
     color: rgb(33, 37, 41);
     border-radius: 50%;
+}
+
+#hero {
+    background: url(../images/duality.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    height: 600px;
 }
 
 /* Hover colour for the round socials icons */

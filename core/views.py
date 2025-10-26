@@ -27,5 +27,4 @@ def home_view(request):
         "characters":final_list
         
     }
-    print(res)
     return render(request, page_url, context)
