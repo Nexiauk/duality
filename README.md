@@ -167,7 +167,8 @@ The famous photograph “Lunch Atop Skyscraper” has a version that replaces th
 #AAB1BF - Eclectic  
 #2182BF - Skylla  
 #88A649 - Nasturtium Shoot  
-#A6121F - Ecstatic Red
+#A6121F - Ecstatic Red  
+#D9A404 - Vivid Yellow
 
 ### *Colour Accessibility*
 I used [Eight Shapes Contrast Grid](https://contrast-grid.eightshapes.com/?version=1.1.0&background-colors=%23845ABF%0D%0A%23AAB1BF%0D%0A%232182BF%0D%0A%2388A649%0D%0A%23A6121F%0D%0A&foreground-colors=%23000000%0D%0A%23ffffff%0D%0A%23AAB1BF%0D%0A%23845ABF%0D%0A%232182BF%0D%0A%2388A649%0D%0A%23A6121F%0D%0A&es-color-form__tile-size=regular&es-color-form__show-contrast=aaa&es-color-form__show-contrast=aa&es-color-form__show-contrast=aa18&es-color-form__show-contrast=dnp) to figure out which foreground colours passed WCAG contrast regulations. Most of the colours were absolutely not compatible with each other, so I added #FFFFFF Black and #000000 White, which worked well with each of the various colours as shown on the grid below. With the palette being composed of primary and secondary colours, there weren’t too many options for some of the colours extracted for the theme.  
@@ -554,4 +555,8 @@ The project includes comprehensive unit tests for models and views using Django'
 ### *Media*
 
 * Media for 731 superheroes and villains - [SuperHeroAPI](https://www.superheroapi.com/)
-* Socials icons for the Footer - [Bootstrap Icons](https://icons.getbootstrap.com/)
+* Socials icons for the Header/Footer - [Bootstrap Icons](https://icons.getbootstrap.com/)
+* Hero image from [freepik.com](https://www.freepik.com/free-ai-image/illustrated-rendering-twin-avatar_94938018.htm#fromView=image_search&page=1&position=30&uuid=3f919ced-a2ab-4eae-9f4f-620c72eddb72&query=heroes+and+villains)
+
+### *Tools*
+* Glassmorphism CSS generator - [css.glass](https://css.glass/)

@@ -5,6 +5,15 @@
     --skylla: #2182BF;
     --nasturtium-shoot: #88A649;
     --ecstatic-red: #A6121F;
+    --vivid-yellow: #D9A404;
+}
+
+body {
+    background-image: linear-gradient(90deg,
+            var(--ecstatic-red) 0%,
+            var(--skylla) 20%,
+            var(--fuschia-blue) 80%,
+            var(--nasturtium-shoot) 100%)
 }
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
@@ -23,7 +32,7 @@
 }
 
 .nav-item:hover {
-    background-color: var(--ecstatic-red);
+    background-color: var(--vivid-yellow);
     cursor: pointer;
     transition: 0.5s ease-in;
 }
@@ -47,7 +56,7 @@
 
 /* Styling for the hero section div with a background image */
 #hero {
-    background: url(../images/duality.jpg);
+    background: url(../images/hero-img.avif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
@@ -57,6 +66,14 @@
 /* Space added at the bottom of the hero card container */
 #hero-content {
     margin-bottom: 25px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 /* Hover colour for the round socials icons */
