@@ -45,12 +45,18 @@
     border-radius: 50%;
 }
 
+/* Styling for the hero section div with a background image */
 #hero {
     background: url(../images/duality.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-x: center;
-    height: 600px;
+    background-position: center top;
+    margin-bottom: 25px;
+}
+
+/* Space added at the bottom of the hero card container */
+#hero-content {
+    margin-bottom: 25px;
 }
 
 /* Hover colour for the round socials icons */
@@ -65,10 +71,24 @@
     border-radius: 5%;
 }
 
+/* Media queries start here */
+
+/* Media query for screens 320px and up */
+@media screen and (min-width:320px) {
+    #hero {
+        height: 400px;
+    }
+
+}
+
 /* Media query for screens 768px and up */
 @media screen and (min-width:768px) {
     .navbar-nav {
         width: 40%;
+    }
+
+    #hero {
+        height: 500px;
     }
 }
 
@@ -99,5 +119,19 @@
 @media screen and (min-width:1440px) {
     .navbar-nav {
         width: 80%;
+    }
+}
+
+/* media query for screens 1900px and up*/
+@media screen and (min-width:1900px) {
+    #hero {
+        height: 700px;
+    }
+}
+
+/* Media query for screens 2560px and up */
+@media screen and (min-width:2560px) {
+    #hero {
+        height: 1000px;
     }
 }
