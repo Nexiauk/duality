@@ -16,6 +16,25 @@ body {
             var(--nasturtium-shoot) 100%)
 }
 
+/* Sticky header */
+header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+
+}
+
+/* Sticky footer */
+footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 /* Allocates available horizontal space in the nav bar equally between nav items */
 .nav-item {
     flex-basis: 0;
@@ -56,11 +75,13 @@ body {
 
 /* Styling for the hero section div with a background image */
 #hero {
-    background: url(../images/hero-img.avif);
+    background-image: url(../images/hero-image.avif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
     margin-bottom: 25px;
+    margin-top: 80px;
+    height: 100vh;
 }
 
 /* Space added at the bottom of the hero card container */
@@ -93,8 +114,12 @@ body {
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
     #hero {
-        height: 400px;
+        background-position: 25% top;
     }
+
+section {
+    margin-bottom: 150px;
+}
 
 }
 
@@ -104,17 +129,20 @@ body {
         width: 40%;
     }
 
+    section {
+    margin-bottom: 80px;
+}
+
     #hero {
-        height: 500px;
+        height: 100vh;
+        background-position: 50% top;
     }
 }
 
 /* media query for screens 1024px and up*/
 @media screen and (min-width:1024px) {
-    @media screen and (min-width:1024px) {
-        .navbar-nav {
-            width: 90%;
-        }
+    .navbar-nav {
+        width: 90%;
     }
 
     /* Skew transform applied to create forward-leaning nav items */
