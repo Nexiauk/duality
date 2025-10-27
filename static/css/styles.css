@@ -113,25 +113,25 @@ footer {
 
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
+    section {
+        margin-bottom: 150px;
+    }
+
     #hero {
         background-position: 25% top;
     }
-
-section {
-    margin-bottom: 150px;
-}
 
 }
 
 /* Media query for screens 768px and up */
 @media screen and (min-width:768px) {
+    section {
+        margin-bottom: 80px;
+    }
+
     .navbar-nav {
         width: 40%;
     }
-
-    section {
-    margin-bottom: 80px;
-}
 
     #hero {
         height: 100vh;
@@ -141,6 +141,9 @@ section {
 
 /* media query for screens 1024px and up*/
 @media screen and (min-width:1024px) {
+    section {
+    margin-bottom: 85px;
+}
     .navbar-nav {
         width: 90%;
     }
@@ -157,6 +160,11 @@ section {
         display: inline-block;
         text-decoration: none;
     }
+
+}
+
+/* media query for screens 1200px and up*/
+@media screen and (min-width:1200px) {
 
 }
 
