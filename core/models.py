@@ -33,7 +33,7 @@ class CharacterCard(models.Model):
         "core.Rarity",
         verbose_name=_("Rarity"),
         on_delete=models.PROTECT,
-        null=True
+        null=False
     )
 
     class Meta:
@@ -91,7 +91,8 @@ class Rarity(models.Model):
     price = models.DecimalField(
         _("Price by Rarity"),
         max_digits=5,
-        decimal_places=2
+        decimal_places=2,
+        null=False
         )
 
     class Meta:
