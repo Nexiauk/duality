@@ -370,8 +370,8 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 | Column Name    | Type     | Constraints / Notes                         |
 | -------------- | -------- | ------------------------------------------- |
 | id             | int      | PK                                          |
-| user_id        | int      | FK → `USER.id`, on_delete=CASCADE           |
-| character_id   | int      | FK → `CHARACTER_CARD.id`, on_delete=PROTECT |
+| username       | int      | FK → `USER.id`, on_delete=CASCADE           |
+| character      | int      | FK → `CHARACTER_CARD.id`, on_delete=PROTECT |
 | date_purchased | datetime | DateTimeField(auto_now_add=True)            |
 | purchase_price | decimal  | DecimalField                                |
 
@@ -392,38 +392,39 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 | id          | int     | PK                                                                        |
 | name        | string  | CharField (Common, Uncommon, Rare, Epic, Legendary, Mythic) Unique = True |
 | level       | int     | PositiveIntegerField (0-5), Unique=True                                   |
-| price       | decimal | DecimalField                                                              |
+| price       | decimal | DecimalField, NULL=False                                                  |
 
 ---
 
 **SHOP_SCHEDULER**
-| Column Name   | Type     | Constraints / Notes              |
-| ------------- | -------- | -------------------------------- |
-| id            | int      | PK                               |
-| start_time    | datetime | DateTimeField(auto_now_add=True) |
-| end_time      | datetime | DateTimeField                    |
-| rotation_type | string   | CharField                        |
+| Column Name   | Type     | Constraints / Notes                 |
+| ------------- | -------- | ----------------------------------- |
+| id            | int      | PK                                  |
+| start_time    | datetime | DateTimeField                       |
+| end_time      | datetime | DateTimeField                       |
+| rotation_type | string   | CharField                           |
+
 
 ---
 
 **SHOP_SCHEDULE_ITEMS**
-| Column Name       | Type    | Constraints / Notes      |
-| ----------------- | ------- | ------------------------ |
-| id                | int     | PK                       |
-| shop_scheduler_id | int     | FK → `SHOP_SCHEDULER.id` |
-| character_id      | int     | FK → `CHARACTER_CARD.id` |
-| sale_price        | decimal | DecimalField             |
+| Column Name       | Type    | Constraints / Notes                 |
+| ----------------- | ------- | ----------------------------------- |
+| id                | int     | PK                                  |
+| shop_scheduler_id | int     | FK → `SHOP_SCHEDULER.id`            |
+| character_id      | int     | FK → `CHARACTER_CARD.id`            |
+| sale_price        | decimal | DecimalField, NULL=True, BLANK=True |
 
 ---
 
 **CHARACTER_CARD**
-| Column Name                 | Type    | Constraints / Notes                    |
-| --------------------------- | ------- | -------------------------------------- |
-| id                          | int     | PK                                     |
-| name                        | string  | CharField                              |
-| can_participate_in_rotation | boolean | default=True                           |
-| archetype                   | int     | FK → `ARCHETYPE.id`, on_delete=PROTECT |
-| rarity                      | int     | FK → `RARITY.id`, on_delete=PROTECT    |
+| Column Name                 | Type    | Constraints / Notes                                |
+| --------------------------- | ------- | -------------------------------------------------- |
+| id                          | int     | PK                                                 |
+| name                        | string  | CharField                                          |
+| can_participate_in_rotation | boolean | default=True                                       |
+| archetype                   | int     | FK → `ARCHETYPE.id`, on_delete=PROTECT             |
+| rarity                      | int     | FK → `RARITY.id`, on_delete=PROTECT, NULL=False    |
 
 ## **Testing**
 
