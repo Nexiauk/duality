@@ -93,6 +93,10 @@ footer {
     /* viewport height minus header/footer */
 }
 
+#shop {
+    margin-top: 150px;
+}
+
 /* Styling for all cards across the app - creates a glassmorphic effect */
 .card {
     background: rgba(255, 255, 255, 0.2);

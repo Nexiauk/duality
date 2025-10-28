@@ -1,8 +1,6 @@
 from django.shortcuts import render
-from pathlib import Path
 from .models import CharacterCard
 import random
-import json
 from core.data import datastore
 
 

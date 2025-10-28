@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section id="shop">
+{% for char in characters  %}
+    <p>{{char.model.name}}</p>
+    <p>{{char.json.slug}}</p>
+{% endfor %}
+</section>
+{% endblock content %}
