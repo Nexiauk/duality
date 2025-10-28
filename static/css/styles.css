@@ -122,7 +122,7 @@ footer {
     }
 
     #hero-content {
-        top: -420px;
+        top: -450px;
     }
 
 }
@@ -173,8 +173,19 @@ footer {
 
 /* media query for screens 1440px and up*/
 @media screen and (min-width:1440px) {
+    #hero-content {
+        top: -370px;
+    }
+
     .navbar-nav {
         width: 80%;
+    }
+}
+
+/* media query for screens 1700px and up*/
+@media screen and (min-width:1700px) {
+    #hero-content {
+        top: -305px;
     }
 }
 
