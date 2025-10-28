@@ -8,6 +8,7 @@
     --vivid-yellow: #D9A404;
 }
 
+/* Linear gradient colour for the body using root variables */
 body {
     background-image: linear-gradient(90deg,
             var(--ecstatic-red) 0%,
@@ -32,7 +33,6 @@ footer {
     left: 0;
     position: fixed;
     width: 100%;
-    box-sizing: border-box;
 }
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
@@ -42,7 +42,7 @@ footer {
     text-align: center;
 }
 
-/* Block and height/width applied so the entire nav item becomes clickable */
+/* Block and height/width applied so the entire nav-link item becomes clickable */
 .nav-link {
     color: white;
     display: block;
@@ -50,6 +50,7 @@ footer {
     height: 100%;
 }
 
+/* Hover styling for nav items and nav links */
 .nav-item:hover {
     background-color: var(--vivid-yellow);
     cursor: pointer;
@@ -73,22 +74,26 @@ footer {
     border-radius: 50%;
 }
 
-/* Styling for the hero section div with a background image */
+/* Hero section fills most of the viewport, allowing space for header/footer */
+#hero-section {
+    height: calc(100vh - 120px);
+}
+
+/* Hero div with responsive background image and offset spacing */
 #hero {
     background-image: url(../images/hero-image.avif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    margin-bottom: 25px;
     margin-top: 80px;
-    height: 100vh;
-}
-
-/* Space added at the bottom of the hero card container */
-#hero-content {
+    /* space below fixed header */
     margin-bottom: 25px;
+    /* gap before next section */
+    height: calc(100vh - 140px);
+    /* viewport height minus header/footer */
 }
 
+/* Styling for all cards across the app - creates a glassmorphic effect */
 .card {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 16px;
@@ -110,40 +115,40 @@ footer {
 }
 
 /* Media queries start here */
-
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
-    section {
-        margin-bottom: 150px;
+    #hero {
+        background-size: 916px auto;
     }
 
-    #hero {
-        background-position: 25% top;
+    #hero-content {
+        top: -420px;
     }
 
 }
 
 /* Media query for screens 768px and up */
 @media screen and (min-width:768px) {
-    section {
-        margin-bottom: 80px;
+    #hero {
+        background-size: cover;
+    }
+
+    #hero-content {
+        top: -300px;
     }
 
     .navbar-nav {
         width: 40%;
     }
 
-    #hero {
-        height: 100vh;
-        background-position: 50% top;
-    }
 }
 
 /* media query for screens 1024px and up*/
 @media screen and (min-width:1024px) {
-    section {
-    margin-bottom: 85px;
-}
+    #hero-content {
+        top: -370px;
+    }
+
     .navbar-nav {
         width: 90%;
     }
@@ -164,9 +169,7 @@ footer {
 }
 
 /* media query for screens 1200px and up*/
-@media screen and (min-width:1200px) {
-
-}
+@media screen and (min-width:1200px) {}
 
 /* media query for screens 1440px and up*/
 @media screen and (min-width:1440px) {
@@ -176,15 +179,7 @@ footer {
 }
 
 /* media query for screens 1900px and up*/
-@media screen and (min-width:1900px) {
-    #hero {
-        height: 700px;
-    }
-}
+@media screen and (min-width:1900px) {}
 
 /* Media query for screens 2560px and up */
-@media screen and (min-width:2560px) {
-    #hero {
-        height: 1000px;
-    }
-}
+@media screen and (min-width:2560px) {}
