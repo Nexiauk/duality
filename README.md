@@ -446,8 +446,10 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * apps.py - all clear, no errors found
     * datastore.py - all clear, no errors found
     * tests.py - all clear no errors found
+    models.py - ll clear, no errors found
 * **Shop App**
     * tests.py - all clear, no errors found
+    * models.py - all clear, no errors found
 * **Binder App**
 * **Root Directory Files**
 
