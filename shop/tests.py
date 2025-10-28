@@ -15,7 +15,8 @@ class ShopTemplatesViewTests(TestCase):
     """Tests for rendering the shop page template with sample characters."""
 
     def setUp(self):
-        """Create sample Archetype, Rarity, and CharacterCard instances for shop tests."""
+        """Create sample Archetype, Rarity, and CharacterCard instances
+          for shop tests."""
         self.hero = Archetype.objects.create(
             literary_archetype="Hero",
             archetype_traits="Heroic"
