@@ -26,21 +26,8 @@ class ShopScheduler(models.Model):
 
     class Meta:
         ordering = ["start_time"]
-        verbose_name = "Shop Scheduler"
+        verbose_name = "Shop Schedule"
         verbose_name_plural = "Shop Schedules"
-
-    def save(self, *args, **kwargs):
-        """
-        Overrides the default save method to ensure:
-            - start_time defaults to the current time if not set.
-            - end_time defaults to 24 hours after start_time if not set.
-        """
-        if not self.start_time:
-            self.start_time = timezone.now()
-        if not self.end_time:
-            self.end_time = self.start_time + timedelta(hours=24)
-        super().save(*args, **kwargs)
-
 
 class ShopScheduleItems(models.Model):
     """
