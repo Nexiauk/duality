@@ -308,9 +308,9 @@ This section contains the Django models for the Duality LC application, a card-c
 
 Models include:
 * **CharacterCard**: Stores the base Legends stored in the system and their basic information - extended data is kept in a JSON file(legends.json)
-* **Archetype**: Represents literary archetypes for characters based on the Hero's Journey concept. This allows characters to be categorised narratively (e.g., "The Hero," or "The Shadow").
-* **Rarity**: Determines the rarity of character cards and sets a price accordingly
-* **ShopScheduler**: Represents a timed shop rotation. Each scheduler must have one or more SHOP_SCHEDULE_ITEMS defining which characters appear and their rotation-specific sale prices.
+* **Archetype**: Represents literary archetypes for characters based on the Hero's Journey concept. This allows characters to be categorised narratively (e.g., "The Hero," or "The Shadow") and stores traits for each archetype.
+* **Rarity**: Determines the rarity of character cards and sets a price accordingly. Has a numeric level field for algorithmic calculations and ordering.
+* **ShopScheduler**: Represents a timed shop rotation. Each scheduler must have one or more shop schedule items defining which characters appear and their rotation-specific sale prices. A custom function defines the schedule end time as now + 24 hours. 
 * **ShopScheduleItems**: Acts as a join table linking ShopScheduler and CharacterCard.  
 Each row = one character in one rotation.  
 Supports assigning any subset of characters to any rotation independently.  
@@ -400,8 +400,8 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 | Column Name   | Type     | Constraints / Notes                 |
 | ------------- | -------- | ----------------------------------- |
 | id            | int      | PK                                  |
-| start_time    | datetime | DateTimeField                       |
-| end_time      | datetime | DateTimeField                       |
+| start_time    | datetime | DateTimeField, auto_now_add=True                       |
+| end_time      | datetime | DateTimeField, default=default_end_time                       |
 | rotation_type | string   | CharField                           |
 
 
