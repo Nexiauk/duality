@@ -11,23 +11,32 @@ from decimal import Decimal, ROUND_HALF_UP
 from datetime import timedelta
 
 
+def default_end_time():
+    return timezone.now() + timedelta(hours=24)
+
+
 class ShopScheduler(models.Model):
     """
     Represents a shop schedule, defining a start and end time
     and the type of rotation (e.g., daily, weekly).
-
-    Methods:
-        save(): Automatically sets default start_time and end_time
-                if they are not provided.
     """
-    start_time = models.DateTimeField(_("Start Time"))
-    end_time = models.DateTimeField(_("End Time"))
+    start_time = models.DateTimeField(_("Start Time"), auto_now_add=True)
+    end_time = models.DateTimeField(_("End Time"), default=default_end_time)
     rotation_type = models.CharField(_("Rotation Type"), max_length=150)
 
     class Meta:
         ordering = ["start_time"]
         verbose_name = "Shop Schedule"
         verbose_name_plural = "Shop Schedules"
+
+    def __str__(self):
+        if self.rotation_type:
+            return (
+                f"{self.rotation_type} "
+                f"({self.start_time.date()} → "
+                f"{self.end_time.date()})"
+            )
+
 
 class ShopScheduleItems(models.Model):
     """
@@ -59,6 +68,13 @@ class ShopScheduleItems(models.Model):
 
     class Meta:
         ordering = ["shop_scheduler"]
+
+    def __str__(self):
+        return (
+            f"{self.character.name} in "
+            f"{self.shop_scheduler} – "
+            f"{self.active_price}"
+        )
 
     @property
     def active_price(self):

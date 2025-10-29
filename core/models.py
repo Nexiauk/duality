@@ -85,15 +85,21 @@ class Rarity(models.Model):
         verbose_name_plural: Plural name of the model
     """
     name = models.CharField(_("Rarity Name"), max_length=50, unique=True)
+    # Numeric representation of rarity used for algorithmic calculations.
+    # Lower values indicate more common items;
+    # Higher values are rarer and less frequent.
     level = models.PositiveIntegerField(
-        _("Rarity Level"), unique=True
+        _("Rarity Level"),
+        unique=True,
+        help_text="Numeric rarity level used for algorithmic calculations. "
+        "Lower numbers are more common; higher numbers are rarer."
     )
     price = models.DecimalField(
         _("Price by Rarity"),
         max_digits=5,
         decimal_places=2,
         null=False
-        )
+    )
 
     class Meta:
         ordering = ["-level"]
