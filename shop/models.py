@@ -8,11 +8,6 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from decimal import Decimal, ROUND_HALF_UP
-from datetime import timedelta
-
-
-def default_end_time():
-    return timezone.now() + timedelta(hours=24)
 
 
 class ShopScheduler(models.Model):
@@ -21,8 +16,8 @@ class ShopScheduler(models.Model):
     and the type of rotation (e.g., daily, weekly).
     """
     start_time = models.DateTimeField(_("Start Time"))
-    end_time = models.DateTimeField(_("End Time"), default=default_end_time)
-    rotation_type = models.CharField(_("Rotation Type"), max_length=150)
+    end_time = models.DateTimeField(_("End Time"))
+    rotation_type = models.CharField(_("Rotation Type"), max_length=150, default="Daily")
 
     class Meta:
         ordering = ["start_time"]

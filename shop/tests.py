@@ -75,6 +75,10 @@ class BaseModelTests(TestCase):
         )
 
 class ShopSchedulerModelTest(BaseModelTests):
-    def test_scheduler_start_and_finish_times(self):
+    def test_scheduler_start_time(self):
         expected_start = timezone.make_aware(datetime(2025,10,31,19,00))
         self.assertEqual(self.scheduler.start_time, expected_start )
+
+    def test_scheduler_end_time(self):
+        expected_end = timezone.make_aware(datetime(2025,11,1,19,00))
+        self.assertEqual(self.scheduler.end_time, expected_end)

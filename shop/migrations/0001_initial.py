@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('start_time', models.DateTimeField(auto_now_add=True, verbose_name='Start Time')),
-                ('end_time', models.DateTimeField(default=shop.models.default_end_time, verbose_name='End Time')),
+                ('end_time', models.DateTimeField(verbose_name='End Time')),
                 ('rotation_type', models.CharField(max_length=150, verbose_name='Rotation Type')),
             ],
             options={
