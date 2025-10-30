@@ -66,19 +66,43 @@ class ShopTemplatesViewTests(TestCase):
 
 class BaseModelTests(TestCase):
     def setUp(self):
-        start = timezone.make_aware(datetime(2025,10,31,19,00))
-        end= start + timedelta(hours=24)
         self.scheduler = ShopScheduler.objects.create(
-            start_time = start,
-            end_time = end,
+            start_time = timezone.make_aware(datetime(2025,10,31,19,00)),
+            end_time = timezone.make_aware(datetime(2025,11,1,19,00)),
             rotation_type = "Halloween"
+        )
+        self.archetype1 = Archetype.objects.create(
+            literary_archetype="The Wise Mentor",
+            archetype_traits="Wise, nurturing, patient"
+        )
+        self.rarity_mythic = Rarity.objects.create(
+            name="Mythic",
+            level=5,
+            price=29.99
+        )
+        self.character_card1 = CharacterCard.objects.create(
+            id=1,
+            name="Iron Man",
+            can_participate_in_rotation=True,
+            archetype=self.archetype1,
+            rarity=self.rarity_mythic
+        )
+        self.schedule_items = ShopScheduleItems.objects.create(
+            shop_scheduler = self.scheduler,
+            character = self.character_card1,
+            sale_price = 0.00
         )
 
 class ShopSchedulerModelTest(BaseModelTests):
     def test_scheduler_start_time(self):
-        expected_start = timezone.make_aware(datetime(2025,10,31,19,00))
-        self.assertEqual(self.scheduler.start_time, expected_start )
+        self.assertEqual(self.scheduler.start_time, timezone.make_aware(datetime(2025,10,31,19,00)) )
 
     def test_scheduler_end_time(self):
-        expected_end = timezone.make_aware(datetime(2025,11,1,19,00))
-        self.assertEqual(self.scheduler.end_time, expected_end)
+        self.assertEqual(self.scheduler.end_time, timezone.make_aware(datetime(2025,11,1,19,00)))
+
+    def test_rotation_type_works(self):
+        self.assertEqual(self.scheduler.rotation_type, "Halloween")
+
+class ShopScheduleItemsModelTest(BaseModelTests):
+    def test_item_includes_character(self):
+        self.assertEqual(self.schedule_items.character, self.character_card1)
