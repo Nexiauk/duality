@@ -400,8 +400,8 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 | Column Name   | Type     | Constraints / Notes                 |
 | ------------- | -------- | ----------------------------------- |
 | id            | int      | PK                                  |
-| start_time    | datetime | DateTimeField, auto_now_add=True                       |
-| end_time      | datetime | DateTimeField, default=default_end_time                       |
+| start_time    | datetime | DateTimeField, auto_now_add=True    |
+| end_time      | datetime | DateTimeField, default=default_end_time|
 | rotation_type | string   | CharField                           |
 
 
@@ -545,11 +545,14 @@ The project includes comprehensive unit tests for models and views using Django'
 
 
 ## **Interesting Bugs**
+* The API I wanted to use came with a json file that would allow me to import the characters directly into the database, however there was a lot of extended information that didn't make sense to store in the database without breaching Database Normalisation. I ended up creating a basic CharacterCard model and then stored the json file in a data folder for the app to open and use the extended data.
 * Not a bug, but something I found interesting to accomplish - creating management commands
-    1. **import.py** to help with my JSON data import into the CharacterCard model, and  assign archetypes from the Archetype model using a map of archetypes and their IDs, when the JSON data only had a string value for archetype.
+    1. **import.py** to help with my JSON data import into the CharacterCard model, and assign archetypes from the Archetype model using a map of archetypes and their IDs, when the JSON data only had a string value for archetype.
     2. **rarity-calculation** to access power stat data from inside nested dictionaries, total it up for each character and put it in a sorted list so I could figure out the range to define rarities in the Rarity model.
     3. **rarity-update** to iterate through the json file, grab the id and name of each character, use the id to grab the same character from the CharacterCard model and perform a check to see if the name matches. If so, it assigned a rarity to that character based on the sum of the character's power stats against a predefined range.
 * Not a bug per se, but originally I had the home view opening up the legends json file at every request, in order to iterate through it and match up with the randomly generated sample of characters from the Charactercard model. This is okay with a small amount of data for a course project, but in actual fact its not very efficent or scalable. I used various resources (Django documentation and ChatGPT) to create a ready method in AppConfig to load up the data once at startup and store it in a global variable in my project's data folder. I then removed the file opening from the home view and iterated through the data stored in the global variable instead.
+* The earlier import of json data into the CharacterCard model meant I had to create a custom pk for the model that wouldn't auto-increment, as I needed to manually assign IDs that already existed in the JSON dictionaries for each character. A  test later on reminded me that Django would no longer auto-assign and increment IDs to any future characters added to the app.
+* I created a custom function to default the ShopScheduler end_time field to timezone.now()+24 hours, thinking that's where I needed to do it when creating schedules. The automated tests I ran highlighted the odd behaviour when trying to set a defined date and time for the end-time. I ended up removing the custom function and the default entirely, which meant I had to remove reference to it from the initial migration file.
 
 ## **Credits**
 
