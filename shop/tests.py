@@ -8,11 +8,17 @@ Includes:
 
 from django.test import TestCase
 from django.urls import reverse
+from django.utils import timezone
+from datetime import datetime, timedelta
 from core.models import CharacterCard, Archetype, Rarity
+from shop.models import ShopScheduler, ShopScheduleItems
 
 
 class ShopTemplatesViewTests(TestCase):
-    """Tests for rendering the shop page template with sample characters."""
+    """
+    Tests for rendering the shop page template with sample characters
+    required by the view.
+    """
 
     def setUp(self):
         """Create sample Archetype, Rarity, and CharacterCard instances
@@ -57,3 +63,18 @@ class ShopTemplatesViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "shop/shop.html")
         self.assertContains(response, "Test Content")
+
+class BaseModelTests(TestCase):
+    def setUp(self):
+        start = timezone.make_aware(datetime(2025,10,31,19,00))
+        end= start + timedelta(hours=24)
+        self.scheduler = ShopScheduler.objects.create(
+            start_time = start,
+            end_time = end,
+            rotation_type = "Halloween"
+        )
+
+class ShopSchedulerModelTest(BaseModelTests):
+    def test_scheduler_start_and_finish_times(self):
+        expected_start = timezone.make_aware(datetime(2025,10,31,19,00))
+        self.assertEqual(self.scheduler.start_time, expected_start )

@@ -20,7 +20,7 @@ class ShopScheduler(models.Model):
     Represents a shop schedule, defining a start and end time
     and the type of rotation (e.g., daily, weekly).
     """
-    start_time = models.DateTimeField(_("Start Time"), auto_now_add=True)
+    start_time = models.DateTimeField(_("Start Time"))
     end_time = models.DateTimeField(_("End Time"), default=default_end_time)
     rotation_type = models.CharField(_("Rotation Type"), max_length=150)
 
