@@ -541,6 +541,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Handle() method typeError - [stackoverflow](https://stackoverflow.com/questions/41401202/django-command-throws-typeerror-handle-got-an-unexpected-keyword-argument)
 * Help with filtering out a particular record in order to update it - [stackoverflow](https://stackoverflow.com/questions/2712682/how-to-select-a-record-and-update-it-with-a-single-queryset-in-django)
 * Help with creating shapes in CSS - [css-tricks.com](https://css-tricks.com/the-shapes-of-css/)
+* Help with CSS gradient text [cssgradient.io](https://cssgradient.io/blog/css-gradient-text/)
 
 
 
