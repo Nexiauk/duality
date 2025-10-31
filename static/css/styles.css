@@ -33,10 +33,10 @@ h1 {
     font-style: italic;
     margin-bottom: 0;
     padding: 0 9px 0 0;
-    background: linear-gradient(90deg,
-            var(--skylla) 20%,
-            var(--fuschia-blue) 80%);
+    background: linear-gradient(90deg, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
+
     background-clip: text;
+    color: transparent;
     -webkit-text-fill-color: transparent;
 
 }
