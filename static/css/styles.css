@@ -1,4 +1,7 @@
-/* Variables for website colour scheme */
+/* Google font import */
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap');
+
+/* Variables for website colour scheme and fonts */
 :root {
     --fuschia-blue: #845ABF;
     --eclectic: #AAB1BF;
@@ -6,6 +9,10 @@
     --nasturtium-shoot: #88A649;
     --ecstatic-red: #A6121F;
     --vivid-yellow: #D9A404;
+
+    --main-header: "Racing Sans One";
+    --sub-heading: "Prompt";
+    --main-text: "Inder"
 }
 
 /* Linear gradient colour for the body using root variables */
@@ -14,7 +21,19 @@ body {
             var(--ecstatic-red) 0%,
             var(--skylla) 20%,
             var(--fuschia-blue) 80%,
-            var(--nasturtium-shoot) 100%)
+            var(--nasturtium-shoot) 100%);
+    font-family: var(--main-text);
+}
+
+h1 {
+    font-family: var(--main-header);
+    margin-bottom: 0;
+}
+
+/* Heading and title styling from h2-h6 plus card titles */
+h2, h3, h3, h5, h6, .card-title {
+    font-family: var(--sub-heading);
+    font-style: italic;
 }
 
 /* Sticky header */
@@ -58,7 +77,9 @@ footer {
 }
 
 .nav-link:hover {
+    transition: 0.5s ease-in;
     font-weight: bold;
+    color: #000000;
 }
 
 /* Custom class to set the base colour of the yang side of the svg path */
