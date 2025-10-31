@@ -1,6 +1,7 @@
 {% load static %}
 <!-- Template variables for URLs of different views for easier reference in navigation menus-->
 {% url 'home' as home_url %}
+{% url 'shop' as shop_url %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,8 +56,11 @@
                             {% if request.path == home_url %}aria-current="page" {% endif %}>
                             <a class="nav-link" href="{% url 'home' %}">Home</a>
                         </li>
-
-                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                        <li class="nav-item {% if request.path == shop_url %}active{% endif %}"
+                            {% if request.path == home_url %}aria-current="page" {% endif %}>
+                            <a class="nav-link" href="{% url 'shop' %}">Shop</a>
+                        </li>
+                        
                         <li class="nav-item"><a class="nav-link" href="#">Binder</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Register</a></li>

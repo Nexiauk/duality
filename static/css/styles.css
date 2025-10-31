@@ -140,10 +140,6 @@ h6,
 
 }
 
-#shop {
-    margin-top: 150px;
-}
-
 /* Styling for all cards across the app - creates a glassmorphic effect */
 .card {
     background: var(--eclectic-transparent);
@@ -151,6 +147,12 @@ h6,
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Match the top corner border radius of card image, to the same px as the card itself. */
+.card-img-top {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
 }
 
 /* Hover colour for the round socials icons */
