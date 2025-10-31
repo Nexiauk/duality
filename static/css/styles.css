@@ -5,6 +5,7 @@
 :root {
     --fuschia-blue: #845ABF;
     --eclectic: #AAB1BF;
+    --eclectic-transparent: rgba(170,177,191,0.4);
     --skylla: #2182BF;
     --nasturtium-shoot: #88A649;
     --ecstatic-red: #A6121F;
@@ -135,7 +136,7 @@ footer {
 
 /* Styling for all cards across the app - creates a glassmorphic effect */
 .card {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--eclectic-transparent);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
