@@ -3,7 +3,7 @@
 
 {% block content %}
 <section id="shop">
-    <div class="container mt-5 mb-5 pb-4 py-xl-5">
+    <div class="container mt-5 mb-5 pb-4 py-xl-5" id="shop-container">
         <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
                 <h2>Shop Heading</h1>
@@ -17,7 +17,7 @@
                     <div class="card-body p-4">
                         <h2 class="text-center card-title"><p>{{char.model.name}}</p></h2>
                         <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-0">
-                            <div></div><span class="badge bg-primary me-sm-3">42</span>
+                            <div></div><span class="badge bg-primary me-sm-3">{{char.power}}</span>
                         </div>
                     </div>
                 </div>

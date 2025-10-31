@@ -15,9 +15,11 @@ def shop_view(request):
         for item in datastore.legends:
             id = item["id"]
             if id == char_id:
+                total_power = sum(item["powerstats"].values())
                 pair = {
                     "model": char,
-                    "json": item
+                    "json": item,
+                    "power": total_power
                 }
                 final_list.append(pair)
 
