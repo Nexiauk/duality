@@ -5,7 +5,7 @@
 :root {
     --fuschia-blue: #845ABF;
     --eclectic: #AAB1BF;
-    --eclectic-transparent: rgba(170,177,191,0.4);
+    --eclectic-transparent: rgba(170, 177, 191, 0.4);
     --skylla: #2182BF;
     --nasturtium-shoot: #88A649;
     --ecstatic-red: #A6121F;
@@ -24,6 +24,24 @@ body {
             var(--fuschia-blue) 80%,
             var(--nasturtium-shoot) 100%);
     font-family: var(--main-text);
+}
+
+/* Sticky header */
+header {
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+
+}
+
+/* Sticky footer */
+footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
 }
 
 /* H1 styling for the two titles that wap out on different screen sizes.
@@ -50,24 +68,6 @@ h6,
 .card-title {
     font-family: var(--sub-heading);
     font-style: italic;
-}
-
-/* Sticky header */
-header {
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 99;
-
-}
-
-/* Sticky footer */
-footer {
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
 }
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
@@ -97,6 +97,16 @@ footer {
     transition: 0.5s ease-in;
     font-weight: bold;
     color: #000000;
+}
+
+.navbar .nav-item.active {
+    background-color: var(--vivid-yellow);
+    cursor: pointer;
+}
+
+.navbar .nav-item.active .nav-link {
+    color: #000000;
+    font-weight: bold;
 }
 
 /* Custom class to set the base colour of the yang side of the svg path */
@@ -238,7 +248,7 @@ footer {
         width: 80%;
     }
 
-       .nav-link {
+    .nav-link {
         font-size: 1.2rem;
     }
 }
