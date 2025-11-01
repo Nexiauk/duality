@@ -52,11 +52,9 @@ h1 {
     margin-bottom: 0;
     padding: 0 9px 0 0;
     background: linear-gradient(90deg, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
-
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-
 }
 
 /* Heading and title styling from h2-h6 plus card titles */
@@ -159,11 +157,33 @@ h6,
 .card-img-top {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-  image-rendering:   -o-crisp-edges;         /* Opera */
-  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-  image-rendering: crisp-edges;
-  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+.loader {
+   border-top: 16px solid var(--ecstatic-red);
+  border-right: 16px solid var(--skylla);
+  border-bottom: 16px solid var(--fuschia-blue);
+  border-left: 16px solid var(--nasturtium-shoot);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.shop-card {
+    display: none;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Hover colour for the round socials icons */
