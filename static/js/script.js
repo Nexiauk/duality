@@ -1,3 +1,4 @@
+// After 2 seconds, hides the loaders and displays the cards.
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         const loaders = document.querySelectorAll(".loader");
@@ -9,8 +10,4 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
     }, 2000)
-
-
-
-
 })

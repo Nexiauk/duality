@@ -2,22 +2,22 @@
 {% load static %}
 
 {% block content %}
-<section id="shop">
+<section id="shop-section">
     <div class="container mt-5 mb-5 pb-4 py-xl-5" id="shop-container">
-        <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-5">
-            <div class="col-md-8 col-xl-6 text-center mx-auto">
+        <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-3">
+            <div class="col-md-8 col-xl-6 text-center mx-auto mt-5 mt-xl-4 mt-xxl-5">
                 <h2>Shop Heading</h1>
                 <p>Shop description detail</p>
             </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6" id="card-row">
             
             {% for char in characters  %}
             <div class="col ps-sm-6 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-sm-5 pe-md-3">
                 <div class="loader text-center"></div>
-                <div class="card shop-card"><img class="object-fit-cover card-img-top w-100 d-block" style="height: 400px;" src="{{char.json.images.lg}}" width="334" height="200">
+                <div class="card shop-card"><img class="object-fit-cover card-img-top w-100 d-block" style="height: 400px;" src="{{char.json.images.lg}}" width="334" height="200" alt="{{char.model.name}}">
                     <div class="card-body p-4">
-                        <h2 class="text-center card-title"><p>{{char.model.name}}</p></h2>
+                        <h2 class="text-center card-title">{{char.model.name}}</h2>
                         <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-0">
                             <div></div><span class="badge bg-primary me-sm-3">{{char.power}}</span>
                         </div>
