@@ -3,20 +3,71 @@
 
 {% block content %}
 <!-- Main hero content containing visual and cards -->
-<section id="hero-section">
-    <!-- Empty div for hero background image that is styled with CSS -->
-    <div id="hero">
+<section id="hero-section" class="container gx-0 gy-0">
+    <!-- Grid of cards visible on large screens only -->
+    <div class="row gy-3 gy-lg-0 row-cols-1 row-cols-md-2 row-cols-lg-3 d-none d-lg-flex">
+        <!-- Individual card columns -->
+        <div class="col">
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2 class="card-title">About Duality</h2>
+                    <h3 class="text-muted mb-2 card-subtitle">Subtitle</h3>
+                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                        dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+                        metus.</p>
+                </div>
+                <div class="card-footer p-4 py-3"><a href="#">Learn more&nbsp;<svg xmlns="http://www.w3.org/2000/svg"
+                            width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                            </path>
+                        </svg></a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2 class="card-title">About Duality</h2>
+                    <h3 class="text-muted mb-2 card-subtitle">Subtitle</h3>
+                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                        dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+                        metus.</p>
+                </div>
+                <div class="card-footer p-4 py-3"><a href="#">Learn more&nbsp;<svg xmlns="http://www.w3.org/2000/svg"
+                            width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                            </path>
+                        </svg></a></div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body p-4">
+                    <h2 class="card-title">About Duality</h2>
+                    <h3 class="text-muted mb-2 card-subtitle">Subtitle</h3>
+                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
+                        dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
+                        metus.</p>
+                </div>
+                <div class="card-footer p-4 py-3"><a href="#">Learn more&nbsp;<svg xmlns="http://www.w3.org/2000/svg"
+                            width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-arrow-right">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                            </path>
+                        </svg></a></div>
+            </div>
+        </div>
     </div>
-    <!-- Container for hero content - cards and carousel -->
-    <div class="container-fluid position-relative" id="hero-content">
-        <!-- Grid of cards visible on large screens only -->
-        <div class="row gy-3 gy-lg-0 row-cols-1 row-cols-md-2 row-cols-lg-3 d-none d-lg-flex">
-            <!-- Individual card columns -->
-            <div class="col">
-                <div class="card">
-                    <div class="card-body p-4">
-                        <h2 class="card-title">About Duality</h2>
-                        <h3 class="text-muted mb-2 card-subtitle">Subtitle</h3>
+    <!-- Carousel for smaller cards cycling on sm and md screens only -->
+    <div id="carouselHero" class="carousel slide d-block d-lg-none mx-md-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Individual carousel items - one item per card -->
+            <div class="carousel-item active">
+                <div class="card px-3">
+                    <div class="card-body p-4 px-md-5">
+                        <h4 class="card-title">About Duality</h4>
+                        <h6 class="text-muted mb-2 card-subtitle">Subtitle</h6>
                         <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
                             dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
                             metus.</p>
@@ -30,12 +81,11 @@
                             </svg></a></div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body p-4">
-
-                        <h2 class="card-title">About Duality</h2>
-                        <h3 class="text-muted mb-2 card-subtitle">Subtitle</h3>
+            <div class="carousel-item">
+                <div class="card px-3">
+                    <div class="card-body p-4 px-md-5">
+                        <h4 class="card-title">About Duality</h4>
+                        <h6 class="text-muted mb-2 card-subtitle">Subtitle</h6>
                         <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
                             dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
                             metus.</p>
@@ -49,11 +99,11 @@
                             </svg></a></div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card">
-                    <div class="card-body p-4">
-                        <h2 class="card-title">About Duality</h2>
-                        <h3 class="text-muted mb-2 card-subtitle">Subtitle</h3>
+            <div class="carousel-item">
+                <div class="card px-3">
+                    <div class="card-body p-4 px-md-5">
+                        <h4 class="card-title">About Duality</h4>
+                        <h6 class="text-muted mb-2 card-subtitle">Subtitle</h6>
                         <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
                             dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
                             metus.</p>
@@ -68,78 +118,19 @@
                 </div>
             </div>
         </div>
-        <!-- Carousel for smaller cards cycling on sm and md screens only -->
-        <div id="carouselHero" class="carousel slide d-block d-lg-none mx-md-5" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Individual carousel items - one item per card -->
-                <div class="carousel-item active">
-                    <div class="card px-3">
-                        <div class="card-body p-4 px-md-5">
-                            <h4 class="card-title">About Duality</h4>
-                            <h6 class="text-muted mb-2 card-subtitle">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                                metus.</p>
-                        </div>
-                        <div class="card-footer p-4 py-3"><a href="#">Learn more&nbsp;<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                                    viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                    </path>
-                                </svg></a></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card px-3">
-                        <div class="card-body p-4 px-md-5">
-                            <h4 class="card-title">About Duality</h4>
-                            <h6 class="text-muted mb-2 card-subtitle">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                                metus.</p>
-                        </div>
-                        <div class="card-footer p-4 py-3"><a href="#">Learn more&nbsp;<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                                    viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                    </path>
-                                </svg></a></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="card px-3">
-                        <div class="card-body p-4 px-md-5">
-                            <h4 class="card-title">About Duality</h4>
-                            <h6 class="text-muted mb-2 card-subtitle">Subtitle</h6>
-                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio,
-                                dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget
-                                metus.</p>
-                        </div>
-                        <div class="card-footer p-4 py-3"><a href="#">Learn more&nbsp;<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                                    viewBox="0 0 16 16" class="bi bi-arrow-right">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                    </path>
-                                </svg></a></div>
-                    </div>
-                </div>
-            </div>
-            <!-- Carousel navigation buttons -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-
+        <!-- Carousel navigation buttons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
+
+
+
 
 </section>
 {% endblock content %}

@@ -3,6 +3,7 @@
 
 /* Variables for website colour scheme and fonts */
 :root {
+    /* Colour variables */
     --fuschia-blue: #845ABF;
     --eclectic: #AAB1BF;
     --eclectic-transparent: rgba(170, 177, 191, 0.4);
@@ -10,7 +11,7 @@
     --nasturtium-shoot: #88A649;
     --ecstatic-red: #A6121F;
     --vivid-yellow: #D9A404;
-
+    /* Font variables */
     --main-header: "Racing Sans One";
     --sub-heading: "Prompt";
     --main-text: "Inder"
@@ -26,22 +27,8 @@ body {
     font-family: var(--main-text);
 }
 
-/* Sticky header */
-header {
-    top: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 99;
-
-}
-
-/* Sticky footer */
-footer {
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
+main {
+    padding-top: 300px;
 }
 
 /* H1 styling for the two titles that wap out on different screen sizes.
@@ -50,7 +37,7 @@ h1 {
     font-family: var(--main-header);
     font-style: italic;
     margin-bottom: 0;
-    padding: 0 9px 0 0;
+    padding: 0 12px 0 0;
     background: linear-gradient(90deg, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
     background-clip: text;
     color: transparent;
@@ -59,7 +46,6 @@ h1 {
 
 /* Heading and title styling from h2-h6 plus card titles */
 h2,
-h3,
 h3,
 h5,
 h6,
@@ -119,20 +105,12 @@ h6,
     border-radius: 50%;
 }
 
-/* Hero section fills most of the viewport, allowing space for header/footer */
-#hero-section,
-#hero {
-    height: calc(100vh - 140px);
-}
-
-/* Hero div with responsive background image and offset spacing */
-#hero {
+/* Hero background image applied to main container only on the home page */
+.hero-bg {
     background-image: url(../images/hero-image.avif);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center top;
-    margin-top: 80px;
-    margin-bottom: 25px;
+    background-position: top center;
 }
 
 /* Styling for all cards across the app - creates a glassmorphic effect */
@@ -159,8 +137,6 @@ h6,
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
     animation: spin 2s linear infinite;
 }
 
@@ -169,7 +145,7 @@ h6,
     display: none;
 }
 
-/* Safari */
+/* Spinning animations for screen loader on shop page */
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -205,25 +181,24 @@ h6,
 /* Media queries start here */
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
+
     .nav-link {
-    color: white;
+        color: white;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
 
-    #hero {
-        background-size: 916px auto;
-    }
-
-    #hero-content {
-        top: -450px;
-    }
-
     #shop-section {
-    padding-bottom: 100px;
-}
+        padding-bottom: 100px;
+    }
+
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 50px;
+    }
 }
 
 /* Media query for screens 768px and up */
@@ -236,36 +211,24 @@ h6,
         width: 40%;
     }
 
-    #hero {
-        background-size: cover;
-    }
-
-    #hero-content {
-        top: -300px;
-    }
     #shop-section {
-    padding-bottom: 0;
-}
+        padding-bottom: 0;
+    }
 
     .shop-card {
         min-width: 320px;
         min-height: 320px;
     }
-
 }
 
 /* media query for screens 1024px and up*/
 @media screen and (min-width:1024px) {
     .nav-link {
-    color: black;
-    }
-    
-    h1 {
-        font-size: 2rem;
+        color: black;
     }
 
-    #hero-content {
-        top: -370px;
+    h1 {
+        font-size: 1.8rem;
     }
 
     .navbar-nav {
@@ -289,7 +252,6 @@ h6,
         min-width: 360px;
         min-height: 320px;
     }
-
 }
 
 /* media query for screens 1200px and up*/
@@ -299,16 +261,12 @@ h6,
 @media screen and (min-width:1440px) {
 
     h1 {
-        font-size: 2.8rem;
-    }
-
-    #hero-content {
-        top: -370px;
-        width: 1200px;
+        font-size: 2.3rem;
     }
 
     .navbar-nav {
-        width: 80%;
+        width: 85%;
+        padding-right: 10px;
     }
 
     .nav-link {
@@ -319,23 +277,16 @@ h6,
 /* media query for screens 1700px and up*/
 @media screen and (min-width:1700px) {
 
+    h1 {
+        font-size: 2.6rem;
+    }
     .nav-link {
         font-size: 1.2rem;
-    }
-
-    #hero-content {
-        top: -400px;
-        width: 1500px;
     }
 }
 
 /* media query for screens 1900px and up*/
-@media screen and (min-width:1900px) {
-    #hero-content {
-        top: -330px;
-        width: 1500px;
-    }
-}
+@media screen and (min-width:1900px) {}
 
 /* Media query for screens 2560px and up */
 @media screen and (min-width:2560px) {
@@ -357,7 +308,7 @@ h6,
     }
 
     .navbar-nav {
-        width: 85%;
+        padding-right: 20px;
     }
 
     .nav-link {
@@ -368,8 +319,7 @@ h6,
         font-size: 2rem;
     }
 
-    #hero-content {
-        top: -600px;
+    #hero-section {
         width: 2200px;
     }
 
