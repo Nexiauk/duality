@@ -9,7 +9,7 @@ def shop_view(request):
     final_list = []
     characters = CharacterCard.objects.all()
     char_list = list(characters)
-    res = random.sample(char_list, 3)
+    res = random.sample(char_list, 12)
     for char in res:
         char_id = char.id
         for item in datastore.legends:
