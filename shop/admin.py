@@ -16,6 +16,6 @@ class ShopSchedulerAdmin(admin.ModelAdmin):
         'allocated_characters'
         )
     def allocated_characters(self, obj):
-        names = sorted(item.character.name for item in obj.shopscheduleitems_set.all())
+        names = sorted(item.character.name for item in obj.scheduled_items.all())
         return ", ".join(names)
 

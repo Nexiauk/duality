@@ -46,7 +46,8 @@ class ShopScheduleItems(models.Model):
     shop_scheduler = models.ForeignKey(
         "shop.ShopScheduler",
         verbose_name=_("Shop Scheduler"),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="scheduled_items"
     )
     character = models.ForeignKey(
         "core.CharacterCard",
