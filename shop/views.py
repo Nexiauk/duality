@@ -7,7 +7,7 @@ from core.data import datastore
 def shop_view(request):
     page_url = "shop/shop.html"
     final_list = []
-    characters = CharacterCard.objects.all()
+    characters = CharacterCard.objects.filter(can_participate_in_rotation = True)
     char_list = list(characters)
     res = random.sample(char_list, 12)
     for char in res:

@@ -63,6 +63,9 @@ class ShopScheduleItems(models.Model):
 
     class Meta:
         ordering = ["shop_scheduler"]
+        verbose_name = "Schedule Items"
+        verbose_name_plural = "Schedule Items"
+
 
     def __str__(self):
         return (
