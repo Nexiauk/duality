@@ -542,6 +542,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Help with filtering out a particular record in order to update it - [stackoverflow](https://stackoverflow.com/questions/2712682/how-to-select-a-record-and-update-it-with-a-single-queryset-in-django)
 * Help with creating shapes in CSS - [css-tricks.com](https://css-tricks.com/the-shapes-of-css/)
 * Help with CSS gradient text [cssgradient.io](https://cssgradient.io/blog/css-gradient-text/)
+* Help with Django inline admin - [medium.com](https://medium.com/django-unleashed/mastering-django-inline-admin-tabularinline-and-stackedinline-examples-c9f17accde84)
 * Help with customising ForeignKey choices in Django Admin - [foysalff.medium.com](https://foysalff.medium.com/customizing-foreignkey-choices-in-django-admin-tailoring-forms-based-on-user-roles-2f6245b18c6d)
 
 
