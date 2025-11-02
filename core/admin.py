@@ -24,6 +24,8 @@ class CharacterCardAmin(admin.ModelAdmin):
     list_display = ("name", "archetype", "rarity", "can_participate_in_rotation")
     list_filter = ("archetype", "rarity",)
     actions = [update_rotation_status]
+
+    search_fields = ["name"]
     
 @admin.register(Rarity)
 class RarityAdmin(admin.ModelAdmin):

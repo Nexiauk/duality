@@ -15,18 +15,19 @@ def shop_view(request):
     for schedule in active_schedules:
         scheduled_items = schedule.scheduled_items.all()
         for item in scheduled_items:
-            char_id = item.character.id
-            for legend in datastore.legends:
-                legend_id = legend["id"]
-                if legend_id == char_id:
-                    total_power = sum(legend["powerstats"].values())
-                    pair = {
-                        "model": item.character,
-                        "json": legend,
-                        "power": total_power
-                    }
-                    final_list.append(pair)
-                    final_list.sort(key=lambda pair:pair["model"].name)
+            if item.character.can_participate_in_rotation:
+                char_id = item.character.id
+                for legend in datastore.legends:
+                    legend_id = legend["id"]
+                    if legend_id == char_id:
+                        total_power = sum(legend["powerstats"].values())
+                        pair = {
+                            "model": item.character,
+                            "json": legend,
+                            "power": total_power
+                        }
+                        final_list.append(pair)
+    final_list.sort(key=lambda pair:pair["model"].name)
 
     context = {
         "characters":final_list
