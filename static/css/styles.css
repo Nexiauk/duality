@@ -28,7 +28,7 @@ body {
 }
 
 main {
-    padding-top: 300px;
+    padding-top: 2rem;
 }
 
 /* H1 styling for the two titles that wap out on different screen sizes.
@@ -128,6 +128,27 @@ h6,
     border-top-right-radius: 16px;
 }
 
+/* Initially hides the shop cards while the loaders are spinning */
+.shop-card {
+    display: none;
+    transition: transform .2s;
+    border: 2px solid transparent;
+}
+
+.shop-card:hover {
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+    z-index: 99;
+    border: 2px solid #dadada;
+    border-radius: 16px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
 /* Spinning loader while the dom loads content and the file content pulls through to the cards */
 .loader {
     border-top: 16px solid var(--ecstatic-red);
@@ -138,11 +159,6 @@ h6,
     width: 120px;
     height: 120px;
     animation: spin 2s linear infinite;
-}
-
-/* Initially hides the shop cards while the loaders are spinning */
-.shop-card {
-    display: none;
 }
 
 /* Spinning animations for screen loader on shop page */
@@ -280,6 +296,7 @@ h6,
     h1 {
         font-size: 2.6rem;
     }
+
     .nav-link {
         font-size: 1.2rem;
     }
