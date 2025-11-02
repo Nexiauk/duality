@@ -21,8 +21,8 @@ class ShopScheduler(models.Model):
 
     class Meta:
         ordering = ["start_time"]
-        verbose_name = "Shop Schedule"
-        verbose_name_plural = "Shop Schedules"
+        verbose_name = "Shop Scheduler"
+        verbose_name_plural = "Shop Scheduler"
 
     def __str__(self):
         if self.rotation_type:
