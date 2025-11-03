@@ -544,6 +544,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Help with CSS gradient text [cssgradient.io](https://cssgradient.io/blog/css-gradient-text/)
 * Help with Django inline admin - [medium.com](https://medium.com/django-unleashed/mastering-django-inline-admin-tabularinline-and-stackedinline-examples-c9f17accde84)
 * Help with customising ForeignKey choices in Django Admin - [foysalff.medium.com](https://foysalff.medium.com/customizing-foreignkey-choices-in-django-admin-tailoring-forms-based-on-user-roles-2f6245b18c6d)
+* Help with generator expressions instead of looping through a whole file - [geeksforgeeks](https://www.geeksforgeeks.org/python/python-find-dictionary-matching-value-in-list/)
 
 
 

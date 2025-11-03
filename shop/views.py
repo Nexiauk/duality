@@ -47,16 +47,15 @@ def shop_view(request):
                 if item.character.can_participate_in_rotation:
                     char_id = item.character.id
                     char = item.character
-                    for legend in datastore.legends:
-                        legend_id = legend["id"]
-                        if legend_id == char_id:
-                            total_power = sum(legend["powerstats"].values())
-                            pair = {
-                                "model": char,
-                                "json": legend,
-                                "power": total_power
-                            }
-                            final_list.append(pair)
+                    legend = next((item for item in datastore.legends if item["id"] == char_id), None)
+                    if legend:
+                        total_power = sum(legend["powerstats"].values())
+                        pair = {
+                            "model": char,
+                            "json": legend,
+                            "power": total_power
+                        }
+                        final_list.append(pair)
 
     else:
         characters = CharacterCard.objects.all()
@@ -64,16 +63,15 @@ def shop_view(request):
         res = random.sample(char_list, 12)
         for char in res:
             char_id = char.id
-            for legend in datastore.legends:
-                legend_id = legend["id"]
-                if legend_id == char_id:
-                    total_power = sum(legend["powerstats"].values())
-                    pair = {
-                        "model": char,
-                        "json": legend,
-                        "power": total_power
-                    }
-                    final_list.append(pair)
+            legend = next((item for item in datastore.legends if item["id"] == char_id), None)
+            if legend:
+                total_power = sum(legend["powerstats"].values())
+                pair = {
+                    "model": char,
+                    "json": legend,
+                    "power": total_power
+                }
+                final_list.append(pair)
     final_list.sort(key=lambda pair: pair["power"], reverse=True)
 
     context = {
