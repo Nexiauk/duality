@@ -6,6 +6,7 @@ including sale pricing and automatic end-time calculation.
 
 from django.db import models
 from django.utils import timezone
+from django.utils.timezone import timedelta
 from django.utils.translation import gettext_lazy as _
 from decimal import Decimal, ROUND_HALF_UP
 
@@ -15,8 +16,13 @@ class ShopScheduler(models.Model):
     Represents a shop schedule, defining a start and end time
     and the type of rotation (e.g., daily, weekly).
     """
-    start_time = models.DateTimeField(_("Start Time"))
-    end_time = models.DateTimeField(_("End Time"))
+    def start_time_default():
+        return timezone.now()
+    def end_time_default():
+        return timezone.now()+timedelta(hours=24)
+
+    start_time = models.DateTimeField(_("Start Time"), default=start_time_default)
+    end_time = models.DateTimeField(_("End Time"), default=end_time_default)
     rotation_type = models.CharField(_("Rotation Type"), max_length=150, default="Daily")
 
     class Meta:
