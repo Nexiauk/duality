@@ -1,3 +1,12 @@
+"""
+Views for the shop app.
+
+This module defines the shop view, which determines which characters
+are currently available for sale based on the active shop schedules.
+It cross-references the database models with external legend data
+to build a dynamic shop interface for display in the front-end template.
+"""
+
 from django.shortcuts import render
 from django.utils import timezone
 from core.data import datastore
@@ -5,6 +14,23 @@ from .models import ShopScheduler
 
 
 def shop_view(request):
+    """
+    Renders the shop page with characters available during the
+    currently active schedule period.
+    - Retrieves active shop schedules where the current
+        time falls between start and end times.
+    - Collects all scheduled items linked to those schedules.
+    - Ensures that only characters marked as eligible for rotation
+        are included.
+    - Cross-references each eligible character with external data
+        from datastore.legends to enrich their display information.
+    - Calculates each character's total power score.
+    - Sorts the final list alphabetically by character name.
+    - Passes the sorted data to the shop template for rendering.
+
+    Returns:
+        HttpResponse: Rendered HTML page displaying the shop inventory.
+    """
     page_url = "shop/shop.html"
     final_list = []
     now = timezone.now()
@@ -27,9 +53,9 @@ def shop_view(request):
                             "power": total_power
                         }
                         final_list.append(pair)
-    final_list.sort(key=lambda pair:pair["model"].name)
+    final_list.sort(key=lambda pair: pair["model"].name)
 
     context = {
-        "characters":final_list
+        "characters": final_list
     }
     return render(request, page_url, context)

@@ -1,3 +1,14 @@
+"""
+Admin configuration for the core app models.
+
+This module customizes the Django admin interface for the core
+models CharacterCard, Archetype, and Rarity. It provides:
+
+- Inline display options and list views for each model.
+- Filtering and search capabilities to improve usability.
+- Custom admin actions, such as updating the rotation status
+  of characters, to streamline administrative workflows.
+  """
 from django.contrib import admin
 from .models import CharacterCard, Archetype, Rarity
 
@@ -10,24 +21,29 @@ class ArchetypeAdmin(admin.ModelAdmin):
     """
     list_display = ("id", "literary_archetype", "archetype_traits")
 
+
 @admin.action(description="Update rotation status")
 def update_rotation_status(modeladmin, request, queryset):
     """
     Admin action to approve selected Fableseed instances.
-
     Sets the approval_status of the selected Fableseed objects to 1.
     """
     queryset.update(can_participate_in_rotation=0)
 
+
 @admin.register(CharacterCard)
 class CharacterCardAmin(admin.ModelAdmin):
-    list_display = ("name", "archetype", "rarity", "can_participate_in_rotation")
+    list_display = (
+        "name",
+        "archetype",
+        "rarity",
+        "can_participate_in_rotation"
+    )
     list_filter = ("archetype", "rarity",)
     actions = [update_rotation_status]
-
     search_fields = ["name"]
-    
+
+
 @admin.register(Rarity)
 class RarityAdmin(admin.ModelAdmin):
     list_display = ("name", "level", "price")
-    
