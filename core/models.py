@@ -38,7 +38,7 @@ class CharacterCard(models.Model):
     )
 
     def get_legends_data(self):
-        char_id = self.character.id
+        char_id = self.id
         legend = next((item for item in datastore.legends if item["id"] == char_id), None)
         return legend
     

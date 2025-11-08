@@ -24,6 +24,7 @@ def shop_view(request):
                     "power": char.power_status()
                 }
                 scheduled_characters.append(character_data)
+                scheduled_characters.sort(key=lambda character_data:character_data["power"], reverse=True)
     context = {
         "characters": scheduled_characters
     }
