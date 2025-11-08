@@ -22,13 +22,21 @@ class ArchetypeAdmin(admin.ModelAdmin):
     list_display = ("id", "literary_archetype", "archetype_traits")
 
 
-@admin.action(description="Update rotation status")
-def update_rotation_status(modeladmin, request, queryset):
+@admin.action(description="Take out of rotation")
+def rotation_false(modeladmin, request, queryset):
+    """
+    Admin action to approve selected Fableseed instances.
+    Sets the approval_status of the selected Fableseed objects to 0.
+    """
+    queryset.update(can_participate_in_rotation=0)
+
+@admin.action(description="Put into rotation")
+def rotation_true(modeladmin, request, queryset):
     """
     Admin action to approve selected Fableseed instances.
     Sets the approval_status of the selected Fableseed objects to 1.
     """
-    queryset.update(can_participate_in_rotation=0)
+    queryset.update(can_participate_in_rotation=1)
 
 
 @admin.register(CharacterCard)
@@ -40,7 +48,7 @@ class CharacterCardAmin(admin.ModelAdmin):
         "can_participate_in_rotation"
     )
     list_filter = ("archetype", "rarity",)
-    actions = [update_rotation_status]
+    actions = [rotation_false, rotation_true]
     search_fields = ["name"]
 
 
