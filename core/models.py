@@ -6,6 +6,7 @@ and archetypes, used for literary references.
 """
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from core.data import datastore
 
 
 class CharacterCard(models.Model):
@@ -35,6 +36,16 @@ class CharacterCard(models.Model):
         on_delete=models.PROTECT,
         null=False
     )
+
+    def get_legends_data(self):
+        char_id = self.character.id
+        legend = next((item for item in datastore.legends if item["id"] == char_id), None)
+        return legend
+    
+    def power_status(self):
+        legend_data = self.get_legends_data()
+        total_power = sum(legend_data["powerstats"].values())
+        return total_power
 
     class Meta:
         ordering = ["name"]
