@@ -15,16 +15,19 @@ from core.models import CharacterCard
 def shop_view(request):
     page_url = "shop/shop.html"
     scheduled_characters = []
-    for schedule in ShopScheduler.get_or_create_active_schedule():
-            eligible_character = schedule.get_eligible_characters()
-            for char in eligible_character:
-                character_data = {
-                    "model": char,
-                    "json": char.get_legends_data(),
-                    "power": char.power_status()
-                }
-                scheduled_characters.append(character_data)
-                scheduled_characters.sort(key=lambda character_data:character_data["power"], reverse=True)
+    schedule = ShopScheduler.get_or_create_active_schedule()
+    for s in schedule:
+        if not s.get_items():
+            s.create_items_for_schedule()
+        eligible_character = s.get_eligible_characters()
+        for char in eligible_character:
+            character_data = {
+                "model": char,
+                "json": char.get_legends_data(),
+                "power": char.power_status()
+            }
+            scheduled_characters.append(character_data)
+    scheduled_characters.sort(key=lambda character_data:character_data["power"], reverse=True)
     context = {
         "characters": scheduled_characters
     }

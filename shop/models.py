@@ -9,6 +9,8 @@ from django.utils import timezone
 from django.utils.timezone import timedelta
 from django.utils.translation import gettext_lazy as _
 from decimal import Decimal, ROUND_HALF_UP
+from core.models import CharacterCard
+import random
 
 
 class ShopScheduler(models.Model):
@@ -40,7 +42,7 @@ class ShopScheduler(models.Model):
     @classmethod
     def get_or_create_active_schedule(cls):
         active_schedules = ShopScheduler.currently_active_schedules()
-        if active_schedules:
+        if active_schedules.exists():
             return active_schedules
         else:
             new_schedule = ShopScheduler.objects.create(
@@ -62,6 +64,17 @@ class ShopScheduler(models.Model):
             if char.can_participate_in_rotation:
                 eligible_characters.append(char)
         return eligible_characters
+    
+    def create_items_for_schedule(self):
+        characters = CharacterCard.objects.all()
+        char_list = list(characters)
+        sampled_characters = random.sample(char_list, 12)
+        for char in sampled_characters:
+            ShopScheduleItems.objects.create(
+                shop_scheduler = self,
+                character = char,
+                sale_price = 0
+            )
 
     class Meta:
         ordering = ["start_time"]
@@ -107,6 +120,7 @@ class ShopScheduleItems(models.Model):
         blank=True
     )
 
+ 
     class Meta:
         ordering = ["shop_scheduler"]
         verbose_name = "Schedule Items"
