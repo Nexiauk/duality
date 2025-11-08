@@ -16,14 +16,52 @@ class ShopScheduler(models.Model):
     Represents a shop schedule, defining a start and end time
     and the type of rotation (e.g., daily, weekly).
     """
+    @staticmethod
     def start_time_default():
         return timezone.now()
+    
+    @staticmethod
     def end_time_default():
         return timezone.now()+timedelta(hours=24)
 
     start_time = models.DateTimeField(_("Start Time"), default=start_time_default)
     end_time = models.DateTimeField(_("End Time"), default=end_time_default)
     rotation_type = models.CharField(_("Rotation Type"), max_length=150, default="Daily")
+
+    @classmethod 
+    def currently_active_schedules(cls):
+        now = timezone.now()
+        active_schedules = cls.objects.filter(
+        start_time__lte=now,
+        end_time__gte=now
+    )
+        return active_schedules
+    
+    @classmethod
+    def get_or_create_active_schedule(cls):
+        active_schedules = ShopScheduler.currently_active_schedules()
+        if active_schedules:
+            return active_schedules
+        else:
+            new_schedule = ShopScheduler.objects.create(
+                start_time = ShopScheduler.start_time_default(),
+                end_time = ShopScheduler.end_time_default(),
+                rotation_type = "Daily"
+            )
+            return [new_schedule]
+
+    
+    def get_items(self):
+        characters = [item.character for item in self.scheduled_items.all()]
+        return characters
+    
+    def get_eligible_characters(self):
+        eligible_characters = []
+        characters = self.get_items()
+        for char in characters:
+            if char.can_participate_in_rotation:
+                eligible_characters.append(char)
+        return eligible_characters
 
     class Meta:
         ordering = ["start_time"]
@@ -58,7 +96,8 @@ class ShopScheduleItems(models.Model):
     character = models.ForeignKey(
         "core.CharacterCard",
         verbose_name=_("Character"),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="scheduled_characters"
     )
     sale_price = models.DecimalField(
         _("Sale Price"),
