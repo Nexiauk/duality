@@ -3,6 +3,7 @@
 import django.db.models.deletion
 import shop.models
 from django.db import migrations, models
+from shop.models import end_time_default, start_time_default
 
 
 class Migration(migrations.Migration):
@@ -28,11 +29,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='shopscheduler',
             name='end_time',
-            field=models.DateTimeField(default=shop.models.ShopScheduler.end_time_default, verbose_name='End Time'),
+            field=models.DateTimeField(default=end_time_default, verbose_name='End Time'),
         ),
         migrations.AlterField(
             model_name='shopscheduler',
             name='start_time',
-            field=models.DateTimeField(default=shop.models.ShopScheduler.start_time_default, verbose_name='Start Time'),
+            field=models.DateTimeField(default=start_time_default, verbose_name='Start Time'),
         ),
     ]

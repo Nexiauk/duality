@@ -15,21 +15,20 @@ from core.models import CharacterCard
 import random
 
 
+def start_time_default():
+    """Returns the default start time (current time)."""
+    return timezone.now()
+
+def end_time_default():
+    """Returns the default end time (24 hours from now)."""
+    return timezone.now()+timedelta(hours=24)
+
 class ShopScheduler(models.Model):
     """
     Represents a shop schedule, defining a start and end time
     and the type of rotation (e.g., daily, weekly).
     """
-    @staticmethod
-    def start_time_default():
-        """Returns the default start time (current time)."""
-        return timezone.now()
-
-    @staticmethod
-    def end_time_default():
-        """Returns the default end time (24 hours from now)."""
-        return timezone.now()+timedelta(hours=24)
-
+ 
     start_time = models.DateTimeField(
         _("Start Time"),
         default=start_time_default
