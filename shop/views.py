@@ -1,10 +1,9 @@
 """
 Views for the shop app.
 
-This module defines the shop view, which determines which characters
-are currently available for sale based on the active shop schedules.
-It cross-references the database models with external legend data
-to build a dynamic shop interface for display in the front-end template.
+Retrieves or creates the active shop schedule, ensures its items are set up,
+and gathers eligible characters for display. Characters are enriched with
+their data and power status, sorted by power, and rendered to the shop page.
 """
 
 from django.shortcuts import render
@@ -27,7 +26,10 @@ def shop_view(request):
                 "power": char.power_status()
             }
             scheduled_characters.append(character_data)
-    scheduled_characters.sort(key=lambda character_data:character_data["power"], reverse=True)
+    scheduled_characters.sort(
+        key=lambda character_data: character_data["power"],
+        reverse=True
+        )
     context = {
         "characters": scheduled_characters
     }

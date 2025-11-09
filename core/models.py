@@ -1,8 +1,9 @@
 """
-This module contains Django models for the core app.
-Defines character information, used across the shop and binder apps.
-Links those characters to rarities, used to calculate prices,
-and archetypes, used for literary references.
+Models for the core app.
+
+Defines characters, rarities, and archetypes used across
+the shop and binder apps. Characters link to archetypes for
+literary references and to rarities for pricing and styling.
 """
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -11,16 +12,10 @@ from core.data import datastore
 
 class CharacterCard(models.Model):
     """
-    Represents different characters/legends.
-    Base data kept in the database.
-    Extended data kept in a JSON file.
-    Character information used on cards in the shop and
-    binder apps.
+    Represents a character or legend used in the shop and binder apps.
 
-    Meta:
-        Ordering ascending by name.
-        verbose_name: Singular name of the model.
-        verbose_name_plural: Plural name of the model
+    Stores base character data in the database, with extended data
+    loaded from an external JSON datastore.
     """
     id = models.IntegerField(primary_key=True)
     name = models.CharField(_("Character Name"), max_length=50)
@@ -38,11 +33,16 @@ class CharacterCard(models.Model):
     )
 
     def get_legends_data(self):
+        """Returns this character’s extended data from the JSON datastore."""
         char_id = self.id
-        legend = next((item for item in datastore.legends if item["id"] == char_id), None)
+        legend = next(
+            (item for item in datastore.legends if item["id"] == char_id),
+            None
+            )
         return legend
-    
+
     def power_status(self):
+        """Calculates the character’s total power based on its powerstats."""
         legend_data = self.get_legends_data()
         total_power = sum(legend_data["powerstats"].values())
         return total_power
@@ -62,11 +62,6 @@ class Archetype(models.Model):
     Represents literary archetypes and
     traits linked to each character in the
     CharacterCards model.
-
-    Meta:
-        Orders ascending by literary_archetype
-        verbose_name: Singular name of the model.
-        verbose_name_plural: Plural name of the model
     """
     literary_archetype = models.CharField(
         _("Literary Archetype"),
@@ -89,11 +84,6 @@ class Rarity(models.Model):
     Represents character card rarities.
     Rarity is determined by the totalled power stats of a character.
     It influences the price of cards in the shop and affects styling.
-
-    Meta:
-        Ordered by rarity level descending
-        verbose_name: Singular name of the model.
-        verbose_name_plural: Plural name of the model
     """
     name = models.CharField(_("Rarity Name"), max_length=50, unique=True)
     # Numeric representation of rarity used for algorithmic calculations.

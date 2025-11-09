@@ -1,7 +1,9 @@
 """
-This module contains Django models for the shop app.
-Defines shop schedules and the items assigned to each schedule,
-including sale pricing and automatic end-time calculation.
+Models for the shop app.
+
+Defines shop schedules and their associated items.
+Schedules control rotation timing and determine which
+characters are available in the shop.
 """
 
 from django.db import models
@@ -20,60 +22,80 @@ class ShopScheduler(models.Model):
     """
     @staticmethod
     def start_time_default():
+        """Returns the default start time (current time)."""
         return timezone.now()
-    
+
     @staticmethod
     def end_time_default():
+        """Returns the default end time (24 hours from now)."""
         return timezone.now()+timedelta(hours=24)
 
-    start_time = models.DateTimeField(_("Start Time"), default=start_time_default)
-    end_time = models.DateTimeField(_("End Time"), default=end_time_default)
-    rotation_type = models.CharField(_("Rotation Type"), max_length=150, default="Daily")
+    start_time = models.DateTimeField(
+        _("Start Time"),
+        default=start_time_default
+        )
+    end_time = models.DateTimeField(
+        _("End Time"),
+        default=end_time_default
+        )
+    rotation_type = models.CharField(
+        _("Rotation Type"),
+        max_length=150,
+        default="Daily"
+        )
 
-    @classmethod 
+    @classmethod
     def currently_active_schedules(cls):
+        """Returns all schedules active at the current time."""
         now = timezone.now()
         active_schedules = cls.objects.filter(
-        start_time__lte=now,
-        end_time__gte=now
-    )
+            start_time__lte=now,
+            end_time__gte=now
+        )
         return active_schedules
-    
+
     @classmethod
     def get_or_create_active_schedule(cls):
+        """
+        Returns the current active schedule(s),
+        or creates a new one if none exist.
+        """
         active_schedules = ShopScheduler.currently_active_schedules()
         if active_schedules.exists():
             return active_schedules
         else:
             new_schedule = ShopScheduler.objects.create(
-                start_time = ShopScheduler.start_time_default(),
-                end_time = ShopScheduler.end_time_default(),
-                rotation_type = "Daily"
+                start_time=ShopScheduler.start_time_default(),
+                end_time=ShopScheduler.end_time_default(),
+                rotation_type="Daily"
             )
             return [new_schedule]
 
-    
     def get_items(self):
+        """Returns all characters assigned to this schedule."""
         characters = [item.character for item in self.scheduled_items.all()]
         return characters
-    
+
     def get_eligible_characters(self):
+        """Returns characters in the schedule
+        that can participate in rotation."""
         eligible_characters = []
         characters = self.get_items()
         for char in characters:
             if char.can_participate_in_rotation:
                 eligible_characters.append(char)
         return eligible_characters
-    
+
     def create_items_for_schedule(self):
+        """Randomly assigns 12 characters to this schedule."""
         characters = CharacterCard.objects.all()
         char_list = list(characters)
         sampled_characters = random.sample(char_list, 12)
         for char in sampled_characters:
             ShopScheduleItems.objects.create(
-                shop_scheduler = self,
-                character = char,
-                sale_price = 0
+                shop_scheduler=self,
+                character=char,
+                sale_price=0
             )
 
     class Meta:
@@ -82,6 +104,7 @@ class ShopScheduler(models.Model):
         verbose_name_plural = "Shop Scheduler"
 
     def __str__(self):
+        """Returns a string representation of the schedule."""
         if self.rotation_type:
             return (
                 f"{self.rotation_type} "
@@ -92,13 +115,8 @@ class ShopScheduler(models.Model):
 
 class ShopScheduleItems(models.Model):
     """
-    Represents an item (character card) assigned to a shop schedule.
-
-    Properties:
-        active_price (str): Returns the effective price for the item as a
-                            formatted string with a currency symbol.
-                            Uses sale_price if set, otherwise falls back
-                            to the character's rarity price.
+    Represents a character item within a shop schedule,
+    optionally discounted with a sale price.
     """
     shop_scheduler = models.ForeignKey(
         "shop.ShopScheduler",
@@ -120,14 +138,13 @@ class ShopScheduleItems(models.Model):
         blank=True
     )
 
- 
     class Meta:
         ordering = ["shop_scheduler"]
         verbose_name = "Schedule Items"
         verbose_name_plural = "Schedule Items"
 
-
     def __str__(self):
+        """Returns a string representation of the item."""
         return (
             f"{self.character.name} in "
             f"{self.shop_scheduler} – "
@@ -137,16 +154,11 @@ class ShopScheduleItems(models.Model):
     @property
     def active_price(self):
         """
-        Returns the active price for the item as a formatted string
-        with a currency symbol.
+        Returns the effective price for the item.
 
-        Logic:
-            - Use sale_price if it is set.
-            - Otherwise, fall back to the character's rarity price.
-            - Ensures two decimal places with proper rounding.
-
-        Returns:
-            Price formatted as '£XX.XX'.
+        Uses sale_price if set; otherwise, falls back
+        to the character's rarity price. Ensures
+        rounding to two decimal places.
         """
         price = (
             self.sale_price
