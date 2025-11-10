@@ -1,0 +1,6195 @@
+[
+    {
+        "model": "core.charactercard",
+        "pk": 1,
+        "fields": {
+            "name": "A-Bomb",
+            "can_participate_in_rotation": false,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 1
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 2,
+        "fields": {
+            "name": "Abe Sapien",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 2
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 3,
+        "fields": {
+            "name": "Abin Sur",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 3
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 4,
+        "fields": {
+            "name": "Abomination",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 4
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 5,
+        "fields": {
+            "name": "Abraxas",
+            "can_participate_in_rotation": false,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 5
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 6,
+        "fields": {
+            "name": "Absorbing Man",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 6
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 7,
+        "fields": {
+            "name": "Adam Monroe",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 7
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 8,
+        "fields": {
+            "name": "Adam Strange",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 8
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 10,
+        "fields": {
+            "name": "Agent Bob",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 10
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 11,
+        "fields": {
+            "name": "Agent Zero",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 11
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 12,
+        "fields": {
+            "name": "Air-Walker",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 4,
+            "legend_id": 12
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 13,
+        "fields": {
+            "name": "Ajax",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 13
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 14,
+        "fields": {
+            "name": "Alan Scott",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 14
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 15,
+        "fields": {
+            "name": "Alex Mercer",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 15
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 17,
+        "fields": {
+            "name": "Alfred Pennyworth",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 17
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 18,
+        "fields": {
+            "name": "Alien",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 18
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 20,
+        "fields": {
+            "name": "Amazo",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 20
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 23,
+        "fields": {
+            "name": "Angel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 23
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 24,
+        "fields": {
+            "name": "Angel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 24
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 25,
+        "fields": {
+            "name": "Angel Dust",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 25
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 26,
+        "fields": {
+            "name": "Angel Salvadore",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 26
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 28,
+        "fields": {
+            "name": "Animal Man",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 28
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 29,
+        "fields": {
+            "name": "Annihilus",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 29
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 30,
+        "fields": {
+            "name": "Ant-Man",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 30
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 31,
+        "fields": {
+            "name": "Ant-Man II",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 2,
+            "legend_id": 31
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 32,
+        "fields": {
+            "name": "Anti-Monitor",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 32
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 34,
+        "fields": {
+            "name": "Anti-Venom",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 5,
+            "legend_id": 34
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 35,
+        "fields": {
+            "name": "Apocalypse",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 35
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 36,
+        "fields": {
+            "name": "Aquababy",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 1,
+            "legend_id": 36
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 37,
+        "fields": {
+            "name": "Aqualad",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 37
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 38,
+        "fields": {
+            "name": "Aquaman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 38
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 39,
+        "fields": {
+            "name": "Arachne",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 39
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 40,
+        "fields": {
+            "name": "Archangel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 40
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 41,
+        "fields": {
+            "name": "Arclight",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 41
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 42,
+        "fields": {
+            "name": "Ardina",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 42
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 43,
+        "fields": {
+            "name": "Ares",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 43
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 44,
+        "fields": {
+            "name": "Ariel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 44
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 45,
+        "fields": {
+            "name": "Armor",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 45
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 48,
+        "fields": {
+            "name": "Atlas",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 48
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 49,
+        "fields": {
+            "name": "Atlas",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 49
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 52,
+        "fields": {
+            "name": "Atom Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 52
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 53,
+        "fields": {
+            "name": "Atom II",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 53
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 56,
+        "fields": {
+            "name": "Aurora",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 56
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 57,
+        "fields": {
+            "name": "Azazel",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 57
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 58,
+        "fields": {
+            "name": "Azrael",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 58
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 60,
+        "fields": {
+            "name": "Bane",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 60
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 61,
+        "fields": {
+            "name": "Banshee",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 61
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 62,
+        "fields": {
+            "name": "Bantam",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 62
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 63,
+        "fields": {
+            "name": "Batgirl",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 63
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 66,
+        "fields": {
+            "name": "Batgirl IV",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 66
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 68,
+        "fields": {
+            "name": "Batgirl VI",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 68
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 69,
+        "fields": {
+            "name": "Batman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 69
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 70,
+        "fields": {
+            "name": "Batman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 70
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 71,
+        "fields": {
+            "name": "Batman II",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 71
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 72,
+        "fields": {
+            "name": "Battlestar",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 72
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 73,
+        "fields": {
+            "name": "Batwoman V",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 73
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 75,
+        "fields": {
+            "name": "Beast",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 75
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 76,
+        "fields": {
+            "name": "Beast Boy",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 76
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 78,
+        "fields": {
+            "name": "Ben 10",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 78
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 79,
+        "fields": {
+            "name": "Beta Ray Bill",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 79
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 80,
+        "fields": {
+            "name": "Beyonder",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 6,
+            "legend_id": 80
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 81,
+        "fields": {
+            "name": "Big Barda",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 6,
+            "legend_id": 81
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 82,
+        "fields": {
+            "name": "Big Daddy",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 82
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 83,
+        "fields": {
+            "name": "Big Man",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 83
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 84,
+        "fields": {
+            "name": "Bill Harken",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 84
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 87,
+        "fields": {
+            "name": "Bionic Woman",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 87
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 88,
+        "fields": {
+            "name": "Bird-Brain",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 88
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 92,
+        "fields": {
+            "name": "Bishop",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 92
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 93,
+        "fields": {
+            "name": "Bizarro",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 5,
+            "legend_id": 93
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 95,
+        "fields": {
+            "name": "Black Adam",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 95
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 96,
+        "fields": {
+            "name": "Black Bolt",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 96
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 97,
+        "fields": {
+            "name": "Black Canary",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 97
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 98,
+        "fields": {
+            "name": "Black Canary",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 98
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 99,
+        "fields": {
+            "name": "Black Cat",
+            "can_participate_in_rotation": true,
+            "archetype": 9,
+            "rarity": 2,
+            "legend_id": 99
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 100,
+        "fields": {
+            "name": "Black Flash",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 100
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 102,
+        "fields": {
+            "name": "Black Knight III",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 102
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 103,
+        "fields": {
+            "name": "Black Lightning",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 103
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 104,
+        "fields": {
+            "name": "Black Mamba",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 104
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 105,
+        "fields": {
+            "name": "Black Manta",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 105
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 106,
+        "fields": {
+            "name": "Black Panther",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 106
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 107,
+        "fields": {
+            "name": "Black Widow",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 107
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 109,
+        "fields": {
+            "name": "Blackout",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 109
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 110,
+        "fields": {
+            "name": "Blackwing",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 110
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 111,
+        "fields": {
+            "name": "Blackwulf",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 2,
+            "legend_id": 111
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 112,
+        "fields": {
+            "name": "Blade",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 112
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 114,
+        "fields": {
+            "name": "Bling!",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 114
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 115,
+        "fields": {
+            "name": "Blink",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 115
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 118,
+        "fields": {
+            "name": "Blizzard II",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 118
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 119,
+        "fields": {
+            "name": "Blob",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 119
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 120,
+        "fields": {
+            "name": "Bloodaxe",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 120
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 121,
+        "fields": {
+            "name": "Bloodhawk",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 121
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 126,
+        "fields": {
+            "name": "Blue Beetle III",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 126
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 127,
+        "fields": {
+            "name": "Boba Fett",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 127
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 130,
+        "fields": {
+            "name": "Boom-Boom",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 130
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 135,
+        "fields": {
+            "name": "Box IV",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 135
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 136,
+        "fields": {
+            "name": "Brainiac",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 136
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 137,
+        "fields": {
+            "name": "Brainiac 5",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 2,
+            "legend_id": 137
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 139,
+        "fields": {
+            "name": "Brundlefly",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 2,
+            "legend_id": 139
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 140,
+        "fields": {
+            "name": "Buffy",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 140
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 141,
+        "fields": {
+            "name": "Bullseye",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 141
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 142,
+        "fields": {
+            "name": "Bumblebee",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 142
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 144,
+        "fields": {
+            "name": "Bushido",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 1,
+            "legend_id": 144
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 145,
+        "fields": {
+            "name": "Cable",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 145
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 146,
+        "fields": {
+            "name": "Callisto",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 146
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 147,
+        "fields": {
+            "name": "Cameron Hicks",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 147
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 148,
+        "fields": {
+            "name": "Cannonball",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 148
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 149,
+        "fields": {
+            "name": "Captain America",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 149
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 150,
+        "fields": {
+            "name": "Captain Atom",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 150
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 151,
+        "fields": {
+            "name": "Captain Britain",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 151
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 152,
+        "fields": {
+            "name": "Captain Cold",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 1,
+            "legend_id": 152
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 154,
+        "fields": {
+            "name": "Captain Hindsight",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 154
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 156,
+        "fields": {
+            "name": "Captain Marvel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 156
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 157,
+        "fields": {
+            "name": "Captain Marvel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 157
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 158,
+        "fields": {
+            "name": "Captain Marvel II",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 158
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 160,
+        "fields": {
+            "name": "Captain Planet",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 160
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 162,
+        "fields": {
+            "name": "Carnage",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 162
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 165,
+        "fields": {
+            "name": "Catwoman",
+            "can_participate_in_rotation": true,
+            "archetype": 9,
+            "rarity": 2,
+            "legend_id": 165
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 167,
+        "fields": {
+            "name": "Century",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 167
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 169,
+        "fields": {
+            "name": "Chamber",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 169
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 170,
+        "fields": {
+            "name": "Chameleon",
+            "can_participate_in_rotation": true,
+            "archetype": 5,
+            "rarity": 2,
+            "legend_id": 170
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 171,
+        "fields": {
+            "name": "Changeling",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 171
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 172,
+        "fields": {
+            "name": "Cheetah",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 172
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 174,
+        "fields": {
+            "name": "Cheetah III",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 174
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 176,
+        "fields": {
+            "name": "Chuck Norris",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 176
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 177,
+        "fields": {
+            "name": "Citizen Steel",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 177
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 178,
+        "fields": {
+            "name": "Claire Bennet",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 178
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 180,
+        "fields": {
+            "name": "Cloak",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 180
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 181,
+        "fields": {
+            "name": "Clock King",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 181
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 185,
+        "fields": {
+            "name": "Colossus",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 185
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 186,
+        "fields": {
+            "name": "Copycat",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 2,
+            "legend_id": 186
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 188,
+        "fields": {
+            "name": "Cottonmouth",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 188
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 191,
+        "fields": {
+            "name": "Crystal",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 191
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 194,
+        "fields": {
+            "name": "Cyborg",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 194
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 195,
+        "fields": {
+            "name": "Cyborg Superman",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 5,
+            "legend_id": 195
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 196,
+        "fields": {
+            "name": "Cyclops",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 196
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 198,
+        "fields": {
+            "name": "Dagger",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 198
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 200,
+        "fields": {
+            "name": "Daphne Powell",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 200
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 201,
+        "fields": {
+            "name": "Daredevil",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 201
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 202,
+        "fields": {
+            "name": "Darkhawk",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 202
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 203,
+        "fields": {
+            "name": "Darkman",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 203
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 204,
+        "fields": {
+            "name": "Darkseid",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 6,
+            "legend_id": 204
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 206,
+        "fields": {
+            "name": "Darkstar",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 206
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 207,
+        "fields": {
+            "name": "Darth Maul",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 207
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 208,
+        "fields": {
+            "name": "Darth Vader",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 208
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 209,
+        "fields": {
+            "name": "Dash",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 209
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 210,
+        "fields": {
+            "name": "Data",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 210
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 211,
+        "fields": {
+            "name": "Dazzler",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 211
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 212,
+        "fields": {
+            "name": "Deadman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 212
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 213,
+        "fields": {
+            "name": "Deadpool",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 213
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 214,
+        "fields": {
+            "name": "Deadshot",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 2,
+            "legend_id": 214
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 215,
+        "fields": {
+            "name": "Deathlok",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 215
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 216,
+        "fields": {
+            "name": "Deathstroke",
+            "can_participate_in_rotation": true,
+            "archetype": 10,
+            "rarity": 4,
+            "legend_id": 216
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 217,
+        "fields": {
+            "name": "Demogoblin",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 217
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 218,
+        "fields": {
+            "name": "Destroyer",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 218
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 219,
+        "fields": {
+            "name": "Diamondback",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 219
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 220,
+        "fields": {
+            "name": "DL Hawkins",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 220
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 221,
+        "fields": {
+            "name": "Doc Samson",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 221
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 222,
+        "fields": {
+            "name": "Doctor Doom",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 222
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 224,
+        "fields": {
+            "name": "Doctor Fate",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 224
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 225,
+        "fields": {
+            "name": "Doctor Octopus",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 225
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 226,
+        "fields": {
+            "name": "Doctor Strange",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 226
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 227,
+        "fields": {
+            "name": "Domino",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 227
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 228,
+        "fields": {
+            "name": "Donatello",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 228
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 230,
+        "fields": {
+            "name": "Doomsday",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 230
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 231,
+        "fields": {
+            "name": "Doppelganger",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 231
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 232,
+        "fields": {
+            "name": "Dormammu",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 232
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 233,
+        "fields": {
+            "name": "Dr Manhattan",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 233
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 234,
+        "fields": {
+            "name": "Drax the Destroyer",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 234
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 235,
+        "fields": {
+            "name": "Ego",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 235
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 236,
+        "fields": {
+            "name": "Elastigirl",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 236
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 237,
+        "fields": {
+            "name": "Electro",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 237
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 238,
+        "fields": {
+            "name": "Elektra",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 238
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 239,
+        "fields": {
+            "name": "Elle Bishop",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 239
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 240,
+        "fields": {
+            "name": "Elongated Man",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 240
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 241,
+        "fields": {
+            "name": "Emma Frost",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 241
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 242,
+        "fields": {
+            "name": "Enchantress",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 242
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 245,
+        "fields": {
+            "name": "Ethan Hunt",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 245
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 246,
+        "fields": {
+            "name": "Etrigan",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 246
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 247,
+        "fields": {
+            "name": "Evil Deadpool",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 247
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 248,
+        "fields": {
+            "name": "Evilhawk",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 248
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 249,
+        "fields": {
+            "name": "Exodus",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 249
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 251,
+        "fields": {
+            "name": "Falcon",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 251
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 252,
+        "fields": {
+            "name": "Fallen One II",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 252
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 253,
+        "fields": {
+            "name": "Faora",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 253
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 254,
+        "fields": {
+            "name": "Feral",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 254
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 256,
+        "fields": {
+            "name": "Fin Fang Foom",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 256
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 257,
+        "fields": {
+            "name": "Firebird",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 257
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 258,
+        "fields": {
+            "name": "Firelord",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 3,
+            "legend_id": 258
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 259,
+        "fields": {
+            "name": "Firestar",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 259
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 260,
+        "fields": {
+            "name": "Firestorm",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 260
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 261,
+        "fields": {
+            "name": "Firestorm",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 261
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 263,
+        "fields": {
+            "name": "Flash",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 263
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 265,
+        "fields": {
+            "name": "Flash II",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 265
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 266,
+        "fields": {
+            "name": "Flash III",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 266
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 267,
+        "fields": {
+            "name": "Flash IV",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 267
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 268,
+        "fields": {
+            "name": "Forge",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 268
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 269,
+        "fields": {
+            "name": "Franklin Richards",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 4,
+            "legend_id": 269
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 270,
+        "fields": {
+            "name": "Franklin Storm",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 270
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 271,
+        "fields": {
+            "name": "Frenzy",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 271
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 273,
+        "fields": {
+            "name": "Galactus",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 5,
+            "legend_id": 273
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 274,
+        "fields": {
+            "name": "Gambit",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 274
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 275,
+        "fields": {
+            "name": "Gamora",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 275
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 277,
+        "fields": {
+            "name": "Gary Bell",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 1,
+            "legend_id": 277
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 278,
+        "fields": {
+            "name": "General Zod",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 6,
+            "legend_id": 278
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 280,
+        "fields": {
+            "name": "Ghost Rider",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 280
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 284,
+        "fields": {
+            "name": "Giganta",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 284
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 285,
+        "fields": {
+            "name": "Gladiator",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 5,
+            "legend_id": 285
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 286,
+        "fields": {
+            "name": "Goblin Queen",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 286
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 287,
+        "fields": {
+            "name": "Godzilla",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 287
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 288,
+        "fields": {
+            "name": "Gog",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 288
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 289,
+        "fields": {
+            "name": "Goku",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 289
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 294,
+        "fields": {
+            "name": "Gorilla Grodd",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 294
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 296,
+        "fields": {
+            "name": "Gravity",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 296
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 297,
+        "fields": {
+            "name": "Greedo",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 297
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 298,
+        "fields": {
+            "name": "Green Arrow",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 298
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 299,
+        "fields": {
+            "name": "Green Goblin",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 299
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 300,
+        "fields": {
+            "name": "Green Goblin II",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 300
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 303,
+        "fields": {
+            "name": "Groot",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 303
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 305,
+        "fields": {
+            "name": "Guy Gardner",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 305
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 306,
+        "fields": {
+            "name": "Hal Jordan",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 306
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 307,
+        "fields": {
+            "name": "Han Solo",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 307
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 308,
+        "fields": {
+            "name": "Hancock",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 308
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 309,
+        "fields": {
+            "name": "Harley Quinn",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 309
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 310,
+        "fields": {
+            "name": "Harry Potter",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 310
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 311,
+        "fields": {
+            "name": "Havok",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 311
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 312,
+        "fields": {
+            "name": "Hawk",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 312
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 313,
+        "fields": {
+            "name": "Hawkeye",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 313
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 314,
+        "fields": {
+            "name": "Hawkeye II",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 1,
+            "legend_id": 314
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 315,
+        "fields": {
+            "name": "Hawkgirl",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 315
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 320,
+        "fields": {
+            "name": "Heat Wave",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 320
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 321,
+        "fields": {
+            "name": "Hela",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 321
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 322,
+        "fields": {
+            "name": "Hellboy",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 322
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 323,
+        "fields": {
+            "name": "Hellcat",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 323
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 325,
+        "fields": {
+            "name": "Hercules",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 325
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 327,
+        "fields": {
+            "name": "Hit-Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 327
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 330,
+        "fields": {
+            "name": "Hope Summers",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 330
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 332,
+        "fields": {
+            "name": "Hulk",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 332
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 333,
+        "fields": {
+            "name": "Human Torch",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 333
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 334,
+        "fields": {
+            "name": "Huntress",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 2,
+            "legend_id": 334
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 335,
+        "fields": {
+            "name": "Husk",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 335
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 336,
+        "fields": {
+            "name": "Hybrid",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 336
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 337,
+        "fields": {
+            "name": "Hydro-Man",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 337
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 338,
+        "fields": {
+            "name": "Hyperion",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 338
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 339,
+        "fields": {
+            "name": "Iceman",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 339
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 340,
+        "fields": {
+            "name": "Impulse",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 340
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 341,
+        "fields": {
+            "name": "Indiana Jones",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 2,
+            "legend_id": 341
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 342,
+        "fields": {
+            "name": "Indigo",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 342
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 343,
+        "fields": {
+            "name": "Ink",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 343
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 344,
+        "fields": {
+            "name": "Invisible Woman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 344
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 345,
+        "fields": {
+            "name": "Iron Fist",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 345
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 346,
+        "fields": {
+            "name": "Iron Man",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 346
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 347,
+        "fields": {
+            "name": "Iron Monger",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 347
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 348,
+        "fields": {
+            "name": "Isis",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 348
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 350,
+        "fields": {
+            "name": "Jack of Hearts",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 350
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 351,
+        "fields": {
+            "name": "Jack-Jack",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 351
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 352,
+        "fields": {
+            "name": "James Bond",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 352
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 353,
+        "fields": {
+            "name": "James T. Kirk",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 353
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 354,
+        "fields": {
+            "name": "Jar Jar Binks",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 354
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 355,
+        "fields": {
+            "name": "Jason Bourne",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 355
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 356,
+        "fields": {
+            "name": "Jean Grey",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 356
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 357,
+        "fields": {
+            "name": "Jean-Luc Picard",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 357
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 358,
+        "fields": {
+            "name": "Jennifer Kale",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 358
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 360,
+        "fields": {
+            "name": "Jessica Cruz",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 360
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 361,
+        "fields": {
+            "name": "Jessica Jones",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 361
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 364,
+        "fields": {
+            "name": "Jim Powell",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 364
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 365,
+        "fields": {
+            "name": "JJ Powell",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 365
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 367,
+        "fields": {
+            "name": "John Constantine",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 367
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 369,
+        "fields": {
+            "name": "John Wraith",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 369
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 370,
+        "fields": {
+            "name": "Joker",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 370
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 371,
+        "fields": {
+            "name": "Jolt",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 371
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 372,
+        "fields": {
+            "name": "Jubilee",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 372
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 373,
+        "fields": {
+            "name": "Judge Dredd",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 373
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 374,
+        "fields": {
+            "name": "Juggernaut",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 374
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 375,
+        "fields": {
+            "name": "Junkpile",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 375
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 376,
+        "fields": {
+            "name": "Justice",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 376
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 379,
+        "fields": {
+            "name": "Kang",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 379
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 380,
+        "fields": {
+            "name": "Kathryn Janeway",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 380
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 381,
+        "fields": {
+            "name": "Katniss Everdeen",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 381
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 382,
+        "fields": {
+            "name": "Kevin 11",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 382
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 383,
+        "fields": {
+            "name": "Kick-Ass",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 383
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 384,
+        "fields": {
+            "name": "Kid Flash",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 384
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 386,
+        "fields": {
+            "name": "Killer Croc",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 386
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 387,
+        "fields": {
+            "name": "Killer Frost",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 387
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 388,
+        "fields": {
+            "name": "Kilowog",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 388
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 389,
+        "fields": {
+            "name": "King Kong",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 389
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 390,
+        "fields": {
+            "name": "King Shark",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 390
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 391,
+        "fields": {
+            "name": "Kingpin",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 391
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 392,
+        "fields": {
+            "name": "Klaw",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 392
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 393,
+        "fields": {
+            "name": "Kool-Aid Man",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 393
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 394,
+        "fields": {
+            "name": "Kraven II",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 394
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 395,
+        "fields": {
+            "name": "Kraven the Hunter",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 395
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 396,
+        "fields": {
+            "name": "Krypto",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 396
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 397,
+        "fields": {
+            "name": "Kyle Rayner",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 397
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 398,
+        "fields": {
+            "name": "Kylo Ren",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 398
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 400,
+        "fields": {
+            "name": "Lady Deathstrike",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 400
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 401,
+        "fields": {
+            "name": "Leader",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 401
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 402,
+        "fields": {
+            "name": "Leech",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 402
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 403,
+        "fields": {
+            "name": "Legion",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 403
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 404,
+        "fields": {
+            "name": "Leonardo",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 404
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 405,
+        "fields": {
+            "name": "Lex Luthor",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 405
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 406,
+        "fields": {
+            "name": "Light Lass",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 406
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 407,
+        "fields": {
+            "name": "Lightning Lad",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 407
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 408,
+        "fields": {
+            "name": "Lightning Lord",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 408
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 409,
+        "fields": {
+            "name": "Living Brain",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 409
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 410,
+        "fields": {
+            "name": "Living Tribunal",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 5,
+            "legend_id": 410
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 412,
+        "fields": {
+            "name": "Lizard",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 412
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 413,
+        "fields": {
+            "name": "Lobo",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 5,
+            "legend_id": 413
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 414,
+        "fields": {
+            "name": "Loki",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 4,
+            "legend_id": 414
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 415,
+        "fields": {
+            "name": "Longshot",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 415
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 416,
+        "fields": {
+            "name": "Luke Cage",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 416
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 418,
+        "fields": {
+            "name": "Luke Skywalker",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 418
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 419,
+        "fields": {
+            "name": "Luna",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 419
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 421,
+        "fields": {
+            "name": "Mach-IV",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 421
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 422,
+        "fields": {
+            "name": "Machine Man",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 422
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 423,
+        "fields": {
+            "name": "Magneto",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 423
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 424,
+        "fields": {
+            "name": "Magog",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 424
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 425,
+        "fields": {
+            "name": "Magus",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 5,
+            "legend_id": 425
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 426,
+        "fields": {
+            "name": "Man of Miracles",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 6,
+            "legend_id": 426
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 427,
+        "fields": {
+            "name": "Man-Bat",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 2,
+            "legend_id": 427
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 428,
+        "fields": {
+            "name": "Man-Thing",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 428
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 429,
+        "fields": {
+            "name": "Man-Wolf",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 429
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 430,
+        "fields": {
+            "name": "Mandarin",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 430
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 431,
+        "fields": {
+            "name": "Mantis",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 431
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 432,
+        "fields": {
+            "name": "Martian Manhunter",
+            "can_participate_in_rotation": true,
+            "archetype": 5,
+            "rarity": 6,
+            "legend_id": 432
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 433,
+        "fields": {
+            "name": "Marvel Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 433
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 435,
+        "fields": {
+            "name": "Master Chief",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 435
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 436,
+        "fields": {
+            "name": "Match",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 436
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 437,
+        "fields": {
+            "name": "Matt Parkman",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 437
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 438,
+        "fields": {
+            "name": "Maverick",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 438
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 439,
+        "fields": {
+            "name": "Maxima",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 439
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 440,
+        "fields": {
+            "name": "Maya Herrera",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 1,
+            "legend_id": 440
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 441,
+        "fields": {
+            "name": "Medusa",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 441
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 442,
+        "fields": {
+            "name": "Meltdown",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 442
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 443,
+        "fields": {
+            "name": "Mephisto",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 443
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 444,
+        "fields": {
+            "name": "Mera",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 444
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 445,
+        "fields": {
+            "name": "Metallo",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 445
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 448,
+        "fields": {
+            "name": "Metron",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 448
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 449,
+        "fields": {
+            "name": "Micah Sanders",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 2,
+            "legend_id": 449
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 450,
+        "fields": {
+            "name": "Michelangelo",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 450
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 451,
+        "fields": {
+            "name": "Micro Lad",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 451
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 452,
+        "fields": {
+            "name": "Mimic",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 452
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 454,
+        "fields": {
+            "name": "Misfit",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 454
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 455,
+        "fields": {
+            "name": "Miss Martian",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 455
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 456,
+        "fields": {
+            "name": "Mister Fantastic",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 456
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 457,
+        "fields": {
+            "name": "Mister Freeze",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 457
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 458,
+        "fields": {
+            "name": "Mister Knife",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 458
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 459,
+        "fields": {
+            "name": "Mister Mxyzptlk",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 5,
+            "legend_id": 459
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 460,
+        "fields": {
+            "name": "Mister Sinister",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 460
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 461,
+        "fields": {
+            "name": "Mister Zsasz",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 461
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 462,
+        "fields": {
+            "name": "Mockingbird",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 462
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 463,
+        "fields": {
+            "name": "MODOK",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 463
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 467,
+        "fields": {
+            "name": "Molten Man",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 467
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 469,
+        "fields": {
+            "name": "Monica Dawson",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 469
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 470,
+        "fields": {
+            "name": "Moon Knight",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 470
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 471,
+        "fields": {
+            "name": "Moonstone",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 471
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 472,
+        "fields": {
+            "name": "Morlun",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 472
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 474,
+        "fields": {
+            "name": "Moses Magnum",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 474
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 475,
+        "fields": {
+            "name": "Mr Immortal",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 475
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 476,
+        "fields": {
+            "name": "Mr Incredible",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 476
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 477,
+        "fields": {
+            "name": "Ms Marvel II",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 477
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 478,
+        "fields": {
+            "name": "Multiple Man",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 478
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 479,
+        "fields": {
+            "name": "Mysterio",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 479
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 480,
+        "fields": {
+            "name": "Mystique",
+            "can_participate_in_rotation": true,
+            "archetype": 5,
+            "rarity": 3,
+            "legend_id": 480
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 481,
+        "fields": {
+            "name": "Namor",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 481
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 483,
+        "fields": {
+            "name": "Namora",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 483
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 484,
+        "fields": {
+            "name": "Namorita",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 484
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 485,
+        "fields": {
+            "name": "Naruto Uzumaki",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 485
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 487,
+        "fields": {
+            "name": "Nebula",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 487
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 488,
+        "fields": {
+            "name": "Negasonic Teenage Warhead",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 1,
+            "legend_id": 488
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 489,
+        "fields": {
+            "name": "Nick Fury",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 489
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 490,
+        "fields": {
+            "name": "Nightcrawler",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 490
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 491,
+        "fields": {
+            "name": "Nightwing",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 491
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 492,
+        "fields": {
+            "name": "Niki Sanders",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 492
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 493,
+        "fields": {
+            "name": "Nina Theroux",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 493
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 495,
+        "fields": {
+            "name": "Northstar",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 495
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 496,
+        "fields": {
+            "name": "Nova",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 496
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 497,
+        "fields": {
+            "name": "Nova",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 497
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 498,
+        "fields": {
+            "name": "Odin",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 498
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 499,
+        "fields": {
+            "name": "Offspring",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 499
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 502,
+        "fields": {
+            "name": "One Punch Man",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 4,
+            "legend_id": 502
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 503,
+        "fields": {
+            "name": "One-Above-All",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 6,
+            "legend_id": 503
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 504,
+        "fields": {
+            "name": "Onslaught",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 504
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 505,
+        "fields": {
+            "name": "Oracle",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 2,
+            "legend_id": 505
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 506,
+        "fields": {
+            "name": "Osiris",
+            "can_participate_in_rotation": false,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 506
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 508,
+        "fields": {
+            "name": "Ozymandias",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 508
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 509,
+        "fields": {
+            "name": "Parademon",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 509
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 510,
+        "fields": {
+            "name": "Paul Blart",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 510
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 514,
+        "fields": {
+            "name": "Penguin",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 514
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 516,
+        "fields": {
+            "name": "Phantom Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 516
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 517,
+        "fields": {
+            "name": "Phoenix",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 6,
+            "legend_id": 517
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 518,
+        "fields": {
+            "name": "Plantman",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 518
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 520,
+        "fields": {
+            "name": "Plastic Man",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 520
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 521,
+        "fields": {
+            "name": "Plastique",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 521
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 522,
+        "fields": {
+            "name": "Poison Ivy",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 522
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 523,
+        "fields": {
+            "name": "Polaris",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 523
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 524,
+        "fields": {
+            "name": "Power Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 6,
+            "legend_id": 524
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 526,
+        "fields": {
+            "name": "Predator",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 526
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 527,
+        "fields": {
+            "name": "Professor X",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 527
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 528,
+        "fields": {
+            "name": "Professor Zoom",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 528
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 529,
+        "fields": {
+            "name": "Psylocke",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 529
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 530,
+        "fields": {
+            "name": "Punisher",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 530
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 531,
+        "fields": {
+            "name": "Purple Man",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 2,
+            "legend_id": 531
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 532,
+        "fields": {
+            "name": "Pyro",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 532
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 533,
+        "fields": {
+            "name": "Q",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 533
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 535,
+        "fields": {
+            "name": "Question",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 535
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 536,
+        "fields": {
+            "name": "Quicksilver",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 536
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 537,
+        "fields": {
+            "name": "Quill",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 1,
+            "legend_id": 537
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 538,
+        "fields": {
+            "name": "Ra's Al Ghul",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 538
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 539,
+        "fields": {
+            "name": "Rachel Pirzad",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 1,
+            "legend_id": 539
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 540,
+        "fields": {
+            "name": "Rambo",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 540
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 541,
+        "fields": {
+            "name": "Raphael",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 541
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 542,
+        "fields": {
+            "name": "Raven",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 542
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 543,
+        "fields": {
+            "name": "Ray",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 543
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 545,
+        "fields": {
+            "name": "Red Arrow",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 545
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 546,
+        "fields": {
+            "name": "Red Hood",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 3,
+            "legend_id": 546
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 547,
+        "fields": {
+            "name": "Red Hulk",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 547
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 548,
+        "fields": {
+            "name": "Red Mist",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 548
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 549,
+        "fields": {
+            "name": "Red Robin",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 549
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 550,
+        "fields": {
+            "name": "Red Skull",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 2,
+            "legend_id": 550
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 551,
+        "fields": {
+            "name": "Red Tornado",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 551
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 555,
+        "fields": {
+            "name": "Rey",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 555
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 556,
+        "fields": {
+            "name": "Rhino",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 556
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 557,
+        "fields": {
+            "name": "Rick Flag",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 557
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 558,
+        "fields": {
+            "name": "Riddler",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 558
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 559,
+        "fields": {
+            "name": "Rip Hunter",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 559
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 561,
+        "fields": {
+            "name": "Robin",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 561
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 562,
+        "fields": {
+            "name": "Robin II",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 562
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 563,
+        "fields": {
+            "name": "Robin III",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 563
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 564,
+        "fields": {
+            "name": "Robin V",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 564
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 565,
+        "fields": {
+            "name": "Robin VI",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 2,
+            "legend_id": 565
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 566,
+        "fields": {
+            "name": "Rocket Raccoon",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 566
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 567,
+        "fields": {
+            "name": "Rogue",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 567
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 568,
+        "fields": {
+            "name": "Ronin",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 568
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 569,
+        "fields": {
+            "name": "Rorschach",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 569
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 570,
+        "fields": {
+            "name": "Sabretooth",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 570
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 571,
+        "fields": {
+            "name": "Sage",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 571
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 572,
+        "fields": {
+            "name": "Sandman",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 572
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 573,
+        "fields": {
+            "name": "Sasquatch",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 573
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 574,
+        "fields": {
+            "name": "Sauron",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 574
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 575,
+        "fields": {
+            "name": "Savage Dragon",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 4,
+            "legend_id": 575
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 576,
+        "fields": {
+            "name": "Scarecrow",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 576
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 577,
+        "fields": {
+            "name": "Scarlet Spider",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 577
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 578,
+        "fields": {
+            "name": "Scarlet Spider II",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 578
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 579,
+        "fields": {
+            "name": "Scarlet Witch",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 579
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 580,
+        "fields": {
+            "name": "Scorpia",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 580
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 581,
+        "fields": {
+            "name": "Scorpion",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 581
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 582,
+        "fields": {
+            "name": "Sebastian Shaw",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 582
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 583,
+        "fields": {
+            "name": "Sentry",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 5,
+            "legend_id": 583
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 584,
+        "fields": {
+            "name": "Shadow King",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 584
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 585,
+        "fields": {
+            "name": "Shadow Lass",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 585
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 586,
+        "fields": {
+            "name": "Shadowcat",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 3,
+            "legend_id": 586
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 587,
+        "fields": {
+            "name": "Shang-Chi",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 587
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 588,
+        "fields": {
+            "name": "Shatterstar",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 588
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 589,
+        "fields": {
+            "name": "She-Hulk",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 589
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 590,
+        "fields": {
+            "name": "She-Thing",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 590
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 591,
+        "fields": {
+            "name": "Shocker",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 591
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 592,
+        "fields": {
+            "name": "Shriek",
+            "can_participate_in_rotation": true,
+            "archetype": 5,
+            "rarity": 2,
+            "legend_id": 592
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 594,
+        "fields": {
+            "name": "Sif",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 594
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 595,
+        "fields": {
+            "name": "Silk",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 595
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 598,
+        "fields": {
+            "name": "Silver Surfer",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 5,
+            "legend_id": 598
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 599,
+        "fields": {
+            "name": "Silverclaw",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 599
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 600,
+        "fields": {
+            "name": "Simon Baz",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 600
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 601,
+        "fields": {
+            "name": "Sinestro",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 4,
+            "legend_id": 601
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 602,
+        "fields": {
+            "name": "Siren",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 602
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 604,
+        "fields": {
+            "name": "Siryn",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 2,
+            "legend_id": 604
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 605,
+        "fields": {
+            "name": "Skaar",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 605
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 607,
+        "fields": {
+            "name": "Snowbird",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 607
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 608,
+        "fields": {
+            "name": "Sobek",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 608
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 609,
+        "fields": {
+            "name": "Solomon Grundy",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 609
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 610,
+        "fields": {
+            "name": "Songbird",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 610
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 611,
+        "fields": {
+            "name": "Space Ghost",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 611
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 612,
+        "fields": {
+            "name": "Spawn",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 612
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 613,
+        "fields": {
+            "name": "Spectre",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 613
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 615,
+        "fields": {
+            "name": "Speedy",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 615
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 618,
+        "fields": {
+            "name": "Spider-Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 618
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 619,
+        "fields": {
+            "name": "Spider-Gwen",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 619
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 620,
+        "fields": {
+            "name": "Spider-Man",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 620
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 623,
+        "fields": {
+            "name": "Spider-Woman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 623
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 625,
+        "fields": {
+            "name": "Spider-Woman III",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 625
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 627,
+        "fields": {
+            "name": "Spock",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 2,
+            "legend_id": 627
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 628,
+        "fields": {
+            "name": "Spyke",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 628
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 630,
+        "fields": {
+            "name": "Star-Lord",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 630
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 631,
+        "fields": {
+            "name": "Stardust",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 6,
+            "legend_id": 631
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 632,
+        "fields": {
+            "name": "Starfire",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 4,
+            "legend_id": 632
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 633,
+        "fields": {
+            "name": "Stargirl",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 633
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 634,
+        "fields": {
+            "name": "Static",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 634
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 635,
+        "fields": {
+            "name": "Steel",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 4,
+            "legend_id": 635
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 636,
+        "fields": {
+            "name": "Stephanie Powell",
+            "can_participate_in_rotation": true,
+            "archetype": 7,
+            "rarity": 2,
+            "legend_id": 636
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 637,
+        "fields": {
+            "name": "Steppenwolf",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 6,
+            "legend_id": 637
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 638,
+        "fields": {
+            "name": "Storm",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 638
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 639,
+        "fields": {
+            "name": "Stormtrooper",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 1,
+            "legend_id": 639
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 640,
+        "fields": {
+            "name": "Sunspot",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 640
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 641,
+        "fields": {
+            "name": "Superboy",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 641
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 642,
+        "fields": {
+            "name": "Superboy-Prime",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 6,
+            "legend_id": 642
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 643,
+        "fields": {
+            "name": "Supergirl",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 6,
+            "legend_id": 643
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 644,
+        "fields": {
+            "name": "Superman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 6,
+            "legend_id": 644
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 645,
+        "fields": {
+            "name": "Swamp Thing",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 645
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 646,
+        "fields": {
+            "name": "Swarm",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 646
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 647,
+        "fields": {
+            "name": "Sylar",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 647
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 648,
+        "fields": {
+            "name": "Synch",
+            "can_participate_in_rotation": true,
+            "archetype": 11,
+            "rarity": 3,
+            "legend_id": 648
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 649,
+        "fields": {
+            "name": "T-1000",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 649
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 650,
+        "fields": {
+            "name": "T-800",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 3,
+            "legend_id": 650
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 651,
+        "fields": {
+            "name": "T-850",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 651
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 652,
+        "fields": {
+            "name": "T-X",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 652
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 653,
+        "fields": {
+            "name": "Taskmaster",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 653
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 654,
+        "fields": {
+            "name": "Tempest",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 654
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 655,
+        "fields": {
+            "name": "Thanos",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 655
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 656,
+        "fields": {
+            "name": "The Cape",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 656
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 657,
+        "fields": {
+            "name": "The Comedian",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 2,
+            "legend_id": 657
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 658,
+        "fields": {
+            "name": "Thing",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 658
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 659,
+        "fields": {
+            "name": "Thor",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 659
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 660,
+        "fields": {
+            "name": "Thor Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 660
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 661,
+        "fields": {
+            "name": "Thunderbird",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 661
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 664,
+        "fields": {
+            "name": "Thunderstrike",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 664
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 665,
+        "fields": {
+            "name": "Thundra",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 665
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 666,
+        "fields": {
+            "name": "Tiger Shark",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 666
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 667,
+        "fields": {
+            "name": "Tigra",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 667
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 668,
+        "fields": {
+            "name": "Tinkerer",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 668
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 670,
+        "fields": {
+            "name": "Toad",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 3,
+            "legend_id": 670
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 671,
+        "fields": {
+            "name": "Toxin",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 671
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 672,
+        "fields": {
+            "name": "Toxin",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 672
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 676,
+        "fields": {
+            "name": "Triplicate Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 2,
+            "legend_id": 676
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 677,
+        "fields": {
+            "name": "Triton",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 677
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 678,
+        "fields": {
+            "name": "Two-Face",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 678
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 679,
+        "fields": {
+            "name": "Ultragirl",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 679
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 680,
+        "fields": {
+            "name": "Ultron",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 5,
+            "legend_id": 680
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 681,
+        "fields": {
+            "name": "Utgard-Loki",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 681
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 685,
+        "fields": {
+            "name": "Vanisher",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 685
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 686,
+        "fields": {
+            "name": "Vegeta",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 6,
+            "legend_id": 686
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 687,
+        "fields": {
+            "name": "Venom",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 4,
+            "legend_id": 687
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 688,
+        "fields": {
+            "name": "Venom II",
+            "can_participate_in_rotation": true,
+            "archetype": 4,
+            "rarity": 3,
+            "legend_id": 688
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 689,
+        "fields": {
+            "name": "Venom III",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 4,
+            "legend_id": 689
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 690,
+        "fields": {
+            "name": "Venompool",
+            "can_participate_in_rotation": true,
+            "archetype": 6,
+            "rarity": 5,
+            "legend_id": 690
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 692,
+        "fields": {
+            "name": "Vibe",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 692
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 693,
+        "fields": {
+            "name": "Vindicator",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 4,
+            "legend_id": 693
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 696,
+        "fields": {
+            "name": "Violet Parr",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 2,
+            "legend_id": 696
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 697,
+        "fields": {
+            "name": "Vision",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 697
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 699,
+        "fields": {
+            "name": "Vixen",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 3,
+            "legend_id": 699
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 701,
+        "fields": {
+            "name": "Vulture",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 701
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 702,
+        "fields": {
+            "name": "Walrus",
+            "can_participate_in_rotation": true,
+            "archetype": 3,
+            "rarity": 2,
+            "legend_id": 702
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 703,
+        "fields": {
+            "name": "War Machine",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 703
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 705,
+        "fields": {
+            "name": "Warlock",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 705
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 706,
+        "fields": {
+            "name": "Warp",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 2,
+            "legend_id": 706
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 707,
+        "fields": {
+            "name": "Warpath",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 707
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 708,
+        "fields": {
+            "name": "Wasp",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 708
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 709,
+        "fields": {
+            "name": "Watcher",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 709
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 711,
+        "fields": {
+            "name": "White Canary",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 2,
+            "legend_id": 711
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 713,
+        "fields": {
+            "name": "Wildfire",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 713
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 714,
+        "fields": {
+            "name": "Winter Soldier",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 3,
+            "legend_id": 714
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 716,
+        "fields": {
+            "name": "Wolfsbane",
+            "can_participate_in_rotation": true,
+            "archetype": 2,
+            "rarity": 2,
+            "legend_id": 716
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 717,
+        "fields": {
+            "name": "Wolverine",
+            "can_participate_in_rotation": true,
+            "archetype": 12,
+            "rarity": 4,
+            "legend_id": 717
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 718,
+        "fields": {
+            "name": "Wonder Girl",
+            "can_participate_in_rotation": true,
+            "archetype": 8,
+            "rarity": 4,
+            "legend_id": 718
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 719,
+        "fields": {
+            "name": "Wonder Man",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 719
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 720,
+        "fields": {
+            "name": "Wonder Woman",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 6,
+            "legend_id": 720
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 722,
+        "fields": {
+            "name": "Wyatt Wingfoot",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 1,
+            "legend_id": 722
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 723,
+        "fields": {
+            "name": "X-23",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 723
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 724,
+        "fields": {
+            "name": "X-Man",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 5,
+            "legend_id": 724
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 726,
+        "fields": {
+            "name": "Yellowjacket",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 726
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 727,
+        "fields": {
+            "name": "Yellowjacket II",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 2,
+            "legend_id": 727
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 728,
+        "fields": {
+            "name": "Ymir",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 728
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 729,
+        "fields": {
+            "name": "Yoda",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 4,
+            "legend_id": 729
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 730,
+        "fields": {
+            "name": "Zatanna",
+            "can_participate_in_rotation": true,
+            "archetype": 1,
+            "rarity": 3,
+            "legend_id": 730
+        }
+    },
+    {
+        "model": "core.charactercard",
+        "pk": 731,
+        "fields": {
+            "name": "Zoom",
+            "can_participate_in_rotation": true,
+            "archetype": 13,
+            "rarity": 3,
+            "legend_id": 731
+        }
+    }
+]

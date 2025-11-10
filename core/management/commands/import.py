@@ -71,7 +71,7 @@ class Command(BaseCommand):
                 if archetype_name:
                     archetype_number = archetype_map[archetype_name]
                 else:
-                    archetype_number = 14 
+                    archetype_number = 14
                 CharacterCard.objects.get_or_create(
                     id=item['id'],
                     name=item['name'],

@@ -1,0 +1,114 @@
+[
+{
+  "model": "core.archetype",
+  "pk": 1,
+  "fields": {
+    "literary_archetype": "Hero",
+    "archetype_traits": "Brave, determined, flawed yet resilient, driven by duty or destiny."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 2,
+  "fields": {
+    "literary_archetype": "Mentor",
+    "archetype_traits": "Wise, nurturing, patient, often symbolic of the higher self or conscience."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 3,
+  "fields": {
+    "literary_archetype": "Shadow",
+    "archetype_traits": "Powerful, driven, intelligent, mirrors the hero's inner conflict."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 4,
+  "fields": {
+    "literary_archetype": "Trickster",
+    "archetype_traits": "Clever, playful, unpredictable, often the voice of truth through mischief."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 5,
+  "fields": {
+    "literary_archetype": "Shapeshifter",
+    "archetype_traits": "Mysterious, alluring, inconsistent, often dual-natured and hard to trust."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 6,
+  "fields": {
+    "literary_archetype": "Threshold Guardian",
+    "archetype_traits": "Stern, protective, testing, loyal to the status quo."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 7,
+  "fields": {
+    "literary_archetype": "Herald",
+    "archetype_traits": "Bold, catalytic, purposeful, often non-combative."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 8,
+  "fields": {
+    "literary_archetype": "Ally",
+    "archetype_traits": "Supportive, brave, dependable, often grounding the hero emotionally."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 9,
+  "fields": {
+    "literary_archetype": "Temptress",
+    "archetype_traits": "Passionate, alluring, manipulative, devoted to their own desires or mission."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 10,
+  "fields": {
+    "literary_archetype": "Creator",
+    "archetype_traits": "Irreverent, paradoxical, highly creative, focused on the application of science."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 11,
+  "fields": {
+    "literary_archetype": "Innocent",
+    "archetype_traits": "Pure, trusting, often naive; possesses very few stats but high potential for empathy."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 12,
+  "fields": {
+    "literary_archetype": "Innocent/Warrior",
+    "archetype_traits": "Extremely capable in combat, loyal, high-spirited, often lacks the narrative depth of the Hero."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 13,
+  "fields": {
+    "literary_archetype": "Destroyer",
+    "archetype_traits": "Brutal, relentless, powerful, often simplistic in motive but cataclysmic in effect."
+  }
+},
+{
+  "model": "core.archetype",
+  "pk": 14,
+  "fields": {
+    "literary_archetype": "Placeholder",
+    "archetype_traits": "Placeholder"
+  }
+}
+]

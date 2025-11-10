@@ -1,0 +1,56 @@
+[
+{
+  "model": "core.rarity",
+  "pk": 1,
+  "fields": {
+    "name": "Common",
+    "level": 0,
+    "price": "0.00"
+  }
+},
+{
+  "model": "core.rarity",
+  "pk": 2,
+  "fields": {
+    "name": "Uncommon",
+    "level": 1,
+    "price": "0.00"
+  }
+},
+{
+  "model": "core.rarity",
+  "pk": 3,
+  "fields": {
+    "name": "Rare",
+    "level": 2,
+    "price": "0.00"
+  }
+},
+{
+  "model": "core.rarity",
+  "pk": 4,
+  "fields": {
+    "name": "Epic",
+    "level": 3,
+    "price": "0.00"
+  }
+},
+{
+  "model": "core.rarity",
+  "pk": 5,
+  "fields": {
+    "name": "Legendary",
+    "level": 4,
+    "price": "0.00"
+  }
+},
+{
+  "model": "core.rarity",
+  "pk": 6,
+  "fields": {
+    "name": "Mythic",
+    "level": 5,
+    "price": "0.00"
+  }
+}
+]
