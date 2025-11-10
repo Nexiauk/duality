@@ -42,6 +42,7 @@ def rotation_true(modeladmin, request, queryset):
 @admin.register(CharacterCard)
 class CharacterCardAmin(admin.ModelAdmin):
     list_display = (
+        "legend_id",
         "name",
         "archetype",
         "rarity",

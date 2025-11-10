@@ -18,7 +18,7 @@ class CharacterCard(models.Model):
     loaded from an external JSON datastore.
     """
     id = models.AutoField(primary_key=True)
-    legend_id = models.IntegerField(default=0)
+    legend_id = models.IntegerField(default=0, unique=True)
     name = models.CharField(_("Character Name"), max_length=50)
     can_participate_in_rotation = models.BooleanField(
         _("Can participate in shop rotations"), default=True
