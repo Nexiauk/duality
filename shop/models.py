@@ -64,8 +64,8 @@ class ShopScheduler(models.Model):
             return active_schedules
         else:
             new_schedule = ShopScheduler.objects.create(
-                start_time=ShopScheduler.start_time_default(),
-                end_time=ShopScheduler.end_time_default(),
+                start_time=start_time_default(),
+                end_time=end_time_default(),
                 rotation_type="Daily"
             )
             return [new_schedule]

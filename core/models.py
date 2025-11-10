@@ -35,7 +35,7 @@ class CharacterCard(models.Model):
 
     def get_legends_data(self):
         """Returns this character’s extended data from the JSON datastore."""
-        char_id = self.id
+        char_id = self.legend_id
         legend = next(
             (item for item in datastore.legends if item["id"] == char_id),
             None
