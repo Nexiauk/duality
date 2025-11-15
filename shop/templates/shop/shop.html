@@ -12,6 +12,10 @@ the active shop schedules. Each character is presented as a card with:
 
 {% extends "base.html" %}
 {% load static %}
+<!-- Dynamically sets the page title -->
+{% block title %}
+Duality: Shop
+{% endblock %}
 <!-- GSAP and plugins for animating hero poem text with ScrollTrigger and SplitText -->
 {% block extra_js %}
 <script src="{% static 'js/shop-script.js' %}"></script>
@@ -19,9 +23,9 @@ the active shop schedules. Each character is presented as a card with:
 {% block content %}
 <section id="shop-section" class="container mb-5 pb-4">
     <!-- Centered Title and description of the shop -->
-    <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-3">
-        <div class="col-md-8 col-xl-6 text-center mx-auto mt-md-5 mt-xl-4 mt-xxl-5">
-            <h2>Shop Heading</h1>
+    <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
+        <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-5 mt-xl-4 mt-xxl-5">
+            <h2>Shop Heading</h2>
                 <p>Shop description detail</p>
         </div>
     </div>
