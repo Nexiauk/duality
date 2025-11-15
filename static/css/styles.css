@@ -107,7 +107,7 @@ h6,
 
 /* Hero background image applied to main container only on the home page */
 .hero-bg {
-    background-image: url(../images/hero-image.avif);
+    background-image: url(../images/background.avif);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;

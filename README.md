@@ -572,6 +572,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Media for 731 superheroes and villains - [SuperHeroAPI](https://www.superheroapi.com/)
 * Socials icons for the Header/Footer - [Bootstrap Icons](https://icons.getbootstrap.com/)
 * Hero image from [freepik.com](https://www.freepik.com/free-ai-image/illustrated-rendering-twin-avatar_94938018.htm#fromView=image_search&page=1&position=30&uuid=3f919ced-a2ab-4eae-9f4f-620c72eddb72&query=heroes+and+villains)
+* Logo sourced from Adobe Stock images [stock.adobe.com](https://stock.adobe.com/uk)
 
 ### *Tools*
 * Glassmorphism CSS generator - [css.glass](https://css.glass/)

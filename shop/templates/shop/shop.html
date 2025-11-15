@@ -12,7 +12,10 @@ the active shop schedules. Each character is presented as a card with:
 
 {% extends "base.html" %}
 {% load static %}
-
+<!-- GSAP and plugins for animating hero poem text with ScrollTrigger and SplitText -->
+{% block extra_js %}
+<script src="{% static 'js/shop-script.js' %}"></script>
+{% endblock %}
 {% block content %}
 <section id="shop-section" class="container mb-5 pb-4">
     <!-- Centered Title and description of the shop -->
