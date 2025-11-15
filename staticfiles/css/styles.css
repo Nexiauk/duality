@@ -1,0 +1,351 @@
+/* Google font import */
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap');
+
+/* Variables for website colour scheme and fonts */
+:root {
+    /* Colour variables */
+    --fuschia-blue: #845ABF;
+    --eclectic: #AAB1BF;
+    --eclectic-transparent: rgba(170, 177, 191, 0.4);
+    --skylla: #2182BF;
+    --nasturtium-shoot: #88A649;
+    --ecstatic-red: #A6121F;
+    --vivid-yellow: #D9A404;
+    /* Font variables */
+    --main-header: "Racing Sans One";
+    --sub-heading: "Prompt";
+    --main-text: "Inder"
+}
+
+/* Linear gradient colour for the body using root variables */
+body {
+    background-image: linear-gradient(90deg,
+            var(--ecstatic-red) 0%,
+            var(--skylla) 20%,
+            var(--fuschia-blue) 80%,
+            var(--nasturtium-shoot) 100%);
+    font-family: var(--main-text);
+}
+
+main {
+    padding-top: 2rem;
+}
+
+/* H1 styling for the two titles that wap out on different screen sizes.
+Linear gradient styling in theme colours */
+h1 {
+    font-family: var(--main-header);
+    font-style: italic;
+    margin-bottom: 0;
+    padding: 0 12px 0 0;
+    background: linear-gradient(90deg, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Heading and title styling from h2-h6 plus card titles */
+h2,
+h3,
+h5,
+h6,
+.card-title {
+    font-family: var(--sub-heading);
+    font-style: italic;
+}
+
+/* Allocates available horizontal space in the nav bar equally between nav items */
+.nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Block and height/width applied so the entire nav-link item becomes clickable */
+.nav-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-style: italic;
+}
+
+/* Hover styling for nav items and nav links */
+.nav-item:hover {
+    background-color: var(--vivid-yellow);
+    cursor: pointer;
+    transition: 0.5s ease-in;
+}
+
+.nav-link:hover {
+    transition: 0.5s ease-in;
+    font-weight: bold;
+    color: #000000;
+}
+
+.navbar .nav-item.active {
+    background-color: var(--vivid-yellow);
+    cursor: pointer;
+}
+
+.navbar .nav-item.active .nav-link {
+    color: #000000;
+    font-weight: bold;
+}
+
+/* Custom class to set the base colour of the yang side of the svg path */
+.yang-colour {
+    color: white;
+    transition: color 0.3s;
+}
+
+/* Applies hover styling to the yin yang SVG icon */
+.yang-colour:hover {
+    background-color: white;
+    color: rgb(33, 37, 41);
+    border-radius: 50%;
+}
+
+/* Hero background image applied to main container only on the home page */
+.hero-bg {
+    background-image: url(../images/hero-image.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+/* Styling for all cards across the app - creates a glassmorphic effect */
+.card {
+    background: var(--eclectic-transparent);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Match the top corner border radius of card image, to the same px as the card itself. */
+.card-img-top {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* Initially hides the shop cards while the loaders are spinning */
+.shop-card {
+    display: none;
+    transition: transform .2s;
+    border: 2px solid transparent;
+}
+
+.shop-card:hover {
+    -ms-transform: scale(1.1);
+    /* IE 9 */
+    -webkit-transform: scale(1.1);
+    /* Safari 3-8 */
+    transform: scale(1.1);
+    z-index: 99;
+    border: 2px solid #dadada;
+    border-radius: 16px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+/* Spinning loader while the dom loads content and the file content pulls through to the cards */
+.loader {
+    border-top: 16px solid var(--ecstatic-red);
+    border-right: 16px solid var(--skylla);
+    border-bottom: 16px solid var(--fuschia-blue);
+    border-left: 16px solid var(--nasturtium-shoot);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+/* Spinning animations for screen loader on shop page */
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Hover colour for the round socials icons */
+.socials-hover:hover {
+    background-color: var(--ecstatic-red);
+    border-radius: 50%;
+}
+
+/* Hover colour for the square socials icon */
+.socials-hover-square:hover {
+    background-color: var(--ecstatic-red);
+    border-radius: 5%;
+}
+
+/* Media queries start here */
+/* Media query for screens 320px and up */
+@media screen and (min-width:320px) {
+
+    .nav-link {
+        color: white;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #shop-section {
+        padding-bottom: 100px;
+    }
+
+    main {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 50px;
+    }
+}
+
+/* Media query for screens 768px and up */
+@media screen and (min-width:768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .navbar-nav {
+        width: 40%;
+    }
+
+    #shop-section {
+        padding-bottom: 0;
+    }
+
+    .shop-card {
+        min-width: 320px;
+        min-height: 320px;
+    }
+}
+
+/* media query for screens 1024px and up*/
+@media screen and (min-width:1024px) {
+    .nav-link {
+        color: black;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar-nav {
+        width: 97%;
+    }
+
+    /* Skew transform applied to create forward-leaning nav items */
+    .nav-item {
+        background-color: var(--skylla);
+        transform: skew(-30deg);
+    }
+
+    /* Opposite skew applied to the nav link so the text looks straight */
+    .nav-link {
+        transform: skew(30deg);
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    .shop-card {
+        min-width: 360px;
+        min-height: 320px;
+    }
+}
+
+/* media query for screens 1200px and up*/
+@media screen and (min-width:1200px) {}
+
+/* media query for screens 1440px and up*/
+@media screen and (min-width:1440px) {
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    .navbar-nav {
+        width: 85%;
+        padding-right: 10px;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+}
+
+/* media query for screens 1700px and up*/
+@media screen and (min-width:1700px) {
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+    }
+}
+
+/* media query for screens 1900px and up*/
+@media screen and (min-width:1900px) {}
+
+/* Media query for screens 2560px and up */
+@media screen and (min-width:2560px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2,
+    h3,
+    h3,
+    h5,
+    h6,
+    .card-title {
+        font-size: 2.5rem;
+    }
+
+    footer {
+        font-size: 1.8rem;
+    }
+
+    .navbar-nav {
+        padding-right: 20px;
+    }
+
+    .nav-link {
+        font-size: 1.8rem;
+    }
+
+    .bi-yin-yang {
+        font-size: 2rem;
+    }
+
+    #hero-section {
+        width: 2200px;
+    }
+
+    .card {
+        font-size: 1.8rem;
+    }
+
+    .shop-card {
+        min-width: 400px;
+        min-height: 320px;
+    }
+}
