@@ -90,13 +90,15 @@
         <main class="flex-fill d-flex {% if request.path == home_url %}align-items-end pb-4 justify-content-center hero-bg{% endif %}">
             <!-- Display Django messages (ERROR/SUCCESS) with ARIA for accessibility -->
             {% if messages %}
-                {% for message in messages %}
-                    <div class="alert {% if 'success' in message.tags %}alert-success{% endif %} {% if 'error' in message.tags %}alert-error{% endif %}"
-                         data-message="{{ message }}"
-                         role="alert"
-                         aria-live="assertive"
-                         aria-atomic="true">{{ message }}</div>
-                {% endfor %}
+                <div class="w-95 w-md-30" id="messages">
+                    {% for message in messages %}
+                        <div class="alert {% if 'success' in message.tags %}alert-success{% endif %} {% if 'error' in message.tags %}alert-error{% endif %}"
+                             data-message="{{ message }}"
+                             role="alert"
+                             aria-live="assertive"
+                             aria-atomic="true">{{ message }}</div>
+                    {% endfor %}
+                </div>
             {% endif %}
             <!-- Page-specific content to be inserted here -->
             {% block content %}

@@ -27,8 +27,16 @@ body {
     font-family: var(--main-text);
 }
 
+/* Styling for the main container, applied to all pages */
 main {
     padding-top: 2rem;
+    position: relative;
+}
+
+/* Anchoring the messages div near the top of the main container */
+#messages {
+    top: 45px;
+    position: absolute;
 }
 
 /* H1 styling for the two titles that wap out on different screen sizes.
@@ -308,6 +316,10 @@ h6,
         font-size: 2.5rem;
     }
 
+    #messages {
+        top: 80px;
+    }
+
     footer {
         font-size: 1.8rem;
     }
@@ -320,16 +332,16 @@ h6,
         font-size: 1.8rem;
     }
 
-    .bi-yin-yang {
-        font-size: 2rem;
-    }
-
     #hero-section {
         width: 2200px;
     }
 
     .card {
         font-size: 1.8rem;
+    }
+
+    #shop-heading {
+        margin-top: 4rem !important;
     }
 
     .shop-card {
