@@ -47,6 +47,12 @@ class CharacterCard(models.Model):
         legend_data = self.get_legends_data()
         total_power = sum(legend_data["powerstats"].values())
         return total_power
+    
+    def charc_alignment(self):
+        """Defines the character's good/bad alignment"""
+        legend_data = self.get_legends_data()
+        alignment = legend_data["biography"]["alignment"]
+        return alignment
 
     class Meta:
         ordering = ["name"]
