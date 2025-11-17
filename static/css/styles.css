@@ -132,10 +132,6 @@ h6,
 }
 
 .shop-card:hover {
-    -ms-transform: scale(1.1);
-    /* IE 9 */
-    -webkit-transform: scale(1.1);
-    /* Safari 3-8 */
     transform: scale(1.1);
     z-index: 99;
     border: 2px solid #dadada;
@@ -143,6 +139,15 @@ h6,
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
+}
+
+.buy-button {
+    background-color: var(--skylla);
+    color: black;
+}
+
+.buy-button:hover {
+    background-color: var(--vivid-yellow);
 }
 
 /* Spinning loader while the dom loads content and the file content pulls through to the cards */

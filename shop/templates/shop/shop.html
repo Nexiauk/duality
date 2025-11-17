@@ -18,7 +18,7 @@ the active shop schedules. Each character is presented as a card with:
     <script src="{% static 'js/shop-script.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-    <section id="shop-section" class="container mb-5 pb-4">
+    <section id="shop-section" class="container mb-5 pb-4 gx-0">
         <!-- Centered Title and description of the shop -->
         <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
             <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4"
@@ -32,10 +32,10 @@ the active shop schedules. Each character is presented as a card with:
             <div class="loader"></div>
         </div>
         <!-- Shop items grid with responsive layout at different screen sizes. -->
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
             <!-- Loop through all characters passed by the view -->
             {% for char in characters %}
-                <div class="col ps-sm-6 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-sm-5 pe-md-3 d-flex justify-content-center">
+                <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                     <!-- Individual shop cards for each character -->
                     <div class="card shop-card">
                         <!-- Character image dynamically loaded from the legends.json file -->
@@ -52,6 +52,9 @@ the active shop schedules. Each character is presented as a card with:
                                 <!-- Badge showing the character's power total -->
                                 <span class="badge bg-primary me-sm-3">{{ char.model.rarity }} {{ char.power }}</span>
                             </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-center">
+                            <button type="button" class="btn buy-button">Buy now</button>
                         </div>
                     </div>
                 </div>
