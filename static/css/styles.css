@@ -216,6 +216,15 @@ h6,
         padding-right: 20px;
         margin-top: 50px;
     }
+
+     .shop-card {
+        min-width: 270px;
+        min-height: 300px;
+    }
+
+    .shop-card  img {
+    height: 300px;
+}
 }
 
 /* Media query for screens 768px and up */
@@ -236,6 +245,10 @@ h6,
         min-width: 320px;
         min-height: 320px;
     }
+
+    .shop-card img {
+    height: 400px;
+}
 }
 
 /* media query for screens 1024px and up*/
