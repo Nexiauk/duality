@@ -24,7 +24,8 @@ def shop_view(request):
                 "model": char,
                 "json": char.get_legends_data(),
                 "power": char.power_status(),
-                "alignment": char.charc_alignment()
+                "alignment": char.charc_alignment(),
+                "universe": char.charc_universe()
             }
             scheduled_characters.append(character_data)
     scheduled_characters.sort(

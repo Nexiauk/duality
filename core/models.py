@@ -49,10 +49,16 @@ class CharacterCard(models.Model):
         return total_power
     
     def charc_alignment(self):
-        """Defines the character's good/bad alignment"""
+        """Returns the character's good/bad alignment from the json data"""
         legend_data = self.get_legends_data()
         alignment = legend_data["biography"]["alignment"]
         return alignment
+    
+    def charc_universe(self):
+        """Returns the character's home universe from the json data"""
+        legend_data = self.get_legends_data()
+        universe = legend_data["biography"]["publisher"]
+        return universe
 
     class Meta:
         ordering = ["name"]
