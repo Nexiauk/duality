@@ -87,7 +87,7 @@ class ShopScheduler(models.Model):
 
     def create_items_for_schedule(self):
         """Randomly assigns 12 characters to this schedule."""
-        characters = CharacterCard.objects.all()
+        characters = CharacterCard.objects.filter(can_participate_in_rotation=True)
         char_list = list(characters)
         sampled_characters = random.sample(char_list, 12)
         for char in sampled_characters:
