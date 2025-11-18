@@ -42,6 +42,13 @@ class ShopScheduler(models.Model):
         max_length=150,
         default="Daily"
         )
+    characters = models.ManyToManyField(
+        "core.CharacterCard",
+        through = "shop.ShopScheduleItems",
+        through_fields = ("shop_scheduler", "character"),
+        related_name = "shop_schedules",
+        blank=True,
+    )
 
     @classmethod
     def currently_active_schedules(cls):

@@ -142,12 +142,32 @@ h6,
 }
 
 .buy-button {
-    background-color: var(--skylla);
+    background-color: var(--vivid-yellow);
     color: black;
-}
+    }
 
 .buy-button:hover {
-    background-color: var(--vivid-yellow);
+    background-color: var(--skylla);
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+/* Pulsing animation used on hovering over the buy now button */
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 /* Spinning loader while the dom loads content and the file content pulls through to the cards */

@@ -576,3 +576,6 @@ The project includes comprehensive unit tests for models and views using Django'
 
 ### *Tools*
 * Glassmorphism CSS generator - [css.glass](https://css.glass/)
+
+### *Code*
+* Css Animation - The Pulse Effect [florin-pop.com](https://florin-pop.com/blog/2019/03/css-pulse-effect/)
