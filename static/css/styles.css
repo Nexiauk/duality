@@ -144,11 +144,21 @@ h6,
 .buy-button {
     background-color: var(--vivid-yellow);
     color: black;
+    transform: skew(-30deg);
+    border-radius: 0;
     }
+
+.unskew {
+    display: inline-block;
+    transform: skew(30deg);
+    font-style: italic;
+    padding: 3px;    
+}
 
 .buy-button:hover {
     background-color: var(--skylla);
     color: white;
+    transform: skew(-30deg);
     animation: pulse 2s infinite;
 }
 
@@ -156,16 +166,19 @@ h6,
 @keyframes pulse {
     0% {
         transform: scale(0.95);
+        transform: skew(-30deg);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
 
     70% {
         transform: scale(1);
+        transform: skew(-30deg);
         box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
 
     100% {
         transform: scale(0.95);
+        transform: skew(-30deg);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
