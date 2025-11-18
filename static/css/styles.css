@@ -33,14 +33,14 @@ main {
     position: relative;
 }
 
-/* Anchoring the messages div near the top of the main container */
+/* Anchors the messages div near the top of the main container */
 #messages {
     top: 45px;
     position: absolute;
 }
 
-/* H1 styling for the two titles that wap out on different screen sizes.
-Linear gradient styling in theme colours */
+/* H1 styling for the two titles.
+Linear gradient styling in theme colours. */
 h1 {
     font-family: var(--main-header);
     font-style: italic;
@@ -52,7 +52,7 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
-/* Heading and title styling from h2-h6 plus card titles */
+/* Heading and title styling from h2-h6 plus card titles, uses a root variable for font family */
 h2,
 h3,
 h5,
@@ -90,12 +90,14 @@ h6,
     color: #000000;
 }
 
+/* Styling for active nav-items - implements a dashed border */
 .navbar .nav-item.active {
     background-color: var(--vivid-yellow);
     border: 2px dashed var(--skylla);
     cursor: pointer;
 }
 
+/* Styles the nav-link text for active nav-items */
 .navbar .nav-item.active .nav-link {
     color: #000000;
     font-weight: bold;
@@ -131,6 +133,7 @@ h6,
     border: 2px solid transparent;
 }
 
+/* Shop cards enlargen on hover with a glow effect */
 .shop-card:hover {
     transform: scale(1.1);
     z-index: 99;
@@ -141,6 +144,7 @@ h6,
     box-shadow: 0 0 10px #9ecaed;
 }
 
+/* Custom buy button for the shop cards, skewed to match nav items */
 .buy-button {
     background-color: var(--vivid-yellow);
     color: black;
@@ -148,13 +152,16 @@ h6,
     border-radius: 0;
     }
 
+/* Unskew class applied to the buy button span text unmutate it */
 .unskew {
     display: inline-block;
     transform: skew(30deg);
     font-style: italic;
-    padding: 3px;    
+    padding: 3px;   
+    font-weight: bold; 
 }
 
+/* Buy button changes colour and pulses on hover */
 .buy-button:hover {
     background-color: var(--skylla);
     color: white;
@@ -162,7 +169,7 @@ h6,
     animation: pulse 2s infinite;
 }
 
-/* Pulsing animation used on hovering over the buy now button */
+/* Pulsing animation used on hovering over the buy now button, skewed to match the button */
 @keyframes pulse {
     0% {
         transform: scale(0.95);
@@ -218,13 +225,13 @@ h6,
 
 /* Hover colour for the round socials icons */
 .socials-hover:hover {
-    background-color: var(--ecstatic-red);
+    background-color: var(--vivid-yellow);
     border-radius: 50%;
 }
 
 /* Hover colour for the square socials icon */
 .socials-hover-square:hover {
-    background-color: var(--ecstatic-red);
+    background-color: var(--vivid-yellow);
     border-radius: 5%;
 }
 
@@ -317,9 +324,6 @@ h6,
     }
 }
 
-/* media query for screens 1200px and up*/
-@media screen and (min-width:1200px) {}
-
 /* media query for screens 1440px and up*/
 @media screen and (min-width:1440px) {
 
@@ -348,9 +352,6 @@ h6,
         font-size: 1.2rem;
     }
 }
-
-/* media query for screens 1900px and up*/
-@media screen and (min-width:1900px) {}
 
 /* Media query for screens 2560px and up */
 @media screen and (min-width:2560px) {
