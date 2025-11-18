@@ -44,7 +44,7 @@ class ShopSchedulerAdmin(admin.ModelAdmin):
     a readable list of allocated characters.
     """
     inlines = [ShopScheduleItemsInline]
-    autocomplete_fields = ['characters'] 
+    autocomplete_fields = ['characters']
     list_display = (
         "start_time",
         "end_time",

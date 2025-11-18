@@ -30,6 +30,7 @@ def rotation_false(modeladmin, request, queryset):
     """
     queryset.update(can_participate_in_rotation=0)
 
+
 @admin.action(description="Put into rotation")
 def rotation_true(modeladmin, request, queryset):
     """

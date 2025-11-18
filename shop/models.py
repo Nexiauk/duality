@@ -19,16 +19,17 @@ def start_time_default():
     """Returns the default start time (current time)."""
     return timezone.now()
 
+
 def end_time_default():
     """Returns the default end time (24 hours from now)."""
     return timezone.now()+timedelta(hours=24)
+
 
 class ShopScheduler(models.Model):
     """
     Represents a shop schedule, defining a start and end time
     and the type of rotation (e.g., daily, weekly).
     """
- 
     start_time = models.DateTimeField(
         _("Start Time"),
         default=start_time_default
@@ -44,9 +45,9 @@ class ShopScheduler(models.Model):
         )
     characters = models.ManyToManyField(
         "core.CharacterCard",
-        through = "shop.ShopScheduleItems",
-        through_fields = ("shop_scheduler", "character"),
-        related_name = "shop_schedules",
+        through="shop.ShopScheduleItems",
+        through_fields=("shop_scheduler", "character"),
+        related_name="shop_schedules",
         blank=True,
     )
 
@@ -94,7 +95,9 @@ class ShopScheduler(models.Model):
 
     def create_items_for_schedule(self):
         """Randomly assigns 12 characters to this schedule."""
-        characters = CharacterCard.objects.filter(can_participate_in_rotation=True)
+        characters = CharacterCard.objects.filter(
+            can_participate_in_rotation=True
+            )
         char_list = list(characters)
         sampled_characters = random.sample(char_list, 12)
         for char in sampled_characters:
