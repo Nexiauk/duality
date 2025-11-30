@@ -66,6 +66,8 @@ class ShopTemplatesViewTests(TestCase):
 
 class BaseModelTests(TestCase):
     def setUp(self):
+        """Create sample character, with an archetype and rarity, to use as
+        as a schedule item in a scheduler instance"""
         self.scheduler = ShopScheduler.objects.create(
             start_time = timezone.make_aware(datetime(2025,10,31,19,00)),
             end_time = timezone.make_aware(datetime(2025,11,1,19,00)),
@@ -95,14 +97,18 @@ class BaseModelTests(TestCase):
 
 class ShopSchedulerModelTest(BaseModelTests):
     def test_scheduler_start_time(self):
+        """Check that the Shop Scheduler has a start time and is correct"""
         self.assertEqual(self.scheduler.start_time, timezone.make_aware(datetime(2025,10,31,19,00)) )
 
     def test_scheduler_end_time(self):
+        """Check that the Shop Scheduler has an end time and is correct"""
         self.assertEqual(self.scheduler.end_time, timezone.make_aware(datetime(2025,11,1,19,00)))
 
     def test_rotation_type_works(self):
+        """Check that the Shop Scheduler has a rotation type"""
         self.assertEqual(self.scheduler.rotation_type, "Halloween")
 
 class ShopScheduleItemsModelTest(BaseModelTests):
+    """Check that the schedule item is the correct character"""
     def test_item_includes_character(self):
         self.assertEqual(self.schedule_items.character, self.character_card1)
