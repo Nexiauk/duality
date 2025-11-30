@@ -25,7 +25,7 @@ class Usercards(models.Model):
         verbose_name=_("Stripe Payment Reference"),
         max_length=300
     )
-    payment_reference = models.CharField(
+    order_reference = models.CharField(
         verbose_name=_("Order Reference Number"),
         max_length=300
     )
@@ -58,3 +58,6 @@ class Usercards(models.Model):
             return self.owner.username
         else:
             return "Deleted user"
+        
+    def character_name(self):
+        return self.character.name

@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'cloudinary',
     'crispy_forms',
     'core',
-    'shop'
+    'shop',
+    'binder'
 ]
 
 SITE_ID = 1
