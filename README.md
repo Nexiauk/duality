@@ -440,17 +440,26 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 #### [**CI Python Linter**](https://pep8ci.herokuapp.com/)
 * **Core App**
+    * fix_legend_id.py - all clear, no errors found
     * import.py - all clear, no errors found
     * rarity-calculation.py - all clear, no errors found
     * rarity-update.py - all clear, no errors found
-    * apps.py - all clear, no errors found
     * datastore.py - all clear, no errors found
-    * tests.py - all clear no errors found
-    models.py - ll clear, no errors found
-* **Shop App**
-    * tests.py - all clear, no errors found
+    * admin.py - all clear, no errors found
+    * apps.py - all clear, no errors found
     * models.py - all clear, no errors found
+    * tests.py - all clear no errors found
+    * urls.py - all clear, no errors found
+    * views.py - all clear, no errors found
+* **Shop App**
+    * admin.py - all clear, no errors found
+    * apps.py - all clear, no errors found
+    * models.py - all clear, no errors found
+    * tests.py - all clear, no errors found
+    * urls.py - all clear, no errors found
+    * views.py - all clear, no errors found
 * **Binder App**
+    *models.py - all clear, no errors found
 * **Root Directory Files**
 
 #### [**JSONLint**](https://jsonlint.com/)
