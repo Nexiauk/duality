@@ -1,14 +1,14 @@
 """
 Admin configuration for the core app models.
 
-This module customizes the Django admin interface for the core
+This module customises the Django admin interface for the core
 models CharacterCard, Archetype, and Rarity. It provides:
 
 - Inline display options and list views for each model.
 - Filtering and search capabilities to improve usability.
 - Custom admin actions, such as updating the rotation status
   of characters, to streamline administrative workflows.
-  """
+"""
 from django.contrib import admin
 from .models import CharacterCard, Archetype, Rarity
 

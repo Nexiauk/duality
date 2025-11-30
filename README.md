@@ -464,6 +464,11 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 #### [**JSONLint**](https://jsonlint.com/)
 * legends.json file is valid.
+* archetypes.json file is valid
+* charactercard_with_legend_id is valid
+* charactercard.json is valid
+* rarity.json is valid
+
 
 #### **The WAVE Webb Accessibility Evaluation Tool**
 
