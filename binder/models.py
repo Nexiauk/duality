@@ -46,8 +46,16 @@ class Usercards(models.Model):
         _(""), max_digits=5, decimal_places=2, null=False)
 
     class Meta:
+        """
+        Constraint added so an owner cannot have more than
+        one UserCard for the same character
+        """
         verbose_name = _("Usercards")
         verbose_name_plural = _("Usercards")
+        constraints = [
+            models.UniqueConstraint(
+                fields=['owner', 'character'], name='unique_owner_character_pair')
+        ]
 
     def __str__(self):
         """
@@ -58,6 +66,6 @@ class Usercards(models.Model):
             return self.owner.username
         else:
             return "Deleted user"
-        
+
     def character_name(self):
         return self.character.name
