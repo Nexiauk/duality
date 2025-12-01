@@ -54,7 +54,9 @@ class Usercards(models.Model):
         verbose_name_plural = _("Usercards")
         constraints = [
             models.UniqueConstraint(
-                fields=['owner', 'character'], name='unique_owner_character_pair')
+                fields=['owner', 'character'],
+                name='unique_owner_character_pair'
+            )
         ]
 
     def __str__(self):

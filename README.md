@@ -367,13 +367,15 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ### *Model Fields*
 
 **USER_CARDS**
-| Column Name    | Type     | Constraints / Notes                         |
-| -------------- | -------- | ------------------------------------------- |
-| id             | int      | PK                                          |
-| username       | int      | FK → `USER.id`, on_delete=CASCADE           |
-| character      | int      | FK → `CHARACTER_CARD.id`, on_delete=PROTECT |
-| date_purchased | datetime | DateTimeField(auto_now_add=True)            |
-| purchase_price | decimal  | DecimalField                                |
+| Column Name    | Type     | Constraints / Notes                                       |
+| -------------- | -------- | ----------------------------------------------------------|
+| id             | int      | PK                                                        |
+| stripe_id      | string   | CharField, max_length=300                                 |
+| order_reference| string   | CharField, max_length=300                                 |
+| owner          | int      | FK → `USER.id`, on_delete=SET_NULL, null=True, blank=True |
+| character      | int      | FK → `CHARACTER_CARD.id`, on_delete=PROTECT               |
+| date_purchased | datetime | DateTimeField(auto_now_add=True)                          |
+| purchase_price | decimal  | DecimalField                                              |
 
 ---
 
@@ -397,19 +399,19 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ---
 
 **SHOP_SCHEDULER**
-| Column Name   | Type     | Constraints / Notes                 |
-| ------------- | -------- | ----------------------------------- |
-| id            | int      | PK                                  |
-| start_time    | datetime | DateTimeField, auto_now_add=True    |
-| end_time      | datetime | DateTimeField, default=default_end_time|
-| rotation_type | string   | CharField                           |
+| Column Name   | Type     | Constraints / Notes                     |
+| ------------- | -------- | ----------------------------------------|
+| id            | int      | PK                                      |
+| start_time    | datetime | DateTimeField, auto_now_add=True        |
+| end_time      | datetime | DateTimeField, default=default_end_time |
+| rotation_type | string   | CharField                               |
 
 
 ---
 
 **SHOP_SCHEDULE_ITEMS**
 | Column Name       | Type    | Constraints / Notes                 |
-| ----------------- | ------- | ----------------------------------- |
+| ----------------- | ------- | ------------------------------------|
 | id                | int     | PK                                  |
 | shop_scheduler_id | int     | FK → `SHOP_SCHEDULER.id`            |
 | character_id      | int     | FK → `CHARACTER_CARD.id`            |
@@ -562,6 +564,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Help with generator expressions instead of looping through a whole file - [geeksforgeeks](https://www.geeksforgeeks.org/python/python-find-dictionary-matching-value-in-list/)
 * Help understanding class methods and static methods [djangocentral.com](https://djangocentral.com/classmethod-and-staticmethod-explained/)
 * Help sorting with lambda in Python [stackoverflow.com](https://stackoverflow.com/questions/3766633/how-to-sort-with-lambda-in-python)
+* Help creating a constraint on the UserCards model to prevent owners having more than one Usercard for the same Character - [forum.djangoprojects.com](https://forum.djangoproject.com/t/how-to-make-a-django-uniqueconstraint-that-checks-fields-in-a-position-independant-way/19062)
 
 
 
