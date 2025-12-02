@@ -146,7 +146,8 @@ h6,
 }
 
 /* Custom buy button for the shop cards, skewed to match nav items */
-.buy-button {
+.buy-button,
+.account-button {
     background-color: var(--vivid-yellow);
     color: black;
     transform: skew(-30deg);
@@ -170,7 +171,8 @@ h6,
 }
 
 /* Buy button changes colour and pulses on hover */
-.buy-button:hover {
+.buy-button:hover,
+.account-button:hover {
     background-color: var(--skylla);
     color: white;
     transform: skew(-30deg);

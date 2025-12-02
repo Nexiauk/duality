@@ -12,7 +12,7 @@
 
 {% block content %}
 
-    <section class="mt-4 mb-4 mx-auto p-4">
+    <section class="mt-4 mb-4 mx-auto p-md-4">
         <div class="form-bg p-4">
             <h2 class="mb-4">{% trans "Sign Out" %}</h2>
                 <p class="mb-4">{% blocktrans %}Are you sure you want to sign out?{% endblocktrans %}</p>
@@ -22,7 +22,7 @@
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-light mt-4" type="submit">{% trans "Sign Out" %} &raquo;</button>
+                <button class="btn account-button mt-4" type="submit"><span class="unskew">{% trans "Sign Out" %} &raquo;</span></button>
               </form>
         </div>
     </section>

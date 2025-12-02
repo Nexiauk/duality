@@ -1,13 +1,7 @@
 <!--
-This template renders the main shop page for the application.
+This template renders the card-detail view after pressing the buy button in the shop.
 
-It displays all characters currently available for sale based on
-the active shop schedules. Each character is presented as a card with:
 
-- Character image loaded from the legends.json file.
-- Character name from the CharacterCard model.
-- Total power displayed as a badge.
-- Responsive grid layout adapting to mobile, tablet, and desktop.
 -->
 {% extends "base.html" %}
 {% load static %}
@@ -19,7 +13,7 @@ the active shop schedules. Each character is presented as a card with:
 {% endblock extra_js %}
 {% block content %}
 <section id="shop-section" class="container mb-5 pb-4 gx-0">
-    <!-- Centered Title and description of the shop -->
+    <!-- Centered title and text indicating the character about to be purchased -->
     <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
         <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4" id="shop-heading">
             <h2>Purchase {{ char.name }}?</h2>
@@ -27,11 +21,11 @@ the active shop schedules. Each character is presented as a card with:
         </div>
     </div>
     <div class="col d-flex justify-content-center">
-        <!-- Loader element shown while shop content is loading-->
+        <!-- Loader element shown while card-detail content is loading-->
         <div class="loader"></div>
     </div>
 
-    <div class="row gy-4 row-cols-1  ms-xxl-6 me-xxl-6 gx-0">
+    <div class="row-cols-1  ms-xxl-6 me-xxl-6 gx-0">
         <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
             <div class="card shop-card">
                 <!-- Character image dynamically loaded from the legends.json file -->

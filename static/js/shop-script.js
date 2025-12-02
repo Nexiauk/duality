@@ -1,4 +1,4 @@
-// After 2 seconds, hides the loaders and displays the cards.
+// Delay UI swap in the shop: hide loader after 2s, then reveal all shop cards
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         const loader = document.querySelector(".loader");
