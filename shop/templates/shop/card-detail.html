@@ -12,7 +12,7 @@ the active shop schedules. Each character is presented as a card with:
 {% extends "base.html" %}
 {% load static %}
 <!-- Dynamically sets the page title -->
-{% block title %}Duality: Shop{% endblock title %}
+{% block title %}Confirm Purchase{% endblock title %}
 <!-- GSAP and plugins for animating hero poem text with ScrollTrigger and SplitText -->
 {% block extra_js %}
 <script src="{% static 'js/shop-script.js' %}"></script>
@@ -22,21 +22,17 @@ the active shop schedules. Each character is presented as a card with:
     <!-- Centered Title and description of the shop -->
     <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
         <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4" id="shop-heading">
-            <h2>Build Your Team!</h2>
-            <p>Mix and match your favourites heroes and villains from across the multiverse.</p>
+            <h2>Purchase {{ char.name }}?</h2>
+            <p>Are you sure you want to continue?</p>
         </div>
     </div>
     <div class="col d-flex justify-content-center">
         <!-- Loader element shown while shop content is loading-->
         <div class="loader"></div>
     </div>
-    <!-- Shop items grid with responsive layout at different screen sizes. -->
-    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
-        <!-- Loop through all characters passed by the view -->
 
-
+    <div class="row gy-4 row-cols-1  ms-xxl-6 me-xxl-6 gx-0">
         <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
-            <!-- Individual shop cards for each character -->
             <div class="card shop-card">
                 <!-- Character image dynamically loaded from the legends.json file -->
                 <img class="object-fit-cover card-img-top w-100 d-block" src="{{ json.images.lg }}" width="auto"
@@ -50,7 +46,8 @@ the active shop schedules. Each character is presented as a card with:
                     </div>
                 </div>
                 {% if user.is_authenticated %}
-                <div class="card-footer d-flex justify-content-center">
+                <div class="card-footer d-flex gap-3 justify-content-center">
+                    <a href="#" class="btn buy-button cancel" onclick="history.back()"><span class="unskew">Cancel</span></a>
                     <a href="" class="btn buy-button"><span class="unskew">Buy now</span></a>
                 </div>
                 {% else %}

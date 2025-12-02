@@ -153,6 +153,13 @@ h6,
     border-radius: 0;
     }
 
+.cancel {
+    background-color: var(--ecstatic-red);
+    color: black;
+    transform: skew(-30deg);
+    border-radius: 0; 
+}
+
 /* Unskew class applied to the buy button span text unmutate it */
 .unskew {
     display: inline-block;
