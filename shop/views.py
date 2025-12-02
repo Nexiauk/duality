@@ -6,12 +6,18 @@ and gathers eligible characters for display. Characters are enriched with
 their data and power status, sorted by power, and rendered to the shop page.
 """
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import ShopScheduler
 from core.models import CharacterCard
+from django.contrib.auth.decorators import login_required
 
 
 def shop_view(request):
+    """
+    Renders the shop page with scheduled characters,
+    combining model data, JSON metadata, and calculated
+    attributes sorted by power.
+    """
     page_url = "shop/shop.html"
     scheduled_characters = []
     schedule = ShopScheduler.get_or_create_active_schedule()
@@ -31,8 +37,25 @@ def shop_view(request):
     scheduled_characters.sort(
         key=lambda character_data: character_data["power"],
         reverse=True
-        )
+    )
     context = {
         "characters": scheduled_characters
+    }
+    return render(request, page_url, context)
+
+@login_required
+def card_view(request, id):
+    """
+    Renders the card detail page for a given CharacterCard
+    including its JSON metadata and calculated power status.
+    """
+    card = get_object_or_404(CharacterCard, id=id)
+    page_url = "shop/card-detail.html"
+    json_data = card.get_legends_data()
+    power = card.power_status()
+    context = {
+        "char": card,
+        "json": json_data,
+        "power": power
     }
     return render(request, page_url, context)
