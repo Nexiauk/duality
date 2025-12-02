@@ -52,10 +52,15 @@ INSTALLED_APPS = [
     'allauth.account',
     'cloudinary',
     'crispy_forms',
+    'crispy_bootstrap5',
     'core',
     'shop',
     'binder'
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
