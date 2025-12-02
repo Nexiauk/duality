@@ -111,8 +111,9 @@ h6,
     background-position: top center;
 }
 
-/* Styling for all cards across the app - creates a glassmorphic effect */
-.card {
+/* Glassmorphic effect for cards and forms */
+.card,
+.form-bg {
     background: var(--eclectic-transparent);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
