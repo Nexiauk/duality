@@ -42,7 +42,10 @@ This template renders the card-detail view after pressing the buy button in the 
                 {% if user.is_authenticated %}
                 <div class="card-footer d-flex gap-3 justify-content-center">
                     <a href="#" class="btn buy-button cancel" onclick="history.back()"><span class="unskew">Cancel</span></a>
-                    <a href="" class="btn buy-button"><span class="unskew">Buy now</span></a>
+                    <form action="{% url 'create-checkout-session' char.id %}" method="post">
+                    {% csrf_token %}
+                    <button class="btn buy-button" type="submit"><span class="unskew">Buy now</span></button>
+                    </form>
                 </div>
                 {% else %}
                 {% endif %}
