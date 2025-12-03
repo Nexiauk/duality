@@ -103,7 +103,6 @@ def create_checkout(request, id):
 @login_required
 def payment_success(request):
     session_id = request.GET.get('session_id')
-
     if session_id:
         try:
             session = stripe.checkout.Session.retrieve(session_id)
