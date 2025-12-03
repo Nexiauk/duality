@@ -3,22 +3,10 @@
 <!-- Dynamically sets the page title -->
 {% block title %}Uh-Oh!{% endblock title %}
 {% block content %}
-<section id="505-section" class="container mb-5 pb-4 gx-0">
-    <!-- Centered title and text indicating the character about to be purchased -->
-    <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
-        <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4" id="shop-heading">
-            <h2>Purchase {{ char.name }}?</h2>
-            <p>Are you sure you want to continue?</p>
+    <section class="mt-4 mb-4 mx-auto p-md-4">
+        <div class="glassmorphic p-4">
+            <h2 class="mb-4">Oh Dear</h2>
+                <p class="mb-4">You've stumbled into a multiversal glitch.</p>              
         </div>
-    </div>
-    <div class="col d-flex justify-content-center">
-        <!-- Loader element shown while card-detail content is loading-->
-        <div class="loader"></div>
-    </div>
-
-    <div class="row-cols-1  ms-xxl-6 me-xxl-6 gx-0">
-        <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">        </div>
-
-    </div>
-</section>
+    </section>
 {% endblock content %}
