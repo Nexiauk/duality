@@ -11,7 +11,7 @@
 {% block content %}
 
     <section class="mt-4 mb-4 mx-auto p-md-4">
-        <div class="form-bg p-4">
+        <div class="glassmorphic p-4">
             <h2 class="mb-4">{% trans "Sign In" %}</h2>
                 <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please <a class="underline hover:text-secondary-content" href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
               <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">

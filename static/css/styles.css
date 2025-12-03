@@ -112,8 +112,7 @@ h6,
 }
 
 /* Glassmorphic effect for cards and forms */
-.card,
-.form-bg {
+.glassmorphic {
     background: var(--eclectic-transparent);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -152,13 +151,13 @@ h6,
     color: black;
     transform: skew(-30deg);
     border-radius: 0;
-    }
+}
 
 .cancel {
     background-color: var(--ecstatic-red);
     color: black;
     transform: skew(-30deg);
-    border-radius: 0; 
+    border-radius: 0;
 }
 
 /* Unskew class applied to the buy button span text unmutate it */
@@ -166,8 +165,8 @@ h6,
     display: inline-block;
     transform: skew(30deg);
     font-style: italic;
-    padding: 3px;   
-    font-weight: bold; 
+    padding: 3px;
+    font-weight: bold;
 }
 
 /* Buy button changes colour and pulses on hover */
@@ -267,14 +266,14 @@ h6,
         margin-top: 50px;
     }
 
-     .shop-card {
+    .shop-card {
         min-width: 270px;
         min-height: 300px;
     }
 
-    .shop-card  img {
-    height: 300px;
-}
+    .shop-card img {
+        height: 300px;
+    }
 }
 
 /* Media query for screens 768px and up */
@@ -297,8 +296,8 @@ h6,
     }
 
     .shop-card img {
-    height: 400px;
-}
+        height: 400px;
+    }
 }
 
 /* media query for screens 1024px and up*/

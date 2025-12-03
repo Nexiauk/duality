@@ -13,7 +13,7 @@
 {% block content %}
 
     <section class="mt-4 mb-4 mx-auto p-md-4">
-        <div class="form-bg p-4">
+        <div class="glassmorphic p-4">
             <h2 class="mb-4">{% trans "Sign Out" %}</h2>
                 <p class="mb-4">{% blocktrans %}Are you sure you want to sign out?{% endblocktrans %}</p>
               <form class="login" id="login_form" method="post" action="{% url 'account_logout' %}">
