@@ -14,8 +14,6 @@ import stripe
 from django.conf import settings
 from django.urls import reverse
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
-
 
 def shop_view(request):
     """
@@ -69,10 +67,13 @@ def card_view(request, id):
 
 @login_required
 def create_checkout(request, id):
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    success_url = request.build_absolute_uri(
+        reverse('payment-success')) + '?session_id={CHECKOUT_SESSION_ID}'
     product = get_object_or_404(
         CharacterCard,
         id=id
-        )
+    )
     # Stripe requires an integer field in pence for the price,
     # rarity.price is a decimal field
     price_in_pence = int(product.rarity.price * 100)
@@ -93,7 +94,7 @@ def create_checkout(request, id):
                 }
             ],
             mode='payment',
-            success_url=request.build_absolute_uri(reverse('payment-success')),
+            success_url=success_url,
             cancel_url=request.build_absolute_uri(reverse('payment-cancel'))
         )
         return redirect(session.url, code=303)
@@ -101,9 +102,23 @@ def create_checkout(request, id):
 
 @login_required
 def payment_success(request):
-    return render(request, 'shop/success.html')
+    session_id = request.GET.get('session_id')
+
+    if session_id:
+        try:
+            session = stripe.checkout.Session.retrieve(session_id)
+            if session.payment_status == 'paid':
+                return render(request, 'shop/success.html', {
+                    'customer_email': session.customer_details.email
+                })
+            else:
+                return render(request, 'shop/cancel.html')
+        except Exception as e:
+            return render(request, 'shop/error.html', {'error': str(e)})
+    else:
+        return render(request, 'shop/error.html', {'error': 'No session id provided'})
 
 
 @login_required
 def payment_cancel(request):
-    return render(request, 'shop/cancel.html')
+    return render(request, 'shop/error.html')
