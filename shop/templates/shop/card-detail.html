@@ -7,12 +7,11 @@ This template renders the card-detail view after pressing the buy button in the 
 {% load static %}
 <!-- Dynamically sets the page title -->
 {% block title %}Confirm Purchase{% endblock title %}
-<!-- GSAP and plugins for animating hero poem text with ScrollTrigger and SplitText -->
 {% block extra_js %}
 <script src="{% static 'js/shop-script.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-<section id="shop-section" class="container mb-5 pb-4 gx-0">
+<section id="card-view" class="container mb-5 pb-4 gx-0">
     <!-- Centered title and text indicating the character about to be purchased -->
     <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
         <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4" id="shop-heading">
@@ -35,13 +34,15 @@ This template renders the card-detail view after pressing the buy button in the 
                     <!-- Character name passed from the character model -->
                     <h2 class="text-center card-title">{{ char.name }}</h2>
                     <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-0">
-                        <!-- Badge showing the character's power total -->
+                        <!-- Badge showing the character's rarity and power total -->
                         <span class="badge bg-primary me-sm-3">{{ char.rarity }} {{ power }}</span>
                     </div>
                 </div>
+                 <!-- Card footer only shows if logged in. Contains a buy and cancel button.  -->
                 {% if user.is_authenticated %}
                 <div class="card-footer d-flex gap-3 justify-content-center">
-                    <a href="#" class="btn buy-button cancel" onclick="history.back()"><span class="unskew">Cancel</span></a>
+                    <a href="#" class="btn buy-button cancel"><span class="unskew">Cancel</span></a>
+                    <!-- Form that leads to a checkout session with Stripe -->
                     <form action="{% url 'create-checkout-session' char.id %}" method="post">
                     {% csrf_token %}
                     <button class="btn buy-button" type="submit"><span class="unskew">Buy now</span></button>

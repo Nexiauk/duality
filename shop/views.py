@@ -79,7 +79,6 @@ def create_checkout(request, id):
     json_data = product.get_legends_data()
     if request.method == 'POST':
         session = stripe.checkout.Session.create(
-
             line_items=[
                 {
                     'price_data': {
