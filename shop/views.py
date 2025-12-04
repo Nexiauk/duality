@@ -7,8 +7,8 @@ their data and power status, sorted by power, and rendered to the shop page.
 """
 
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
 from .models import ShopScheduler, CharacterCard
+from binder.models import Usercards
 from django.contrib.auth.decorators import login_required
 import stripe
 from django.conf import settings
@@ -81,20 +81,18 @@ def create_checkout(request, id):
     if request.method == 'POST':
         session = stripe.checkout.Session.create(
             line_items=[
-                {
-                    'price_data': {
-                        'currency': 'gbp',
-                        'product_data': {
-                            'name': product.name,
-                            'images': [json_data['images']['lg']],
-                            'metadata': {
+                {'price_data': {
+                    'currency': 'gbp',
+                    'product_data': {
+                        'name': product.name,
+                        'images': [json_data['images']['lg']],
+                        'metadata': {
                                 'character_id': product.id
-                            }
-                        },
-                        'unit_amount': price_in_pence,
+                        }
                     },
-                    'quantity': 1,
-                }
+                    'unit_amount': price_in_pence,
+                },
+                    'quantity': 1}
             ],
             mode='payment',
             metadata={
@@ -114,10 +112,13 @@ def payment_success(request):
             session = stripe.checkout.Session.retrieve(
                 session_id,
                 expand=['line_items.data.price.product']
-                )
+            )
             customer = session.metadata.get('customer')
             purchases = get_purchases_from_session(session)
             if session.payment_status == 'paid':
+                for purchase in purchases:
+                    Usercards.create_usercard(
+                        request.user, purchase, session.payment_intent)
                 return render(request, 'shop/success.html', {
                     'customer_email': session.customer_details.email,
                     'customer': customer,
@@ -128,19 +129,24 @@ def payment_success(request):
         except Exception as e:
             return render(request, 'shop/error.html', {'error': str(e)})
     else:
-        return render(request, 'shop/error.html', {'error': 'No session id provided'})
+        return render(
+            request,
+            'shop/error.html',
+            {'error': 'No session id provided'}
+            )
 
 
 @login_required
 def payment_cancel(request):
-    return render(request, 'shop/error.html')
+    return render(request, 'shop/cancel')
+
 
 def get_purchases_from_session(session):
     purchases = []
     for item in session.line_items.data:
         purchases.append({
-        'price': item.price.unit_amount,
-        'character_id': item.price.product.metadata.get('character_id'),
-        'character_name': item.price.product.name
+            'price': item.price.unit_amount,
+            'character_id': item.price.product.metadata.get('character_id'),
+            'character_name': item.price.product.name
         })
     return purchases

@@ -10,6 +10,7 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
 from core.models import CharacterCard
+from decimal import Decimal
 
 
 class Usercards(models.Model):
@@ -71,3 +72,32 @@ class Usercards(models.Model):
 
     def character_name(self):
         return self.character.name
+    
+    def order_ref(self):
+        ignore_list = {'the', 'a', 'an'}
+        split = self.character.name.split()
+        for word in split:
+            if word.upper() not in ignore_list:
+                first_word = word.upper()
+                break
+        string = str(self.id)
+        order_number = first_word + string.zfill(4)
+        return order_number
+    
+
+    @classmethod
+    def create_usercard(cls, user, purchase, payment_intent):
+        character = CharacterCard.objects.get(id=purchase['character_id'])
+        price_in_pounds = Decimal(purchase['price']) / 100
+        usercard, created = cls.objects.get_or_create(
+            owner=user,
+            stripe_payment_id=payment_intent,
+            character=character,
+            defaults={
+                'purchase_price': price_in_pounds
+            }
+        )
+        if created or not usercard.order_ref:
+            usercard.order_reference=usercard.order_ref()
+            usercard.save(update_fields=['order_reference'])
+        return usercard
