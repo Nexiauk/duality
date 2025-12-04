@@ -67,6 +67,13 @@ def card_view(request, id):
 
 @login_required
 def create_checkout(request, id):
+    """
+    Create a Stripe checkout session for purchasing a CharacterCard.
+
+    Requires the user to be logged in. Retrieves the specified card by ID,
+    calculates its price in pence, and creates a Stripe session with product
+    details and user metadata. Redirects to the Stripe checkout page upon POST.
+    """
     stripe.api_key = settings.STRIPE_SECRET_KEY
     success_url = request.build_absolute_uri(
         reverse('payment-success')) + '?session_id={CHECKOUT_SESSION_ID}'
@@ -106,6 +113,14 @@ def create_checkout(request, id):
 
 @login_required
 def payment_success(request):
+    """
+    Handle successful Stripe payments and create user-owned cards.
+
+    Retrieves the Stripe session using the session_id from the query string,
+    verifies payment status, records purchased CharacterCards for the logged-in
+    user, and renders a success page. If payment failed or an error occurs,
+    renders the appropriate cancel or error page.
+    """
     session_id = request.GET.get('session_id')
     if session_id:
         try:
@@ -142,6 +157,12 @@ def payment_cancel(request):
 
 
 def get_purchases_from_session(session):
+    """
+    Extract purchased item details from a Stripe checkout session.
+
+    Returns a list of dictionaries containing the price, character ID,
+    and character name for each item in the session's line items.
+    """
     purchases = []
     for item in session.line_items.data:
         purchases.append({

@@ -44,7 +44,11 @@ class Usercards(models.Model):
     )
     date_purchased = models.DateTimeField(auto_now_add=True)
     purchase_price = models.DecimalField(
-        _(""), max_digits=5, decimal_places=2, null=False)
+        max_digits=5,
+        decimal_places=2,
+        null=False,
+        verbose_name=_("Purchase Price")
+        )
 
     class Meta:
         """
@@ -71,9 +75,16 @@ class Usercards(models.Model):
             return "Deleted user"
 
     def character_name(self):
+        """
+        Return the name of the associated character.
+        """
         return self.character.name
-    
+
     def order_ref(self):
+        """
+        Generate a unique order reference combining the first significant
+        word of the character's name and the usercard ID, zero-padded.
+        """
         ignore_list = {'the', 'a', 'an'}
         split = self.character.name.split()
         for word in split:
@@ -83,10 +94,16 @@ class Usercards(models.Model):
         string = str(self.id)
         order_number = first_word + string.zfill(4)
         return order_number
-    
 
     @classmethod
     def create_usercard(cls, user, purchase, payment_intent):
+        """
+        Create or retrieve a Usercard for a given user and purchase.
+
+        Records the character, purchase price, and Stripe payment ID.
+        Generates and saves an order reference if not already set.
+        Returns the Usercard instance.
+        """
         character = CharacterCard.objects.get(id=purchase['character_id'])
         price_in_pounds = Decimal(purchase['price']) / 100
         usercard, created = cls.objects.get_or_create(
@@ -98,6 +115,6 @@ class Usercards(models.Model):
             }
         )
         if created or not usercard.order_ref:
-            usercard.order_reference=usercard.order_ref()
+            usercard.order_reference = usercard.order_ref()
             usercard.save(update_fields=['order_reference'])
         return usercard
