@@ -86,7 +86,10 @@ def create_checkout(request, id):
                         'currency': 'gbp',
                         'product_data': {
                             'name': product.name,
-                            'images': [json_data['images']['lg']]
+                            'images': [json_data['images']['lg']],
+                            'metadata': {
+                                'character_id': product.id
+                            }
                         },
                         'unit_amount': price_in_pence,
                     },
@@ -94,6 +97,9 @@ def create_checkout(request, id):
                 }
             ],
             mode='payment',
+            metadata={
+                'customer': request.user.username,
+            },
             success_url=success_url,
             cancel_url=request.build_absolute_uri(reverse('payment-cancel'))
         )
@@ -105,10 +111,17 @@ def payment_success(request):
     session_id = request.GET.get('session_id')
     if session_id:
         try:
-            session = stripe.checkout.Session.retrieve(session_id)
+            session = stripe.checkout.Session.retrieve(
+                session_id,
+                expand=['line_items.data.price.product']
+                )
+            customer = session.metadata.get('customer')
+            purchases = get_purchases_from_session(session)
             if session.payment_status == 'paid':
                 return render(request, 'shop/success.html', {
-                    'customer_email': session.customer_details.email
+                    'customer_email': session.customer_details.email,
+                    'customer': customer,
+                    'purchases': purchases
                 })
             else:
                 return render(request, 'shop/cancel.html')
@@ -121,3 +134,13 @@ def payment_success(request):
 @login_required
 def payment_cancel(request):
     return render(request, 'shop/error.html')
+
+def get_purchases_from_session(session):
+    purchases = []
+    for item in session.line_items.data:
+        purchases.append({
+        'price': item.price.unit_amount,
+        'character_id': item.price.product.metadata.get('character_id'),
+        'character_name': item.price.product.name
+        })
+    return purchases
