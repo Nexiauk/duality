@@ -123,3 +123,12 @@ class Rarity(models.Model):
     def __str__(self):
         """Returns the rarity as its string representation"""
         return self.name
+    
+
+    @classmethod
+    def unique_rarities_for_filter(cls):
+        """
+        Returns a flat list of distinct rarities
+        """
+        rarities=Rarity.objects.values_list('name', flat=True).distinct()
+        return rarities

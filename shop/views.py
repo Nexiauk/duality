@@ -8,6 +8,7 @@ their data and power status, sorted by power, and rendered to the shop page.
 
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import ShopScheduler, CharacterCard
+from core.models import Rarity
 from binder.models import Usercards
 from django.contrib.auth.decorators import login_required
 import stripe
@@ -41,8 +42,10 @@ def shop_view(request):
         key=lambda character_data: character_data["power"],
         reverse=True
     )
+    rarities = Rarity.unique_rarities_for_filter()
     context = {
-        "characters": scheduled_characters
+        "characters": scheduled_characters,
+        "rarities": rarities
     }
     return render(request, page_url, context)
 
