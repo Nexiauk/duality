@@ -111,6 +111,10 @@ h6,
     background-position: top center;
 }
 
+div label {
+    display: block;
+}
+
 /* Glassmorphic effect for cards and forms */
 .glassmorphic {
     background: var(--eclectic-transparent);

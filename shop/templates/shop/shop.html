@@ -12,51 +12,86 @@ the active shop schedules. Each character is presented as a card with:
 {% extends "base.html" %}
 {% load static %}
 <!-- Dynamically sets the page title -->
-{% block title %}Duality: Shop{% endblock title %}
+{% block title %}
+    Duality: Shop
+{% endblock title %}
 <!-- GSAP and plugins for animating hero poem text with ScrollTrigger and SplitText -->
 {% block extra_js %}
-<script src="{% static 'js/shop-script.js' %}"></script>
+    <script src="{% static 'js/shop-script.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-<section id="shop-section" class="container mb-5 pb-4 gx-0">
-    <!-- Centered Title and description of the shop -->
-    <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
-        <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4" id="shop-heading">
-            <h2>Build Your Team!</h2>
-            <p>Mix and match your favourites heroes and villains from across the multiverse.</p>
-        </div>
-    </div>
-    <div class="col d-flex justify-content-center">
-        <!-- Loader element shown while shop content is loading-->
-        <div class="loader"></div>
-    </div>
-    <!-- Shop items grid with responsive layout at different screen sizes. -->
-    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
-        <!-- Loop through all characters passed by the view -->
-        {% for char in characters %}
-        <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
-            <!-- Individual shop cards for each character -->
-            <div class="card shop-card glassmorphic">
-                <!-- Character image dynamically loaded from the legends.json file -->
-                <img class="object-fit-cover card-img-top w-100 d-block" src="{{ char.json.images.lg }}" width="auto"
-                    height="400" alt="{{ char.model.name }}">
-                <div class="card-body p-4">
-                    <!-- Character name passed from the character model -->
-                    <h2 class="text-center card-title">{{ char.model.name }}</h2>
-                    <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-0">
-                        <!-- Badge showing the character's power total -->
-                        <span class="badge me-sm-3 {{ char.model.rarity|lower }}">{{ char.model.rarity }} {{ char.power }}</span>
-                    </div>
+    <section id="shop-section" class="container mb-5 pb-4 gx-0">
+        <!-- Centered Title and description of the shop -->
+        <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
+            <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4"
+                 id="shop-heading">
+                <h2>Build Your Team!</h2>
+                <p>Mix and match your favourites heroes and villains from across the multiverse.</p>
+            </div>
+            {% comment %} New row for filter dropdowns {% endcomment %}
+            <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2 flex justify-content-center">
+                <div class="col-3 text-center">
+                    <label for="rarities">Filter by Rarity</label>
+                    <select name="Rarities" id="rarities">
+                        <option value="all">Show All</option>
+                        <option value="common">Common</option>
+                        <option value="uncommon">Uncommon</option>
+                        <option value="rare">Rare</option>
+                        <option value="epic">Epic</option>
+                        <option value="legendary">Legendary</option>
+                        <option value="mythic">Mythic</option>
+                    </select>
                 </div>
-                {% if user.is_authenticated %}
-                <div class="card-footer d-flex justify-content-center">
-                    <a href="{% url 'card-detail' char.model.id %}" class="btn buy-button {{ char.model.rarity|lower }}"><span class="unskew">Buy now</span></a>
+                <div class="col-3 text-center">
+                    <label for="rarities">Filter by Rarity</label>
+                    <select name="Rarities" id="rarities">
+                        <option value="all">Show All</option>
+                        <option value="common">Common</option>
+                        <option value="uncommon">Uncommon</option>
+                        <option value="rare">Rare</option>
+                        <option value="epic">Epic</option>
+                        <option value="legendary">Legendary</option>
+                        <option value="mythic">Mythic</option>
+                    </select>
                 </div>
-                {% else %}
-                {% endif %}
             </div>
         </div>
-        {% endfor %}
-    </div>
-</section>
+        <div class="col d-flex justify-content-center">
+            <!-- Loader element shown while shop content is loading-->
+            <div class="loader"></div>
+        </div>
+        <!-- Shop items grid with responsive layout at different screen sizes. -->
+        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
+            <!-- Loop through all characters passed by the view -->
+            {% for char in characters %}
+                <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
+                    <!-- Individual shop cards for each character -->
+                    <div class="card shop-card glassmorphic"
+                         data-card-type="{{ char.model.rarity|lower }}">
+                        <!-- Character image dynamically loaded from the legends.json file -->
+                        <img class="object-fit-cover card-img-top w-100 d-block"
+                             src="{{ char.json.images.lg }}"
+                             width="auto"
+                             height="400"
+                             alt="{{ char.model.name }}">
+                        <div class="card-body p-4">
+                            <!-- Character name passed from the character model -->
+                            <h2 class="text-center card-title">{{ char.model.name }}</h2>
+                            <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-0">
+                                <!-- Badge showing the character's power total -->
+                                <span class="badge me-sm-3 {{ char.model.rarity|lower }}">{{ char.model.rarity }} {{ char.power }}</span>
+                            </div>
+                        </div>
+                        {% if user.is_authenticated %}
+                            <div class="card-footer d-flex justify-content-center">
+                                <a href="{% url 'card-detail' char.model.id %}"
+                                   class="btn buy-button {{ char.model.rarity|lower }}"><span class="unskew">Buy now</span></a>
+                            </div>
+                        {% else %}
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock content %}
