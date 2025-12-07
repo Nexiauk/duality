@@ -30,7 +30,7 @@ the active shop schedules. Each character is presented as a card with:
             </div>
             {% comment %} New row for filter dropdowns {% endcomment %}
             <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2 flex justify-content-center">
-                <div class="col-3 text-center">
+                <div class="col-12 col-md-3 text-md-center mt-2 mb-2">
                     <label for="rarities">Filter by Rarity</label>
                     <select name="Rarities" id="rarities">
                         {% for rarity in rarities %}
@@ -38,19 +38,19 @@ the active shop schedules. Each character is presented as a card with:
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col-12 col-md-3 text-md-center mt-2 mb-2">
                     <label for="rarities">Filter by Alignment</label>
                     <select name="Alignment" id="alignment">
                         {% for alignment in alignments %}
-                        <option value="{{ alignment|lower }}">{{ alignment }}</option>
+                        <option value="{{ alignment|lower }}">{{ alignment|capfirst }}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-3 text-center">
+                <div class="col-12 col-md-3 text-md-center mt-2 mb-2">
                     <label for="universe">Filter by Universe</label>
                     <select name="Alignment" id="alignment">
                         {% for universe in universes %}
-                        <option value="{{ universe|lower }}">{{ universe }}</option>
+                        <option value="{{ universe|lower }}">{{ universe|capfirst }}</option>
                         {% endfor %}
                     </select>
                 </div>
