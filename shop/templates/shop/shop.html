@@ -40,14 +40,18 @@ the active shop schedules. Each character is presented as a card with:
                 </div>
                 <div class="col-3 text-center">
                     <label for="rarities">Filter by Alignment</label>
-                    <select name="Rarities" id="rarities">
-                        <option value="all">Show All</option>
-                        <option value="common">Common</option>
-                        <option value="uncommon">Uncommon</option>
-                        <option value="rare">Rare</option>
-                        <option value="epic">Epic</option>
-                        <option value="legendary">Legendary</option>
-                        <option value="mythic">Mythic</option>
+                    <select name="Alignment" id="alignment">
+                        {% for alignment in alignments %}
+                        <option value="{{ alignment|lower }}">{{ alignment }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-3 text-center">
+                    <label for="universe">Filter by Universe</label>
+                    <select name="Alignment" id="alignment">
+                        {% for universe in universes %}
+                        <option value="{{ universe|lower }}">{{ universe }}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>

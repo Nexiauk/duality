@@ -43,9 +43,13 @@ def shop_view(request):
         reverse=True
     )
     rarities = Rarity.unique_rarities_for_filter()
+    alignments = {character_data["alignment"] for character_data in scheduled_characters}
+    universes = {character_data["universe"] for character_data in scheduled_characters}
     context = {
         "characters": scheduled_characters,
-        "rarities": rarities
+        "rarities": rarities,
+        "alignments": list(alignments),
+        "universes": list(universes)
     }
     return render(request, page_url, context)
 
