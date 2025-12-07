@@ -144,6 +144,31 @@ h6,
     box-shadow: 0 0 10px #9ecaed;
 }
 
+/* Rarity colours for shop card badges */
+.badge.common {
+    background-color:var(--eclectic);
+}
+
+.badge.uncommon {
+    background-color:var(--nasturtium-shoot);
+}
+
+.badge.rare {
+    background-color:var(--skylla);
+}
+
+.badge.epic {
+    background-color: var(--fuschia-blue);
+}
+
+.badge.legendary {
+    background-color: var(--vivid-yellow);
+}
+
+.badge.mythic {
+    background-color: gold;
+}
+
 /* Custom buy button for the shop cards, skewed to match nav items */
 .buy-button,
 .account-button {

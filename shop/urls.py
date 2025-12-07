@@ -12,5 +12,5 @@ urlpatterns = [
     path("create-checkout-session/<int:id>", views.create_checkout, name="create-checkout-session"),
     path("success/", views.payment_success, name="payment-success"),
     path("cancel/", views.payment_cancel, name="payment-cancel"),
-    path("error/", views.payment_cancel, name="payment-cancel"),
+    path("error/", views.payment_cancel, name="payment-error"),
 ]

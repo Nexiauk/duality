@@ -15,6 +15,7 @@ class UserCardsAdmin(admin.ModelAdmin):
         "owner",
         "character_name",
         "order_reference",
+        "stripe_payment_id",
         "date_purchased",
         "purchase_price"
     )

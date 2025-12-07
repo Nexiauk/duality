@@ -156,6 +156,7 @@ def payment_cancel(request):
     return render(request, 'shop/cancel')
 
 
+@login_required
 def get_purchases_from_session(session):
     """
     Extract purchased item details from a Stripe checkout session.

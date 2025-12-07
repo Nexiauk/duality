@@ -6,7 +6,7 @@
     <section class="mt-4 mb-4 mx-auto p-md-4">
         <div class="glassmorphic p-4">
             <h2 class="mb-4">Success!</h2>
-                <p class="mb-4">Payment successfully made, {{ customer }}<br>An email has been sent to <b>{{ customer_email }}</b> with details of your purchase.</p> 
+                <p class="mb-4">Payment successfully made, {{ customer }}.<br>An email has been sent to <b>{{ customer_email }}</b> with details of your purchase.</p> 
                 
                 {% for purchase in purchases %}
                 {{ purchase.character_id }}
