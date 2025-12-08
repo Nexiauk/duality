@@ -11,3 +11,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2000)
 })
 
+// Filtering for the shop

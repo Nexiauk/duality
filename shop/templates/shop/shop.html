@@ -30,25 +30,28 @@ the active shop schedules. Each character is presented as a card with:
             </div>
             {% comment %} New row for filter dropdowns {% endcomment %}
             <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2 flex justify-content-center">
-                <div class="col-12 col-md-3 text-md-center mt-2 mb-2">
+                <div class="col-12 col-md-3 text-center mt-2 mb-2">
                     <label for="rarities">Filter by Rarity</label>
-                    <select name="Rarities" id="rarities">
+                    <select name="rarities" id="rarities" class="glassmorphic">
+                        <option value="all" selected>All</option>
                         {% for rarity in rarities %}
                         <option value="{{ rarity|lower }}">{{ rarity }}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-12 col-md-3 text-md-center mt-2 mb-2">
+                <div class="col-12 col-md-3 text-center mt-2 mb-2">
                     <label for="rarities">Filter by Alignment</label>
-                    <select name="Alignment" id="alignment">
+                    <select name="alignment" id="alignment" class="glassmorphic">
+                        <option value="all" selected>All</option>
                         {% for alignment in alignments %}
                         <option value="{{ alignment|lower }}">{{ alignment|capfirst }}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="col-12 col-md-3 text-md-center mt-2 mb-2">
+                <div class="col-12 col-md-3 text-center mt-2 mb-2">
                     <label for="universe">Filter by Universe</label>
-                    <select name="Alignment" id="alignment">
+                    <select name="universe" id="universe" class="glassmorphic">
+                        <option value="all" selected>All</option>
                         {% for universe in universes %}
                         <option value="{{ universe|lower }}">{{ universe|capfirst }}</option>
                         {% endfor %}

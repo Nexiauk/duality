@@ -108,7 +108,7 @@ class ShopScheduler(models.Model):
             )
 
     class Meta:
-        ordering = ["start_time"]
+        ordering = ["-start_time"]
         verbose_name = "Shop Scheduler"
         verbose_name_plural = "Shop Scheduler"
 
