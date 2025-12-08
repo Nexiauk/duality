@@ -43,8 +43,12 @@ def shop_view(request):
         reverse=True
     )
     rarities = Rarity.unique_rarities_for_filter()
-    alignments = {character_data["alignment"] for character_data in scheduled_characters}
-    universes = {character_data["universe"] for character_data in scheduled_characters}
+    alignments = {
+        character_data["alignment"] for character_data in scheduled_characters
+    }
+    universes = {
+        character_data["universe"] for character_data in scheduled_characters
+    }
     context = {
         "characters": scheduled_characters,
         "rarities": rarities,
@@ -155,7 +159,7 @@ def payment_success(request):
             request,
             'shop/error.html',
             {'error': 'No session id provided'}
-            )
+        )
 
 
 @login_required

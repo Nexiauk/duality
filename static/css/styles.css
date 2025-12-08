@@ -33,10 +33,9 @@ main {
     position: relative;
 }
 
-/* Anchors the messages div near the top of the main container */
-#messages {
-    top: 45px;
-    position: absolute;
+/* Anchor links styled to match colour scheme */
+a {
+    color: var(--skylla);
 }
 
 /* H1 styling for the two titles.
@@ -60,6 +59,12 @@ h6,
 .card-title {
     font-family: var(--sub-heading);
     font-style: italic;
+}
+
+/* Positions the messages div near the top of the main container */
+#messages {
+    top: 45px;
+    position: absolute;
 }
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
