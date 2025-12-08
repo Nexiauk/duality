@@ -70,7 +70,7 @@ the active shop schedules. Each character is presented as a card with:
                 <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                     <!-- Individual shop cards for each character -->
                     <div class="card shop-card glassmorphic"
-                         data-card-type="{{ char.model.rarity|lower }}">
+                         data-card-type="{{ char.model.rarity|lower }} {{ alignment|lower }} {{ universe|lower }}">
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block"
                              src="{{ char.json.images.lg }}"
