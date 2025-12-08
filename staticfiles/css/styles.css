@@ -33,10 +33,9 @@ main {
     position: relative;
 }
 
-/* Anchors the messages div near the top of the main container */
-#messages {
-    top: 45px;
-    position: absolute;
+/* Anchor links styled to match colour scheme */
+a {
+    color: var(--skylla);
 }
 
 /* H1 styling for the two titles.
@@ -60,6 +59,30 @@ h6,
 .card-title {
     font-family: var(--sub-heading);
     font-style: italic;
+}
+
+div label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    border-radius: 16px;
+    padding: 10px;
+    width: 180px;
+}
+
+/* Style options inside a select */
+option 
+ {
+    font-size: 1rem;
+    background-color: var(--ecstatic-red);
+}
+
+/* Positions the messages div near the top of the main container */
+#messages {
+    top: 45px;
+    position: absolute;
 }
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
@@ -111,8 +134,8 @@ h6,
     background-position: top center;
 }
 
-/* Styling for all cards across the app - creates a glassmorphic effect */
-.card {
+/* Glassmorphic effect for cards and forms */
+.glassmorphic {
     background: var(--eclectic-transparent);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -144,25 +167,59 @@ h6,
     box-shadow: 0 0 10px #9ecaed;
 }
 
+/* Rarity colours for shop card badges */
+.badge.common {
+    background-color:var(--eclectic);
+}
+
+.badge.uncommon {
+    background-color:var(--nasturtium-shoot);
+}
+
+.badge.rare {
+    background-color:var(--skylla);
+}
+
+.badge.epic {
+    background-color: var(--fuschia-blue);
+}
+
+.badge.legendary {
+    background-color: var(--vivid-yellow);
+}
+
+.badge.mythic {
+    background-color: gold;
+}
+
 /* Custom buy button for the shop cards, skewed to match nav items */
-.buy-button {
+.buy-button,
+.account-button {
     background-color: var(--vivid-yellow);
     color: black;
     transform: skew(-30deg);
     border-radius: 0;
-    }
+}
+
+.cancel {
+    background-color: var(--ecstatic-red);
+    color: black;
+    transform: skew(-30deg);
+    border-radius: 0;
+}
 
 /* Unskew class applied to the buy button span text unmutate it */
 .unskew {
     display: inline-block;
     transform: skew(30deg);
     font-style: italic;
-    padding: 3px;   
-    font-weight: bold; 
+    padding: 3px;
+    font-weight: bold;
 }
 
 /* Buy button changes colour and pulses on hover */
-.buy-button:hover {
+.buy-button:hover,
+.account-button:hover {
     background-color: var(--skylla);
     color: white;
     transform: skew(-30deg);
@@ -257,14 +314,14 @@ h6,
         margin-top: 50px;
     }
 
-     .shop-card {
+    .shop-card {
         min-width: 270px;
         min-height: 300px;
     }
 
-    .shop-card  img {
-    height: 300px;
-}
+    .shop-card img {
+        height: 300px;
+    }
 }
 
 /* Media query for screens 768px and up */
@@ -287,8 +344,8 @@ h6,
     }
 
     .shop-card img {
-    height: 400px;
-}
+        height: 400px;
+    }
 }
 
 /* media query for screens 1024px and up*/

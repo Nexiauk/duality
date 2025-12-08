@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Filtering for the shop
     const cards = document.querySelectorAll(".shop-card")
     const selects = document.querySelectorAll(".filter")
-
     const rarity = document.getElementById("rarities")
     const alignment = document.getElementById("alignment")
     const universe = document.getElementById("universe")
@@ -23,10 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
            let selectedRarity = rarity.value
             let selectedAlignment = alignment.value
             let selectedUniverse = universe.value
-
             cards.forEach((card) => {
                 const cardCol = card.parentNode
-
                 if (
                     (card.dataset.rarity == selectedRarity || selectedRarity === "all")&&
                     (card.dataset.alignment == selectedAlignment || selectedAlignment === "all")&&
