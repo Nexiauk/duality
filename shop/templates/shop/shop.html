@@ -21,18 +21,19 @@ the active shop schedules. Each character is presented as a card with:
 {% endblock extra_js %}
 {% block content %}
     <section id="shop-section" class="container mb-5 pb-4 gx-0">
-        <!-- Centered Title and description of the shop -->
+        <!-- Centered title and description of the shop -->
         <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
             <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4"
                  id="shop-heading">
                 <h2>Build Your Team!</h2>
                 <p>Mix and match your favourites heroes and villains from across the multiverse.</p>
             </div>
-            {% comment %} New row for filter dropdowns {% endcomment %}
+            <!-- New row for filter dropdowns -->
             <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2 flex justify-content-center">
                 <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                    <!-- Rarity filter -->
                     <label for="rarities">Filter by Rarity</label>
-                    <select name="rarities" id="rarities" class="glassmorphic">
+                    <select name="rarities" id="rarities" class="glassmorphic filter">
                         <option value="all" selected>All</option>
                         {% for rarity in rarities %}
                         <option value="{{ rarity|lower }}">{{ rarity }}</option>
@@ -40,8 +41,9 @@ the active shop schedules. Each character is presented as a card with:
                     </select>
                 </div>
                 <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <label for="rarities">Filter by Alignment</label>
-                    <select name="alignment" id="alignment" class="glassmorphic">
+                    <!-- Alignment filter -->
+                    <label for="alignment">Filter by Alignment</label>
+                    <select name="alignment" id="alignment" class="glassmorphic filter">
                         <option value="all" selected>All</option>
                         {% for alignment in alignments %}
                         <option value="{{ alignment|lower }}">{{ alignment|capfirst }}</option>
@@ -49,8 +51,9 @@ the active shop schedules. Each character is presented as a card with:
                     </select>
                 </div>
                 <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                    <!-- Universe filter -->
                     <label for="universe">Filter by Universe</label>
-                    <select name="universe" id="universe" class="glassmorphic">
+                    <select name="universe" id="universe" class="glassmorphic filter">
                         <option value="all" selected>All</option>
                         {% for universe in universes %}
                         <option value="{{ universe|lower }}">{{ universe|capfirst }}</option>
@@ -70,7 +73,9 @@ the active shop schedules. Each character is presented as a card with:
                 <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                     <!-- Individual shop cards for each character -->
                     <div class="card shop-card glassmorphic"
-                         data-card-type="{{ char.model.rarity|lower }} {{ alignment|lower }} {{ universe|lower }}">
+                         data-rarity="{{ char.model.rarity|lower }}"
+                         data-alignment="{{ char.alignment|lower }}" 
+                         data-universe="{{ char.universe|lower }}">
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block"
                              src="{{ char.json.images.lg }}"
