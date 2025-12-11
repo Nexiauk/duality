@@ -1,15 +1,12 @@
 <!--
 This template renders the card-detail view after pressing the buy button in the shop.
-
-
 -->
 {% extends "base.html" %}
 {% load static %}
 <!-- Dynamically sets the page title -->
 {% block title %}Confirm Purchase{% endblock title %}
 {% block extra_js %}
-<script src="{% static 'js/card-detail.js' %}"></script>
-<script src="{% static 'js/shop-script.js' %}"></script>
+<script src="{% static 'js/shop.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
 <section id="card-view" class="container mb-5 pb-4 gx-0">

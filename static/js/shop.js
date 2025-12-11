@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selects.forEach((select) => {
         select.addEventListener("change", () => {
-           let selectedRarity = rarity.value
+            let selectedRarity = rarity.value
             let selectedAlignment = alignment.value
             let selectedUniverse = universe.value
             cards.forEach((card) => {
                 const cardCol = card.parentNode
                 if (
-                    (card.dataset.rarity == selectedRarity || selectedRarity === "all")&&
-                    (card.dataset.alignment == selectedAlignment || selectedAlignment === "all")&&
+                    (card.dataset.rarity == selectedRarity || selectedRarity === "all") &&
+                    (card.dataset.alignment == selectedAlignment || selectedAlignment === "all") &&
                     (card.dataset.universe == selectedUniverse || selectedUniverse === "all")
                 ) {
                     card.style.display = "block"
@@ -40,5 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         })
     })
-
+    // A back button that navigates the browser history.
+    document.querySelectorAll(".cancel").forEach(button => {
+        button.addEventListener("click", (e) => {
+            e.preventDefault();
+            history.back();
+            console.log("Hello")
+        });
+    });
 })
