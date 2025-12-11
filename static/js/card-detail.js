@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
             history.back();
+            console.log("Hello")
         });
     });
 });

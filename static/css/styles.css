@@ -170,14 +170,17 @@ option
 /* Rarity colours for shop card badges */
 .badge.common {
     background-color:var(--eclectic);
+    color: black;
 }
 
 .badge.uncommon {
     background-color:var(--nasturtium-shoot);
+    color: black;
 }
 
 .badge.rare {
     background-color:var(--skylla);
+    color: black;
 }
 
 .badge.epic {

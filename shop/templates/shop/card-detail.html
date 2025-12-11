@@ -8,6 +8,7 @@ This template renders the card-detail view after pressing the buy button in the 
 <!-- Dynamically sets the page title -->
 {% block title %}Confirm Purchase{% endblock title %}
 {% block extra_js %}
+<script src="{% static 'js/card-detail.js' %}"></script>
 <script src="{% static 'js/shop-script.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}

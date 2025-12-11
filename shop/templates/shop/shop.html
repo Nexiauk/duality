@@ -78,7 +78,8 @@ the active shop schedules. Each character is presented as a card with:
                          data-universe="{{ char.universe|lower }}">
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block"
-                             src="{{ char.json.images.lg }}"
+                        loading="lazy"
+                             src="{{ char.json.images.md }}"
                              width="auto"
                              height="400"
                              alt="{{ char.model.name }}">

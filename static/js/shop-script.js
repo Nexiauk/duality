@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.style.display = "block";
         })
 
-    }, 2000)
+    }, 3000)
     // Filtering for the shop
     const cards = document.querySelectorAll(".shop-card")
     const selects = document.querySelectorAll(".filter")
