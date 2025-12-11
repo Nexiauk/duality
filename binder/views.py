@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.models import User
 from .models import Usercards
 
-# Create your views here.
+
 def binder_view(request):
     """
     Renders the shop page with scheduled characters,
@@ -13,7 +13,7 @@ def binder_view(request):
     usercards = Usercards.objects.filter(owner=request.user)
     user_chars = []
     for char in usercards:
-        character=char.character
+        character = char.character
         card_data = {
             "usercard": char,
             "chardetails": character,

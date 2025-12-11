@@ -461,7 +461,9 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * urls.py - all clear, no errors found
     * views.py - all clear, no errors found
 * **Binder App**
-    *models.py - all clear, no errors found
+    * models.py - all clear, no errors found
+    * views.py - all clear, no errors found
+    * urls.py - all clear, no errors found
 * **Root Directory Files**
 
 #### [**JSONLint**](https://jsonlint.com/)
