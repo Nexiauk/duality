@@ -5,6 +5,7 @@
 {% url 'account_login' as login_url %}
 {% url 'account_logout' as logout_url %}
 {% url 'account_signup' as signup_url %}
+{% url 'binder' as binder_url %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +62,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Binder</a>
+                            <a class="nav-link" href="{% url "binder" %}">Binder</a>
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
