@@ -79,23 +79,23 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 
 **Shop Interaction**
 
-* **Browse the available cards in the shop**, so that I can decide which ones to collect or purchase.
+* **Browse the available cards in the shop**, so that I can decide which ones to collect.
+
+* **Filter the available cards in the shop**, so that I can easily locate heroes/villains of specific types for my collection.
 
 * **See at a glance which cards are free and which ones require payment**, so that I can make quick decisions on which cards to collect.
 
 * **See at a glance the different card rarities and Universes**, so I can make informed collection decisions.
 
-* **See at a glance the last time the shop refreshed**, so that I don’t waste time on a card stack I’ve already viewed.
+* **See at a glance and easily use a 'Buy Now' button**, so I can efficiently make a purchase.
 
-* **See at a glance the next time the shop will refresh**, so that I know when to come back and check the shop again.
+* **Be given the option to continue or cancel my purchase**, so I can change my mind if I want.
 
 **Binder / Collection Management**
 
 * **Add free cards to my binder with a single click**, so that I can build my collection quickly and efficiently.
 
 * **Add purchasable cards to a basket with a single click**, so that I can efficiently purchase them if under time constraints.
-
-* **See how many items are in my basket**, so that I can track my intended purchases.
 
 * **Cancel my purchase before it’s processed**, so that I have the option to change my mind.
 
