@@ -32,12 +32,15 @@ class UserCardsInline(admin.TabularInline):
     extra = 0
     fields = (
         "order_reference",
+        "stripe_payment_id",
         "character",
         "date_purchased",
         "purchase_price",
         
               )
     readonly_fields = (
+        "order_reference",
+        "stripe_payment_id",
         "date_purchased",
         "purchase_price",
     )
