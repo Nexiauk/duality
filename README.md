@@ -490,6 +490,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ### **Manual Testing**
 * Tested characters imported safely after running import.py and that archetypes were allocated to all characters - checked via Django admin. Exception errors raise if the file doesn't exist at the specified path, if the JSON data is malformed, or if the OS denies permissions. Exception errors also raise if invalid values or if bad values violate database rules.
 * Tested that rarities were assigned to all characters after running rarity-update.py - checked via Django admin. Built-in logic to compare id and name from the JSON file, to id and name in the CharacterCard model table. Exception errors raise if the CharacterCard doesn't exist, and any characters not allocated a rarity will print to the terminal.
+* Checked that the method of grabbing the json data for each character returns the correct details by manually comparing characters to the json file
 * Checked that UserCards showed inline to Users in the Admin panel after deregistering the User admin and creating a custome one.
 * Checked that ShopScheduleItems show inline to Shop Scheduler after creating an inline admin class
 * Checked that ShopSchedulers show a comma separated list of characters allocated to the schedule
@@ -500,6 +501,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Checked that the Shop filters work solo and in tandem with each other to show the correct characters
 * Checked that multiple Shop Schedulers with crossover dates showed all items on all schedulers
 * Checked that when there were no currently active schedules, a new one was created when visiting the shop
+* Checked that the shop still created a schedule properly after adding a try/except block to the class method that is called in the view to create it
 
 
 

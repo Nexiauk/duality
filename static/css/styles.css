@@ -419,12 +419,14 @@ option
         font-size: 4rem;
     }
 
-    h2,
+    .hero-card .card-title {
+        font-size: 3rem;
+    }
+
     h3,
-    h3,
+    h4,
     h5,
-    h6,
-    .card-title {
+    h6 {
         font-size: 2.5rem;
     }
 
@@ -445,11 +447,17 @@ option
     }
 
     #hero-section {
-        width: 2200px;
+        max-width: 2200px;
+        max-height: 1000px;
     }
 
-    .card {
+    #hero-section .col {
+        padding: 0 1.2rem 2.5rem 1.2rem;
+    }
+
+    .hero-card {
         font-size: 1.8rem;
+        padding: 2.5rem;
     }
 
     #shop-heading {
