@@ -247,27 +247,33 @@ Duality: Legends Unchained has been designed mobile-first, built initially to lo
 ### *Footer*
 
 ### *Home Page*
-Progress bar  
-Dynamic background  
 Hero section
+Carousel on smaller screens
 
 ### *Shop Page*
-Add to basket  
 Hover animations  
-Shop countdown timer
-
-### *Basket*
-Remove from basket  
-Proceed to payment  
+Shop countdown timer??
+Filters
+Card-detail
+Stripe payment
 Stripe Payment
 
 ### *Binder Page*
 Filters  
-Search  
 Flippable cards  
 Extra card content
 
-### 
+### Admin
+Shop Scheduler
+Schedule items - inline
+Customer User admin so that other model admins can be shown inline
+Inline usercards and inline userprofile
+CharacterCard additional actions for rotation - take out of rotation/put into rotation
+CharacterCard searchbar for characters by name
+Hook method for ScheduledItems, so the only items eligible to be allocated to a schedule are those where rotation equals true
+Autocomplete field on shop schedule items for quicker allocating
+Search bar on CharacterCard model for quicker editing
+Custom method to show characters allocated to a particular schedule as a comma separated list
 
 ## **Security Features**
 
@@ -298,6 +304,9 @@ Extra card content
 * Ability to trade cards  
 * 1v1 card battles  
 * Audio effects
+* A fancier binder
+* Ability to search by rarity/universe/alignment/archetype on the shop schedule items to allow 'type' shops.
+* Change the shop scheduler so that instead of creating a new schedule on a visit, it is an automated task
 
 ## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
@@ -464,6 +473,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * models.py - all clear, no errors found
     * views.py - all clear, no errors found
     * urls.py - all clear, no errors found
+    * admin.py - all clear, no errors found
 * **Root Directory Files**
 
 #### [**JSONLint**](https://jsonlint.com/)
@@ -473,15 +483,25 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * charactercard.json is valid
 * rarity.json is valid
 
-
 #### **The WAVE Webb Accessibility Evaluation Tool**
 
 #### **Chrome Lighthouse**
 
 ### **Manual Testing**
 * Tested characters imported safely after running import.py and that archetypes were allocated to all characters - checked via Django admin. Exception errors raise if the file doesn't exist at the specified path, if the JSON data is malformed, or if the OS denies permissions. Exception errors also raise if invalid values or if bad values violate database rules.
-
 * Tested that rarities were assigned to all characters after running rarity-update.py - checked via Django admin. Built-in logic to compare id and name from the JSON file, to id and name in the CharacterCard model table. Exception errors raise if the CharacterCard doesn't exist, and any characters not allocated a rarity will print to the terminal.
+* Checked that UserCards showed inline to Users in the Admin panel after deregistering the User admin and creating a custome one.
+* Checked that ShopScheduleItems show inline to Shop Scheduler after creating an inline admin class
+* Checked that ShopSchedulers show a comma separated list of characters allocated to the schedule
+* Checked that the autocomplete works when creating shop schedule items via Admin
+* Checked that the search function works on the CharacterCard admin
+* Checked that only characters where rotation = True show as eligible to become Shop Schedule Items
+* Checked that the logic works in the view to remove any characters where initally rotation was true, but that became false after the item was already displaying in the shop
+* Checked that the Shop filters work solo and in tandem with each other to show the correct characters
+* Checked that multiple Shop Schedulers with crossover dates showed all items on all schedulers
+* Checked that when there were no currently active schedules, a new one was created when visiting the shop
+
+
 
 ### **Unit Testing**
 

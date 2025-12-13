@@ -6,7 +6,7 @@ Schedules control rotation timing and determine which
 characters are available in the shop.
 """
 
-from django.db import models
+from django.db import models, IntegrityError
 from django.utils import timezone
 from django.utils.timezone import timedelta
 from django.utils.translation import gettext_lazy as _
@@ -70,13 +70,15 @@ class ShopScheduler(models.Model):
         active_schedules = ShopScheduler.currently_active_schedules()
         if active_schedules.exists():
             return active_schedules
-        else:
+        try:
             new_schedule = ShopScheduler.objects.create(
                 start_time=start_time_default(),
                 end_time=end_time_default(),
                 rotation_type="Daily"
             )
             return [new_schedule]
+        except IntegrityError:
+            return cls.currently_active_schedules
 
     def get_items(self):
         """Returns all characters assigned to this schedule."""
@@ -111,6 +113,12 @@ class ShopScheduler(models.Model):
         ordering = ["-start_time"]
         verbose_name = "Shop Scheduler"
         verbose_name_plural = "Shop Scheduler"
+        constraints = [
+            models.UniqueConstraint(
+                fields=["start_time"],
+                name="unique_shop_per_start_time"
+            )
+        ]
 
     def __str__(self):
         """Returns a string representation of the schedule."""

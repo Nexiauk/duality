@@ -36,7 +36,7 @@ class UserCardsInline(admin.TabularInline):
         "character",
         "date_purchased",
         "purchase_price",
-        
+
               )
     readonly_fields = (
         "order_reference",
@@ -44,6 +44,7 @@ class UserCardsInline(admin.TabularInline):
         "date_purchased",
         "purchase_price",
     )
+
 
 class CustomUserAdmin(UserAdmin):
     """
@@ -56,6 +57,7 @@ class CustomUserAdmin(UserAdmin):
         "email",
         "is_staff",
     ]
+
 
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)

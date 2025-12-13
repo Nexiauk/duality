@@ -19,7 +19,7 @@ class ShopScheduleItemsInline(admin.TabularInline):
     directly within the ShopScheduler admin page.
     """
     model = ShopScheduleItems
-    extra = 12
+    extra = 0
     autocomplete_fields = ['character']
 
     def formfield_for_foreignkey(self, db_field, request, *args, **kwargs):
