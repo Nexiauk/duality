@@ -73,8 +73,7 @@ select {
 }
 
 /* Style options inside a select */
-option 
- {
+option {
     font-size: 1rem;
     background-color: var(--ecstatic-red);
 }
@@ -169,17 +168,17 @@ option
 
 /* Rarity colours for shop card badges */
 .badge.common {
-    background-color:var(--eclectic);
+    background-color: var(--eclectic);
     color: black;
 }
 
 .badge.uncommon {
-    background-color:var(--nasturtium-shoot);
+    background-color: var(--nasturtium-shoot);
     color: black;
 }
 
 .badge.rare {
-    background-color:var(--skylla);
+    background-color: var(--skylla);
     color: black;
 }
 
@@ -298,6 +297,10 @@ option
 /* Media queries start here */
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
+    footer {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
 
     .nav-link {
         color: white;
@@ -415,11 +418,32 @@ option
 
 /* Media query for screens 2560px and up */
 @media screen and (min-width:2560px) {
+    footer {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        font-size: 1.9rem;
+    }
+
     h1 {
         font-size: 4rem;
     }
 
-    .hero-card .card-title {
+    p {
+        font-size: 1.8rem;
+    }
+
+    select {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    div label {
+        margin-top: 15px;
+        font-size: 1.4rem;
+    }
+
+    .hero-card .card-title,
+    .heading {
         font-size: 3rem;
     }
 
@@ -427,23 +451,31 @@ option
     h4,
     h5,
     h6 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     #messages {
         top: 80px;
     }
 
-    footer {
-        font-size: 1.8rem;
+    .navbar {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        padding-left: 20px;
+        font-size: 1.9rem;
+    }
+
+    h1 {
+        font-size: 4rem;
+        padding: 0 48px 0 10px;
     }
 
     .navbar-nav {
-        padding-right: 20px;
+        padding-right: 30px;
     }
 
     .nav-link {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     #hero-section {
@@ -457,15 +489,23 @@ option
 
     .hero-card {
         font-size: 1.8rem;
-        padding: 2.5rem;
+        padding: 2.2rem;
     }
 
     #shop-heading {
-        margin-top: 4rem !important;
+        margin-top: 6rem !important;
     }
 
     .shop-card {
         min-width: 400px;
         min-height: 320px;
+    }
+
+    .badge {
+        font-size: 1.1rem;
+    }
+
+    .buy-button {
+        font-size: 1.4rem;
     }
 }

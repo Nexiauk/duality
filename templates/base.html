@@ -102,7 +102,7 @@
         {% endblock content %}
     </main>
     <!-- Footer starts here. Stays sticky when scrolling -->
-    <footer class="text-center bg-dark mt-auto py-2 sticky-md-bottom" data-bs-theme="dark">
+    <footer class="text-center bg-dark mt-auto sticky-md-bottom" data-bs-theme="dark">
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-md-3">
                 <!-- Column with copyright information -->
@@ -151,7 +151,7 @@
                 <div class="col">
                     <!-- Unordered list for links to terms and policies -->
                     {% if user.is_authenticated %}
-                    <p class="text-body my-2">You are currently signed in as <b>{{ user }}</b>.</p>
+                    <p class="text-body my-2">You are signed in as <b>{{ user }}</b>.</p>
                     {% else %}
                     <p class="text-body my-2">You are currently not signed in.</p>
                     {% endif %}

@@ -25,11 +25,11 @@ the active shop schedules. Each character is presented as a card with:
         <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2">
             <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4"
                  id="shop-heading">
-                <h2>Build Your Team!</h2>
+                <h2 class="heading">Build Your Team!</h2>
                 <p>Mix and match your favourites heroes and villains from across the multiverse.</p>
             </div>
             <!-- New row for filter dropdowns -->
-            <div class="row ms-xxl-6 ps-xxl-0 me-xxl-6 mb-2 flex justify-content-center">
+            <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center">
                 <div class="col-12 col-md-3 text-center mt-2 mb-2">
                     <!-- Rarity filter -->
                     <label for="rarities">Filter by Rarity</label>
@@ -67,7 +67,7 @@ the active shop schedules. Each character is presented as a card with:
             <div class="loader"></div>
         </div>
         <!-- Shop items grid with responsive layout at different screen sizes. -->
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
+        <div class="row gy-4 gy-xxl-5 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
             <!-- Loop through all characters passed by the view -->
             {% for char in characters %}
                 <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
