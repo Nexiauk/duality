@@ -156,10 +156,9 @@ option {
 .shop-card {
     display: none;
     transition: transform .2s;
-    border: 2px solid transparent;
 }
 
-/* Shop cards enlargen on hover with a glow effect */
+/* Shop cards grow on hover with a glow effect */
 .shop-card:hover {
     transform: scale(1.1);
     z-index: 99;
@@ -170,36 +169,46 @@ option {
     box-shadow: 0 0 10px #9ecaed;
 }
 
+/* The Binder flip card container, with perspective for 3D effect */
 .binder-card {
     perspective: 1000px;
     background-color: transparent;
     width: 356px;
     height: 573px;
-    border: none;
+    display: none;
+    transition: transform .2s;
+    border: 2px solid transparent;
 }
 
+/* Container to position the front and back of the card */
 .card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
+/* A horizontal flip when the mouse moves over the flip box container */
 .binder-card:hover .card-inner {
     transform: rotateY(180deg);
+    border: 2px solid #dadada;
+    border-radius: 16px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
-
-
+/* POsition the front and the back of the card */
 .card-front,
 .card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
 
 }
 

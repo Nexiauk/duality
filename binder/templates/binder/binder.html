@@ -14,7 +14,7 @@ the active shop schedules. Each character is presented as a card with:
     My Team
 {% endblock title %}
 {% block extra_js %}
-    <script src="{% static 'js/shop.js' %}"></script>
+    <script src="{% static 'js/binder.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
     <section id="shop-section" class="container mb-5 pb-4 gx-0">
@@ -67,9 +67,7 @@ the active shop schedules. Each character is presented as a card with:
                          data-rarity="{{ char.chardetails.rarity|lower }}"
                          data-alignment="{{ char.alignment|lower }}"
                          data-universe="{{ char.universe|lower }}">
-
                         <div class="card-inner">
-
                             <div class="card-front glassmorphic">
                                 <!-- Character image dynamically loaded from the legends.json file -->
                                 <img class="object-fit-cover card-img-top w-100 d-block"
@@ -91,8 +89,6 @@ the active shop schedules. Each character is presented as a card with:
                                 <p>This is the back</p>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             {% endfor %}
