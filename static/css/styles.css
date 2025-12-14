@@ -173,11 +173,15 @@ option {
 .binder-card {
     perspective: 1000px;
     background-color: transparent;
-    width: 356px;
-    height: 573px;
+    width: 266px;
+    height: 452px;
     display: none;
     transition: transform .2s;
     border: 2px solid transparent;
+}
+
+.binder-card img {
+    height: 300px;
 }
 
 /* Container to position the front and back of the card */
@@ -402,8 +406,14 @@ option {
         min-height: 320px;
     }
 
-    .shop-card img {
+    .shop-card img,
+    .binder-card img {
         height: 400px;
+    }
+
+    .binder-card {
+        height: 527px;
+        width: 316px;
     }
 }
 
@@ -434,10 +444,14 @@ option {
         text-decoration: none;
     }
 
-    .shop-card,
-    .binder-card {
+    .shop-card {
         min-width: 360px;
         min-height: 320px;
+    }
+
+    .binder-card {
+        height: 529px;
+        width: 356px;
     }
 }
 
@@ -567,6 +581,11 @@ option {
     .shop-card {
         min-width: 400px;
         min-height: 320px;
+    }
+
+    .binder-card {
+        height: 542px;
+        width: 396px;
     }
 
     .badge {
