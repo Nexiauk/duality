@@ -23,6 +23,10 @@ def binder_view(request):
             "universe": character.charc_universe()
             }
         user_chars.append(card_data)
+        user_chars.sort(
+        key=lambda character_data: character_data["power"],
+        reverse=True
+    )
 
     context = {
         "characters": user_chars
