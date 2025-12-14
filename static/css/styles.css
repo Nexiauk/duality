@@ -192,6 +192,7 @@ option {
 
 .badge.legendary {
     background-color: var(--vivid-yellow);
+    color: black;
 }
 
 .badge.mythic {
