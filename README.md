@@ -183,16 +183,19 @@ The image depicts good and evil, dark and light, but the colours weren't quite r
 ![Final Duality Image](../duality/docs/screenshots/hero-image.avif)
 
 * Logo
+I originally chose a Yin Yang symbole for the logo because of its connotations of Duality, but it didn't really fit. So I searched on Adobe Stock for imagery representing duality/infinity/masks, and found this particular emblem:  
+![Infinity flame icon](../duality/docs/screenshots/original-logo.png)  
+The colours weren't quite right so again, I used Adobe Photoshop to change it up:  
+![Final Duality Logo](../duality/docs/screenshots/logo.avif)
 
 ### *Typography*
 
-Avengeance - loved this for the title, but needed to pay for an annual subscription licence. Couldn’t justify the cost.  
-
-
-#### **Final set**
 * **Racing Sans One (Decorative) - logo/title.** High contrast Sans Serif font, designed for large headlines and titles. Features sharp angles and streamlined curves to convey a sense of motion and energy.  
-* **Prompt (Structured) - headings in italic.** Highly legible Sans Serif geometric font, designed for performance on tech interfaces. Clean and contemporary.  
+
+* **Prompt (Structured) - headings in italic.** Highly legible Sans Serif geometric font, designed for performance on tech interfaces. Clean and contemporary. 
+
 * **Inder (Easy Reading) - body text.** Low contrast sans serif, can be used on a wide range of screen sizes. Clean lines and absence of decorative elements means it’s perfect for smaller text on Legend cards. 
+
 ![Font Pairing](../duality/docs/screenshots/font-pairing.png)
 
 ### *Wireframes*
@@ -653,7 +656,7 @@ The project includes comprehensive unit tests for models and views using Django'
 * Media for 731 superheroes and villains - [SuperHeroAPI](https://www.superheroapi.com/)
 * Socials icons for the Header/Footer - [Bootstrap Icons](https://icons.getbootstrap.com/)
 * Hero image from [freepik.com](https://www.freepik.com/free-ai-image/illustrated-rendering-twin-avatar_94938018.htm#fromView=image_search&page=1&position=30&uuid=3f919ced-a2ab-4eae-9f4f-620c72eddb72&query=heroes+and+villains)
-* Logo sourced from Adobe Stock images [stock.adobe.com](https://stock.adobe.com/uk)
+* Logo sourced from Adobe Stock images [stock.adobe.com](https://stock.adobe.com/uk/images/dynamic-flame-energy-abstract-icon-vibrant-abstract-emblem-featuring-a-central-blaze-embraced-by-flowing-red-and-blue-elements-symbolizing-balance-and-powerful-connection/1605298308?prev_url=detail)
 
 ### *Tools*
 * Glassmorphism CSS generator - [css.glass](https://css.glass/)
