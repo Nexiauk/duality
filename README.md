@@ -195,13 +195,24 @@ The colours weren't quite right so again, I used Adobe Photoshop to change it up
 * **Prompt (Structured) - headings in italic.** Highly legible Sans Serif geometric font, designed for performance on tech interfaces. Clean and contemporary. 
 
 * **Inder (Easy Reading) - body text.** Low contrast sans serif, can be used on a wide range of screen sizes. Clean lines and absence of decorative elements means it’s perfect for smaller text on Legend cards. 
-
 ![Font Pairing](../duality/docs/screenshots/font-pairing.png)
 
 ### *Wireframes*
-Wireframes were produced using [Bootstrap Studio](https://bootstrapstudio.io/), which has the added bonus of generating a skeletal HTML framework for my pages that can then be further customised with my own CSS styling and animations. Bootstrap Studio is worth every penny \-  I was lucky enough to use it for free during my course, but would absolutely pay for the full version in the future.
+Wireframes were produced using [Bootstrap Studio](https://bootstrapstudio.io/), which has the added bonus of generating a skeletal HTML framework for my pages that can then be further customised with my own CSS styling and animations. Bootstrap Studio is worth every penny -  I was lucky enough to use it for free during my course, but would absolutely pay for the full version in the future.
+
+Bootstrap Studio let me quickly build my design for scaling across different viewports, too.
+
+The published version of the wireframe template can be found here:  
+[Duality Wireframe Published](https://billowing-mountain-0627.bss.design/index.html)
+
+
 
 ### *End Product Design Changes*
+The only changes made were to the layout created by Bootstrap Studio in places. Having the info cards on the main page only slightly covering the hero image looked unfinished in reality, so I had the hero image cover the whole page and added a glassmorphic effect to the cards. I also had to tweak a bit more using flex properties to get the cards to sit in the correct place. 
+
+I added filters to the shop and the binder pages
+
+Everything else stayed pretty much the same - I hadn't added styling to the wireframes this time, I just used them to mockup a skeletal layout for each page.
 
 ## **Features**
 
