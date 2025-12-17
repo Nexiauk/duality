@@ -60,7 +60,7 @@ the active shop schedules. Each character is presented as a card with:
         <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
             <!-- Loop through all characters passed by the view -->
             {% for char in characters %}
-                <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
+                <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                     <!-- Individual shop cards for each character -->
                     <div class="card binder-card"
                          data-rarity="{{ char.chardetails.rarity|lower }}"
@@ -76,15 +76,57 @@ the active shop schedules. Each character is presented as a card with:
                                      height="400"
                                      alt="{{ char.chardetails.name }}">
                                 <div class="card-body d-flex flex-column justify-content-evenly">
-                                    <div><span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span></div>
+                                    <div>
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span>
+                                    </div>
                                     <!-- Character name passed from the character model -->
                                     <h2 class="text-center card-title">{{ char.chardetails.name }}</h2>
                                     <!-- Badge showing the character's power total -->
-                                    <span class="badge p-0 archetype mb-2">{{ char.chardetails.archetype }}</span>
+                                    <div class="row">
+                                        <div class="col-12">{{ char.alignment }}</div>
+                                        <div class="col-12">{{ char.universe }}</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card-back glassmorphic">
-                                <p>This is the back</p>
+                            <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
+                                <h3>{{ char.json.biography.fullName }}</h3>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p>
+                                            <b>Alias:</b> 
+                                            {{ char.json.biography.aliases.0 }}
+                                        </p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p>
+                                            <b>First Appearance:</b> 
+                                            {{ char.json.biography.firstAppearance }}
+                                        </p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p><b>Race:</b> {{ char.json.appearance.race }}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">Combat: {{ char.json.powerstats.combat }}</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">Durability: {{ char.json.powerstats.durability }}</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">Intelligence: {{ char.json.powerstats.intelligence }}</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">Power: {{ char.json.powerstats.power }}</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">Speed: {{ char.json.powerstats.speed }}</span>
+                                    </div>
+                                    <div class="col-6">
+                                        <span class="badge {{ char.chardetails.rarity|lower }}">Strength: {{ char.json.powerstats.strength }}</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

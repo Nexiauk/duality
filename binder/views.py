@@ -18,12 +18,14 @@ def binder_view(request):
         rarities_set = set()
         # Card data for each user card so the correct data can be displayed
         # and datasets added for filtering
+        charc_alignment = character.charc_alignment()
+        charc_alignment = charc_alignment[:1].upper() + charc_alignment[1:].lower()
         card_data = {
             "usercard": char,
             "chardetails": character,
             "json": character.get_legends_data(),
             "power": character.power_status(),
-            "alignment": character.charc_alignment(),
+            "alignment": charc_alignment,
             "universe": character.charc_universe(),
             "rarity": character.rarity.name
         }
