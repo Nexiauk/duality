@@ -7,7 +7,6 @@ the active shop schedules. Each character is presented as a card with:
 - Character name from the CharacterCard model.
 - Total power displayed as a badge.
 - Responsive grid layout adapting to mobile, tablet, and desktop. -->
-
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
@@ -22,7 +21,7 @@ the active shop schedules. Each character is presented as a card with:
         <div class="row ms-xxl-6 me-xxl-6 mb-2">
             <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4"
                  id="shop-heading">
-                <h2 class="heading">Binder Files</h2>
+                <h2 class="heading">Binder</h2>
                 <p>View your ultimate multiversal team!</p>
             </div>
             <!-- New row for filter dropdowns -->
@@ -76,13 +75,12 @@ the active shop schedules. Each character is presented as a card with:
                                      width="auto"
                                      height="400"
                                      alt="{{ char.chardetails.name }}">
-                                <div class="card-body p-4">
+                                <div class="card-body d-flex flex-column justify-content-evenly">
+                                    <div><span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span></div>
                                     <!-- Character name passed from the character model -->
                                     <h2 class="text-center card-title">{{ char.chardetails.name }}</h2>
-                                    <div class="d-flex justify-content-center flex-wrap gap-2 gap-md-0">
-                                        <!-- Badge showing the character's power total -->
-                                        <span class="badge me-sm-3 {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span>
-                                    </div>
+                                    <!-- Badge showing the character's power total -->
+                                    <span class="badge p-0 archetype mb-2">{{ char.chardetails.archetype }}</span>
                                 </div>
                             </div>
                             <div class="card-back glassmorphic">

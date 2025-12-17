@@ -17,10 +17,10 @@
     --main-text: "Inder"
 }
 
+/* Show scrollbar all the time to stop layout shifts */
 html {
     overflow-y: scroll;
 }
-
 
 /* Linear gradient colour for the body using root variables */
 body {
@@ -66,11 +66,13 @@ h6,
     font-style: italic;
 }
 
+/* Select label styling */
 div label {
     display: block;
     margin-bottom: 5px;
 }
 
+/* Select styling */
 select {
     border-radius: 16px;
     padding: 10px;
@@ -169,7 +171,7 @@ option {
     box-shadow: 0 0 10px #9ecaed;
 }
 
-/* The Binder flip card container, with perspective for 3D effect */
+/* Binder flip card container, with perspective for 3D effect */
 .binder-card {
     perspective: 1000px;
     background-color: transparent;
@@ -180,8 +182,15 @@ option {
     border: 2px solid transparent;
 }
 
+/* Fixed size for binder card image, changes at different screen sizes */
 .binder-card img {
     height: 300px;
+}
+
+/* Stripped back card title for better flex layout */
+.card-title {
+    padding: 0;
+    margin: 0;
 }
 
 /* Container to position the front and back of the card */
@@ -204,7 +213,7 @@ option {
     box-shadow: 0 0 10px #9ecaed;
 }
 
-/* POsition the front and the back of the card */
+/* Position the front and the back of the card */
 .card-front,
 .card-back {
     position: absolute;
@@ -216,9 +225,15 @@ option {
 
 }
 
+/* Styling of the back of the binder flip card */
 .card-back {
     border-radius: 16px;
     transform: rotateY(180deg);
+}
+
+/* Remove padding from card-body to create more space on the flex layout */
+.card-body {
+    padding: 0;
 }
 
 /* Rarity colours for shop card badges */
@@ -251,7 +266,15 @@ option {
     color: black;
 }
 
-/* Custom buy button for the shop cards, skewed to match nav items */
+.archetype {
+    font-size: medium;
+}
+
+.badge {
+    font-size: small;
+}
+
+/* Custom buttons, skewed to match nav items */
 .buy-button,
 .account-button {
     background-color: var(--vivid-yellow);
@@ -267,7 +290,7 @@ option {
     border-radius: 0;
 }
 
-/* Unskew class applied to the buy button span text unmutate it */
+/* Unskew class applied to the button span text to unmutate it */
 .unskew {
     display: inline-block;
     transform: skew(30deg);
@@ -276,7 +299,7 @@ option {
     font-weight: bold;
 }
 
-/* Buy button changes colour and pulses on hover */
+/* Buttona changes colour and pulse on hover */
 .buy-button:hover,
 .account-button:hover {
     background-color: var(--skylla);
@@ -285,7 +308,7 @@ option {
     animation: pulse 2s infinite;
 }
 
-/* Pulsing animation used on hovering over the buy now button, skewed to match the button */
+/* Pulsing animation used on hovering over the buttons, skewed to match the button */
 @keyframes pulse {
     0% {
         transform: scale(0.95);
@@ -385,6 +408,10 @@ option {
     .shop-card img {
         height: 300px;
     }
+
+    .card-body {
+        height: 148px;
+    }
 }
 
 /* Media query for screens 768px and up */
@@ -408,12 +435,16 @@ option {
 
     .shop-card img,
     .binder-card img {
-        height: 400px;
+        height: 390px;
     }
 
     .binder-card {
         height: 527px;
         width: 316px;
+    }
+
+    .card-body {
+        height: 137px;
     }
 }
 
@@ -450,7 +481,6 @@ option {
     }
 
     .binder-card {
-        height: 529px;
         width: 356px;
     }
 }
@@ -586,6 +616,10 @@ option {
     .binder-card {
         height: 542px;
         width: 396px;
+    }
+
+    .card-body {
+        height: 152px;
     }
 
     .badge {
