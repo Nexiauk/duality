@@ -656,6 +656,98 @@ The project includes comprehensive unit tests for models and views using Django'
 * Not a bug per se, but originally I had the home view opening up the legends json file at every request, in order to iterate through it and match up with the randomly generated sample of characters from the Charactercard model. This is okay with a small amount of data for a course project, but in actual fact its not very efficent or scalable. I used various resources (Django documentation and ChatGPT) to create a ready method in AppConfig to load up the data once at startup and store it in a global variable in my project's data folder. I then removed the file opening from the home view and iterated through the data stored in the global variable instead.
 * The earlier import of json data into the CharacterCard model meant I had to create a custom pk for the model that wouldn't auto-increment, as I needed to manually assign IDs that already existed in the JSON dictionaries for each character. A  test later on reminded me that Django would no longer auto-assign and increment IDs to any future characters added to the app. This was sorted using the custom management command **fix_legend_id** to assign a separate integer field to legend_id that matches the current PK for each character, I was then able to change id to an AutoField.
 
+## **Deployment**
+
+### Creating a Github Fork
+1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).
+2. In the top-right corner of the page click on the down arrow next to the **Fork** button and select **Create a new fork**.
+3. You can change the name of the fork in **Repository name** and add an optional description.
+4. Tick **Copy the main branch only**.
+5. Click the **Create a Fork** button.
+6. A new repository should appear in your GitHub with the name you chose.
+
+### Cloning a Github Repository
+1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).
+2. Click on the **Code** button on top of the repository and copy the link.
+3. Open Git Bash and change the working directory to the location where you want the cloned directory.
+4. Type git clone and then paste the link.
+5. Press Enter to create your local clone.
+
+### Installing Requirements
+1. Create a virtual environment in your local project folder.  
+2. Activate the virtual environment.  
+3. Install all required dependencies using the `requirements.txt` file using `pip install -r requirements.txt`  
+4. Verify installation by running the project locally.  
+
+### Preparing the Project
+1. Ensure your Django project has a `requirements.txt` with all dependencies listed.  
+2. Ensure your project has a `Procfile` at the root, specifying how Heroku should run the app.  
+3. Make sure `ALLOWED_HOSTS` in `settings.py` includes your Heroku app domain.  
+4. Ensure static files are configured for production (for example, using WhiteNoise).
+5. Ensure `dj-database-url` is listed in `requirements.txt` so it is installed automatically.
+6. Your `settings.py` should use `dj-database-url` to read the `DATABASE_URL` environment variable.  
+  This ensures Django connects to the correct database in both local and Heroku environments.  
+7. Set `DEBUG = False` in `settings.py` for production. 
+
+### Creating an `env.py` File
+1. In your local project directory, create a file named `env.py`.  
+2. Add your sensitive environment variables to the file, for example:
+   ```python
+   import os
+
+   os.environ['SECRET_KEY'] = 'your-secret-key'
+   os.environ['CLOUDINARY_URL'] = 'your-cloudinary-url'
+   os.environ['DATABASE_URL'] = 'your-local-database-url'
+3. Ensure env.py is added to .gitignore so it is never pushed to GitHub
+
+
+### Running Database Migrations and Collecting Static Files Locally
+1. Check database migrations by executing `python manage.py makemigrations`.
+2. Run database migrations locally to update the database schema by executing `python manage.py migrate`.
+3. Collect static files locally so they are ready for deployment by executing `python manage.py collectstatic`.  
+*Note: `DISABLE_COLLECTSTATIC=1` is needed to skip Heroku's automatic static collection when using Cloudinary.*
+
+### Deploying Local Changes
+1. Commit the changes using Git (`git add`, `git commit`).  
+2. Push the changes to GitHub (`git push origin main`).  
+3. Deploy the updated branch to Heroku using the steps in **Deploying on Heroku**.  
+
+### Creating a Heroku App
+1. Navigate to [Heroku](https://www.heroku.com/) and log in to your account.  
+2. Click the **New** button in the top-right corner and select **Create new app**.  
+3. Enter a unique name for your app.  
+4. Select your preferred region.  
+5. Click the **Create app** button to finalize the app creation.  
+6. After the app is created, you will be taken to the app dashboard where you can configure settings and deploy your project.
+
+
+### Configuring the App on Heroku
+1. Navigate to the **Settings** tab of your app.  
+2. Click **Reveal Config Vars**.  
+3. Add the following variables:  
+   - `CLOUDINARY_URL` → your Cloudinary account URL.  
+   - `DISABLE_COLLECTSTATIC` → set to `1` if you want to skip automatic static collection.  
+   - `DATABASE_URL` → automatically added if you enable Heroku Postgres (leave it as is).  
+   - `SECRET_KEY` → your Django secret key.  
+4. (Optional) Add any other third-party service keys your project needs
+
+### Deploying on Heroku
+1. Navigate to the **Deploy** tab of your Heroku app.  
+2. Under **Deployment method**, select **GitHub**.  
+3. Search for your GitHub repository and connect it.  
+4. Under **Automatic deploys**, you can enable automatic deployment from the main branch if desired.  
+5. Click **Deploy Branch** to deploy manually. 
+
+### Verifying the Deployment
+1. Click the **Open App** button in the top-right of the Heroku dashboard.  
+2. Check that your Django project loads correctly in the browser.  
+3. If any errors occur, click **More** → **View Logs** to troubleshoot.
+
+### Optional Best Practices
+- Keep all API keys and secrets in Config Vars, never in code.  
+- Monitor logs regularly to catch any runtime errors.  
+- Enable automatic deployment from GitHub for continuous updates.    
+
 ## **Credits**
 
 ### *Data*

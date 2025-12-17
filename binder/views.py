@@ -14,7 +14,10 @@ def binder_view(request):
     user_chars = []
     for char in usercards:
         character = char.character
+        # Rarities set for unique character rarity values in the binder filter
         rarities_set = set()
+        # Card data for each user card so the correct data can be displayed
+        # and datasets added for filtering
         card_data = {
             "usercard": char,
             "chardetails": character,
@@ -30,6 +33,7 @@ def binder_view(request):
         key=lambda character_data: character_data["power"],
         reverse=True
     )
+    # Set comprehension for filter dropdown data
     alignments = {
         character_data["alignment"] for character_data in user_chars
     }
