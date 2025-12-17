@@ -14,21 +14,33 @@ def binder_view(request):
     user_chars = []
     for char in usercards:
         character = char.character
+        rarities_set = set()
         card_data = {
             "usercard": char,
             "chardetails": character,
             "json": character.get_legends_data(),
             "power": character.power_status(),
             "alignment": character.charc_alignment(),
-            "universe": character.charc_universe()
-            }
+            "universe": character.charc_universe(),
+            "rarity": character.rarity.name
+        }
         user_chars.append(card_data)
-        user_chars.sort(
+        rarities_set.add(character.rarity.name)
+    user_chars.sort(
         key=lambda character_data: character_data["power"],
         reverse=True
     )
+    alignments = {
+        character_data["alignment"] for character_data in user_chars
+    }
+    universes = {
+        character_data["universe"] for character_data in user_chars
+    }
 
     context = {
-        "characters": user_chars
+        "characters": user_chars,
+        "rarities": rarities_set,
+        "alignments": sorted(alignments),
+        "universes": sorted(universes)
     }
     return render(request, page_url, context)

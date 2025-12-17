@@ -52,8 +52,8 @@ def shop_view(request):
     context = {
         "characters": scheduled_characters,
         "rarities": rarities,
-        "alignments": list(alignments),
-        "universes": list(universes)
+        "alignments": sorted(alignments),
+        "universes": sorted(universes)
     }
     return render(request, page_url, context)
 
