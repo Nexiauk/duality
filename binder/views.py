@@ -16,10 +16,10 @@ def binder_view(request):
         character = char.character
         # Rarities set for unique character rarity values in the binder filter
         rarities_set = set()
-        # Card data for each user card so the correct data can be displayed
-        # and datasets added for filtering
+        # Returns the character's alignment with the first letter in uppercase
         charc_alignment = character.charc_alignment()
-        charc_alignment = charc_alignment[:1].upper() + charc_alignment[1:].lower()
+        charc_alignment = charc_alignment.capitalize()
+        # Card data for each user card so the correct data can be displayed
         card_data = {
             "usercard": char,
             "chardetails": character,

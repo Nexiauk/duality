@@ -154,6 +154,12 @@ option {
     border-top-right-radius: 16px;
 }
 
+.card-img-overlay {
+    height: 50px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 /* Initially hides the shop cards while the loaders are spinning */
 .shop-card {
     display: none;
@@ -204,14 +210,14 @@ option {
 }
 
 /* A horizontal flip when the mouse moves over the flip box container */
-.binder-card:hover .card-inner {
+/* .binder-card:hover .card-inner {
     transform: rotateY(180deg);
     border: 2px solid #dadada;
     border-radius: 16px;
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
-}
+} */
 
 /* Position the front and the back of the card */
 .card-front,
@@ -222,7 +228,6 @@ option {
     -webkit-backface-visibility: hidden;
     /* Safari */
     backface-visibility: hidden;
-
 }
 
 /* Styling of the back of the binder flip card */
