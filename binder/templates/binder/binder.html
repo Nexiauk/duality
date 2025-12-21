@@ -75,6 +75,9 @@ the active shop schedules. Each character is presented as a card with:
                                      width="auto"
                                      height="400"
                                      alt="{{ char.chardetails.name }}">
+                                <div class="card-banner glassmorphic">
+                                    <h5>{{ char.universe }}</h5>
+                                </div>
                                 <div class="card-body d-flex flex-column justify-content-evenly">
                                     <div>
                                         <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span>
@@ -88,25 +91,27 @@ the active shop schedules. Each character is presented as a card with:
                                 </div>
                             </div>
                             <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
-                                                                <div class="card-img-overlay glassmorphic">
+                                <div class="card-img-overlay glassmorphic">
                                     <h5>{{ char.universe }}</h5>
                                 </div>
                                 <h3>{{ char.json.biography.fullName }}</h3>
                                 <div class="row">
                                     <div class="col-12">
                                         <p>
-                                            <b>Alias:</b> 
+                                            <b>Alias:</b>
                                             {{ char.json.biography.aliases.0 }}
                                         </p>
                                     </div>
                                     <div class="col-12">
                                         <p>
-                                            <b>First Appearance:</b> 
+                                            <b>First Appearance:</b>
                                             {{ char.json.biography.firstAppearance }}
                                         </p>
                                     </div>
                                     <div class="col-12">
-                                        <p><b>Race:</b> {{ char.json.appearance.race }}</p>
+                                        <p>
+                                            <b>Race:</b> {{ char.json.appearance.race }}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="row">
