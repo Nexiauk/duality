@@ -17,6 +17,11 @@
     --main-text: "Inder"
 }
 
+/* Show scrollbar all the time to stop layout shifts */
+html {
+    overflow-y: scroll;
+}
+
 /* Linear gradient colour for the body using root variables */
 body {
     background-image: linear-gradient(90deg,
@@ -51,6 +56,13 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0.5em 0;
+}
+
 /* Heading and title styling from h2-h6 plus card titles, uses a root variable for font family */
 h2,
 h3,
@@ -61,11 +73,13 @@ h6,
     font-style: italic;
 }
 
+/* Select label styling */
 div label {
     display: block;
     margin-bottom: 5px;
 }
 
+/* Select styling */
 select {
     border-radius: 16px;
     padding: 10px;
@@ -73,10 +87,8 @@ select {
 }
 
 /* Style options inside a select */
-option 
- {
+option {
     font-size: 1rem;
-    background-color: var(--ecstatic-red);
 }
 
 /* Positions the messages div near the top of the main container */
@@ -143,20 +155,60 @@ option
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.universe {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0.5em 0;
+    font-style: italic;
+}
+
 /* Match the top corner border radius of card image, to the same px as the card itself. */
 .card-img-top {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 }
 
+.card-img-overlay {
+    height: 45px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-banner {
+    height: 45px;
+    border-radius: 0;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 65%;
+}
+
+.card-banner h5 {
+    margin-bottom: 0;
+}
+
+.card-img-overlay h5 {
+    margin-bottom: 0;
+}
+
 /* Initially hides the shop cards while the loaders are spinning */
 .shop-card {
     display: none;
     transition: transform .2s;
-    border: 2px solid transparent;
 }
 
-/* Shop cards enlargen on hover with a glow effect */
+/* Shop cards grow on hover with a glow effect */
 .shop-card:hover {
     transform: scale(1.1);
     z-index: 99;
@@ -167,17 +219,99 @@ option
     box-shadow: 0 0 10px #9ecaed;
 }
 
+/* Glassmorphic style effects for shop and binder headings */
+.glow {
+    background: var(--eclectic-transparent);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    z-index: 99;
+    border: 2px solid #dadada;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+/* Binder flip card container, with perspective for 3D effect */
+.binder-card {
+    perspective: 1000px;
+    background-color: transparent;
+    width: 266px;
+    height: 452px;
+    display: none;
+    transition: transform .2s;
+    border: 2px solid transparent;
+}
+
+/* Fixed size for binder card image, changes at different screen sizes */
+.binder-card img {
+    height: 300px;
+}
+
+/* Stripped back card title for better flex layout */
+.card-title {
+    padding: 0;
+    margin: 0;
+}
+
+/* Container to position the front and back of the card */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* A horizontal flip when the mouse moves over the flip box container */
+.binder-card:hover .card-inner {
+    transform: rotateY(180deg);
+    border: 2px solid #dadada;
+    border-radius: 16px;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+/* Position the front and the back of the card */
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Styling of the back of the binder flip card */
+.card-back {
+    border-radius: 16px;
+    transform: rotateY(180deg);
+}
+
+/* Remove padding from card-body to create more space on the flex layout */
+.card-body {
+    padding: 0;
+}
+
 /* Rarity colours for shop card badges */
 .badge.common {
-    background-color:var(--eclectic);
+    background-color: var(--eclectic);
+    color: black;
 }
 
 .badge.uncommon {
-    background-color:var(--nasturtium-shoot);
+    background-color: var(--nasturtium-shoot);
+    color: black;
 }
 
 .badge.rare {
-    background-color:var(--skylla);
+    background-color: var(--skylla);
+    color: black;
 }
 
 .badge.epic {
@@ -186,13 +320,23 @@ option
 
 .badge.legendary {
     background-color: var(--vivid-yellow);
+    color: black;
 }
 
 .badge.mythic {
     background-color: gold;
+    color: black;
 }
 
-/* Custom buy button for the shop cards, skewed to match nav items */
+.archetype {
+    font-size: medium;
+}
+
+.badge {
+    font-size: small;
+}
+
+/* Custom buttons, skewed to match nav items */
 .buy-button,
 .account-button {
     background-color: var(--vivid-yellow);
@@ -208,7 +352,7 @@ option
     border-radius: 0;
 }
 
-/* Unskew class applied to the buy button span text unmutate it */
+/* Unskew class applied to the button span text to unmutate it */
 .unskew {
     display: inline-block;
     transform: skew(30deg);
@@ -217,7 +361,7 @@ option
     font-weight: bold;
 }
 
-/* Buy button changes colour and pulses on hover */
+/* Buttona changes colour and pulse on hover */
 .buy-button:hover,
 .account-button:hover {
     background-color: var(--skylla);
@@ -226,7 +370,7 @@ option
     animation: pulse 2s infinite;
 }
 
-/* Pulsing animation used on hovering over the buy now button, skewed to match the button */
+/* Pulsing animation used on hovering over the buttons, skewed to match the button */
 @keyframes pulse {
     0% {
         transform: scale(0.95);
@@ -295,6 +439,10 @@ option
 /* Media queries start here */
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
+    footer {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
 
     .nav-link {
         color: white;
@@ -304,7 +452,8 @@ option
         font-size: 2rem;
     }
 
-    #shop-section {
+    #shop-section,
+    #binder-section {
         padding-bottom: 100px;
     }
 
@@ -314,6 +463,10 @@ option
         margin-top: 50px;
     }
 
+    .card-banner {
+        top: 255px;
+    }
+
     .shop-card {
         min-width: 270px;
         min-height: 300px;
@@ -321,6 +474,10 @@ option
 
     .shop-card img {
         height: 300px;
+    }
+
+    .binder-card-body {
+        height: 148px;
     }
 }
 
@@ -334,7 +491,8 @@ option
         width: 40%;
     }
 
-    #shop-section {
+    #shop-section,
+    #binder-section {
         padding-bottom: 0;
     }
 
@@ -343,8 +501,22 @@ option
         min-height: 320px;
     }
 
-    .shop-card img {
-        height: 400px;
+    .shop-card img,
+    .binder-card img {
+        height: 390px;
+    }
+
+    .card-banner {
+        top: 345px;
+    }
+
+    .binder-card {
+        height: 527px;
+        width: 316px;
+    }
+
+    .binder-card-body {
+        height: 137px;
     }
 }
 
@@ -379,6 +551,10 @@ option
         min-width: 360px;
         min-height: 320px;
     }
+
+    .binder-card {
+        width: 356px;
+    }
 }
 
 /* media query for screens 1440px and up*/
@@ -396,6 +572,10 @@ option
     .nav-link {
         font-size: 1.2rem;
     }
+
+    .card-banner {
+        top: 346px;
+    }
 }
 
 /* media query for screens 1700px and up*/
@@ -405,56 +585,123 @@ option
         font-size: 2.6rem;
     }
 
+    select {
+        margin-bottom: 1rem;
+    }
+
     .nav-link {
         font-size: 1.2rem;
     }
+
+    #shop-heading,
+    #binder-heading {
+        margin-top: 2.5rem !important;
+    }
 }
+
 
 /* Media query for screens 2560px and up */
 @media screen and (min-width:2560px) {
-    h1 {
-        font-size: 4rem;
+    footer {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        font-size: 1.9rem;
     }
 
-    h2,
+    h1 {
+        font-size: 4rem;
+        padding: 0 48px 0 10px;
+    }
+
     h3,
-    h3,
+    h4,
     h5,
-    h6,
-    .card-title {
-        font-size: 2.5rem;
+    h6 {
+        font-size: 2.4rem;
+    }
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    select {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    div label {
+        margin-top: 15px;
+        font-size: 1.5rem;
+    }
+
+    .hero-card .card-title,
+    .heading {
+        font-size: 3rem;
     }
 
     #messages {
         top: 80px;
     }
 
-    footer {
-        font-size: 1.8rem;
+    .navbar {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        padding-left: 20px;
+        font-size: 1.9rem;
     }
 
     .navbar-nav {
-        padding-right: 20px;
+        padding-right: 30px;
     }
 
     .nav-link {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     #hero-section {
-        width: 2200px;
+        max-width: 2200px;
+        max-height: 1000px;
     }
 
-    .card {
+    #hero-section .col {
+        padding: 0 1.2rem 2.5rem 1.2rem;
+    }
+
+    .hero-card {
         font-size: 1.8rem;
+        padding: 2.2rem;
     }
 
-    #shop-heading {
-        margin-top: 4rem !important;
+    #shop-heading,
+    #binder-heading {
+        margin-top: 6rem !important;
     }
 
     .shop-card {
         min-width: 400px;
         min-height: 320px;
+    }
+
+    .binder-card {
+        height: 542px;
+        width: 396px;
+    }
+
+    .binder-card-body {
+        height: 152px;
+    }
+
+    .glow {
+        padding: 1rem;
+    }
+
+    .badge {
+        font-size: 1.1rem;
+    }
+
+    .buy-button {
+        font-size: 1.4rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }
