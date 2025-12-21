@@ -1,12 +1,4 @@
-<!-- This template renders the main shop page for the application.
-
-It displays all characters currently available for sale based on
-the active shop schedules. Each character is presented as a card with:
-
-- Character image loaded from the legends.json file.
-- Character name from the CharacterCard model.
-- Total power displayed as a badge.
-- Responsive grid layout adapting to mobile, tablet, and desktop. -->
+<!--  -->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
@@ -16,11 +8,11 @@ the active shop schedules. Each character is presented as a card with:
     <script src="{% static 'js/binder.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-    <section id="shop-section" class="container mb-5 pb-4 gx-0">
-        <!-- Centered title and description of the shop -->
+    <section id="binder-section" class="container mb-5 pb-4 gx-0">
+        <!-- Centered title and description of the binder-->
         <div class="row ms-xxl-6 me-xxl-6 mb-2">
-            <div class="col-md-8 col-xl-6 text-center mx-auto mt-3 mt-md-4"
-                 id="shop-heading">
+            <div class="col-10 text-center mx-auto mt-3 mt-md-4 glow mb-4"
+                 id="binder-heading">
                 <h2 class="heading">Binder</h2>
                 <p>View your ultimate multiversal team!</p>
             </div>
@@ -53,20 +45,22 @@ the active shop schedules. Each character is presented as a card with:
             </div>
         </div>
         <div class="col d-flex justify-content-center">
-            <!-- Loader element shown while shop content is loading-->
+            <!-- Loader element shown while binder content is loading-->
             <div class="loader"></div>
         </div>
-        <!-- Shop items grid with responsive layout at different screen sizes. -->
+        <!-- Binder items grid with responsive layout at different screen sizes. -->
         <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
             <!-- Loop through all characters passed by the view -->
             {% for char in characters %}
                 <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
-                    <!-- Individual shop cards for each character -->
+                    <!-- Individual binder cards for each character. Flips on hover to display further character details -->
                     <div class="card binder-card"
                          data-rarity="{{ char.chardetails.rarity|lower }}"
                          data-alignment="{{ char.alignment|lower }}"
                          data-universe="{{ char.universe|lower }}">
+                         <!-- Container for the front and back of the flip card -->
                         <div class="card-inner">
+                            <!-- Front of the flip card -->
                             <div class="card-front glassmorphic">
                                 <!-- Character image dynamically loaded from the legends.json file -->
                                 <img class="object-fit-cover card-img-top w-100 d-block"
@@ -78,7 +72,7 @@ the active shop schedules. Each character is presented as a card with:
                                 <div class="card-banner glassmorphic">
                                     <h5>{{ char.universe }}</h5>
                                 </div>
-                                <div class="card-body d-flex flex-column justify-content-evenly">
+                                <div class="card-body binder-card-body d-flex flex-column justify-content-evenly">
                                     <div>
                                         <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span>
                                     </div>
@@ -90,10 +84,13 @@ the active shop schedules. Each character is presented as a card with:
                                     </div>
                                 </div>
                             </div>
+                            <!-- Back of the flipcard -->
                             <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
+                                <!-- Overlay banner containing character publisher/universe -->
                                 <div class="card-img-overlay glassmorphic">
                                     <h5>{{ char.universe }}</h5>
                                 </div>
+                                <!-- Card details on the back pulled through from the json file.  -->
                                 <h3>{{ char.json.biography.fullName }}</h3>
                                 <div class="row">
                                     <div class="col-12">
@@ -114,6 +111,7 @@ the active shop schedules. Each character is presented as a card with:
                                         </p>
                                     </div>
                                 </div>
+                                <!-- Row containing powerstats for each character, pulled from the json file and styled to match card rarity -->
                                 <div class="row">
                                     <div class="col-6">
                                         <span class="badge {{ char.chardetails.rarity|lower }}">Combat: {{ char.json.powerstats.combat }}</span>

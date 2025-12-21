@@ -204,6 +204,20 @@ option {
     box-shadow: 0 0 10px #9ecaed;
 }
 
+.glow {
+    background: var(--eclectic-transparent);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    padding: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    z-index: 99;
+    border: 2px solid #dadada;
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
 /* Binder flip card container, with perspective for 3D effect */
 .binder-card {
     perspective: 1000px;
@@ -422,7 +436,8 @@ option {
         font-size: 2rem;
     }
 
-    #shop-section {
+    #shop-section,
+    #binder-section {
         padding-bottom: 100px;
     }
 
@@ -445,8 +460,8 @@ option {
         height: 300px;
     }
 
-    .card-body {
-        height: 148px;
+    .binder-card-body {
+       height: 148px; 
     }
 }
 
@@ -460,7 +475,8 @@ option {
         width: 40%;
     }
 
-    #shop-section {
+    #shop-section,
+    #binder-section {
         padding-bottom: 0;
     }
 
@@ -474,7 +490,7 @@ option {
         height: 390px;
     }
 
-      .card-banner {
+    .card-banner {
         top: 345px;
     }
 
@@ -483,7 +499,7 @@ option {
         width: 316px;
     }
 
-    .card-body {
+    .binder-card-body {
         height: 137px;
     }
 }
@@ -557,11 +573,13 @@ option {
         font-size: 1.2rem;
     }
 
-    #shop-heading {
+    #shop-heading,
+    #binder-heading {
         margin-top: 2.5rem !important;
     }
 
-    #shop-heading p {
+    #shop-heading p,
+    #binder-heading p {
         margin-bottom: 1.5rem;
     }
 }
@@ -644,7 +662,8 @@ option {
     }
 
 
-    #shop-heading {
+    #shop-heading,
+    #binder-heading {
         margin-top: 6rem !important;
     }
 
@@ -658,7 +677,7 @@ option {
         width: 396px;
     }
 
-    .card-body {
+    .binder-card-body {
         height: 152px;
     }
 
