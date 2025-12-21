@@ -477,7 +477,7 @@ option {
     }
 
     .binder-card-body {
-       height: 148px; 
+        height: 148px;
     }
 }
 
@@ -572,6 +572,10 @@ option {
     .nav-link {
         font-size: 1.2rem;
     }
+
+    .card-banner {
+        top: 346px;
+    }
 }
 
 /* media query for screens 1700px and up*/
@@ -606,6 +610,14 @@ option {
 
     h1 {
         font-size: 4rem;
+        padding: 0 48px 0 10px;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-size: 2.4rem;
     }
 
     p {
@@ -619,19 +631,12 @@ option {
 
     div label {
         margin-top: 15px;
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
 
     .hero-card .card-title,
     .heading {
         font-size: 3rem;
-    }
-
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-size: 2.4rem;
     }
 
     #messages {
@@ -643,11 +648,6 @@ option {
         padding-bottom: 1.2rem;
         padding-left: 20px;
         font-size: 1.9rem;
-    }
-
-    h1 {
-        font-size: 4rem;
-        padding: 0 48px 0 10px;
     }
 
     .navbar-nav {
@@ -672,7 +672,6 @@ option {
         padding: 2.2rem;
     }
 
-
     #shop-heading,
     #binder-heading {
         margin-top: 6rem !important;
@@ -692,11 +691,17 @@ option {
         height: 152px;
     }
 
+    .glow {
+        padding: 1rem;
+    }
+
     .badge {
         font-size: 1.1rem;
     }
 
     .buy-button {
         font-size: 1.4rem;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 }

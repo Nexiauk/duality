@@ -59,6 +59,12 @@ class CharacterCard(models.Model):
         legend_data = self.get_legends_data()
         universe = legend_data["biography"]["publisher"]
         return universe
+    
+    def group_affiliation(self):
+        legends_data = self.get_legends_data()
+        affiliation = legends_data["connections"]["groupAffiliation"].split(", ")[0].strip()
+        return affiliation
+
 
     class Meta:
         ordering = ["name"]

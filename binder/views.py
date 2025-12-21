@@ -27,7 +27,8 @@ def binder_view(request):
             "power": character.power_status(),
             "alignment": charc_alignment,
             "universe": character.charc_universe(),
-            "rarity": character.rarity.name
+            "rarity": character.rarity.name,
+            "affiliation": character.group_affiliation()
         }
         user_chars.append(card_data)
         rarities_set.add(character.rarity.name)

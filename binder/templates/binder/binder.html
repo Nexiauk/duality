@@ -2,141 +2,153 @@
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
-    My Team
+My Team
 {% endblock title %}
 {% block extra_js %}
-    <script src="{% static 'js/binder.js' %}"></script>
+<script src="{% static 'js/binder.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-    <section id="binder-section" class="container mb-5 pb-4 gx-0">
-        <!-- Centered title and description of the binder-->
-        <div class="row ms-xxl-6 me-xxl-6 mb-2">
-            <div class="col-10 text-center mx-auto mt-3 mt-md-4 glow mb-4"
-                 id="binder-heading">
-                <h2 class="heading">Binder</h2>
-                <p>View your ultimate multiversal team!</p>
+<section id="binder-section" class="container mb-5 pb-4 gx-0">
+    <!-- Centered title and description of the binder-->
+    <div class="row ms-xxl-6 me-xxl-6 mb-2">
+        <div class="col-10 text-center mx-auto mt-3 mt-md-4 glow mb-4" id="binder-heading">
+            <h2 class="heading">Binder</h2>
+            <p>View your ultimate multiversal team!</p>
+        </div>
+        <!-- New row for filter dropdowns -->
+        <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center">
+            <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                <!-- Rarity filter -->
+                <label for="rarities">Filter by Rarity</label>
+                <select name="rarities" id="rarities" class="glassmorphic filter">
+                    <option value="all" selected>All</option>
+                    {% for rarity in rarities %}<option value="{{ rarity|lower }}">{{ rarity }}</option>{% endfor %}
+                </select>
             </div>
-            <!-- New row for filter dropdowns -->
-            <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center">
-                <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <!-- Rarity filter -->
-                    <label for="rarities">Filter by Rarity</label>
-                    <select name="rarities" id="rarities" class="glassmorphic filter">
-                        <option value="all" selected>All</option>
-                        {% for rarity in rarities %}<option value="{{ rarity|lower }}">{{ rarity }}</option>{% endfor %}
-                    </select>
-                </div>
-                <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <!-- Alignment filter -->
-                    <label for="alignment">Filter by Alignment</label>
-                    <select name="alignment" id="alignment" class="glassmorphic filter">
-                        <option value="all" selected>All</option>
-                        {% for alignment in alignments %}<option value="{{ alignment|lower }}">{{ alignment|capfirst }}</option>{% endfor %}
-                    </select>
-                </div>
-                <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <!-- Universe filter -->
-                    <label for="universe">Filter by Universe</label>
-                    <select name="universe" id="universe" class="glassmorphic filter">
-                        <option value="all" selected>All</option>
-                        {% for universe in universes %}<option value="{{ universe|lower }}">{{ universe|capfirst }}</option>{% endfor %}
-                    </select>
-                </div>
+            <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                <!-- Alignment filter -->
+                <label for="alignment">Filter by Alignment</label>
+                <select name="alignment" id="alignment" class="glassmorphic filter">
+                    <option value="all" selected>All</option>
+                    {% for alignment in alignments %}<option value="{{ alignment|lower }}">{{ alignment|capfirst }}
+                    </option>{% endfor %}
+                </select>
+            </div>
+            <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                <!-- Universe filter -->
+                <label for="universe">Filter by Universe</label>
+                <select name="universe" id="universe" class="glassmorphic filter">
+                    <option value="all" selected>All</option>
+                    {% for universe in universes %}<option value="{{ universe|lower }}">{{ universe|capfirst }}</option>
+                    {% endfor %}
+                </select>
             </div>
         </div>
-        <div class="col d-flex justify-content-center">
-            <!-- Loader element shown while binder content is loading-->
-            <div class="loader"></div>
-        </div>
-        <!-- Binder items grid with responsive layout at different screen sizes. -->
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
-            <!-- Loop through all characters passed by the view -->
-            {% for char in characters %}
-                <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
-                    <!-- Individual binder cards for each character. Flips on hover to display further character details -->
-                    <article class="card binder-card"
-                         data-rarity="{{ char.chardetails.rarity|lower }}"
-                         data-alignment="{{ char.alignment|lower }}"
-                         data-universe="{{ char.universe|lower }}">
-                         <!-- Container for the front and back of the flip card -->
-                        <div class="card-inner">
-                            <!-- Front of the flip card -->
-                            <div class="card-front glassmorphic">
-                                <!-- Character image dynamically loaded from the legends.json file -->
-                                <img class="object-fit-cover card-img-top w-100 d-block"
-                                     loading="lazy"
-                                     src="{{ char.json.images.md }}"
-                                     width="auto"
-                                     height="400"
-                                     alt="{{ char.chardetails.name }}">
-                                <div class="card-banner glassmorphic">
-                                    <p class="universe">{{ char.universe }}</p>
-                                </div>
-                                <div class="card-body binder-card-body d-flex flex-column justify-content-evenly">
-                                    <div>
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span>
-                                    </div>
-                                    <!-- Character name passed from the character model -->
-                                    <h3 class="text-center card-title">{{ char.chardetails.name }}</h3>
-                                    <!-- Badge showing the character's power total -->
-                                    <div class="row">
-                                        <div class="col-12 col-lg-12">{{ char.alignment }}</div>
-                                    </div>
-                                </div>
+    </div>
+    <div class="col d-flex justify-content-center">
+        <!-- Loader element shown while binder content is loading-->
+        <div class="loader"></div>
+    </div>
+    <!-- Binder items grid with responsive layout at different screen sizes. -->
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
+        <!-- Loop through all characters passed by the view -->
+        {% for char in characters %}
+        <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
+            <!-- Individual binder cards for each character. Flips on hover to display further character details -->
+            <article class="card binder-card" data-rarity="{{ char.chardetails.rarity|lower }}"
+                data-alignment="{{ char.alignment|lower }}" data-universe="{{ char.universe|lower }}">
+                <!-- Container for the front and back of the flip card -->
+                <div class="card-inner">
+                    <!-- Front of the flip card -->
+                    <div class="card-front glassmorphic">
+                        <!-- Character image dynamically loaded from the legends.json file -->
+                        <img class="object-fit-cover card-img-top w-100 d-block" loading="lazy"
+                            src="{{ char.json.images.md }}" width="auto" height="400" alt="{{ char.chardetails.name }}">
+                        <div class="card-banner glassmorphic">
+                            <p class="universe">{{ char.universe }}</p>
+                        </div>
+                        <div class="card-body binder-card-body d-flex flex-column justify-content-evenly">
+                            <div>
+                                <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }}
+                                    {{ char.power }}</span>
                             </div>
-                            <!-- Back of the flipcard -->
-                            <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
-                                <!-- Overlay banner containing character publisher/universe -->
-                                <div class="card-img-overlay glassmorphic">
-                                    <p class="universe">{{ char.universe }}</p>
-                                </div>
-                                <!-- Card details on the back pulled through from the json file.  -->
-                                <h3>{{ char.json.biography.fullName }}</h3>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <p>
-                                            <b>Alias:</b>
-                                            {{ char.json.biography.aliases.0 }}
-                                        </p>
-                                    </div>
-                                    <div class="col-12">
-                                        <p>
-                                            <b>First Appearance:</b>
-                                            {{ char.json.biography.firstAppearance }}
-                                        </p>
-                                    </div>
-                                    <div class="col-12">
-                                        <p>
-                                            <b>Race:</b> {{ char.json.appearance.race }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <!-- Row containing powerstats for each character, pulled from the json file and styled to match card rarity -->
-                                <div class="row">
-                                    <div class="col-6">
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">Combat: {{ char.json.powerstats.combat }}</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">Durability: {{ char.json.powerstats.durability }}</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">Intelligence: {{ char.json.powerstats.intelligence }}</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">Power: {{ char.json.powerstats.power }}</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">Speed: {{ char.json.powerstats.speed }}</span>
-                                    </div>
-                                    <div class="col-6">
-                                        <span class="badge {{ char.chardetails.rarity|lower }}">Strength: {{ char.json.powerstats.strength }}</span>
-                                    </div>
-                                </div>
+                            <!-- Character name passed from the character model -->
+                            <h3 class="text-center card-title">{{ char.chardetails.name }}</h3>
+                            <!-- Badge showing the character's power total -->
+                            <div class="row">
+                                <div class="col-12 col-lg-12">{{ char.alignment }}</div>
                             </div>
                         </div>
-                    </article>
+                    </div>
+                    <!-- Back of the flipcard -->
+                    <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
+                        <!-- Overlay banner containing character publisher/universe -->
+                        <div class="card-img-overlay glassmorphic">
+                            <p class="universe">{{ char.universe }}</p>
+                        </div>
+                        <!-- Card details on the back pulled through from the json file.  -->
+                        <h3>{{ char.json.biography.fullName }}</h3>
+                        <div class="row">
+                            <div class="col-12">
+                                <p>
+                                    <b>Archetype:</b> {{ char.chardetails.archetype }}
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    <b>Group:</b> {{ char.affiliation }}
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    <b>Alias:</b>
+                                    {{ char.json.biography.aliases.0 }}
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    <b>First Appearance:</b>
+                                    {{ char.json.biography.firstAppearance }}
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>
+                                    <b>Race:</b> {{ char.json.appearance.race }}
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Row containing powerstats for each character, pulled from the json file and styled to match card rarity -->
+                        <div class="row">
+                            <div class="col-6">
+                                <span class="badge {{ char.chardetails.rarity|lower }}">Combat:
+                                    {{ char.json.powerstats.combat }}</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="badge {{ char.chardetails.rarity|lower }}">Durability:
+                                    {{ char.json.powerstats.durability }}</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="badge {{ char.chardetails.rarity|lower }}">Intelligence:
+                                    {{ char.json.powerstats.intelligence }}</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="badge {{ char.chardetails.rarity|lower }}">Power:
+                                    {{ char.json.powerstats.power }}</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="badge {{ char.chardetails.rarity|lower }}">Speed:
+                                    {{ char.json.powerstats.speed }}</span>
+                            </div>
+                            <div class="col-6">
+                                <span class="badge {{ char.chardetails.rarity|lower }}">Strength:
+                                    {{ char.json.powerstats.strength }}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            {% endfor %}
+            </article>
         </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>
 {% endblock content %}
