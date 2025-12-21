@@ -56,6 +56,13 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0.5em 0;
+}
+
 /* Heading and title styling from h2-h6 plus card titles, uses a root variable for font family */
 h2,
 h3,
@@ -148,6 +155,14 @@ option {
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.universe {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 0.5em 0;
+    font-style: italic;
+}
+
 /* Match the top corner border radius of card image, to the same px as the card itself. */
 .card-img-top {
     border-top-left-radius: 16px;
@@ -204,6 +219,7 @@ option {
     box-shadow: 0 0 10px #9ecaed;
 }
 
+/* Glassmorphic style effects for shop and binder headings */
 .glow {
     background: var(--eclectic-transparent);
     backdrop-filter: blur(5px);
@@ -576,11 +592,6 @@ option {
     #shop-heading,
     #binder-heading {
         margin-top: 2.5rem !important;
-    }
-
-    #shop-heading p,
-    #binder-heading p {
-        margin-bottom: 1.5rem;
     }
 }
 

@@ -54,7 +54,7 @@
             {% for char in characters %}
                 <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                     <!-- Individual binder cards for each character. Flips on hover to display further character details -->
-                    <div class="card binder-card"
+                    <article class="card binder-card"
                          data-rarity="{{ char.chardetails.rarity|lower }}"
                          data-alignment="{{ char.alignment|lower }}"
                          data-universe="{{ char.universe|lower }}">
@@ -70,14 +70,14 @@
                                      height="400"
                                      alt="{{ char.chardetails.name }}">
                                 <div class="card-banner glassmorphic">
-                                    <h5>{{ char.universe }}</h5>
+                                    <p class="universe">{{ char.universe }}</p>
                                 </div>
                                 <div class="card-body binder-card-body d-flex flex-column justify-content-evenly">
                                     <div>
                                         <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }} {{ char.power }}</span>
                                     </div>
                                     <!-- Character name passed from the character model -->
-                                    <h2 class="text-center card-title">{{ char.chardetails.name }}</h2>
+                                    <h3 class="text-center card-title">{{ char.chardetails.name }}</h3>
                                     <!-- Badge showing the character's power total -->
                                     <div class="row">
                                         <div class="col-12 col-lg-12">{{ char.alignment }}</div>
@@ -88,7 +88,7 @@
                             <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
                                 <!-- Overlay banner containing character publisher/universe -->
                                 <div class="card-img-overlay glassmorphic">
-                                    <h5>{{ char.universe }}</h5>
+                                    <p class="universe">{{ char.universe }}</p>
                                 </div>
                                 <!-- Card details on the back pulled through from the json file.  -->
                                 <h3>{{ char.json.biography.fullName }}</h3>
@@ -134,7 +134,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             {% endfor %}
         </div>
