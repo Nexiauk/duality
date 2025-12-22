@@ -16,7 +16,7 @@
                    {% element p %}
             <p class="mb-4">{% blocktrans %}Already have an account? Then please <a class="underline hover:text-secondary-content" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
                 {% endelement %}
-              <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">
+              <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
                 {% if redirect_field_value %}
