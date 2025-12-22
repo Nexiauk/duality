@@ -67,7 +67,7 @@ My Team
                         <div class="card-banner glassmorphic">
                             <p class="universe">{{ char.universe }}</p>
                         </div>
-                        <div class="card-body binder-card-body d-flex flex-column justify-content-evenly">
+                        <div class="card-body character-card-body d-flex flex-column justify-content-evenly">
                             <div>
                                 <span class="badge {{ char.chardetails.rarity|lower }}">{{ char.chardetails.rarity }}
                                     {{ char.power }}</span>
@@ -96,13 +96,13 @@ My Team
                             </div>
                             <div class="col-12">
                                 <p>
-                                    <b>Group:</b> {{ char.affiliation }}
+                                    <b>Alias:</b>
+                                    {{ char.json.biography.aliases.0 }}
                                 </p>
                             </div>
                             <div class="col-12">
                                 <p>
-                                    <b>Alias:</b>
-                                    {{ char.json.biography.aliases.0 }}
+                                    <b>Group:</b> {{ char.affiliation }}
                                 </p>
                             </div>
                             <div class="col-12">
