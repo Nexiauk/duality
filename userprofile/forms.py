@@ -1,5 +1,6 @@
 from allauth.account.forms import SignupForm
 from django import forms
+from.models import UserProfile
 
 class CustomSignupForm(SignupForm):
     """
@@ -13,6 +14,12 @@ class CustomSignupForm(SignupForm):
         Save the user and assign the display_name to the related UserProfile.
         """
         user = super().save(request)
-        user.userprofile.display_name = self.cleaned_data["display_name"]
-        user.userprofile.save()
+
+        profile, created = UserProfile.objects.get_or_create(
+        user=user,
+        defaults={'display_name': self.cleaned_data["display_name"]}
+    )
+        if not created:
+            user.userprofile.display_name = self.cleaned_data["display_name"]
+            user.userprofile.save()
         return user
