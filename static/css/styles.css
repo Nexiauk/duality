@@ -102,6 +102,7 @@ option {
     flex-basis: 0;
     flex-grow: 1;
     text-align: center;
+    border: 1px solid var(--skylla);
 }
 
 /* Block and height/width applied so the entire nav-link item becomes clickable */
@@ -117,7 +118,6 @@ option {
     background-color: var(--vivid-yellow);
     cursor: pointer;
     transition: 0.5s ease-in;
-    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
@@ -130,7 +130,7 @@ option {
     color: #000000;
 }
 
-/* Styling for active nav-items - implements a dashed border */
+/* Styling for active nav-items created a glowing border */
 .navbar .nav-item.active {
     background-color: var(--vivid-yellow);
     backdrop-filter: blur(5px);

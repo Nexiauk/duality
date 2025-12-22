@@ -6,6 +6,7 @@
 {% url 'account_logout' as logout_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'binder' as binder_url %}
+{% url 'profile' as profile_url %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,9 +68,9 @@
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
-                        <li class="nav-item {% if request.path == binder_url %}active{% endif %}"
-                            {% if request.path == binder_url %}aria-current="page" {% endif %}>
-                            <a class="nav-link" href="{% url "binder" %}">Profile</a>
+                        <li class="nav-item {% if request.path == profile_url %}active{% endif %}"
+                            {% if request.path == profile_url %}aria-current="page" {% endif %}>
+                            <a class="nav-link" href="{% url "profile" %}">Profile</a>
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
