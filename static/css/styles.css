@@ -726,4 +726,11 @@ option {
         margin-top: 10px;
         margin-bottom: 10px;
     }
+
+    /* Important used to override Bootstrap mt helper class, which has important attached to it. */
+    #signup-section,
+    #login-section,
+    #logout-section {
+        margin-top: 5rem!important;
+    }
 }
