@@ -1,3 +1,10 @@
+"""
+Views for the core app.
+Renders index.html
+"""
 from django.shortcuts import render
 
-# Create your views here.
+
+def profile_view(request):
+    page_url = "userprofile/view-profile.html"
+    return render(request, page_url)

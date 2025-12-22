@@ -22,5 +22,6 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     path('', include("core.urls"), name="core-urls"),
     path('shop/', include("shop.urls"), name="shop-urls"),
-     path('binder/', include("binder.urls"), name="binder-urls"),
+    path('binder/', include("binder.urls"), name="binder-urls"),
+    path('userprofile/', include("userprofile.urls"), name="userprofile-urls"),
 ]

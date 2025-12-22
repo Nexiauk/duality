@@ -354,8 +354,16 @@ Each row = one character in one rotation.
 Supports assigning any subset of characters to any rotation independently.  
 Enables per-rotation pricing or other metadata without affecting the base character record.
 * **UserCards** Stores details of the character cards that a user has purchased, including the date and time it was bought, and the purchase price at the time.
+* **UserProfile** Stores extended user details such as display name.
 
 ### *Model Relationships (ERD Notation)*
+
+**USER ||--|| USER_PROFILE : "purchases"**  
+* Each user has exactly one profile.  
+* USER_PROFILE stores extended info like display name, while the base USER holds login credentials and name.
+
+---
+
 **USER ||--o{ USER_CARDS : "purchases"**  
 * Each user can purchase zero or more user_cards.  
 * User cards belong to exactly one user.  
@@ -403,6 +411,25 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 ---
 ### *Model Fields*
+
+**USER**
+| Column Name    | Type     | Constraints / Notes                                       |
+| -------------- | -------- | ----------------------------------------------------------|
+| id             | int      | PK                                                        |
+| username       | string   | CharField:unique                                          |
+| email          | string   | EmailField:EmailValidator                                 |
+| password       | string   | CharField                                                 |
+
+---
+
+**USER_PROFILE**
+| Column Name    | Type     | Constraints / Notes                                         |
+| -------------- | -------- | ------------------------------------------------------------|
+| id             | int      | PK                                                          |
+| user_id        | int      | FK to User. CharField, OneToOne: USER.id, on_delete=CASCADE |
+| display_name   | string   | CharField, max_length=300                                   |
+
+---
 
 **USER_CARDS**
 | Column Name    | Type     | Constraints / Notes                                       |
