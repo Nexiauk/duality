@@ -67,6 +67,12 @@
                         </li>
                         {% endif %}
                         {% if user.is_authenticated %}
+                        <li class="nav-item {% if request.path == binder_url %}active{% endif %}"
+                            {% if request.path == binder_url %}aria-current="page" {% endif %}>
+                            <a class="nav-link" href="{% url "binder" %}">Profile</a>
+                        </li>
+                        {% endif %}
+                        {% if user.is_authenticated %}
                         <li class="nav-item {% if request.path == logout_url %}active{% endif %}"
                             {% if request.path == logout_url %}aria-current="page" {% endif %}>
                             <a class="nav-link" href="{% url "account_logout" %}">Logout</a>
