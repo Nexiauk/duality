@@ -288,16 +288,16 @@ Flippable cards
 Extra card content
 
 ### Admin
-Shop Scheduler
-Schedule items - inline
-Customer User admin so that other model admins can be shown inline
-Inline usercards and inline userprofile
-CharacterCard additional actions for rotation - take out of rotation/put into rotation
-CharacterCard searchbar for characters by name
-Hook method for ScheduledItems, so the only items eligible to be allocated to a schedule are those where rotation equals true
-Autocomplete field on shop schedule items for quicker allocating
-Search bar on CharacterCard model for quicker editing
-Custom method to show characters allocated to a particular schedule as a comma separated list
+* Shop Scheduler
+* Schedule items - inline
+* Customer User admin so that other model admins can be shown inline
+* Inline usercards and inline userprofile
+* CharacterCard additional actions for rotation - take out of rotation/put into rotation
+* CharacterCard searchbar for characters by name
+* Hook method for ScheduledItems, so the only items eligible to be allocated to a schedule are those where rotation equals true
+* Autocomplete field on shop schedule items for quicker allocating
+* Search bar on CharacterCard model for quicker editing
+* Custom method to show characters allocated to a particular schedule as a comma separated list
 
 ## **Security Features**
 
@@ -329,8 +329,13 @@ Custom method to show characters allocated to a particular schedule as a comma s
 * 1v1 card battles  
 * Audio effects
 * A fancier binder
-* Ability to search by rarity/universe/alignment/archetype on the shop schedule items to allow 'type' shops.
-* Change the shop scheduler so that instead of creating a new schedule on a visit, it is an automated task
+* Search function on the Binder
+* Pagination for the Binder
+* Ability to search by rarity/universe/alignment/archetype on the shop schedule items admin to allow 'type' shops. IE a Marvel only set of characters.
+* Change the shop scheduler so that instead of creating a new schedule on a visit, it is an automated task every 24 hours.
+* A timer countdown for the shop, so customers can see when the current batch of characters will be replaced.
+
+
 
 ## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
