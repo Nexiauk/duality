@@ -23,3 +23,8 @@ class CustomSignupForm(SignupForm):
             user.userprofile.display_name = self.cleaned_data["display_name"]
             user.userprofile.save()
         return user
+    
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ["display_name"]
