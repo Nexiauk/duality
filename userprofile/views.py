@@ -19,9 +19,9 @@ def profile_view(request, id):
 
 
 @login_required
-def edit_profile(request):
+def edit_profile_view(request):
     profile = request.user.userprofile
-    page_url = 'userprofile/edit-profile'
+    page_url = 'userprofile/edit-profile.html'
 
     if request.method == "POST":
         form = UserProfileForm(
@@ -48,7 +48,7 @@ def edit_profile(request):
     else:
         form = UserProfileForm(instance=profile)
     return render(
-        page_url,
         request,
+        page_url,
         {"form": form}
     )
