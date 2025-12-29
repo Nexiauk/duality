@@ -55,8 +55,10 @@ My Team
         {% for char in characters %}
         <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
             <!-- Individual binder cards for each character. Flips on hover to display further character details -->
-            <article class="card binder-card" data-rarity="{{ char.chardetails.rarity|lower }}"
-                data-alignment="{{ char.alignment|lower }}" data-universe="{{ char.universe|lower }}">
+            <article class="card binder-card"
+            data-rarity="{{ char.chardetails.rarity|lower }}"
+                data-alignment="{{ char.alignment|lower }}" 
+                data-universe="{{ char.universe|lower }}">
                 <!-- Container for the front and back of the flip card -->
                 <div class="card-inner">
                     <!-- Front of the flip card -->

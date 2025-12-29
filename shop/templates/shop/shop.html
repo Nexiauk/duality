@@ -23,7 +23,8 @@ the active shop schedules. Each character is presented as a card with:
     <section id="shop-section" class="container mb-5 pb-4 gx-0">
         <!-- Centered title and description of the shop -->
         <div class="row ms-xxl-6 me-xxl-6 mb-2">
-            <div class="col-10 text-center mx-auto mt-3 mt-md-4 glow mb-4" id="shop-heading">
+            <div class="col-10 text-center mx-auto mt-3 mt-md-4 glow mb-4"
+                 id="shop-heading">
                 <h2 class="heading">Build Your Team!</h2>
                 <p>Mix and match your favourites heroes and villains from across the multiverse.</p>
             </div>
@@ -66,9 +67,9 @@ the active shop schedules. Each character is presented as a card with:
                 <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                     <!-- Individual shop cards for each character -->
                     <article class="card shop-card glassmorphic"
-                         data-rarity="{{ char.model.rarity|lower }}"
-                         data-alignment="{{ char.alignment|lower }}"
-                         data-universe="{{ char.universe|lower }}">
+                             data-rarity="{{ char.model.rarity|lower }}"
+                             data-alignment="{{ char.alignment|lower }}"
+                             data-universe="{{ char.universe|lower }}">
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block"
                              loading="lazy"
@@ -76,9 +77,9 @@ the active shop schedules. Each character is presented as a card with:
                              width="auto"
                              height="400"
                              alt="{{ char.model.name }}">
-                                                             <div class="card-banner glassmorphic">
-                                    <p class="universe">{{ char.universe }}</p>
-                                </div>
+                        <div class="card-banner glassmorphic">
+                            <p class="universe">{{ char.universe }}</p>
+                        </div>
                         <div class="card-body character-card-body d-flex flex-column justify-content-evenly align-items-center">
                             <div>
                                 <!-- Badge showing the character's power total -->
@@ -94,7 +95,7 @@ the active shop schedules. Each character is presented as a card with:
                             </div>
                         {% else %}
                         {% endif %}
-                        </article>
+                    </article>
                 </div>
             {% endfor %}
         </div>

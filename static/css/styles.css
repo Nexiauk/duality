@@ -158,9 +158,10 @@ option {
 .glassmorphic {
     background: var(--eclectic-transparent);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
 }
 
 .universe {
@@ -220,7 +221,6 @@ option {
 .shop-card:hover {
     transform: scale(1.1);
     z-index: 99;
-    border: 2px solid #dadada;
     border-radius: 16px;
     outline: none;
     border-color: #9ecaed;
@@ -230,13 +230,11 @@ option {
 /* Glassmorphic style effects for shop and binder headings */
 .glow {
     background: var(--eclectic-transparent);
-    backdrop-filter: blur(5px);
     border-radius: 16px;
     padding: 0.5rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
     z-index: 99;
-
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
@@ -277,10 +275,8 @@ option {
 /* A horizontal flip when the mouse moves over the flip box container */
 .binder-card:hover .card-inner {
     transform: rotateY(180deg);
-    border: 2px solid #dadada;
     border-radius: 16px;
     outline: none;
-    border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
 }
 
