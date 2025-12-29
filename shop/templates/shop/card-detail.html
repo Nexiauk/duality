@@ -43,7 +43,7 @@ This template renders the card-detail view after pressing the buy button in the 
                     <!-- Form that leads to a checkout session with Stripe -->
                     <form action="{% url 'create-checkout-session' char.id %}" method="post">
                     {% csrf_token %}
-                    <button class="btn buy-button" type="submit"><span class="unskew">Buy now</span></button>
+                    <button class="btn buy-button" type="submit"><span class="unskew">Buy now £{{ char.rarity.price }}</span></button>
                     </form>
                 </div>
                 {% else %}

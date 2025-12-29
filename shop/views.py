@@ -42,18 +42,18 @@ def shop_view(request):
         key=lambda character_data: character_data["power"],
         reverse=True
     )
-    rarities = Rarity.unique_rarities_for_filter()
-    alignments = {
+    rarities_filter = Rarity.unique_rarities_for_filter()
+    alignments_filter = {
         character_data["alignment"] for character_data in scheduled_characters
     }
-    universes = {
+    universes_filter = {
         character_data["universe"] for character_data in scheduled_characters
     }
     context = {
         "characters": scheduled_characters,
-        "rarities": rarities,
-        "alignments": sorted(alignments),
-        "universes": sorted(universes)
+        "rarities": rarities_filter,
+        "alignments": sorted(alignments_filter),
+        "universes": sorted(universes_filter)
     }
     return render(request, page_url, context)
 
