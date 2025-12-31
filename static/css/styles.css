@@ -80,6 +80,11 @@ div label {
     margin-bottom: 5px;
 }
 
+/* Style disabled form control boxes to look disabled */
+.form-control:disabled {
+    background-color: var(--eclectic);
+}
+
 /* Select styling to match up with the styling of other form elements*/
 select {
     border-radius: 16px;

@@ -18,7 +18,6 @@ def profile_view(request, id):
     for form in [profileform, userform]:
         for field in form.fields.values():
             field.disabled=True
-
     context = {
         "user": user,
         "profileform": profileform,

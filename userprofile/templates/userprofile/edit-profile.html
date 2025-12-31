@@ -13,7 +13,7 @@ Edit Profile
         <div class="glassmorphic p-5">
             <h2 class="mb-4">Edit {{ user.get_display_name }}'s Profile</h2>
                 <p class="mb-4">Edit your profile details</p>
-              <form id="edit-profile" method="post">
+              <form id="edit-profile-form" method="post">
                 {% csrf_token %}
                 {{ userform | crispy }}
                 {{ profileform | crispy }}
