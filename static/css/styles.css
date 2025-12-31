@@ -43,7 +43,7 @@ a {
     color: var(--skylla);
 }
 
-/* H1 styling for the two titles.
+/* H1 styling for titles.
 Linear gradient styling in theme colours. */
 h1 {
     font-family: var(--main-header);
@@ -56,8 +56,9 @@ h1 {
     -webkit-text-fill-color: transparent;
 }
 
+/* Specific styling for h3 headings */
 h3 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.2;
     margin: 0.5em 0;
@@ -79,19 +80,19 @@ div label {
     margin-bottom: 5px;
 }
 
-/* Select styling */
+/* Select styling to match up with the styling of other form elements*/
 select {
     border-radius: 16px;
     padding: 10px;
     width: 180px;
 }
 
-/* Style options inside a select */
+/* Style options inside a select so the text is larger than standard */
 option {
     font-size: 1rem;
 }
 
-/* Positions the messages div near the top of the main container */
+/* Message div positioned below the header */
 #messages {
     top: 45px;
     position: absolute;
@@ -113,12 +114,12 @@ option {
     font-style: italic;
 }
 
-/* Hover styling for nav items and nav links */
-.nav-item:hover {
+/* Hover styling for nav items and nav links, and select dropdown filters */
+.nav-item:hover,
+select:hover  {
     background-color: var(--vivid-yellow);
     cursor: pointer;
     transition: 0.5s ease-in;
-    border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
     box-shadow: 0 0 10px #9ecaed;
@@ -130,7 +131,7 @@ option {
     color: #000000;
 }
 
-/* Styling for active nav-items created a glowing border */
+/* Styling for active nav-items creates a glowing border */
 .navbar .nav-item.active {
     background-color: var(--vivid-yellow);
     backdrop-filter: blur(5px);
@@ -164,6 +165,7 @@ option {
     box-sizing: border-box;
 }
 
+/* Styling applied to universe banner on the cards to match styling to h3 */
 .universe {
     font-size: 1.8rem;
     font-weight: 500;
@@ -178,18 +180,8 @@ option {
     border-top-right-radius: 16px;
 }
 
-.card-img-overlay {
-    height: 45px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-banner {
+/* Overlay banner for the front of shop and binder cards */
+.card-front-banner {
     height: 45px;
     border-radius: 0;
     border: 0;
@@ -201,15 +193,31 @@ option {
     left: 0;
     right: 0;
     top: 65%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+/* Overlay banner for the back of binder cards */
+.card-back-banner {
+    height: 45px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.card-banner h5 {
+/* Remove unneeded space below h5 elements in the card banners */
+.card-front-banner h5,
+.card-back-banner h5 {
     margin-bottom: 0;
 }
 
-.card-img-overlay h5 {
-    margin-bottom: 0;
-}
 
 /* Initially hides the shop cards while the loaders are spinning */
 .shop-card {
@@ -481,7 +489,7 @@ option {
         margin-top: 50px;
     }
 
-    .card-banner {
+    .card-front-banner {
         top: 255px;
     }
 
@@ -524,7 +532,7 @@ option {
         height: 390px;
     }
 
-    .card-banner {
+    .card-front-banner {
         top: 345px;
     }
 
@@ -591,7 +599,7 @@ option {
         font-size: 1.2rem;
     }
 
-    .card-banner {
+    .card-front-banner {
         top: 346px;
     }
 }

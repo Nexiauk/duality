@@ -133,8 +133,6 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 
 * **Adjust the prices for each rarity band or individual card**, so that I can control the shop economy and run promotions without changing the underlying card power ratings.
 
-* **Highlight special, featured, or new cards in the collection**, so I can encourage customer purchases and promotions.
-
 * **Set card availability**, so that I can control which cards are on sale or temporarily removed from the shop, supporting special offers and promotions.
 
 **User Management**

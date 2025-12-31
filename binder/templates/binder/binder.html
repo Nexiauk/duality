@@ -66,7 +66,7 @@ My Team
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block" loading="lazy"
                             src="{{ char.json.images.md }}" width="auto" height="400" alt="{{ char.chardetails.name }}">
-                        <div class="card-banner glassmorphic">
+                        <div class="card-front-banner glassmorphic">
                             <p class="universe">{{ char.universe }}</p>
                         </div>
                         <div class="card-body character-card-body d-flex flex-column justify-content-evenly">
@@ -85,7 +85,7 @@ My Team
                     <!-- Back of the flipcard -->
                     <div class="card-back glassmorphic d-flex flex-column justify-content-evenly p-2">
                         <!-- Overlay banner containing character publisher/universe -->
-                        <div class="card-img-overlay glassmorphic">
+                        <div class="card-back-banner glassmorphic">
                             <p class="universe">{{ char.universe }}</p>
                         </div>
                         <!-- Card details on the back pulled through from the json file.  -->
