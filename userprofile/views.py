@@ -10,14 +10,19 @@ from userprofile.forms import UserProfileForm, UserForm
 
 
 def profile_view(request, id):
+    """
+    Display a user's profile in read-only mode.
+
+    Renders the profile and user forms with all fields disabled.
+    """
     user = get_object_or_404(User, pk=id)
     page_url = "userprofile/view-profile.html"
-    profile=request.user.userprofile
+    profile = request.user.userprofile
     profileform = UserProfileForm(instance=profile)
     userform = UserForm(instance=request.user)
     for form in [profileform, userform]:
         for field in form.fields.values():
-            field.disabled=True
+            field.disabled = True
     context = {
         "user": user,
         "profileform": profileform,
@@ -28,9 +33,14 @@ def profile_view(request, id):
 
 @login_required
 def edit_profile_view(request):
+    """
+    Allow the logged-in user to edit their profile and account details.
+
+    Handles form submission, validation, saving, and displays
+    success or error messages.
+    """
     profile = request.user.userprofile
     page_url = 'userprofile/edit-profile.html'
-
     if request.method == "POST":
         profileform = UserProfileForm(
             request.POST,
