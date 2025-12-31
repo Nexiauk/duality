@@ -15,7 +15,8 @@ Edit Profile
                 <p class="mb-4">Edit your profile details</p>
               <form id="edit-profile" method="post">
                 {% csrf_token %}
-                {{ form | crispy }}
+                {{ userform | crispy }}
+                {{ profileform | crispy }}
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}

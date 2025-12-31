@@ -1,6 +1,7 @@
 from allauth.account.forms import SignupForm
 from django import forms
 from.models import UserProfile
+from django.contrib.auth.models import User
 
 class CustomSignupForm(SignupForm):
     """
@@ -25,6 +26,13 @@ class CustomSignupForm(SignupForm):
         return user
     
 class UserProfileForm(forms.ModelForm):
+    prefix = "profiledata"
     class Meta:
         model = UserProfile
         fields = ["display_name"]
+
+class UserForm(forms.ModelForm):
+    prefix = "userdata"
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]

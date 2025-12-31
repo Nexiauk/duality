@@ -6,14 +6,23 @@ from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from userprofile.forms import UserProfileForm
+from userprofile.forms import UserProfileForm, UserForm
 
 
 def profile_view(request, id):
     user = get_object_or_404(User, pk=id)
     page_url = "userprofile/view-profile.html"
+    profile=request.user.userprofile
+    profileform = UserProfileForm(instance=profile)
+    userform = UserForm(instance=request.user)
+    for form in [profileform, userform]:
+        for field in form.fields.values():
+            field.disabled=True
+
     context = {
-        "user": user
+        "user": user,
+        "profileform": profileform,
+        "userform": userform
     }
     return render(request, page_url, context)
 
@@ -24,16 +33,21 @@ def edit_profile_view(request):
     page_url = 'userprofile/edit-profile.html'
 
     if request.method == "POST":
-        form = UserProfileForm(
+        profileform = UserProfileForm(
             request.POST,
             instance=profile
         )
-        if form.is_valid():
-            form.save()
+        userform = UserForm(
+            request.POST,
+            instance=request.user
+        )
+        if profileform.is_valid() and userform.is_valid():
+            userform.save()
+            profileform.save()
             messages.add_message(
                 request,
                 messages.SUCCESS,
-                "Profile successfully updated!"
+                "User details successfully updated!"
             )
             return redirect(
                 "profile",
@@ -46,9 +60,11 @@ def edit_profile_view(request):
                 "Error updating user profile, try again."
             )
     else:
-        form = UserProfileForm(instance=profile)
+        profileform = UserProfileForm(instance=profile)
+        userform = UserForm(instance=request.user)
     return render(
         request,
         page_url,
-        {"form": form}
+        {"profileform": profileform,
+         "userform": userform}
     )
