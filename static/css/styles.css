@@ -103,7 +103,7 @@ option {
     flex-basis: 0;
     flex-grow: 1;
     text-align: center;
-    border: 1px solid var(--skylla);
+    border: 1px solid #212529;
 }
 
 /* Block and height/width applied so the entire nav-link item becomes clickable */

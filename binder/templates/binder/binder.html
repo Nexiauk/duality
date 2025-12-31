@@ -11,7 +11,7 @@ My Team
 <section id="binder-section" class="container mb-5 pb-4 gx-0">
     <!-- Centered title and description of the binder-->
     <div class="row ms-xxl-6 me-xxl-6 mb-2">
-        <div class="col-10 text-center mx-auto mt-3 mt-md-4 glow mb-4" id="binder-heading">
+        <div class="col-10 text-center mx-auto mt-3 pt-3 mt-md-4 glow mb-4" id="binder-heading">
             <h2 class="heading">Binder</h2>
             <p>View your ultimate multiversal team!</p>
         </div>
@@ -45,12 +45,12 @@ My Team
             </div>
         </div>
     </div>
-    <!-- Binder items grid with responsive layout at different screen sizes. -->
-    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
-            <div class="col d-flex justify-content-center">
+    <div class="col d-flex justify-content-center">
         <!-- Loader element shown while binder content is loading-->
         <div class="loader"></div>
     </div>
+    <!-- Binder items grid with responsive layout at different screen sizes. -->
+    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
         <!-- Loop through all characters passed by the view -->
         {% for char in characters %}
         <div class="col-sm-12 ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
