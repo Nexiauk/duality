@@ -480,7 +480,15 @@ select:hover  {
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-title {
+        font-size: 1.9rem;
+    }
+
+    .card-subtitle {
+        font-size: 1.5rem;
     }
 
     #shop-section,
@@ -645,6 +653,14 @@ select:hover  {
         padding: 0 48px 0 10px;
     }
 
+    .hero-title {
+        font-size: 3.2rem;
+    }
+
+    .card-subtitle {
+        font-size: 2.7rem;
+    }
+
     h3,
     h4,
     h5,
@@ -653,7 +669,7 @@ select:hover  {
     }
 
     p {
-        font-size: 1.8rem;
+        font-size: 1.9rem;
     }
 
     select {

@@ -6,6 +6,69 @@ INSERT PICTURE HERE
 
 This app has been created as a project during my [Code Institute](https://codeinstitute.net/) Level 5 Web App Development course.
 
+## Table of Contents
+
+- [Duality: Legends Unchained](#duality-legends-unchained)
+- [Duality Blurb](#duality-blurb)
+- [Inspiration](#inspiration)
+  - [Reluctant Readers](#reluctant-readers)
+  - [The Psychology of Collecting](#the-psychology-of-collecting)
+  - [The Idea](#the-idea)
+- [Goals](#goals)
+- [User Experience (UX)](#user-experienceux)
+  - [Types of Users](#types-of-users)
+  - [User Stories](#user-stories)
+    - [Guest Users](#guest-users)
+    - [Registered Users](#registered-users)
+    - [Admin Users](#admin-users)
+- [Design](#design)
+  - [Colour Scheme](#colour-scheme)
+  - [Colour Palette](#colour-palette)
+  - [Colour Accessibility](#colour-accessibility)
+  - [Imagery](#imagery)
+  - [Typography](#typography)
+  - [Wireframes](#wireframes)
+  - [End Product Design Changes](#end-product-design-changes)
+- [Features](#features)
+  - [Users](#users)
+  - [Characters](#characters)
+    - [Archetype Mapping Logic](#archetype-mapping-logic)
+    - [Quantitative Criteria Key](#quantitative-criteria-key)
+    - [Interpretation Notes](#interpretation-notes)
+  - [Cards](#cards)
+  - [Responsiveness](#responsiveness)
+  - [Header](#header)
+  - [Footer](#footer)
+  - [Home Page](#home-page)
+  - [Shop Page](#shop-page)
+  - [Binder Page](#binder-page)
+  - [Profile Page](#profile-page)
+  - [Admin](#admin)
+- [Security Features](#security-features)
+  - [Authentication & User Management](#authentication--user-management)
+  - [Access Control](#access-control)
+  - [Permissions & Roles](#permissions--roles)
+  - [Environment Variables](#environment-variables)
+  - [Deployment Security](#deployment-security)
+  - [Payment Security](#payment-security)
+- [Future Features](#future-features)
+- [Models and Data Relationships](#models-and-data-relationships)
+  - [Entity Relationship Diagram](#entity-relationship-diagram)
+  - [Overview](#overview)
+  - [Model Relationships (ERD Notation)](#model-relationships-erd-notation)
+  - [Model Fields](#model-fields)
+- [Testing](#testing)
+  - [User Story Testing](#user-story-testing)
+  - [Automated Testing](#automated-testing)
+  - [Manual Testing](#manual-testing)
+  - [Unit Testing](#unit-testing)
+- [Technology Used](#technology-used)
+- [Coding Help](#coding-help)
+- [Interesting Bugs](#interesting-bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
+
 ## **Duality Blurb**
 The barriers between universes have collapsed - chaos reigns!
 
@@ -284,6 +347,11 @@ Stripe Payment
 Filters  
 Flippable cards  
 Extra card content
+
+### *Profile Page*
+Disabled form
+Editable form
+Extended user info from profile model
 
 ### Admin
 * Shop Scheduler
