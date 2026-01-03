@@ -90,8 +90,12 @@ the active shop schedules. Each character is presented as a card with:
                         </div>
                         {% if user.is_authenticated %}
                             <div class="card-footer d-flex justify-content-center">
-                                <a href="{% url 'card-detail' char.model.id %}"
-                                   class="btn buy-button {{ char.model.rarity|lower }}"><span class="unskew">Buy now £{{ char.model.rarity.price }}</span></a>
+                                {% if char.model.id in owned_cards %}
+                                    <button class="btn" disabled aria-disabled="true"><span class="unskew">You already own this card</span></button>
+                                {% else %}
+                                    <a href="{% url 'card-detail' char.model.id %}"
+                                       class="btn buy-button {{ char.model.rarity|lower }}"><span class="unskew">Buy now £{{ char.model.rarity.price }}</span></a>
+                                {% endif %}
                             </div>
                         {% else %}
                         {% endif %}

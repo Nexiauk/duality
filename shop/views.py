@@ -25,6 +25,7 @@ def shop_view(request):
     page_url = "shop/shop.html"
     scheduled_characters = []
     schedule = ShopScheduler.get_or_create_active_schedule()
+    owned_cards = Usercards.objects.filter(owner=request.user).values_list('character', flat=True)
     for s in schedule:
         if not s.get_items():
             s.create_items_for_schedule()
@@ -53,7 +54,8 @@ def shop_view(request):
         "characters": scheduled_characters,
         "rarities": rarities_filter,
         "alignments": sorted(alignments_filter),
-        "universes": sorted(universes_filter)
+        "universes": sorted(universes_filter),
+        "owned_cards": owned_cards
     }
     return render(request, page_url, context)
 

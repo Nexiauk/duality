@@ -369,6 +369,15 @@ select:hover  {
     border-radius: 0;
 }
 
+.btn:disabled {
+    background-color: var(--ecstatic-red);
+    color: white;
+    transform: skew(-30deg);
+    border-radius: 0;
+    opacity: 1;
+    border: none;
+}
+
 /* Unskew class applied to the button span text to unmutate it */
 .unskew {
     display: inline-block;
