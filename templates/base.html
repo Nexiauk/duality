@@ -93,7 +93,10 @@
     </header>
     <!-- Background picture class applied only on the home page. Hero contents aligned to bottom of the page with padding to push it up slightly. Consistent layout scross all screen sizes. -->
     <main
-        class="flex-fill d-flex {% if request.path == home_url %}align-items-end pb-4 justify-content-center hero-bg{% endif %}">
+        class="flex-fill d-flex flex-column {% if request.path == home_url %}justify-content-end align-items-center pb-4 hero-bg
+        {% elif request.path == shop_url or request.path == binder_url %}align-items-start
+        {% else %}align-items-center justify-content-center
+        {% endif %}">
         <!-- Display Django messages (ERROR/SUCCESS) with ARIA for accessibility -->
         {% if messages %}
         <div class="w-95 w-md-30" id="messages">

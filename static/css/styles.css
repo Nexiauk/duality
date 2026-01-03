@@ -98,9 +98,13 @@ option {
 }
 
 /* Message div positioned below the header */
-#messages {
-    top: 45px;
-    position: absolute;
+/* #messages {
+    top: 65px;
+    z-index: auto;
+} */
+
+.alert {
+    margin-bottom: 0;
 }
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
