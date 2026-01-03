@@ -164,7 +164,7 @@ def payment_success(request):
 
 @login_required
 def payment_cancel(request):
-    return render(request, 'shop/cancel')
+    return render(request, 'shop/cancel.html')
 
 
 @login_required

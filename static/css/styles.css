@@ -364,7 +364,7 @@ select:hover  {
 
 .cancel {
     background-color: var(--ecstatic-red);
-    color: black;
+    color: white;
     transform: skew(-30deg);
     border-radius: 0;
 }
