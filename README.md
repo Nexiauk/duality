@@ -640,6 +640,54 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 
 ### **Manual Testing**
+Chrome
+Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
+
+All nav links work on all pages
+All external links open in a new browser window
+The layout reflows and changes as expected across different screen sizes
+The background image appears and disappears as it should on different screen sizes
+The logo text always links back to the home page from every other page
+Hover colours work as expected on laptops and desktops
+All required form fields have to be filled in
+The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+
+
+Edge
+Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
+
+All nav and footer links work on all pages
+All external links open in a new browser window
+The layout reflows and changes as expected across different screen sizes
+The background image appears and disappears as it should on different screen sizes
+The logo text always links back to the home page from every other page
+Hover colours work as expected on laptops and desktops
+All required form fields have to be filled in
+The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+FireFox
+Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
+
+All nav and footer links work on all pages
+All external links open in a new browser window
+The layout reflows and changes as expected across different screen sizes
+The background image appears and disappears as it should on different screen sizes
+The logo text always links back to the home page from every other page
+Hover colours work as expected on laptops and desktops
+All required form fields have to be filled in
+The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+
+
+Safari
+Tested on an iPhone SE 2023
+
+The burger nav dropdown works as expected on all pages, expanding, collapsing and disappearing as it should
+All nav links work on all pages
+All external links open in a new browser window
+All active nav-links display in the appropriate colour on the appropriate page
+All required form fields have to be filled in
+The logo text takes you back to the home page from every page
+
+
 * Tested characters imported safely after running import.py and that archetypes were allocated to all characters - checked via Django admin. Exception errors raise if the file doesn't exist at the specified path, if the JSON data is malformed, or if the OS denies permissions. Exception errors also raise if invalid values or if bad values violate database rules.
 * Tested that rarities were assigned to all characters after running rarity-update.py - checked via Django admin. Built-in logic to compare id and name from the JSON file, to id and name in the CharacterCard model table. Exception errors raise if the CharacterCard doesn't exist, and any characters not allocated a rarity will print to the terminal.
 * Checked that the method of grabbing the json data for each character returns the correct details by manually comparing characters to the json file
