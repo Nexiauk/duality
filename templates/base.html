@@ -66,24 +66,24 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item {% if request.path == binder_url %}active{% endif %}"
                             {% if request.path == binder_url %}aria-current="page" {% endif %}>
-                            <a class="nav-link" href="{% url "binder" %}">Binder</a>
+                            <a class="nav-link" href="{% url 'binder' %}">Binder</a>
                         </li>
                         <li class="nav-item {% if request.path == profile_url or request.path == edit_url %}active{% endif %}"
                             {% if request.path == profile_url or request.path == edit_url %}aria-current="page" {% endif %}>
-                            <a class="nav-link" href="{% url "profile" id=user.id %}">My Profile</a>
+                            <a class="nav-link" href="{% url 'profile' id=user.id %}">My Profile</a>
                         </li>
                         <li class="nav-item {% if request.path == logout_url %}active{% endif %}"
                             {% if request.path == logout_url %}aria-current="page" {% endif %}>
-                            <a class="nav-link" href="{% url "account_logout" %}">Logout</a>
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         {% else %}
                         <li class="nav-item {% if request.path == signup_url %}active{% endif %}"
                         {% if request.path == signup_url %}aria-current="page" {% endif %}>
-                            <a class="nav-link" href="{% url "account_signup" %}">Register</a>
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item {% if request.path == login_url %}active{% endif %}"
                         {% if request.path == login_url %}aria-current="page" {% endif %}>
-                            <a class="nav-link" href="{% url "account_login" %}">Login</a>
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
                     </ul>

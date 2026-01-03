@@ -25,7 +25,10 @@ def shop_view(request):
     page_url = "shop/shop.html"
     scheduled_characters = []
     schedule = ShopScheduler.get_or_create_active_schedule()
-    owned_cards = Usercards.objects.filter(owner=request.user).values_list('character', flat=True)
+    if request.user.is_authenticated:
+        owned_cards = Usercards.objects.filter(owner=request.user).values_list('character', flat=True)
+    else:
+        owned_cards = Usercards.objects.none()
     for s in schedule:
         if not s.get_items():
             s.create_items_for_schedule()

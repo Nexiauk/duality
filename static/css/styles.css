@@ -97,12 +97,6 @@ option {
     font-size: 1rem;
 }
 
-/* Message div positioned below the header */
-/* #messages {
-    top: 65px;
-    z-index: auto;
-} */
-
 .alert {
     margin-bottom: 0;
 }
@@ -698,10 +692,6 @@ select:hover  {
     .hero-card .card-title,
     .heading {
         font-size: 3rem;
-    }
-
-    #messages {
-        top: 80px;
     }
 
     .navbar {

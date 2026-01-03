@@ -88,6 +88,7 @@ the active shop schedules. Each character is presented as a card with:
                             <!-- Character name passed from the character model -->
                             <h3 class="text-center card-title">{{ char.model.name }}</h3>
                         </div>
+                        <!-- Shows the buy button only if the user is logged in, and displays a disabled button if the logged-in user already owns the card -->
                         {% if user.is_authenticated %}
                             <div class="card-footer d-flex justify-content-center">
                                 {% if char.model.id in owned_cards %}
