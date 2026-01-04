@@ -11,6 +11,7 @@ from .models import ShopScheduler, CharacterCard
 from core.models import Rarity
 from binder.models import Usercards
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 import stripe
 from django.conf import settings
 from django.urls import reverse
@@ -145,15 +146,20 @@ def payment_success(request):
                 expand=['line_items.data.price.product']
             )
             customer = session.metadata.get('customer')
+            customer_username = User.objects.get(username=customer)
+            display_name = customer_username.get_display_name
             purchases = get_purchases_from_session(session)
             if session.payment_status == 'paid':
                 for purchase in purchases:
-                    Usercards.create_usercard(
+                    usercard = Usercards.create_usercard(
                         request.user, purchase, session.payment_intent)
+                    purchase['order_reference'] = usercard.order_reference
+                    purchase['price'] = purchase['price']/100
                 return render(request, 'shop/success.html', {
                     'customer_email': session.customer_details.email,
                     'customer': customer,
-                    'purchases': purchases
+                    'purchases': purchases,
+                    'display_name': display_name
                 })
             else:
                 return render(request, 'shop/cancel.html')
