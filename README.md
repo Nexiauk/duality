@@ -322,14 +322,25 @@ This table defines the abbreviations used in the **Quantitative Criteria** colum
 
 
 ### *Cards*
-Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations. They are responsive across screen sizes and their layout reflows as the screen changes.
+Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations. They are responsive across screen sizes and their layout reflows as the screen changes. All cards show their publisher/universe, the character name and their total stats rarity.
+They have a glassmorphic effect with border shadow for a lifted 3D effect, and glow around the edges on hover. 
 
-They have a glassmorphic effect with border shadow for a lifted 3D effect, and glow around the edges on hover. On the shop, cards scale up on hover. In the binder, cards flip on hover for additional content.
+On the shop, cards scale up on hover.  
+![Shop card](../duality/docs/screenshots/shop-card.jpg)
+![Shop card hover effect](../duality/docs/screenshots/shop-card-hover.jpg)
+
+In the binder, cards flip on hover for additional content.  
+![Binder card](../duality/docs/screenshots/binder-card.jpg)
+![Binder card hover effect](../duality/docs/screenshots/binder-card-hover.jpg)
 
 ### *Responsiveness*
 Duality: Legends Unchained has been designed mobile-first, built initially to look good on a screen 320px wide in Google Chrome. It is responsive across various screens and devices up to 4k (2560+). This has been achieved using Bootstrap grid sizes as well as CSS3 media queries to ensure the layout changes appropriately and looks good across all screen sizes. 
 
 ### *Header*
+The header features Nav items styled with a skewed effect for a dynamic feel. The nav-items glow on hover, and keep the glow and a changed colour on click. The navbar will automatically distribute space evenly across nav-items to keep a consistently spaced feel.
+On mobile and tablet screens, the navbar collapses and is replaced with a burger icon. A dropdown of nav items appears that keeps all the same hover and active effects.
+The nav-brand consists of a customised logo and the app name in gradient colours ([see Design section](#design)).
+The header is always fixed to the top so that navigation is easy to find and use.
 
 ### *Footer*
 
