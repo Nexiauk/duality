@@ -401,6 +401,9 @@ Clicking 'Buy Now' will take the user to a confirmation page, where they have th
 If the user continues with their purchase, the name of the character, their image and the price of the card will be sent through to the Stripe checkout page.  
 ![Stripe character card details](../duality/docs/screenshots/stripe-card.jpg)
 
+Depending on if the purchase fails, is cancelled, or is successful, one of three templates will load:
+* cancel.html
+
 
 Note: Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request.
 

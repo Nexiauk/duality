@@ -350,7 +350,7 @@ select:hover  {
 
 .badge.neutral {
     background-color: gray;
-    color: white;
+    color: black;
 }
 
 .badge.mythic {
