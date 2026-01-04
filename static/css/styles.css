@@ -591,6 +591,10 @@ select:hover  {
         font-size: 1.8rem;
     }
 
+    p {
+        font-size: 1.2rem;
+    }
+
     .navbar-nav {
         width: 97%;
     }
