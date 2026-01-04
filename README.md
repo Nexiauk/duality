@@ -337,16 +337,37 @@ In the binder, cards flip on hover for additional content.
 Duality: Legends Unchained has been designed mobile-first, built initially to look good on a screen 320px wide in Google Chrome. It is responsive across various screens and devices up to 4k (2560+). This has been achieved using Bootstrap grid sizes as well as CSS3 media queries to ensure the layout changes appropriately and looks good across all screen sizes. 
 
 ### *Header*
-The header features Nav items styled with a skewed effect for a dynamic feel. The nav-items glow on hover, and keep the glow and a changed colour on click. The navbar will automatically distribute space evenly across nav-items to keep a consistently spaced feel.
+The header features a navbar whose nav-items arestyled with a skewed effect for a dynamic feel. The nav-items glow on hover, and keep the glow and a changed colour when active. The navbar will automatically distribute space evenly across nav-items to keep a consistently spaced feel.  
+![Header with nav items and nav-brand](../duality/docs/screenshots/header.jpg)
+
 On mobile and tablet screens, the navbar collapses and is replaced with a burger icon. A dropdown of nav items appears that keeps all the same hover and active effects.
-The nav-brand consists of a customised logo and the app name in gradient colours ([see Design section](#design)).
+![Header on mobile with collapsible navbar](../duality/docs/screenshots/header-mobile.jpg)
+
+
+The nav-brand consists of a customised logo and the app name in gradient colours ([see Design section](#design)).  
+![Navbrand with logo and title text.](../duality/docs/screenshots/navbrand.jpg)
+
 The header is always fixed to the top so that navigation is easy to find and use.
 
 ### *Footer*
+The footer features a copyright notice, a socials icon area and shows whether a user is signed in or out. The footer is fixed on screens 768px and up, but not on mobile to make more room for the content.  
+![Footer](../duality/docs/screenshots/footer.jpg)
+
+The socials icons feature a link to my personal Facebook page, my LinkedIn account and my Github. The icons change colour and glow on hover.  
+![Socials icons hover effect](../duality/docs/screenshots/socials-hover.jpg)
+
+The login status area will display a user's display name, if they have one, their username if they don't and will show you are not currently logged in if you haven't signed in, or if you signed out.  
+![Login status area](../duality/docs/screenshots/login-status.jpg)
+
 
 ### *Home Page*
-Hero section
-Carousel on smaller screens
+The home page features a customised image that is strategically placed to best effect on small and large screens.
+
+Three hero cards explain what the app is about, with links to the shop and your binder. This text changes depening on a user's login status, directing them to register/sign in instead.  
+![Home page on a larger screen](../duality/docs/screenshots/hero-section-lg.jpg)
+
+The hero cards change to a carousel on small screens that cycles through automatically, this was designed to keep the home page compact and prevent an overly long screen to scroll vertically down.  
+![Home page on a mobile screen](../duality/docs/screenshots/hero-section-mobile.jpg)
 
 ### *Shop Page*
 Hover animations  
