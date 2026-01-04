@@ -6,7 +6,8 @@
     <section class="mt-4 mb-4 mx-auto p-md-4">
         <div class="glassmorphic p-5">
             <h2 class="mb-4">Something went wrong</h2>
-                <p class="mb-4">{{ error }}</p>              
+                <p class="mb-4">{{ error }}</p>    
+                <a href="{% url 'shop' %}" class="btn buy-button cancel"><span class="unskew">Return to Shop</span></a>            
         </div>
     </section>
 {% endblock content %}

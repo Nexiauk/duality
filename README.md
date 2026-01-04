@@ -402,24 +402,24 @@ If the user continues with their purchase, the name of the character, their imag
 ![Stripe character card details](../duality/docs/screenshots/stripe-card.jpg)
 
 Depending on if the purchase fails, is cancelled, or is successful, one of three templates will load:
-* cancel.html
-
+* cancel.html gives a button to go back to the shop
+* error.html passes the failure error as a string and gives a button to go back to the shop
+* success.html gives the transaction details and a button to go to the binder
 
 Note: Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request.
 
-
-Stripe payment
-Stripe Payment
-
 ### *Binder Page*
-Filters  
-Flippable cards  
-Extra card content
+The binder page features filters, much the same as the shop page - by Rarity, Alignment and Universe. As per the [Card Features](#cards) section, the cards also flip on hover to provide extended information about each character.
 
 ### *Profile Page*
-Disabled form
-Editable form
-Extended user info from profile model
+The profile page features a disabled version of the edit-profile form, with an edit button that takes the user to an editable version of the form which allows them to change their first name, last name, email address, and display name. Display name is stored on a custom model and made accessible through the User model via a shared property. The admin is customised so that the user profile information appears inline the User admin page and both can be edited at the same time.
+
+![View profile page](../duality/docs/screenshots/view-profile.jpg)
+![Edit profile page](../duality/docs/screenshots/edit-profile.jpg)
+
+
+
+
 
 ### Admin
 * Shop Scheduler
@@ -433,30 +433,49 @@ Extended user info from profile model
 * Search bar on CharacterCard model for quicker editing
 * Custom method to show characters allocated to a particular schedule as a comma separated list
 
+
+
+
+
+
+
 ## **Security Features**
 
 ### *Authentication & User Management*
-* Django Allauth is used to handle user registration, login, logout, and account management.  
-* Provides built-in security features such as password hashing, email verification, and session handling.
+- Django Allauth is used to handle user registration, login, logout, and account management.
+- Provides built-in security features such as password hashing, session management, and optional email verification.
+- Authentication logic is handled by Django’s proven authentication framework rather than custom code.
 
 ### *Access Control*
+- Views and functionality are restricted based on authentication status.
+- Users must be logged in to access account-specific features such as profiles and purchases.
+- Django’s built-in request user context is used to ensure users can only access their own data.
 
 ### *Permissions & Roles*
+- Administrative actions are restricted to staff and superuser accounts via Django’s admin permissions.
+- Standard users do not have access to admin-only functionality.
+- Role separation ensures that sensitive management actions cannot be performed by regular users.
 
 ### *Environment Variables*
-* Sensitive data is stored securely in an env.py file, which is hidden via .gitignore.  
-* Keys and settings stored in env.py include:  
-* SECRET_KEY (Django project key)  
-* DATABASE_URL (PostgreSQL database connection)  
-* CLOUDINARY_URL (media storage)  
-* .venv (virtual environment) is also excluded from GitHub, ensuring no dependencies or system files are exposed.
+- Sensitive configuration data is stored in an `env.py` file, which is excluded from version control via `.gitignore`.
+- Environment variables include:
+  - `SECRET_KEY` (Django project key)
+  - `DATABASE_URL` (PostgreSQL database connection)
+  - `CLOUDINARY_URL` (media storage)
+  - `STRIPE_SECRET_KEY` (payment processing)
+- The virtual environment (`.venv`) is also excluded from GitHub to prevent exposure of system-specific files and dependencies.
 
 ### *Deployment Security*
-* DEBUG mode is disabled in production.  
-* No passwords, API keys, or sensitive information are ever committed to the repository.  
-* All environment-specific settings are managed securely via env.py.
+- `DEBUG` mode is disabled in production to prevent sensitive error information being exposed.
+- No passwords, API keys, or secrets are committed to the repository.
+- Production environment variables are managed securely using Heroku Config Vars.
 
 ### *Payment Security*
+- All payment processing is handled by Stripe, a PCI-DSS compliant payment provider.
+- The application never stores, processes, or transmits card details.
+- Stripe API keys are stored securely using environment variables.
+- The application only receives non-sensitive payment information such as transaction identifiers and payment status.
+
 
 ## **Future Features**
 * Ability to trade cards  
@@ -465,9 +484,11 @@ Extended user info from profile model
 * A fancier binder
 * Search function on the Binder
 * Pagination for the Binder
+* Sort function on the Binder so it can be sorted by most recent purchase
 * Ability to search by rarity/universe/alignment/archetype on the shop schedule items admin to allow 'type' shops. IE a Marvel only set of characters.
 * Change the shop scheduler so that instead of creating a new schedule on a visit, it is an automated task every 24 hours.
 * A timer countdown for the shop, so customers can see when the current batch of characters will be replaced.
+* Fancy website colour changes relating directly to how many cards a user has that are one alignment or another.
 
 
 
