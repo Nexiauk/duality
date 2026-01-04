@@ -1,8 +1,8 @@
 # Duality: Legends Unchained
 
-[View the live project here](INSERT LINK HERE)
+[View the live project here](https://duality-2411f10ea2e4.herokuapp.com/)
 
-INSERT PICTURE HERE
+![Am I responsive](../duality/docs/screenshots/amiresponsive.jpg)
 
 This app has been created as a project during my [Code Institute](https://codeinstitute.net/) Level 5 Web App Development course.
 
@@ -322,7 +322,9 @@ This table defines the abbreviations used in the **Quantitative Criteria** colum
 
 
 ### *Cards*
-Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations.
+Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations. They are responsive across screen sizes and their layout reflows as the screen changes.
+
+They have a glassmorphic effect with border shadow for a lifted 3D effect, and glow around the edges on hover. On the shop, cards scale up on hover. In the binder, cards flip on hover for additional content.
 
 ### *Responsiveness*
 Duality: Legends Unchained has been designed mobile-first, built initially to look good on a screen 320px wide in Google Chrome. It is responsive across various screens and devices up to 4k (2560+). This has been achieved using Bootstrap grid sizes as well as CSS3 media queries to ensure the layout changes appropriately and looks good across all screen sizes. 
@@ -640,7 +642,12 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 
 ### **Manual Testing**
+
+Mobile 320px
 Chrome
+
+
+
 Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 
 All nav links work on all pages

@@ -338,6 +338,21 @@ select:hover  {
     color: black;
 }
 
+.badge.good {
+    background-color: white;
+    color: black;
+}
+
+.badge.bad {
+    background-color: black;
+    color: white;
+}
+
+.badge.neutral {
+    background-color: gray;
+    color: white;
+}
+
 .badge.mythic {
     background-color: gold;
     color: black;
@@ -562,7 +577,7 @@ select:hover  {
     }
 
     .character-card-body {
-        height: 137px;
+        height: 120px;
     }
 }
 
