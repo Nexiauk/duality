@@ -80,13 +80,18 @@ the active shop schedules. Each character is presented as a card with:
                         <div class="card-front-banner glassmorphic">
                             <p class="universe">{{ char.universe }}</p>
                         </div>
-                        <div class="card-body character-card-body d-flex flex-column justify-content-evenly align-items-center">
-                            <div>
-                                <!-- Badge showing the character's power total -->
-                                <span class="badge {{ char.model.rarity|lower }}">{{ char.model.rarity }} {{ char.power }}</span>
+                        <div class="card-body character-card-body d-flex flex-column align-items-center">
+                            <!-- Badges showing the character's power total, rarity and alignment -->
+                            <div class="mt-2 mt-xxl-3">
+                                <span class="badge {{ char.model.rarity|lower }}">{{ char.model.rarity }} {{ char.power }}</span> <span
+                                    class="badge {{ char.alignment|lower }} mb-2">Alignment: {{ char.alignment }}</span>
                             </div>
                             <!-- Character name passed from the character model -->
-                            <h3 class="text-center card-title">{{ char.model.name }}</h3>
+                                                        <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+                                <h3 class="text-center card-title">
+                                    {{ char.model.name }}
+                                </h3>
+                            </div>
                         </div>
                         <!-- Shows the buy button only if the user is logged in, and displays a disabled button if the logged-in user already owns the card -->
                         {% if user.is_authenticated %}
