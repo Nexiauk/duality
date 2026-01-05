@@ -17,29 +17,31 @@
                     </div>
                     <div class="card-footer p-4 py-3">
                         {% if user.is_authenticated %}
-                        <a href="{% url 'profile' id=user.id %}" target="_blank" class="link-info">Edit your profile!&nbsp;
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
+                            <a href="{% url 'profile' id=user.id %}"
+                               target="_blank"
+                               class="link-info">Edit your profile!&nbsp;
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="1em"
+                                     height="1em"
+                                     fill="currentColor"
+                                     viewBox="0 0 16 16"
+                                     class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                    </path>
+                                </svg>
+                            </a>
                         {% else %}
-                        <a href="{% url 'account_signup' %}" target="_blank" class="link-info">Sign up now! 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
+                            <a href="{% url 'account_signup' %}" target="_blank" class="link-info">Sign up now!
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="1em"
+                                     height="1em"
+                                     fill="currentColor"
+                                     viewBox="0 0 16 16"
+                                     class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                    </path>
+                                </svg>
+                            </a>
                         {% endif %}
                     </div>
                 </div>
@@ -50,11 +52,11 @@
                         <h2 class="hero-title">The Shop</h2>
                         <h3 class="text-muted mb-2 card-subtitle">Build your team!</h3>
                         <p class="card-text">
-                         The Shop rotates daily with new characters, rarities, and surprises - every visit brings something new. Build your collection, your way. 
+                            The Shop rotates daily with new characters, rarities, and surprises - every visit brings something new. Build your collection, your way.
                         </p>
                     </div>
                     <div class="card-footer p-4 py-3">
-                        <a href="{% url 'shop' %}" class="link-info" target="_blank">Visit the shop 
+                        <a href="{% url 'shop' %}" class="link-info" target="_blank">Visit the shop!
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  width="1em"
                                  height="1em"
@@ -74,34 +76,34 @@
                         <h2 class="hero-title">Your Binder</h2>
                         <h3 class="text-muted mb-2 card-subtitle">Manage your misfits!</h3>
                         <p class="card-text">
-                         Your Binder is your tracker - view who's on your team, check their statistics, and find out more about your elite crew of multiversal misfits.
+                            Your Binder is your tracker - view who's on your team, check their statistics, and find out more about your elite crew of multiversal misfits.
                         </p>
                     </div>
                     <div class="card-footer p-4 py-3">
                         {% if user.is_authenticated %}
-                        <a href="{% url 'binder' %}" class="link-info" target="_blank">See your binder 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
+                            <a href="{% url 'binder' %}" class="link-info" target="_blank">See your binder!
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="1em"
+                                     height="1em"
+                                     fill="currentColor"
+                                     viewBox="0 0 16 16"
+                                     class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                    </path>
+                                </svg>
+                            </a>
                         {% else %}
-                        <a href="{% url 'account_login' %}" class="link-info" target="_blank">See your binder 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
+                            <a href="{% url 'account_login' %}" class="link-info" target="_blank">Login for your binder!
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                     width="1em"
+                                     height="1em"
+                                     fill="currentColor"
+                                     viewBox="0 0 16 16"
+                                     class="bi bi-arrow-right">
+                                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                    </path>
+                                </svg>
+                            </a>
                         {% endif %}
                     </div>
                 </div>
@@ -119,35 +121,37 @@
                             <h2 class="hero-title">Duality</h2>
                             <h3 class="text-muted mb-2 card-subtitle">Multiversal mayhem!</h3>
                             <p class="card-text">
-                             The barriers between universes have vanished. To set things right, build your ultimate team of heroes and villains from across the Multiverse.   
+                                The barriers between universes have vanished. To set things right, build your ultimate team of heroes and villains from across the Multiverse.
                             </p>
                         </div>
                         <div class="card-footer p-4 py-3">
-                        {% if user.is_authenticated %}
-                        <a href="{% url 'profile' id=user.id %}" target="_blank" class="link-info">Edit your profile! 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
-                        {% else %}
-                        <a href="{% url 'account_signup' %}" target="_blank" class="link-info">Sign up now! 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
-                        {% endif %}
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'profile' id=user.id %}"
+                                   target="_blank"
+                                   class="link-info">Edit your profile!
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         width="1em"
+                                         height="1em"
+                                         fill="currentColor"
+                                         viewBox="0 0 16 16"
+                                         class="bi bi-arrow-right">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                        </path>
+                                    </svg>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" target="_blank" class="link-info">Sign up now!
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         width="1em"
+                                         height="1em"
+                                         fill="currentColor"
+                                         viewBox="0 0 16 16"
+                                         class="bi bi-arrow-right">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                        </path>
+                                    </svg>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -161,7 +165,7 @@
                             </p>
                         </div>
                         <div class="card-footer p-4 py-3">
-                            <a href="{% url 'shop' %}" class="link-info" target="_blank">Visit the shop 
+                            <a href="{% url 'shop' %}" class="link-info" target="_blank">Visit the shop!
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                      width="1em"
                                      height="1em"
@@ -185,31 +189,31 @@
                             </p>
                         </div>
                         <div class="card-footer p-4 py-3">
-                                                    {% if user.is_authenticated %}
-                        <a href="{% url 'binder' %}" class="link-info" target="_blank">See your binder 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
-                        {% else %}
-                        <a href="{% url 'account_login' %}" class="link-info" target="_blank">Login for your binder! 
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                 width="1em"
-                                 height="1em"
-                                 fill="currentColor"
-                                 viewBox="0 0 16 16"
-                                 class="bi bi-arrow-right">
-                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
-                                </path>
-                            </svg>
-                        </a>
-                        {% endif %}
+                            {% if user.is_authenticated %}
+                                <a href="{% url 'binder' %}" class="link-info" target="_blank">See your binder
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         width="1em"
+                                         height="1em"
+                                         fill="currentColor"
+                                         viewBox="0 0 16 16"
+                                         class="bi bi-arrow-right">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                        </path>
+                                    </svg>
+                                </a>
+                            {% else %}
+                                <a href="{% url 'account_login' %}" class="link-info" target="_blank">Login for your binder!
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                         width="1em"
+                                         height="1em"
+                                         fill="currentColor"
+                                         viewBox="0 0 16 16"
+                                         class="bi bi-arrow-right">
+                                        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8">
+                                        </path>
+                                    </svg>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

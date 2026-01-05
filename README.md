@@ -327,6 +327,10 @@ This table defines the abbreviations used in the **Quantitative Criteria** colum
 Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations. They are responsive across screen sizes and their layout reflows as the screen changes. All cards show their publisher/universe, the character name and their total stats rarity.
 They have a glassmorphic effect with border shadow for a lifted 3D effect, and glow around the edges on hover. 
 
+Card fronts show badges with Power totals and the rarity assigned to them, as well as the character's alignment to good/neutral/evil. These badges change colour based on rarity and alignment.
+
+Card backs in the binder show extended information and a full breakdown of stats in the same colour as the card rarity.
+
 On the shop, cards scale up on hover.  
 ![Shop card](../duality/docs/screenshots/shop-card.jpg)
 ![Shop card hover effect](../duality/docs/screenshots/shop-card-hover.jpg)
@@ -339,14 +343,34 @@ In the binder, cards flip on hover for additional content.
 Duality: Legends Unchained has been designed mobile-first, built initially to look good on a screen 320px wide in Google Chrome. It is responsive across various screens and devices up to 4k (2560+). This has been achieved using Bootstrap grid sizes as well as CSS3 media queries to ensure the layout changes appropriately and looks good across all screen sizes. 
 
 ### *Header*
-The header features a navbar whose nav-items arestyled with a skewed effect for a dynamic feel. The nav-items glow on hover, and keep the glow and a changed colour when active. The navbar will automatically distribute space evenly across nav-items to keep a consistently spaced feel.  
+The header features a navbar whose nav-items are styled with a skewed effect for a dynamic feel. The nav-items glow on hover, and keep the glow and a changed colour when active. The navbar will automatically distribute space evenly across nav-items to keep a consistently spaced feel.  
+
+Guests and logged-in users are presented with different nav options.  
+
+Guests will see:
+* Home
+* Shop
+* Register
+* Login
+
+Authenticated users will see:
+* Home
+* Shop
+* Binder
+* My Profile
+* Logout
+
 ![Header with nav items and nav-brand](../duality/docs/screenshots/header.jpg)
+![Different nav-item list for logged out users](../duality/docs/screenshots/header-loggedout.jpg)
+
+
 
 On mobile and tablet screens, the navbar collapses and is replaced with a burger icon. A dropdown of nav items appears that keeps all the same hover and active effects.
+
 ![Header on mobile with collapsible navbar](../duality/docs/screenshots/header-mobile.jpg)
 
 
-The nav-brand consists of a customised logo and the app name in gradient colours ([see Design section](#design)).  
+The nav-brand consists of a customised logo and the app name in gradient colours ([see Design section](#design)), both of which link back to the home page..  
 ![Navbrand with logo and title text.](../duality/docs/screenshots/navbrand.jpg)
 
 The header is always fixed to the top so that navigation is easy to find and use.
@@ -358,7 +382,7 @@ The footer features a copyright notice, a socials icon area and shows whether a 
 The socials icons feature a link to my personal Facebook page, my LinkedIn account and my Github. The icons change colour and glow on hover.  
 ![Socials icons hover effect](../duality/docs/screenshots/socials-hover.jpg)
 
-The login status area will display a user's display name, if they have one, their username if they don't and will show you are not currently logged in if you haven't signed in, or if you signed out.  
+The login status area will display a user's display name, if they have one, their username if they don't, and will show you are not currently logged in if you haven't signed in, or if you signed out.  
 ![Login status area](../duality/docs/screenshots/login-status.jpg)
 
 
@@ -366,20 +390,23 @@ The login status area will display a user's display name, if they have one, thei
 The home page features a customised image that is strategically placed to best effect on small and large screens.
 
 Three hero cards explain what the app is about, with links to the shop and a user's binder. This text changes depending on a user's login status, directing them to register/sign in instead.  
+
 ![Home page on a larger screen](../duality/docs/screenshots/hero-section-lg.jpg)
 
-The hero cards change to a carousel on small screens that cycles through automatically - this was designed to keep the home page compact and prevent an overly long screen to scroll vertically down.  
+The hero cards change to a carousel on small screens that cycles through automatically - this was designed to keep the home page compact and prevent excessive vertical scrolling. 
+
 ![Home page on a mobile screen](../duality/docs/screenshots/hero-section-mobile.jpg)
 
 ### *Shop Page*
 The shop features a distinct title area and contains a grid of cards pulled through from the latest shop schedule items.
-The layout of card grid responsively reflows on different screen sizes and the cards themselves also responsively change size.  
+The layout of the card grid responsively reflows on different screen sizes and the cards themselves also responsively change size.  
 ![Shop page](../duality/docs/screenshots/shop.jpg)
 
 The shop features filters:
-* Rarity, which always shows all rarities available in the rarity table
+* Rarity, which always shows all rarities that are available in the rarity table
 * Alignment, which shows only the alignments currently available in the shop
 * Universe, which again shows only the universes/publishers currently available in the shop.  
+
 ![Shop filters](../duality/docs/screenshots/filters.jpg)
 
 The filters can be used in conjunction with each other and set back to 'All'.
@@ -395,7 +422,7 @@ If a user already owns a card, a disabled button in a different colour will disp
 ![Card with buy button](../duality/docs/screenshots/card-price.jpg)
 ![Card displayed for guest](../duality/docs/screenshots/shop-card.jpg)
 
-Clicking 'Buy Now' will take the user to a confirmation page, where they have the option to either continue with their purchase, or cancel it completely before hitting the Stripe system.
+Clicking 'Buy Now' will take the user to a confirmation page, where they have the option to either continue with their purchase, or cancel it completely before hitting the Stripe system.  
 ![Confirmation of purchase page](../duality/docs/screenshots/continue%20purchase.jpg)
 
 If the user continues with their purchase, the name of the character, their image and the price of the card will be sent through to the Stripe checkout page.  
@@ -406,14 +433,21 @@ Depending on if the purchase fails, is cancelled, or is successful, one of three
 * error.html passes the failure error as a string and gives a button to go back to the shop
 * success.html gives the transaction details and a button to go to the binder
 
-Note: Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request.
+*Note:* Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request.
 
 ### *Binder Page*
 The binder page features filters, much the same as the shop page - by Rarity, Alignment and Universe. As per the [Card Features](#cards) section, the cards also flip on hover to provide extended information about each character.
 
-### *Profile Page*
-The profile page features a disabled version of the edit-profile form, with an edit button that takes the user to an editable version of the form which allows them to change their first name, last name, email address, and display name. Display name is stored on a custom model and made accessible through the User model via a shared property. The admin is customised so that the user profile information appears inline the User admin page and both can be edited at the same time.
+![Binder page](../duality/docs/screenshots/binder.jpg)  
 
+![Binder page](../duality/docs/screenshots/binder-flip.jpg)
+
+### *Profile Page*
+The profile page features a disabled version of the edit-profile form, with an edit button that takes the user to an editable version of the form which allows them to change their first name, last name, email address, and display name. Display name is stored on a custom model and made accessible through the User model via a shared property. The admin is customised so that the user profile information appears inline to the User admin page and both can be edited at the same time. 
+
+*Note:* A custom signup form has been created and registered in settings.py, to include the display name property when a user registers with the site, allowing a user to create a UserProfile record in the database that they can edit later on.
+
+![Custom signup form](../duality/docs/screenshots/signup-form.jpg)  
 ![View profile page](../duality/docs/screenshots/view-profile.jpg)
 ![Edit profile page](../duality/docs/screenshots/edit-profile.jpg)
 
@@ -482,15 +516,14 @@ The profile page features a disabled version of the edit-profile form, with an e
 * 1v1 card battles  
 * Audio effects
 * A fancier binder
-* Search function on the Binder
-* Pagination for the Binder
+* Search function on the Binder to easily locate cards
+* Pagination for the Binder in case a collection grows too large
 * Sort function on the Binder so it can be sorted by most recent purchase
 * Ability to search by rarity/universe/alignment/archetype on the shop schedule items admin to allow 'type' shops. IE a Marvel only set of characters.
 * Change the shop scheduler so that instead of creating a new schedule on a visit, it is an automated task every 24 hours.
 * A timer countdown for the shop, so customers can see when the current batch of characters will be replaced.
 * Fancy website colour changes relating directly to how many cards a user has that are one alignment or another.
-
-
+* Purchases section on the profile page to make the reporting of transaction errors easier.
 
 ## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
@@ -685,7 +718,13 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * views.py - all clear, no errors found
     * urls.py - all clear, no errors found
     * admin.py - all clear, no errors found
+
+
+* **User Profile App**
 * **Root Directory Files**
+* **Project files**
+
+
 
 #### [**JSONLint**](https://jsonlint.com/)
 * legends.json file is valid.
@@ -713,6 +752,12 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Logout Page - no errors  
 ![Alt text](../duality/docs/testing/wave-logout.png)
 
+* Payment Success
+* Payment Cancel
+* Payment Error
+* View Profile
+* Edit Profile
+
 #### **Chrome Lighthouse**
 * Home Page(mobile)  
 ![Alt text](../duality/docs/testing/homepage-lighthouse-mobile.png)
@@ -726,6 +771,12 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Shop Page(desktop)  
 ![Alt text](../duality/docs/testing/shop-lighthouse-desktop.png)
 
+* Binder
+* Payment Success
+* Payment Cancel
+* Payment Error
+* View Profile
+* Edit Profile
 
 
 ### **Manual Testing**
@@ -801,7 +852,8 @@ The logo text takes you back to the home page from every page
 
 ### **Unit Testing**
 
-The project includes comprehensive unit tests for models and views using Django's `TestCase`. Key areas covered:
+The project includes unit tests for models and views using Django's `TestCase`. 
+Key areas covered:
 
 #### Core Template & View Tests
 - Confirms that the home page (`index`) loads successfully.
@@ -823,6 +875,10 @@ The project includes comprehensive unit tests for models and views using Django'
 - Ensures archetype attributes (name, traits) are correct.
 - Checks verbose names (singular/plural) and ordering.
 - Confirms string representation returns the archetype name.
+
+#### UserProfile Model tests
+
+#### Binder Model Tests
 
 
 ## **Technology Used**
