@@ -456,8 +456,10 @@ The profile page features a disabled version of the edit-profile form, with an e
 
 
 ### Admin
-* Shop Scheduler
-* Schedule items - inline
+* Shop Scheduler contains the start time, end time, and type of rotation, allowing for special schedules to be setup alongside the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items, 12 as default for the daily schedule.
+* Shop Schedule Items sit inline to shop scheduler in the admin interface - it is a custom join table that contains the characters who will be in each schedule, showing which schedule they belong to and allowing admin to define a custom sale price for characters in a schedule, although this logic hasn't yet been implemented (prices are picked up from the rarity table as default).
+The shop schedule items have a search function implemented to allow admin to easily access certain characters without scrolling through a 500+ list.
+
 * Customer User admin so that other model admins can be shown inline
 * Inline usercards and inline userprofile
 * CharacterCard additional actions for rotation - take out of rotation/put into rotation
