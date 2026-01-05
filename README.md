@@ -709,15 +709,29 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * urls.py - all clear, no errors found
     * views.py - all clear, no errors found
 * **Binder App**
-    * models.py - all clear, no errors found
-    * views.py - all clear, no errors found
-    * urls.py - all clear, no errors found
     * admin.py - all clear, no errors found
-
-
-* **User Profile App**
+    * apps.py - - all clear, no errors found
+    * models.py - all clear, no errors found
+    * tests.py
+    * urls.py - all clear, no errors found
+    * views.py - all clear, no errors found
+* **UserProfile App**
+    * admin.py - all clear, no errors found
+    * apps.py - all clear, no errors found
+    * forms.py - all clear, no errors found
+    * models.py - all clear, no errors found
+    * signals.py - all clear, no errors found
+    * tests.py
+    * urls.py - all clear, no errors found
+    * views.py - all clear, no errors found
 * **Root Directory Files**
+    * env.py - lines 5 and 20 too long, cannot be helped as these are env variables
+    * manage.py - all clear, no errors found
 * **Project files**
+    * asgi.py - all clear, no errors found
+    * settings.py - lines 116, 119, 122 and 125 are too long, can't be helped as password auth validators need to be dictionaries.
+    * urls.py - all clear, no errors found
+    * wsgi.py - all clear, no errors found
 
 
 

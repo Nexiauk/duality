@@ -33,16 +33,16 @@ class ShopScheduler(models.Model):
     start_time = models.DateTimeField(
         _("Start Time"),
         default=start_time_default
-        )
+    )
     end_time = models.DateTimeField(
         _("End Time"),
         default=end_time_default
-        )
+    )
     rotation_type = models.CharField(
         _("Rotation Type"),
         max_length=150,
         default="Daily"
-        )
+    )
     characters = models.ManyToManyField(
         "core.CharacterCard",
         through="shop.ShopScheduleItems",
@@ -101,7 +101,7 @@ class ShopScheduler(models.Model):
         """Randomly assigns 12 characters to this schedule."""
         characters = CharacterCard.objects.filter(
             can_participate_in_rotation=True
-            )
+        )
         char_list = list(characters)
         sampled_characters = random.sample(char_list, 12)
         for char in sampled_characters:

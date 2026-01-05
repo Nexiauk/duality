@@ -22,12 +22,15 @@ def shop_view(request):
     Renders the shop page with scheduled characters,
     combining model data, JSON metadata, and calculated
     attributes sorted by power.
+    Also grabs a list of the current user's owned cards
+    for logic-based styling and disabling of the buy button.
     """
     page_url = "shop/shop.html"
     scheduled_characters = []
     schedule = ShopScheduler.get_or_create_active_schedule()
     if request.user.is_authenticated:
-        owned_cards = Usercards.objects.filter(owner=request.user).values_list('character', flat=True)
+        owned_cards = Usercards.objects.filter(
+            owner=request.user).values_list('character', flat=True)
     else:
         owned_cards = Usercards.objects.none()
     for s in schedule:
