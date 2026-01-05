@@ -12,6 +12,9 @@ from django.contrib.auth.admin import UserAdmin
 
 @admin.register(Usercards)
 class UserCardsAdmin(admin.ModelAdmin):
+    """Custom admin configuration for user cards
+    allowing admin to see all purchases by all users
+    in one central location"""
     list_display = (
         "id",
         "owner",
@@ -21,3 +24,4 @@ class UserCardsAdmin(admin.ModelAdmin):
         "date_purchased",
         "purchase_price"
     )
+    

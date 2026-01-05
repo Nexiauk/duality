@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 from binder.models import Usercards
 
+
 class UserProfileInline(admin.StackedInline):
     """
     Inline admin configuration for the UserProfile model.
@@ -13,6 +14,7 @@ class UserProfileInline(admin.StackedInline):
     can_delete = False
     verbose_name_plural = "Profile"
     fk_name = "user"
+
 
 class UserCardsInline(admin.TabularInline):
     """
@@ -36,6 +38,7 @@ class UserCardsInline(admin.TabularInline):
         "purchase_price",
     )
 
+
 class CustomUserAdmin(UserAdmin):
     """
     Custom admin configuration for the User model.
@@ -55,4 +58,3 @@ class CustomUserAdmin(UserAdmin):
 
 admin.site.unregister(User)
 admin.site.register(User, CustomUserAdmin)
-

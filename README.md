@@ -457,11 +457,12 @@ The profile page features a disabled version of the edit-profile form, with an e
 
 ### Admin
 * Shop Scheduler contains the start time, end time, and type of rotation, allowing for special schedules to be setup alongside the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items, 12 as default for the daily schedule.
-* Shop Schedule Items sit inline to shop scheduler in the admin interface - it is a custom join table that contains the characters who will be in each schedule, showing which schedule they belong to and allowing admin to define a custom sale price for characters in a schedule, although this logic hasn't yet been implemented (prices are picked up from the rarity table as default).
-The shop schedule items have a search function implemented to allow admin to easily access certain characters without scrolling through a 500+ list.
 
-* Customer User admin so that other model admins can be shown inline
-* Inline usercards and inline userprofile
+* Shop Schedule Items sit inline to shop scheduler in the admin interface - it is a custom join table that contains the characters who will be in each schedule, showing which schedule they belong to and allowing admin to define a custom sale price for characters in a schedule, although this logic hasn't yet been implemented (prices are picked up from the rarity table as default). The shop schedule items have a search function implemented to allow admin to easily locate certain characters they want to allocate to a schedule, without scrolling through a 500+ list. There is no separate Shop Schedule Items admin interface as its not necessary.
+
+* User admin has UserProfile and Usercards inline, so that a User's details, their custom details, and their purchased cards can all be viewed/edited from a central place. Usercards exists in admin separately so all purchases can be viewed in one place sorted by date descending, but its easier for admin to find a particular user's cards by finding that user. 
+
+
 * CharacterCard additional actions for rotation - take out of rotation/put into rotation
 * CharacterCard searchbar for characters by name
 * Hook method for ScheduledItems, so the only items eligible to be allocated to a schedule are those where rotation equals true

@@ -57,6 +57,7 @@ class Usercards(models.Model):
         """
         verbose_name = _("Usercards")
         verbose_name_plural = _("Usercards")
+        ordering = ["-date_purchased"]
         constraints = [
             models.UniqueConstraint(
                 fields=['owner', 'character'],

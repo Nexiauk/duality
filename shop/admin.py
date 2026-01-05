@@ -56,6 +56,8 @@ class ShopSchedulerAdmin(admin.ModelAdmin):
         """
         Returns a comma-separated list of character names
         linked to this schedule, sorted alphabetically.
+        This allows admin to see at a glance which characters are
+        assigned to the shop schedule.
         """
         names = sorted(
             item.character.name for item in obj.scheduled_items.all())
