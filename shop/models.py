@@ -65,7 +65,9 @@ class ShopScheduler(models.Model):
     def get_or_create_active_schedule(cls):
         """
         Returns the current active schedule(s),
-        or creates a new one if none exist.
+        or creates a new one if none exist. If concurrent requests
+        are made, the try/except handles the integrity error and
+        returns the currently active schedule.
         """
         active_schedules = ShopScheduler.currently_active_schedules()
         if active_schedules.exists():
@@ -110,6 +112,8 @@ class ShopScheduler(models.Model):
             )
 
     class Meta:
+        """Constraint added so two Schedulers
+        cannot have the same start time"""
         ordering = ["-start_time"]
         verbose_name = "Shop Scheduler"
         verbose_name_plural = "Shop Scheduler"

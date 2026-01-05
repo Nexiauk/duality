@@ -433,7 +433,7 @@ Depending on if the purchase fails, is cancelled, or is successful, one of three
 * error.html passes the failure error as a string and gives a button to go back to the shop
 * success.html gives the transaction details and a button to go to the binder
 
-*Note:* Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request.
+*Note:* Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request. This is handled using a constraint on the Scheduler start time, and try/except on a class method in the scheduler model that either gets or creates an active schedule.
 
 ### *Binder Page*
 The binder page features filters, much the same as the shop page - by Rarity, Alignment and Universe. As per the [Card Features](#cards) section, the cards also flip on hover to provide extended information about each character.
@@ -451,30 +451,22 @@ The profile page features a disabled version of the edit-profile form, with an e
 ![View profile page](../duality/docs/screenshots/view-profile.jpg)
 ![Edit profile page](../duality/docs/screenshots/edit-profile.jpg)
 
-
-
-
-
 ### Admin
-* Shop Scheduler contains the start time, end time, and type of rotation, allowing for special schedules to be setup alongside the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items, 12 as default for the daily schedule.
+* Shop Scheduler admin interface allows admin users to create new shop schedules with a start time, end time, and rotation type. This is in addition to the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items inline to the instance admin, so that they can be easily deleted, or have more items added to the scheduler. This means admin can click on a particular schedule and see at a glance which characters will be appearing in that timeframe.
 
-* Shop Schedule Items sit inline to shop scheduler in the admin interface - it is a custom join table that contains the characters who will be in each schedule, showing which schedule they belong to and allowing admin to define a custom sale price for characters in a schedule, although this logic hasn't yet been implemented (prices are picked up from the rarity table as default). The shop schedule items have a search function implemented to allow admin to easily locate certain characters they want to allocate to a schedule, without scrolling through a 500+ list. There is no separate Shop Schedule Items admin interface as its not necessary.
+* Shop Scheduler also has a custom method to show characters allocated to each schedule as a comma separated list, so that admin doesn't have to click and open each schedule to find out who will be/was in that shop schedule.
+
+* Shop Schedule Items is a custom join table that contains the characters who will be in each schedule, showing which schedule they belong to and allowing admin to define a custom sale price for characters in a schedule, although this logic hasn't yet been implemented (prices are picked up from the rarity table as default). 
+
+* The shop schedule items have an autocomplete implemented to allow admin to easily locate certain characters they want to allocate as an item, without scrolling through a 500+ list. There is no separate Shop Schedule Items admin interface as its not necessary.
+
+* Shop Schedule Items admin configuration also contains a hook method that restricts the character dropdown list to only show characters that are eligible for shop rotation. This prevents Characters where rotation=False from being allocated as an item manually in the admin screen.
 
 * User admin has UserProfile and Usercards inline, so that a User's details, their custom details, and their purchased cards can all be viewed/edited from a central place. Usercards exists in admin separately so all purchases can be viewed in one place sorted by date descending, but its easier for admin to find a particular user's cards by finding that user. 
 
+* User profile doesn't have its own admin interface, as its not necessary. User profile as an inline would also contain extended profile information in the future, such as billing address etc.
 
-* CharacterCard additional actions for rotation - take out of rotation/put into rotation
-* CharacterCard searchbar for characters by name
-* Hook method for ScheduledItems, so the only items eligible to be allocated to a schedule are those where rotation equals true
-* Autocomplete field on shop schedule items for quicker allocating
-* Search bar on CharacterCard model for quicker editing
-* Custom method to show characters allocated to a particular schedule as a comma separated list
-
-
-
-
-
-
+* Characters admin contains additional actions for taking characters out of rotation, and putting them back in again. It also has additional sorting options by archetype and rarity, and a searchbar so that admin can perform a quick search by character name if they want to delete/perform an action on that character.
 
 ## **Security Features**
 
