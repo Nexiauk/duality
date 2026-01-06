@@ -9,7 +9,7 @@ Includes:
 from django.test import TestCase
 from django.urls import reverse
 from django.utils import timezone
-from datetime import datetime, timedelta
+from datetime import datetime
 from core.models import CharacterCard, Archetype, Rarity
 from shop.models import ShopScheduler, ShopScheduleItems
 
@@ -96,6 +96,7 @@ class BaseModelTests(TestCase):
         )
 
 class ShopSchedulerModelTest(BaseModelTests):
+    """Tests the Shop Schedulers core scheduling configuration"""
     def test_scheduler_start_time(self):
         """Check that the Shop Scheduler has a start time and is correct"""
         self.assertEqual(self.scheduler.start_time, timezone.make_aware(datetime(2025,10,31,19,00)) )

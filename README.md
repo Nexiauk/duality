@@ -428,8 +428,10 @@ Clicking 'Buy Now' will take the user to a confirmation page, where they have th
 If the user continues with their purchase, the name of the character, their image and the price of the card will be sent through to the Stripe checkout page.  
 ![Stripe character card details](../duality/docs/screenshots/stripe-card.jpg)
 
+* Stripe handles the payment through its own checkout system - there is no basket or subscription service setup.
+
 Depending on if the purchase fails, is cancelled, or is successful, one of three templates will load:
-* cancel.html gives a button to go back to the shop
+* cancel.html gives a cancel message and a button to go back to the shop
 * error.html passes the failure error as a string and gives a button to go back to the shop
 * success.html gives the transaction details and a button to go to the binder
 
@@ -474,6 +476,7 @@ The profile page features a disabled version of the edit-profile form, with an e
 - Django Allauth is used to handle user registration, login, logout, and account management.
 - Provides built-in security features such as password hashing, session management, and optional email verification.
 - Authentication logic is handled by Django’s proven authentication framework rather than custom code.
+- Users are required to login to make purchases and view their purchases in their binder, as well as adjust their profile details.
 
 ### *Access Control*
 - Views and functionality are restricted based on authentication status.
@@ -857,8 +860,6 @@ The logo text takes you back to the home page from every page
 * Checked that when there were no currently active schedules, a new one was created when visiting the shop
 * Checked that the shop still created a schedule properly after adding a try/except block to the class method that is called in the view to create it
 
-
-
 ### **Unit Testing**
 
 The project includes unit tests for models and views using Django's `TestCase`. 
@@ -887,7 +888,12 @@ Key areas covered:
 
 #### UserProfile Model tests
 
-#### Binder Model Tests
+#### Usercards Model Tests
+- Ensures Usercards fields (owner, character, purchase price, date purchased) are correctly assigned.
+- Confirms automatically generated fields (stripe_payment_id, order_reference) exist and work as expected.
+- Checks string and helper methods return correct values (__str__ returns the owner's username, character_name returns the associated character name, order_ref generates the proper reference format).
+- Verifies verbose names (singular and plural) are correctly configured.
+
 
 
 ## **Technology Used**
