@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Usercards
 from core.models import Rarity
 
+
 @login_required
 def binder_view(request):
     """
@@ -28,7 +29,7 @@ def binder_view(request):
             "affiliation": character.group_affiliation()
         }
         user_chars.append(card_data)
- 
+
     user_chars.sort(
         key=lambda character_data: character_data["power"],
         reverse=True
