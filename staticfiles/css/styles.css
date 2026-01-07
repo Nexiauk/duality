@@ -338,6 +338,21 @@ select:hover  {
     color: black;
 }
 
+.badge.good {
+    background-color: white;
+    color: black;
+}
+
+.badge.bad {
+    background-color: black;
+    color: white;
+}
+
+.badge.neutral {
+    background-color: gray;
+    color: black;
+}
+
 .badge.mythic {
     background-color: gold;
     color: black;
@@ -562,7 +577,7 @@ select:hover  {
     }
 
     .character-card-body {
-        height: 137px;
+        height: 120px;
     }
 }
 
@@ -574,6 +589,10 @@ select:hover  {
 
     h1 {
         font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.2rem;
     }
 
     .navbar-nav {
@@ -676,7 +695,7 @@ select:hover  {
     }
 
     p {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
     }
 
     select {
