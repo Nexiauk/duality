@@ -162,7 +162,7 @@
                 <div class="col">
                     <!-- Unordered list for links to terms and policies -->
                     {% if user.is_authenticated %}
-                    <p class="text-body my-2">You are signed in as <b>{{ user.get_display_name }}</b>.</p>
+                    <p class="text-body my-2">You are signed in as <b>{{ user.get_display_name|default:user.username }}</b>.</p>
                     {% else %}
                     <p class="text-body my-2">You are currently not signed in.</p>
                     {% endif %}

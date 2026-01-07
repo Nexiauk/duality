@@ -438,7 +438,10 @@ Depending on if the purchase fails, is cancelled, or is successful, one of three
 *Note:* Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request. This is handled using a constraint on the Scheduler start time, and try/except on a class method in the scheduler model that either gets or creates an active schedule.
 
 ### *Binder Page*
-The binder page features filters, much the same as the shop page - by Rarity, Alignment and Universe. As per the [Card Features](#cards) section, the cards also flip on hover to provide extended information about each character.
+The binder page features filters, much the same as the shop page - by Rarity, Alignment and Universe. Rarity is all existing rarities on the model, while alignment and universe are collated directly from the usercards themselves. Implemented page logic to handle empty page glitches when a new user has no usercards. Includes a button to visit the shop.  
+![Empty binder page](../duality/docs/screenshots/empty-binder.jpg)
+
+As per the [Card Features](#cards) section, the cards also flip on hover to provide extended information about each character.
 
 ![Binder page](../duality/docs/screenshots/binder.jpg)  
 
@@ -861,6 +864,7 @@ The logo text takes you back to the home page from every page
 * Checked that the shop still created a schedule properly after adding a try/except block to the class method that is called in the view to create it
 * Fixed profile editing for users without a display name by adding a try/except in view_profile and edit_profile to create a new UserProfile in memory when one doesn’t exist, allowing the form to load and save missing details.
     * As a result of the above, tidied up the userprofile views: swapped request.user for the URL user variable, updated edit_profile to match, and added the user’s ID to the URLs and path.
+* Checked that the binder loads even when a user doesn't have any purchased usercards. This wasn't initially working as I had forgotten to add @login_required authenticator and hadn't added an if statement to the template to handle no usercards. This handles empty page glitches for new users with no purchases. Also changed the rarities filter to use all rarities rather than just filtering the ones that existed, as i want rarities to apepar in the order that they do on the model.
 
 
 ### **Unit Testing**

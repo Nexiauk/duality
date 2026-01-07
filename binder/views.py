@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from .models import Usercards
+from core.models import Rarity
 
-
+@login_required
 def binder_view(request):
     """
     Renders the shop page with scheduled characters,
@@ -11,26 +13,22 @@ def binder_view(request):
     page_url = "binder/binder.html"
     usercards = Usercards.objects.filter(owner=request.user)
     user_chars = []
+    # Rarities set for unique character rarity values in the binder filter
     for char in usercards:
         character = char.character
-        # Rarities set for unique character rarity values in the binder filter
-        rarities_set = set()
-        # Returns the character's alignment with the first letter in uppercase
-        charc_alignment = character.charc_alignment()
-        charc_alignment = charc_alignment.capitalize()
         # Card data for each user card so the correct data can be displayed
         card_data = {
             "usercard": char,
             "chardetails": character,
             "json": character.get_legends_data(),
             "power": character.power_status(),
-            "alignment": charc_alignment,
+            "alignment": character.charc_alignment().capitalize(),
             "universe": character.charc_universe(),
             "rarity": character.rarity.name,
             "affiliation": character.group_affiliation()
         }
         user_chars.append(card_data)
-        rarities_set.add(character.rarity.name)
+ 
     user_chars.sort(
         key=lambda character_data: character_data["power"],
         reverse=True
@@ -42,10 +40,11 @@ def binder_view(request):
     universes = {
         character_data["universe"] for character_data in user_chars
     }
+    rarities_filter = Rarity.unique_rarities_for_filter()
 
     context = {
         "characters": user_chars,
-        "rarities": rarities_set,
+        "rarities": rarities_filter,
         "alignments": sorted(alignments),
         "universes": sorted(universes)
     }
