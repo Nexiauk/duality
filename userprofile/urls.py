@@ -8,6 +8,6 @@ from . import views
 
 urlpatterns = [
     path("view-profile/<int:id>/", views.profile_view, name="profile"),
-    path("edit-profile/", views.edit_profile_view, name="edit-profile"),
+    path("edit-profile/<int:id>", views.edit_profile_view, name="edit-profile"),
 
 ]

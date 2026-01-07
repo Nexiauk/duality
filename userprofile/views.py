@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from userprofile.forms import UserProfileForm, UserForm
+from .models import UserProfile
 
 
 def profile_view(request, id):
@@ -17,9 +18,12 @@ def profile_view(request, id):
     """
     user = get_object_or_404(User, pk=id)
     page_url = "userprofile/view-profile.html"
-    profile = request.user.userprofile
+    try:
+        profile = user.userprofile
+    except User.userprofile.RelatedObjectDoesNotExist:
+        profile = UserProfile(user=user)
     profileform = UserProfileForm(instance=profile)
-    userform = UserForm(instance=request.user)
+    userform = UserForm(instance=user)
     for form in [profileform, userform]:
         for field in form.fields.values():
             field.disabled = True
@@ -32,27 +36,33 @@ def profile_view(request, id):
 
 
 @login_required
-def edit_profile_view(request):
+def edit_profile_view(request, id):
     """
     Allow the logged-in user to edit their profile and account details.
 
     Handles form submission, validation, saving, and displays
     success or error messages.
     """
-    profile = request.user.userprofile
+    user = get_object_or_404(User, pk=id)
+    try:
+        profile = user.userprofile
+    except User.userprofile.RelatedObjectDoesNotExist:
+        profile = UserProfile(user=user)
     page_url = 'userprofile/edit-profile.html'
     if request.method == "POST":
         profileform = UserProfileForm(
-            request.POST,
+            request.POST or None,
             instance=profile
         )
         userform = UserForm(
-            request.POST,
-            instance=request.user
+            request.POST or None,
+            instance=user
         )
         if profileform.is_valid() and userform.is_valid():
             userform.save()
             profileform.save()
+            if profile.pk is None:
+                profile.save()
             messages.add_message(
                 request,
                 messages.SUCCESS,
@@ -60,7 +70,7 @@ def edit_profile_view(request):
             )
             return redirect(
                 "profile",
-                request.user.pk
+                user.pk
             )
         else:
             messages.add_message(
@@ -70,10 +80,11 @@ def edit_profile_view(request):
             )
     else:
         profileform = UserProfileForm(instance=profile)
-        userform = UserForm(instance=request.user)
+        userform = UserForm(instance=user)
     return render(
         request,
         page_url,
         {"profileform": profileform,
-         "userform": userform}
+         "userform": userform,
+         "user": user}
     )

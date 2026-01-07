@@ -859,21 +859,24 @@ The logo text takes you back to the home page from every page
 * Checked that multiple Shop Schedulers with crossover dates showed all items on all schedulers
 * Checked that when there were no currently active schedules, a new one was created when visiting the shop
 * Checked that the shop still created a schedule properly after adding a try/except block to the class method that is called in the view to create it
+* Fixed profile editing for users without a display name by adding a try/except in view_profile and edit_profile to create a new UserProfile in memory when one doesn’t exist, allowing the form to load and save missing details.
+    * As a result of the above, tidied up the userprofile views: swapped request.user for the URL user variable, updated edit_profile to match, and added the user’s ID to the URLs and path.
+
 
 ### **Unit Testing**
 
-The project includes unit tests for models and views using Django's `TestCase`. 
+The project includes unit tests for models and views using Django's TestCase. 
 Key areas covered:
 
 #### Core Template & View Tests
-- Confirms that the home page (`index`) loads successfully.
-- Checks that the correct template (`core/index.html`) is used.
+- Confirms that the home page (index) loads successfully.
+- Checks that the correct template (core/index.html) is used.
 - Verifies page content rendering.
 
 #### CharacterCard Model Tests
-- Ensures `CharacterCard` verbose names (singular/plural) are correct.
+- Ensures CharacterCard verbose names (singular/plural) are correct.
 - Validates character creation and attributes (name, rotation eligibility).
-- Confirms correct association with `Archetype` and `Rarity`.
+- Confirms correct association with Archetype and Rarity.
 - Checks character ordering and string representation.
 
 #### Rarity Model Tests
