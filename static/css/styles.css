@@ -256,7 +256,6 @@ select:hover {
 .binder-card {
     perspective: 1000px;
     background-color: transparent;
-    width: 266px;
     height: 452px;
     display: none;
     transition: transform .2s;
@@ -535,6 +534,10 @@ select:hover {
         min-height: 300px;
     }
 
+    .binder-card {
+        min-width: 270px;
+    }
+
     .shop-card img {
         height: 300px;
     }
@@ -575,7 +578,7 @@ select:hover {
 
     .binder-card {
         height: 527px;
-        width: 316px;
+        min-width: 320px;
     }
 
     .character-card-body {
@@ -620,7 +623,7 @@ select:hover {
     }
 
     .binder-card {
-        width: 356px;
+        min-width: 360px;
     }
 }
 
@@ -794,7 +797,7 @@ select:hover {
 
     .binder-card {
         height: 542px;
-        width: 436px;
+        min-width: 440px;
     }
 
     #back-details p {
