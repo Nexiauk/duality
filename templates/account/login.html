@@ -14,7 +14,7 @@
 
     <section class="mt-3 mt-xxl-4 mb-3 mb-xxl-4 mx-auto" id="login-section">
         <div class="glassmorphic p-5 pt-4 pb-4">
-            <h2 class="mb-4">{% trans "Sign In" %}</h2>
+            <h2 class="mb-4 heading">{% trans "Sign In" %}</h2>
                 <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please <a class="underline text-white" href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
               <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">
                 {% csrf_token %}
