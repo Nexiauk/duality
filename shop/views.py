@@ -77,10 +77,14 @@ def card_view(request, id):
     page_url = "shop/card-detail.html"
     json_data = card.get_legends_data()
     power = card.power_status()
+    alignment = card.charc_alignment()
+    universe = card.charc_universe()
     context = {
         "char": card,
         "json": json_data,
-        "power": power
+        "power": power,
+        "alignment": alignment,
+        "universe": universe
     }
     return render(request, page_url, context)
 

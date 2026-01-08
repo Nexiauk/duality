@@ -402,7 +402,8 @@ select:hover  {
 
 /* Buttons change colour and pulse on hover */
 .buy-button:hover,
-.account-button:hover {
+.account-button:hover,
+.cancel:hover {
     background-color: var(--skylla);
     color: white;
     transform: skew(-30deg);
