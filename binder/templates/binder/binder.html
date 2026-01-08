@@ -13,7 +13,13 @@ My Team
     <div class="row ms-xxl-6 me-xxl-6 mb-2">
         <div class="col-10 text-center mx-auto mt-3 pt-3 mt-md-4 glow mb-4" id="binder-heading">
             <h2 class="heading">{{ user.get_display_name|default:user.username }}'s Binder</h2>
-            <p>View your ultimate multiversal team!</p>
+            <p>
+                {% if characters %}
+                View your ultimate multiversal team!
+                {% else %}
+                {{ user.get_display_name|default:user.username }}, your binder is empty!
+                {% endif %}
+            </p>
         </div>
         <!-- Row for filter dropdowns -->
         <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center">
@@ -145,7 +151,7 @@ My Team
         </div>
         {% endfor %}
         {% else %}
-        <div class="col d-flex flex-column align-items-center"><p>{{ user.get_display_name|default:user.username }}, your binder is empty!</p>
+        <div class="col d-flex flex-column align-items-center mt-5">
             <a href="{% url 'shop' %}" class="btn buy-button"><span class="unskew">Go to Shop</span></a></div>
         {% endif %}
     </div>
