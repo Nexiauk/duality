@@ -771,7 +771,8 @@ select:hover  {
         font-size: 1.1rem;
     }
 
-    .buy-button {
+    .buy-button,
+    .cancel {
         font-size: 1.4rem;
         margin-top: 10px;
         margin-bottom: 10px;
