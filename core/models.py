@@ -43,28 +43,46 @@ class CharacterCard(models.Model):
         return legend
 
     def power_status(self):
-        """Calculates the character’s total power based on its powerstats."""
+        """Calculates the character’s total power based on the sum of their
+        powerstats in the legends.json file."""
         legend_data = self.get_legends_data()
         total_power = sum(legend_data["powerstats"].values())
         return total_power
-    
+
     def charc_alignment(self):
         """Returns the character's good/bad alignment from the json data"""
         legend_data = self.get_legends_data()
         alignment = legend_data["biography"]["alignment"]
         return alignment
-    
+
     def charc_universe(self):
         """Returns the character's home universe from the json data"""
         legend_data = self.get_legends_data()
         universe = legend_data["biography"]["publisher"]
         return universe
-    
+
     def group_affiliation(self):
+        """Gets the character's group affiliations from the legends.json file
+        and splits the value into a list by comma, then returns the first
+        list item only """
         legends_data = self.get_legends_data()
-        affiliation = legends_data["connections"]["groupAffiliation"].split(", ")[0].strip()
+        affiliation = legends_data["connections"]["groupAffiliation"].split(
+            ", "
+            )[0].strip()
         return affiliation
 
+    def full_name(self):
+        """Gets the character's full name from the legends.json file
+        strips out whitespace and then determines if a value exists.
+        If it does, it returns that value with the whitespace intact.
+        If it doesn't it returns the CharacerCard model name."""
+        legends_data = self.get_legends_data()
+        full_name = legends_data["biography"]["fullName"]
+        fullname_trim = full_name.strip()
+        if fullname_trim:
+            return full_name
+        else:
+            return self.name
 
     class Meta:
         ordering = ["name"]
@@ -129,12 +147,12 @@ class Rarity(models.Model):
     def __str__(self):
         """Returns the rarity as its string representation"""
         return self.name
-    
 
     @classmethod
     def unique_rarities_for_filter(cls):
         """
-        Returns a flat list of distinct rarities
+        Returns a flat list of distinct rarities used for filters
+        on the shop and the binder pages.
         """
-        rarities=Rarity.objects.values_list('name', flat=True).distinct()
+        rarities = Rarity.objects.values_list('name', flat=True).distinct()
         return rarities

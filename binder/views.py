@@ -26,7 +26,8 @@ def binder_view(request):
             "alignment": character.charc_alignment().capitalize(),
             "universe": character.charc_universe(),
             "rarity": character.rarity.name,
-            "affiliation": character.group_affiliation()
+            "affiliation": character.group_affiliation(),
+            "fullname": character.full_name()
         }
         user_chars.append(card_data)
 

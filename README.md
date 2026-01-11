@@ -88,7 +88,9 @@ My son is what schools call a “reluctant reader.” If a book doesn’t have i
 Illustrated storytelling is not a crutch, it’s a gateway. Graphic novels and comics can pave a prettier pathway into reading for pleasure, especially for readers who find long blocks of text daunting.
 
 ### *The Psychology of Collecting*
-At the same time, I’ve seen how collecting hooks people in. My brother, for example, has a Pokémon card binder, ostensibly ‘for his son’ — but I remember him collecting the same cards as a kid. It’s not really about resale value. It’s about the joy of owning something rare, of filling pages, of seeing a collection grow and feeling proud of it. That psychology is powerful, especially when paired with storytelling.
+At the same time, I’ve seen how collecting hooks people in. My brother, for example, has a Pokémon card binder, ostensibly ‘for his son’ — but I remember him collecting the same cards as a kid. It’s not really about resale value. It’s about the joy of owning something rare, of filling pages, of seeing a collection grow and feeling proud of it. That psychology is powerful, especially when paired with storytelling.  
+![Pokemon Binder collection full of cards](../duality/docs/screenshots/pokemon-binder.jpg)
+![Example card from the same binder collection](../duality/docs/screenshots/pokemon-card.jpg)
 
 ### *The Idea*
 Originally, I wanted to make a fairy-tale inspired card collection with characters and objects from classic stories with the idea being that the visual nature of the cards would be appealing to reluctant readers, who would then learn a little more about those stories after purchasing the cards. But when I started designing the cards, I realised the scope was bigger than I could handle. So I stepped back and looked for data sources that could bring a ready-made universe to life. 
@@ -718,7 +720,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * admin.py - all clear, no errors found
     * apps.py - - all clear, no errors found
     * models.py - all clear, no errors found
-    * tests.py
+    * tests.py - all clear, no errors found
     * urls.py - all clear, no errors found
     * views.py - all clear, no errors found
 * **UserProfile App**
@@ -727,7 +729,6 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * forms.py - all clear, no errors found
     * models.py - all clear, no errors found
     * signals.py - all clear, no errors found
-    * tests.py
     * urls.py - all clear, no errors found
     * views.py - all clear, no errors found
 * **Root Directory Files**
@@ -750,28 +751,30 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 #### **The WAVE Webb Accessibility Evaluation Tool**
 * Home Page - no errors  
-![Alt text](../duality/docs/testing/wave-home.png)
+![Home page accessibility check on Wave](../duality/docs/testing/wave-home.png)
 
 * Shop Page - no errors  
-![Alt text](../duality/docs/testing/wave-shop.png)
+![Shop Page accessibility check on Wave](../duality/docs/testing/wave-shop.png)
 
 * Binder Page - no errors  
-![Alt text](../duality/docs/testing/wave-binder.png)
+![Binder Page accessibility check on Wave](../duality/docs/testing/wave-binder.png)
 
 * Register Page - no errors  
-![Alt text](../duality/docs/testing/wave-register.png)
+![Register Page accessibility check on Wave](../duality/docs/testing/wave-register.png)
 
 * Login Page - no errors  
-![Alt text](../duality/docs/testing/wave-login.png)
+![Login Page accessibility check on Wave](../duality/docs/testing/wave-login.png)
 
 * Logout Page - no errors  
-![Alt text](../duality/docs/testing/wave-logout.png)
+![Logout Page accessibility check on Wave](../duality/docs/testing/wave-logout.png)
 
 * Payment Success
 * Payment Cancel
 * Payment Error
-* View Profile
-* Edit Profile
+* View Profile Page - no errors  
+![View Profile page accessibility checkn on Wave](../duality/docs/screenshots/view-profile-wave.jpg)
+* Edit Profile  
+![Edit Profile accessibility check on Wave](../duality/docs/screenshots/edit-profile-wave.jpg)
 
 #### **Chrome Lighthouse**
 * Home Page(mobile)  
