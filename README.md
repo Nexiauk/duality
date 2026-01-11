@@ -768,28 +768,35 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Logout Page - no errors  
 ![Logout Page accessibility check on Wave](../duality/docs/testing/wave-logout.png)
 
-* Payment Success
-* Payment Cancel
-* Payment Error
+* Card Detail Page - no errors  
+![Card Detail Page accessibility check on Wave](../duality/docs/testing/wave-card-detail.jpg)
+* Payment Success - no errors  
+![Payment Success Page accessibility check on Wave](../duality/docs/testing/wave-payment-success.jpg)
+* Payment Cancel - no errors  
+![Payment Cancelled Page accessibility check on Wave](../duality/docs/testing/wave-payment-cancel.jpg)
 * View Profile Page - no errors  
-![View Profile page accessibility checkn on Wave](../duality/docs/screenshots/view-profile-wave.jpg)
+![View Profile page accessibility checkn on Wave](../duality/docs/testing/wave-view-profile.jpg)
 * Edit Profile  
-![Edit Profile accessibility check on Wave](../duality/docs/screenshots/edit-profile-wave.jpg)
+![Edit Profile accessibility check on Wave](../duality/docs/testing/wave-edit-profile.jpg)
 
 #### **Chrome Lighthouse**
 * Home Page(mobile)  
-![Alt text](../duality/docs/testing/homepage-lighthouse-mobile.png)
+![Home page lighthouse testing on mobile](../duality/docs/testing/homepage-lighthouse-mobile.png)
 
 * Home Page(desktop)  
-![Alt text](../duality/docs/testing/homepage-lighthouse-desktop.png)
+![Home page lighthouse testing on desktop](../duality/docs/testing/homepage-lighthouse-desktop.png)
 
 * Shop Page(mobile)  
-![Alt text](../duality/docs/testing/shop-lighthouse-mobile.png)
+![Shop page lighthouse testing on mobile](../duality/docs/testing/shop-lighthouse-mobile.png)
 
 * Shop Page(desktop)  
-![Alt text](../duality/docs/testing/shop-lighthouse-desktop.png)
+![Shop page lighthouse testing on desktop](../duality/docs/testing/shop-lighthouse-desktop.png)
 
-* Binder
+* Binder Page(mobile)  
+![Binder page lighthouse testing on mobile](../duality/docs/testing/binder-lighthouse-mobile.png)
+*Binder Page(desktop)  
+![Binder page lighthouse testing on desktop](../duality/docs/testing/binder-lighthouse-desktop.png)
+* Card Detail
 * Payment Success
 * Payment Cancel
 * Payment Error
@@ -868,6 +875,8 @@ The logo text takes you back to the home page from every page
 * Fixed profile editing for users without a display name by adding a try/except in view_profile and edit_profile to create a new UserProfile in memory when one doesn’t exist, allowing the form to load and save missing details.
     * As a result of the above, tidied up the userprofile views: swapped request.user for the URL user variable, updated edit_profile to match, and added the user’s ID to the URLs and path.
 * Checked that the binder loads even when a user doesn't have any purchased usercards. This wasn't initially working as I had forgotten to add @login_required authenticator and hadn't added an if statement to the template to handle no usercards. This handles empty page glitches for new users with no purchases. Also changed the rarities filter to use all rarities rather than just filtering the ones that existed, as i want rarities to apepar in the order that they do on the model.
+* Checked that the full_name instance method pulls through the model name if no fullname exists in the json data for a character.
+* Checked that only the first group affiliation shows on Usercards for each character as per the group_affiliation instance method
 
 
 ### **Unit Testing**
