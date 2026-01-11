@@ -49,6 +49,7 @@ class CustomUserAdmin(UserAdmin):
         UserCardsInline
         )
     list_display = [
+        "id",
         "userprofile__display_name",
         "username",
         "email",

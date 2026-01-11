@@ -13,7 +13,6 @@ from .models import UserProfile
 def profile_view(request, id):
     """
     Display a user's profile in read-only mode.
-
     Renders the profile and user forms with all fields disabled.
     """
     user = get_object_or_404(User, pk=id)
@@ -28,7 +27,7 @@ def profile_view(request, id):
         for field in form.fields.values():
             field.disabled = True
     context = {
-        "user": user,
+        "profile_user": user,
         "profileform": profileform,
         "userform": userform
     }
@@ -39,7 +38,6 @@ def profile_view(request, id):
 def edit_profile_view(request, id):
     """
     Allow the logged-in user to edit their profile and account details.
-
     Handles form submission, validation, saving, and displays
     success or error messages.
     """
@@ -86,5 +84,5 @@ def edit_profile_view(request, id):
         page_url,
         {"profileform": profileform,
          "userform": userform,
-         "user": user}
+         "profile_user": user}
     )
