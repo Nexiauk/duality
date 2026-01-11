@@ -478,7 +478,7 @@ The profile page features a disabled version of the edit-profile form, with an e
 ## **Security Features**
 
 ### *Authentication & User Management*
-- Django Allauth is used to handle user registration, login, logout, and account management.
+- Django Allauth is used to handle user registration, login, logout, password resets and account management.
 - Provides built-in security features such as password hashing, session management, and optional email verification.
 - Authentication logic is handled by Django’s proven authentication framework rather than custom code.
 - Users are required to login to make purchases and view their purchases in their binder, as well as adjust their profile details.
@@ -705,8 +705,11 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Payment Cancel Page - No errors or warnings to show.
 
 #### **The W3C CSS Validation Service**
+* styles.css - No error found.
 
 #### **The JSHint Validation Service**
+* binder.js - No errors.
+* shop.js - No errors.
 
 #### [**CI Python Linter**](https://pep8ci.herokuapp.com/)
 * **Core App**
