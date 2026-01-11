@@ -796,13 +796,26 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ![Binder page lighthouse testing on mobile](../duality/docs/testing/binder-lighthouse-mobile.png)
 *Binder Page(desktop)  
 ![Binder page lighthouse testing on desktop](../duality/docs/testing/binder-lighthouse-desktop.png)
-* Card Detail
-* Payment Success
-* Payment Cancel
-* Payment Error
-* View Profile
-* Edit Profile
-
+* Card Detail Page(mobile)  
+![Card detail page lighthouse testing on mobile](../duality/docs/testing/card-detail-lighthouse-mobile.png)
+* Card Detail Page(desktop)  
+![Card detail page lighthouse testing on desltop](../duality/docs/testing/card-detail-lighthouse-desktop.png)
+* Payment Success Page(mobile)    
+![Payment success page lighthouse testing on mobile](../duality/docs/testing/payment-success-lighthouse-mobile.png)
+* Payment Success Page(desktop)    
+![Payment success page lighthouse testing on desktop](../duality/docs/testing/payment-success-lighthouse-desktop.png)
+* Payment Cancel Page(mobile)    
+![Payment cancel page lighthouse testing on mobile](../duality/docs/testing/payment-cancel-lighthouse-mobile.png)
+* Payment Cancel Page(desktop)
+![Payment cancel page lighthouse testing on desktop](../duality/docs/testing/payment-cancel-lighthouse-desktop.png)
+* View Profile Page(mobile)  
+![View profile page lighthouse testing on mobile](../duality/docs/testing/view-profile-lighthouse-mobile.png)
+* View Profile Page(desktop)   
+![View profile page lighthouse testing on desktop](../duality/docs/testing/view-profile-lighthouse-desktop.png)
+* Edit Profile Page(mobile)   
+![Edit profile page lighthouse testing on mobile](../duality/docs/testing/edit-profile-lighthouse-mobile.png) 
+* Edit Profile Page(desktop)    
+![Edit profile page lighthouse testing on mobile](../duality/docs/testing/edit-profile-lighthouse-desktop.png)
 
 ### **Manual Testing**
 
