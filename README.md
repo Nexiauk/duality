@@ -691,6 +691,11 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ### *Automated Testing*
 
 #### **The W3C Markup Validation Service**
+* Home Page - No errors or warnings to show.
+* Shop Page - No errors or warnings to show.
+* Binder Page - No errors or warnings to show.
+* Register Form - No errors or warning to show.
+* Login Form - No errors or warnings to show.
 
 #### **The W3C CSS Validation Service**
 

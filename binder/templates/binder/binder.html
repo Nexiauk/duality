@@ -70,7 +70,7 @@ My Team
                     <div class="card-front glassmorphic">
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block" loading="lazy"
-                            src="{{ char.json.images.md }}" width="auto" height="400" alt="{{ char.chardetails.name }}">
+                            src="{{ char.json.images.md }}" height="400" alt="{{ char.chardetails.name }}">
                         <div class="card-front-banner glassmorphic">
                             <p class="universe">{{ char.universe }}</p>
                         </div>
@@ -104,14 +104,14 @@ My Team
                         <!-- Card details on the back pulled through from the json file  -->
                         <div class="card-details flex-grow-1">
                             <div class="row">
-                                <div class="col-12" id="back-details">
-                                    <p class="mb-0"><b>Archetype: </b>{{ char.chardetails.archetype }}</p>
-                                    <p class="mb-0"><b>Alias: </b>{{ char.json.biography.aliases.0 }}
+                                <div class="col-12">
+                                    <p class="mb-0 back-text"><b>Archetype: </b>{{ char.chardetails.archetype }}</p>
+                                    <p class="mb-0 back-text"><b>Alias: </b>{{ char.json.biography.aliases.0 }}
                                     </p>
-                                    <p class="mb-0"><b>Group: </b>{{ char.affiliation }}</p>
-                                    <p class="mb-0"><b>First Appearance:<br></b>{{ char.json.biography.firstAppearance }}
+                                    <p class="mb-0 back-text"><b>Group: </b>{{ char.affiliation }}</p>
+                                    <p class="mb-0 back-text"><b>First Appearance:<br></b>{{ char.json.biography.firstAppearance }}
                                     </p>
-                                    <p class="mb-0"><b>Race: </b>{{ char.json.appearance.race }}</p>
+                                    <p class="mb-0 back-text"><b>Race: </b>{{ char.json.appearance.race }}</p>
                                 </div>
                             </div>
                         </div>

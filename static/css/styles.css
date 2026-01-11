@@ -800,7 +800,7 @@ select:hover {
         min-width: 440px;
     }
 
-    #back-details p {
+    .back-text {
         font-size: 1.4rem;
     }
 
