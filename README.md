@@ -694,8 +694,15 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Home Page - No errors or warnings to show.
 * Shop Page - No errors or warnings to show.
 * Binder Page - No errors or warnings to show.
+* View profile Page - No errors or warnings to show.
+* Edit Profile Page - No errors or warnings to show.
 * Register Form - No errors or warning to show.
 * Login Form - No errors or warnings to show.
+* Logout Page - No errors or warnings to show.
+* Password Reset Form - No errors or warnings to show.
+* Card Detail page - No errors or warnings to show.
+* Payment Success Page - No errors or warnings to show.
+* Payment Cancel Page - No errors or warnings to show.
 
 #### **The W3C CSS Validation Service**
 
