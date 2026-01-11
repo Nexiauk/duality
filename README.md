@@ -768,16 +768,19 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * Logout Page - no errors  
 ![Logout Page accessibility check on Wave](../duality/docs/testing/wave-logout.png)
 
+* Password Reset Page - no errors    
+![Password Reset Page accessibility check on Wave](../duality/docs/testing/wave-password.png)
+
 * Card Detail Page - no errors  
-![Card Detail Page accessibility check on Wave](../duality/docs/testing/wave-card-detail.jpg)
+![Card Detail Page accessibility check on Wave](../duality/docs/testing/wave-card-detail.png)
 * Payment Success - no errors  
-![Payment Success Page accessibility check on Wave](../duality/docs/testing/wave-payment-success.jpg)
+![Payment Success Page accessibility check on Wave](../duality/docs/testing/wave-payment-success.png)
 * Payment Cancel - no errors  
-![Payment Cancelled Page accessibility check on Wave](../duality/docs/testing/wave-payment-cancel.jpg)
+![Payment Cancelled Page accessibility check on Wave](../duality/docs/testing/wave-payment-cancel.png)
 * View Profile Page - no errors  
-![View Profile page accessibility checkn on Wave](../duality/docs/testing/wave-view-profile.jpg)
+![View Profile page accessibility checkn on Wave](../duality/docs/testing/wave-view-profile.png)
 * Edit Profile  
-![Edit Profile accessibility check on Wave](../duality/docs/testing/wave-edit-profile.jpg)
+![Edit Profile accessibility check on Wave](../duality/docs/testing/wave-edit-profile.png)
 
 #### **Chrome Lighthouse**
 * Home Page(mobile)  
@@ -792,7 +795,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 * Binder Page(mobile)  
 ![Binder page lighthouse testing on mobile](../duality/docs/testing/binder-lighthouse-mobile.png)
-*Binder Page(desktop)  
+* Binder Page(desktop)  
 ![Binder page lighthouse testing on desktop](../duality/docs/testing/binder-lighthouse-desktop.png)
 
 * Card Detail Page(mobile)  
@@ -807,7 +810,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 * Payment Cancel Page(mobile)    
 ![Payment cancel page lighthouse testing on mobile](../duality/docs/testing/payment-cancel-lighthouse-mobile.png)
-* Payment Cancel Page(desktop)
+* Payment Cancel Page(desktop)    
 ![Payment cancel page lighthouse testing on desktop](../duality/docs/testing/payment-cancel-lighthouse-desktop.png)
 
 * View Profile Page(mobile)  
@@ -819,6 +822,26 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ![Edit profile page lighthouse testing on mobile](../duality/docs/testing/edit-profile-lighthouse-mobile.png) 
 * Edit Profile Page(desktop)    
 ![Edit profile page lighthouse testing on mobile](../duality/docs/testing/edit-profile-lighthouse-desktop.png)
+
+* Login Page(mobile)  
+  ![Login page lighthouse testing on mobile](../duality/docs/testing/login-lighthouse-mobile.png)
+* Login Page(desktop)    
+![Login page lighthouse testing on desktop](../duality/docs/testing/login-lighthouse-desktop.png)
+
+* Logout Page(mobile)  
+  ![Logout page lighthouse testing on mobile](../duality/docs/testing/logout-lighthouse-mobile.png)
+* Logout Page(desktop)    
+![Logout page lighthouse testing on desktop](../duality/docs/testing/logout-lighthouse-desktop.png)
+
+* Register Page(mobile)    
+![Register page lighthouse testing on mobile](../duality/docs/testing/register-lighthouse-mobile.png)
+* Register Page(desktop)    
+![Register page lighthouse testing on desktop](../duality/docs/testing/register-lighthouse-desktop.png)
+
+* Password Reset Page(mobile)    
+![Password reset page lighthouse testing on mobile](../duality/docs/testing/password-lighthouse-mobile.png)
+* Password Reset Page(desktop)   
+![Password reset page lighthouse testing on desktop](../duality/docs/testing/password-lighthouse-desktop.png)
 
 ### **Manual Testing**
 
