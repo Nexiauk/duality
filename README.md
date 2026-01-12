@@ -145,6 +145,8 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 
 * **Change my password and email address**, so that I can keep my account secure.
 
+* **View and amend my profile details**, so that i can keep my account up-to-date
+
 **Shop Interaction**
 
 * **Browse the available cards in the shop**, so that I can decide which ones to collect.
@@ -160,12 +162,6 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 * **Be given the option to continue or cancel my purchase**, so I can change my mind if I want.
 
 **Binder / Collection Management**
-
-* **Add free cards to my binder with a single click**, so that I can build my collection quickly and efficiently.
-
-* **Add purchasable cards to a basket with a single click**, so that I can efficiently purchase them if under time constraints.
-
-* **Cancel my purchase before it’s processed**, so that I have the option to change my mind.
 
 * **Access a binder of my collected cards**, so that I can view my purchases and their additional unlocked content.
 
@@ -706,16 +702,18 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * **Find a login/logout button, so that I can quickly sign in with minimal effort.**    
   The login and logout button can be found in the fixed header/navbar at all times, and each one displays based on a user’s login status. A guest will see the option to login, a logged-in user will see the option to logout. A link to login also shows on the home page hero card and at the top of the shop. The registration form features a link to login for ease of access.
 * **Change my password and email address, so that I can keep my account secure.**    
-  The view profile form includes a link to the change password form, allowing a user to change it at will. There is a link on the change password form to the reset password form. This also exists on the login form, preventing the user from being locked out of their account due to forgotten passwords. A user can also edit their profile details to change their first name, last name, display name and email address so long as they are logged in and the profile user id matches the request user’s id. 
-  
+  The view profile form includes a link to the change password form, allowing a user to change it at will. There is a link on the change password form to the reset password form. This also exists on the login form, preventing the user from being locked out of their account due to forgotten passwords. 
+* **View and amend my profile details, so that i can keep my account up-to-date**
+  A user can view their profile by clicking on the nav-link for profile and it will show the edit-profile form but with disabled fields. There is an edit button and a change password button on the form.  the edit button takes the user to the edit-profile form where they can change their first name, last name, display name and email address, so long as they are logged in and the profile user id matches the request user id. 
+
   *Note:* I decided specifically not to pass the user's email address through to the Stripe payment system, to leave the user with control over which email address they might want to be billed to. Some users might want to use a different email address for the app, than the one they have payment receipts sent to.
 
 **Shop Interaction**
 * **Browse the available cards in the shop, so that I can decide which ones to collect.**
-  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity, and Price, so users can easily decide which ones to collect.
+  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity with power total, and Price, so users can easily decide which ones to collect.
 
 * **Filter the available cards in the shop, so that I can easily locate heroes/villains of specific types for my collection.**
-  The shop cards can be filtered by Rarity, Alignment, or Universe, or a mix of the three, allowing users to quickly locate cards they might be looking or waiting for to add to their personal collection.
+  The shop cards can be filtered by Rarity, Alignment, or Universe, or a mix of the three, allowing users to quickly locate cards they might be looking or waiting for to add to their personal collection. Future updates would include a reset button for the filters.
 
 * **See at a glance which cards are free and which ones require payment, so that I can make quick decisions on which cards to collect.**
   Each card in the shop displays a button for logged-in users, that shows the price of the card. There are currently no free cards in the app because of Stripe limitations on the checkout requiring a positive amount. Future updates would feature the ability to insta-purchase free cards from the shop by bypassing the stripe checkout completely, for a seamless user experience.
@@ -724,28 +722,62 @@ Enables per-rotation pricing or other metadata without affecting the base charac
   Each card features a badge that shows its rairty, in that rarity's colour, and a banner displaying the ficitonal universe the character belongs to. The shop can be filtered by both these pieces of data to allow users to quickly locate cards they might want to buy.
 
 * **See at a glance and easily use a 'Buy Now' button, so I can efficiently make a purchase.**
-  Logged-in users can see a 'Buy Now' button in an additional footer on each card. The button also displays the card's price and will take the user to a page with the card's details asking for confirmation of purchase. 
+  Logged-in users can see a 'Buy Now' button in an additional footer on each card The button has a pulse effect on hover making it even more obvious. The button also displays the card's price and will take the user to a page with the card's details asking for confirmation of purchase. 
 
 * **Be given the option to continue or cancel my purchase, so I can change my mind if I want.**
-  When making a purchase, the buy now button will take the logged-in user to a confirmation page, where they will be given the option to cancel if they want. The cancel button will simply take them back in the browser to the shop.
+  When making a purchase, the buy now button will take the logged-in user to a confirmation page, where they will be given the option to cancel if they want. The cancel button will simply take them back in the browser to the shop. The url for the card-detail page features logic in the view to ensure that only cards that are in the current shop schedule can be viewed and purchased, and the url cannot be edited manually to force a non scheduled card to show.
 
 **Binder / Collection Management**
 
-* **Add free cards to my binder with a single click**, so that I can build my collection quickly and efficiently.
+* **Access a binder of my collected cards, so that I can view my purchases and their additional unlocked content.**
+  There is a link in the navbar to a logged-in user's binder, which features a grid of their purchased/collected cards. Each card features a front and a back. The front has an image, a rarity badge with their power total and an alignment badge, as well as a universe banner. Hovering over a card flips it over to display extended information about that character. Extended details include archetype, any aliases they might have, groups that they are a part of, their first appearance, their race, and a grid of badges for each of their individual power stats.
 
-* **Add purchasable cards to a basket with a single click**, so that I can efficiently purchase them if under time constraints.
-
-* **Cancel my purchase before it’s processed**, so that I have the option to change my mind.
-
-* **Access a binder of my collected cards**, so that I can view my purchases and their additional unlocked content.
-
-* **Filter or search my binder,** so that I can quickly view cards by type, rarity, or attributes (Hero, Villain, Universe, Power Rating).
+* **Filter or search my binder, so that I can quickly view cards by type, rarity, or attributes (Hero, Villain, Universe, Power Rating).**
+  The binder features filters for Rarity, Alignment and Universe, which also work in conjunction with each other, allowing a user to drill down into their collection. Future updates would include a reset button for the filters.
 
 **Payments & Feedback**
 
-* **Make secure payments through Stripe**, so that I can purchase cards without worrying about payment safety.
+* **Make secure payments through Stripe, so that I can purchase cards without worrying about payment safety.**
+  Purchased card details are sent through to a Stripe-hosted, single-purchase checkout, where users can make secure payments. Their payment details are not stored anywhere in the Duality app. receipts and payment confirmations are handled by Stripe. After successful payment the app creates a record linking the purchased card to the user (usercards) so ownership is tracked. Usercards also store the Stripe payment reference and a custom Duality order reference in case of queries or refund requests.
 
-* **See immediate visual cues, like animations or highlights, when I add cards to my basket or binder**, so that I know my actions have been registered.
+* **See immediate visual cues, like animations or highlights, when I add cards to my basket or binder, so that I know my actions have been registered.**
+I decided against having a basket as I wanted to follow the Epic Store method or making purchases which is to select the item, view a confirmation page, and purchase that item. The purchasing and cancelling buttons pulse on hover to signal interactivity, and the user will be taken to a purchase confirmation page that allows them to either continue or go back. After purchasing a card, the user is taken to a success page that shows the details of the card they purchased, the amount they've paid, and the email address that's been notified of the purchase. if an error occurs, the user will see an error page with a string message and if the payment is cancelled at the Strupe checkout, the user will be redirected to a transaction cancelled page.
+
+
+#### **Admin Users**
+
+**Collection Management**
+
+* **See all cards in the Master Collection, so that I can easily review and edit their content.**
+
+* **Add new cards to the Master Collection, so that customers have more cards to collect.**
+
+* **Filter the Master Collection by Rarity and Universe, so that I can easily find and manage specific cards and their sub-collections.**
+
+**Shop Management**
+
+* **See what cards are currently marked for shop rotation, so I can add and remove to the rotation as desired.**
+
+* **Schedule shop rotations and set/adjust the shop refresh schedule, so that new card batches appear at predictable times or immediately when needed.**
+
+* **Set price bandings based on a card’s power rating, so that cards of higher rarity automatically have higher prices and shop pricing remains consistent.**
+
+* **Adjust the prices for each rarity band or individual card, so that I can control the shop economy and run promotions without changing the underlying card power ratings.**
+
+* **Set card availability, so that I can control which cards are on sale or temporarily removed from the shop, supporting special offers and promotions.**
+
+**User Management**
+
+* **See a list of all registered users, so that I can support accounts as needed.**
+
+* **Track purchase history, so that I can troubleshoot issues and handle refunds.**
+
+**Payments & Security**
+
+* **Manage Stripe payment settings and view transaction logs, so that I can ensure secure and smooth payments.**
+
+* **Back up the Master Collection and user data, so that content is safe in case of system failure.**
+
 
 ### *Automated Testing*
 
