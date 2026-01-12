@@ -396,8 +396,9 @@ select:hover {
     display: inline-block;
     transform: skew(30deg);
     font-style: italic;
-    padding: 3px;
     font-weight: bold;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 /* Buttons change colour and pulse on hover */

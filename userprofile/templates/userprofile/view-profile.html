@@ -28,10 +28,11 @@ in read-only mode with a link to edit the profile.
                 {% endif %}
             </form>
             <!-- Link to the edit-profile page -->
-            <div class="col-12 d-flex">
+            <div class="col-12 gap-md-4 d-flex flex-column flex-md-row">
                 {% if user.is_authenticated and request.user.id == profile_user.id %}
                     <a href="{% url 'edit-profile' id=request.user.id %}"
                        class="btn account-button mt-4"><span class="unskew">Edit Profile &raquo;</span></a>
+                    <a href="{% url 'account_change_password' %}" class="btn account-button mt-4"><span class="unskew">Change Password &raquo;</span></a>
                 {% endif %}
             </div>
         </div>

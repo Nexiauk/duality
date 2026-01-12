@@ -131,7 +131,7 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 
 * **Easily find** a sign-up button, so that I can sign up to become a ‘collector’ (customer).
 
-* **Register** for an account using a logical, clearly-defined form, so that I can start building my collection.
+* **Register** for an account using a logical, clearly-defined form, so that I can start building my collection.*
 
 ---
 
@@ -688,6 +688,20 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 ## **Testing**
 
 ### *User Story Testing*
+#### **Guest Users**
+
+*As a guest I want to:*
+
+**Account / Access**
+
+* **Browse the site using simple, logical, clear navigation so that I can find out what it’s about.**    
+  The site features a header that is always fixed to the top so that navigation is readily accessible. Nav links are horizontal on larger screens and populate a dropdown menu on mobiles and tablets. The links are simply labelled and include logic to only display what a guest/logged-in user should see.
+
+* **Easily find a sign-up button, so that I can sign up to become a ‘collector’ (customer).**    
+  The sign up button is available in the navbar, and also features as a link on the home page in a hero card for guests. The navbar is always fixed to the top so the signup button is always available. The login form features a signup link and if a guest is viewing the shop, they will be prompted to sign up or login in the header sub-text.
+
+* **Register for an account using a logical, clearly-defined form, so that I can start building my collection.**    
+  The Registration form is simple and straightforward, and features built-in validation via allauth to ensure the correct information is filled out. It includes a Display name field, as the form has been customised to include this field from the Userprofile model.
 
 ### *Automated Testing*
 
