@@ -755,8 +755,6 @@ Enables per-rotation pricing or other metadata without affecting the base charac
     * urls.py - all clear, no errors found
     * wsgi.py - all clear, no errors found
 
-
-
 #### [**JSONLint**](https://jsonlint.com/)
 * legends.json file is valid.
 * archetypes.json file is valid
@@ -788,12 +786,16 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 * Card Detail Page - no errors  
 ![Card Detail Page accessibility check on Wave](../duality/docs/testing/wave-card-detail.png)
+
 * Payment Success - no errors  
 ![Payment Success Page accessibility check on Wave](../duality/docs/testing/wave-payment-success.png)
+
 * Payment Cancel - no errors  
 ![Payment Cancelled Page accessibility check on Wave](../duality/docs/testing/wave-payment-cancel.png)
+
 * View Profile Page - no errors  
 ![View Profile page accessibility checkn on Wave](../duality/docs/testing/wave-view-profile.png)
+
 * Edit Profile  
 ![Edit Profile accessibility check on Wave](../duality/docs/testing/wave-edit-profile.png)
 
@@ -860,6 +862,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 ### **Manual Testing**
 
+#### **Browser Testing**
 Mobile 320px
 Chrome
 
@@ -911,7 +914,7 @@ All active nav-links display in the appropriate colour on the appropriate page
 All required form fields have to be filled in
 The logo text takes you back to the home page from every page
 
-
+#### **Developer Manual Testing**
 * Tested characters imported safely after running import.py and that archetypes were allocated to all characters - checked via Django admin. Exception errors raise if the file doesn't exist at the specified path, if the JSON data is malformed, or if the OS denies permissions. Exception errors also raise if invalid values or if bad values violate database rules.
 * Tested that rarities were assigned to all characters after running rarity-update.py - checked via Django admin. Built-in logic to compare id and name from the JSON file, to id and name in the CharacterCard model table. Exception errors raise if the CharacterCard doesn't exist, and any characters not allocated a rarity will print to the terminal.
 * Checked that the method of grabbing the json data for each character returns the correct details by manually comparing characters to the json file

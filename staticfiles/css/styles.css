@@ -119,7 +119,7 @@ option {
 
 /* Hover styling for nav items and nav links, and select dropdown filters */
 .nav-item:hover,
-select:hover  {
+select:hover {
     background-color: var(--vivid-yellow);
     cursor: pointer;
     transition: 0.5s ease-in;
@@ -198,6 +198,7 @@ select:hover  {
     top: 65%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
+
 /* Overlay banner for the back of binder cards */
 .card-back-banner {
     height: 45px;
@@ -255,7 +256,6 @@ select:hover  {
 .binder-card {
     perspective: 1000px;
     background-color: transparent;
-    width: 266px;
     height: 452px;
     display: none;
     transition: transform .2s;
@@ -402,7 +402,8 @@ select:hover  {
 
 /* Buttons change colour and pulse on hover */
 .buy-button:hover,
-.account-button:hover {
+.account-button:hover,
+.cancel:hover {
     background-color: var(--skylla);
     color: white;
     transform: skew(-30deg);
@@ -533,6 +534,10 @@ select:hover  {
         min-height: 300px;
     }
 
+    .binder-card {
+        min-width: 270px;
+    }
+
     .shop-card img {
         height: 300px;
     }
@@ -573,7 +578,7 @@ select:hover  {
 
     .binder-card {
         height: 527px;
-        width: 316px;
+        min-width: 320px;
     }
 
     .character-card-body {
@@ -592,7 +597,7 @@ select:hover  {
     }
 
     p {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 
     .navbar-nav {
@@ -618,7 +623,7 @@ select:hover  {
     }
 
     .binder-card {
-        width: 356px;
+        min-width: 360px;
     }
 }
 
@@ -627,6 +632,22 @@ select:hover  {
 
     h1 {
         font-size: 2.3rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    select {
+        font-size: 1.1rem;
+    }
+
+    option {
+        font-size: 1.1rem;
+    }
+
+    div label {
+        font-size: 1.1rem;
     }
 
     .navbar-nav {
@@ -695,17 +716,34 @@ select:hover  {
     }
 
     p {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     select {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         margin-bottom: 15px;
+        width: 260px;
     }
 
     div label {
         margin-top: 15px;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    option {
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 1.8rem;
+    }
+
+   .form-control {
+        font-size: 1.8rem;
+    }
+
+    a {
+        font-size: 1.8rem;
     }
 
     .hero-card .card-title,
@@ -748,14 +786,22 @@ select:hover  {
         margin-top: 6rem !important;
     }
 
+    .container {
+        max-width: 1600px;
+    }
+
     .shop-card {
-        min-width: 400px;
+        min-width: 440px;
         min-height: 320px;
     }
 
     .binder-card {
         height: 542px;
-        width: 396px;
+        min-width: 440px;
+    }
+
+    .back-text {
+        font-size: 1.4rem;
     }
 
     .character-card-body {
@@ -770,16 +816,22 @@ select:hover  {
         font-size: 1.1rem;
     }
 
-    .buy-button {
-        font-size: 1.4rem;
+    .buy-button,
+    .cancel,
+    .account-button {
+        font-size: 1.6rem;
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    #messages {
+        font-size: 1.5rem;
     }
 
     /* Important used to override Bootstrap mt helper class, which has important attached to it. */
     #signup-section,
     #login-section,
     #logout-section {
-        margin-top: 5rem!important;
+        margin-top: 5rem !important;
     }
 }
