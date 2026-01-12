@@ -7,14 +7,16 @@ their data and power status, sorted by power, and rendered to the shop page.
 """
 
 from django.shortcuts import render, get_object_or_404, redirect
+from django.conf import settings
+from django.urls import reverse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib import messages
 from .models import ShopScheduler, CharacterCard
 from core.models import Rarity
 from binder.models import Usercards
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
 import stripe
-from django.conf import settings
-from django.urls import reverse
+
 
 
 def shop_view(request):
@@ -72,8 +74,17 @@ def card_view(request, id):
     """
     Renders the card detail page for a given CharacterCard
     including its JSON metadata and calculated power status.
+    Checks the schedule to see if the card requested is in the shop,
+    if not, sends the user back to the shop with a warning message.
     """
+    schedule = ShopScheduler.get_or_create_active_schedule()
+    eligible_cards = []
+    for s in schedule:
+        eligible_cards.extend(s.get_eligible_characters())
     card = get_object_or_404(CharacterCard, id=id)
+    if card not in eligible_cards:
+        messages.warning(request, "This card is not currently available in the shop")
+        return redirect("shop")
     page_url = "shop/card-detail.html"
     json_data = card.get_legends_data()
     power = card.power_status()
@@ -182,6 +193,7 @@ def payment_success(request):
 
 @login_required
 def payment_cancel(request):
+    """Returns the payment cancellation template"""
     return render(request, 'shop/cancel.html')
 
 

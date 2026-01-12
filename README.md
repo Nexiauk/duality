@@ -706,20 +706,28 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * **Find a login/logout button, so that I can quickly sign in with minimal effort.**    
   The login and logout button can be found in the fixed header/navbar at all times, and each one displays based on a user’s login status. A guest will see the option to login, a logged-in user will see the option to logout. A link to login also shows on the home page hero card and at the top of the shop. The registration form features a link to login for ease of access.
 * **Change my password and email address, so that I can keep my account secure.**    
-  The view profile form includes a link to the change password form, allowing a user to change it at will. There is a link on the change password form to the reset password form. This also exists on the login form, preventing the user from being locked out of their account due to forgotten passwords. A user can also edit their profile details to change their first name, last name, display name and email address so long as they are logged in and the profile user id matches the request user’s id.
+  The view profile form includes a link to the change password form, allowing a user to change it at will. There is a link on the change password form to the reset password form. This also exists on the login form, preventing the user from being locked out of their account due to forgotten passwords. A user can also edit their profile details to change their first name, last name, display name and email address so long as they are logged in and the profile user id matches the request user’s id. 
+  
+  *Note:* I decided specifically not to pass the user's email address through to the Stripe payment system, to leave the user with control over which email address they might want to be billed to. Some users might want to use a different email address for the app, than the one they have payment receipts sent to.
 
 **Shop Interaction**
-* **Browse the available cards in the shop**, so that I can decide which ones to collect.
+* **Browse the available cards in the shop, so that I can decide which ones to collect.**
+  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity, and Price, so users can easily decide which ones to collect.
 
-* **Filter the available cards in the shop**, so that I can easily locate heroes/villains of specific types for my collection.
+* **Filter the available cards in the shop, so that I can easily locate heroes/villains of specific types for my collection.**
+  The shop cards can be filtered by Rarity, Alignment, or Universe, or a mix of the three, allowing users to quickly locate cards they might be looking or waiting for to add to their personal collection.
 
-* **See at a glance which cards are free and which ones require payment**, so that I can make quick decisions on which cards to collect.
+* **See at a glance which cards are free and which ones require payment, so that I can make quick decisions on which cards to collect.**
+  Each card in the shop displays a button for logged-in users, that shows the price of the card. There are currently no free cards in the app because of Stripe limitations on the checkout requiring a positive amount. Future updates would feature the ability to insta-purchase free cards from the shop by bypassing the stripe checkout completely, for a seamless user experience.
 
-* **See at a glance the different card rarities and Universes**, so I can make informed collection decisions.
+* **See at a glance the different card rarities and Universes, so I can make informed collection decisions.**
+  Each card features a badge that shows its rairty, in that rarity's colour, and a banner displaying the ficitonal universe the character belongs to. The shop can be filtered by both these pieces of data to allow users to quickly locate cards they might want to buy.
 
-* **See at a glance and easily use a 'Buy Now' button**, so I can efficiently make a purchase.
+* **See at a glance and easily use a 'Buy Now' button, so I can efficiently make a purchase.**
+  Logged-in users can see a 'Buy Now' button in an additional footer on each card. The button also displays the card's price and will take the user to a page with the card's details asking for confirmation of purchase. 
 
-* **Be given the option to continue or cancel my purchase**, so I can change my mind if I want.
+* **Be given the option to continue or cancel my purchase, so I can change my mind if I want.**
+  When making a purchase, the buy now button will take the logged-in user to a confirmation page, where they will be given the option to cancel if they want. The cancel button will simply take them back in the browser to the shop.
 
 **Binder / Collection Management**
 
