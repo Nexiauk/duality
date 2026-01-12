@@ -15,7 +15,7 @@ in read-only mode with a link to edit the profile.
         <div class="glassmorphic p-5 pt-4 pb-4">
             <!-- Page heading showing the user's display name -->
             <h2 class="mb-4 heading">View {{ user.get_display_name|default:user.username }}'s Profile</h2>
-            <p class="mb-4">Edit your profile details</p>
+            <p class="mb-4">Edit your profile details and change your password.</p>
             <!-- Profile view form with CSRF token and hidden redirect field if present -->
             <form id="view-profile-form" method="post">
                 {% csrf_token %}
@@ -32,7 +32,7 @@ in read-only mode with a link to edit the profile.
                 {% if user.is_authenticated and request.user.id == profile_user.id %}
                     <a href="{% url 'edit-profile' id=request.user.id %}"
                        class="btn account-button mt-4"><span class="unskew">Edit Profile &raquo;</span></a>
-                    <a href="{% url 'account_change_password' %}" class="btn account-button mt-4"><span class="unskew">Change Password &raquo;</span></a>
+                    <a href="{% url 'account_change_password' %}" class="btn account-button mt-3 mt-md-4"><span class="unskew">Change Password &raquo;</span></a>
                 {% endif %}
             </div>
         </div>
