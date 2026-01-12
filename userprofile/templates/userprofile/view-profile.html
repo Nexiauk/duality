@@ -8,7 +8,7 @@ in read-only mode with a link to edit the profile.
 {% load crispy_forms_tags %}
 {% load static %}
 {% block title %}
-    My profile
+    {{ user.get_display_name|default:user.username }}'s profile
 {% endblock title %}
 {% block content %}
     <section class="mt-3 mb-3 mx-auto p-md-4">
