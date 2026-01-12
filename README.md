@@ -79,29 +79,30 @@ Assemble a force for light to restore balance, or
 
 Embrace the darkness and command chaos.
 
-Duality: Legends Unchained is a collectible card app where you curate your ultimate team from across your favourite universes.
+Duality: Legends Unchained is a collectible card app where you curate your ultimate team from across your favourite fictional universes.
 
 ## **Inspiration**
 
 ### *Reluctant Readers*
-My son is what schools call a “reluctant reader.” If a book doesn’t have illustrations, he simply isn’t interested, no matter how much he’s encouraged. But give him something with pictures and you can’t stop him. He’s read and re-read every Diary of a Wimpy Kid, Tom Gates, Louie Stowell’s Loki series, Bunny vs Monkey, Donut Squad — the list goes on. His shelves are overflowing with graphic novels: Harley Quinn, Deadpool and Venom comics, and yet he’s still labelled as reluctant, simply because his reading is visual.  
+My son is what schools call a 'reluctant reader.' If a book doesn’t have illustrations, he simply isn’t interested, no matter how much he’s encouraged. But give him something with pictures and you can’t stop him. He’s read and re-read every Diary of a Wimpy Kid, Tom Gates, Louie Stowell’s Loki series, Bunny vs Monkey, Donut Squad — the list goes on. His shelves are overflowing with graphic novels: Harley Quinn, Deadpool and Venom comics; and yet he’s still labelled as reluctant, simply because his reading is visual.  
+
 Illustrated storytelling is not a crutch, it’s a gateway. Graphic novels and comics can pave a prettier pathway into reading for pleasure, especially for readers who find long blocks of text daunting.
 
 ### *The Psychology of Collecting*
-At the same time, I’ve seen how collecting hooks people in. My brother, for example, has a Pokémon card binder, ostensibly ‘for his son’ — but I remember him collecting the same cards as a kid. It’s not really about resale value. It’s about the joy of owning something rare, of filling pages, of seeing a collection grow and feeling proud of it. That psychology is powerful, especially when paired with storytelling.  
-![Pokemon Binder collection full of cards](./docs/screenshots/pokemon-binder.jpg)
-![Example card from the same binder collection](./docs/screenshots/pokemon-card.jpg)
+At the same time, I’ve seen how collecting hooks people in. My brother, for example, has a Pokémon card binder, ostensibly 'for his son' — but I remember him collecting the same cards as a kid. It’s not really about the resale value and what the collection is worth for his con in the future. It’s about the joy of owning something rare, of filling pages, of seeing a collection grow and feeling proud of it. That psychology is powerful, especially when paired with storytelling.  
+![Example of a Pokemon Binder collection full of cards](./docs/screenshots/pokemon-binder.jpg)
+![Example of a card from the same binder collection](./docs/screenshots/pokemon-card.jpg)
 
 ### *The Idea*
-Originally, I wanted to make a fairy-tale inspired card collection with characters and objects from classic stories with the idea being that the visual nature of the cards would be appealing to reluctant readers, who would then learn a little more about those stories after purchasing the cards. But when I started designing the cards, I realised the scope was bigger than I could handle. So I stepped back and looked for data sources that could bring a ready-made universe to life. 
+Originally, I wanted to make a fairy-tale inspired card collection with characters and objects from classic stories, with the idea being that the visual nature of the cards would be appealing to reluctant readers, who would then learn a little more about those stories after purchasing the cards. But when I started designing the cards, I realised the scope was bigger than I could handle, due to the necessity of creating graphics for each of those cards and the limited time scope of my project. So, I stepped back and looked for data sources that could bring a ready-made universe to life. 
 
-That’s when I stumbled across the [Superhero API](https://www.superheroapi.com/). It collates 731 heroes and villains from across different publishers and universes. Superheroes and villains never really go out of fashion — they just get remade, recast, and reimagined for new audiences. By combining this treasure trove of illustrated characters with the psychology of collecting, and framing it in a narrative about collapsed multiversal barriers, Duality: Legends Unleashed was born.  
+That’s when I stumbled across the [Superhero API](https://www.superheroapi.com/). It collates 731 heroes and villains from across different fictional publishers and universes. Superheroes and villains never really go out of fashion — they just get remade, recast, and reimagined for new audiences. By combining this treasure trove of illustrated characters with the psychology of collecting, and framing it in a narrative about collapsed multiversal barriers, Duality: Legends Unchained was born.  
 
 It’s not just about collecting cards. It’s about creating your own super-powered team — heroes or villains — and, maybe along the way, finding that illustrated storytelling can make reading fun again.
 
 ## **Goals**
 * Build an addictive, card-collecting experience.  
-* Display hero and villain cards in a top secret binder.  
+* Display hero and villain cards in a binder.  
 * Inspire reading through illustrated biographies.  
 * Enrich content with diverse characters curated by experts.  
 * Promote exploration, discovery, and replay.
@@ -113,7 +114,7 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 * Adults who enjoy collectibles  
 * Children who enjoy collectibles  
 * Anyone who enjoys Heroes/Villains  
-* Anyone who enjoys ‘visual’ reading  
+* Anyone who enjoys 'visual' reading  
 * Guests who want to browse  
 * Registered users who want to collect  
 * Admin who curate the content

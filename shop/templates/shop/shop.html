@@ -30,7 +30,7 @@ the active shop schedules. Each character is presented as a card with:
                     {% if user.is_authenticated %}
                         {{ user.get_display_name|default:user.username }}, mix and match your favourites heroes and villains from across the multiverse.
                     {% else %}
-                        <a href="{% url "account_login" %}" class="text-white">Login</a> to build your own collection.
+                        <a href="{% url "account_signup" %}" class="text-white">Sign up</a> or <a href="{% url "account_login" %}" class="text-white">Login</a> to build your own collection.
                     {% endif %}
                 </p>
             </div>
