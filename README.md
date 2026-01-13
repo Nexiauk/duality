@@ -1024,7 +1024,9 @@ The logo text takes you back to the home page from every page
     * As a result of the above, tidied up the userprofile views: swapped request.user for the URL user variable, updated edit_profile to match, and added the user’s ID to the URLs and path.
 * Checked that the binder loads even when a user doesn't have any purchased usercards. This wasn't initially working as I had forgotten to add @login_required authenticator and hadn't added an if statement to the template to handle no usercards. This handles empty page glitches for new users with no purchases. Also changed the rarities filter to use all rarities rather than just filtering the ones that existed, as i want rarities to apepar in the order that they do on the model.
 * Checked that the full_name instance method pulls through the model name if no fullname exists in the json data for a character.
-* Checked that only the first group affiliation shows on Usercards for each character as per the group_affiliation instance method
+* Checked that only the first group affiliation shows on Usercards for each character as per the group_affiliation instance method.
+* After setting up email backend in settings.py, checked that allauth emails print to the console for account management.
+* After setting up a payment confirmation email in the payment_success view in the shop, tested that it prints to the console by making a purchase.
 
 
 ### **Unit Testing**

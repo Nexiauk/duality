@@ -12,11 +12,12 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import send_mail, BadHeaderError
 from .models import ShopScheduler, CharacterCard
 from core.models import Rarity
 from binder.models import Usercards
 import stripe
+import smtplib
 
 
 def shop_view(request):
@@ -168,25 +169,32 @@ def payment_success(request):
             customer_username = User.objects.get(username=customer)
             display_name = customer_username.get_display_name
             purchases = get_purchases_from_session(session)
-            message = f"{session.customer_details.name}, your purchase is complete."
+            message = (
+                f"{session.customer_details.name}, your purchase is complete."
+                )
             if session.payment_status == 'paid':
                 # Create user cards
                 for purchase in purchases:
-                    print(purchases)
                     usercard = Usercards.create_usercard(
                         request.user, purchase, session.payment_intent)
                     purchase['order_reference'] = usercard.order_reference
                     purchase['price'] = purchase['price']/100
                     # Message variable for email text
-                    message += f"- {purchase['character_name']} | £{purchase['price']} | Order Ref: {purchase['order_reference']}\n"
+                    message += (
+                        f"- {purchase['character_name']} | £{purchase['price']} "
+                        f"| Order Ref: {purchase['order_reference']}\n"
+                        )
                 # Send a confirmation email - customised to purchase made.
-                send_mail(
-                    'Your Diality purchase was successful.',
-                    message,
-                    'admin@duality.com',
-                    [session.customer_details.email],
-                    fail_silently=False,
-                )
+                try:
+                    send_mail(
+                        'Your Duality purchase was successful.',
+                        message,
+                        'admin@duality.com',
+                        [session.customer_details.email],
+                        fail_silently=False,
+                    )
+                except (BadHeaderError, smtplib.SMTPException) as e:
+                    print(f"Email failed to send {e}")
                 return render(request, 'shop/success.html', {
                     'customer_email': session.customer_details.email,
                     'customer': customer,
