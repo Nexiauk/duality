@@ -12,11 +12,11 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.mail import send_mail
 from .models import ShopScheduler, CharacterCard
 from core.models import Rarity
 from binder.models import Usercards
 import stripe
-
 
 
 def shop_view(request):
@@ -83,7 +83,8 @@ def card_view(request, id):
         eligible_cards.extend(s.get_eligible_characters())
     card = get_object_or_404(CharacterCard, id=id)
     if card not in eligible_cards:
-        messages.warning(request, "This card is not currently available in the shop")
+        messages.warning(
+            request, "This card is not currently available in the shop")
         return redirect("shop")
     page_url = "shop/card-detail.html"
     json_data = card.get_legends_data()
@@ -167,12 +168,25 @@ def payment_success(request):
             customer_username = User.objects.get(username=customer)
             display_name = customer_username.get_display_name
             purchases = get_purchases_from_session(session)
+            message = f"{session.customer_details.name}, your purchase is complete."
             if session.payment_status == 'paid':
+                # Create user cards
                 for purchase in purchases:
+                    print(purchases)
                     usercard = Usercards.create_usercard(
                         request.user, purchase, session.payment_intent)
                     purchase['order_reference'] = usercard.order_reference
                     purchase['price'] = purchase['price']/100
+                    # Message variable for email text
+                    message += f"- {purchase['character_name']} | £{purchase['price']} | Order Ref: {purchase['order_reference']}\n"
+                # Send a confirmation email - customised to purchase made.
+                send_mail(
+                    'Your Diality purchase was successful.',
+                    message,
+                    'admin@duality.com',
+                    [session.customer_details.email],
+                    fail_silently=False,
+                )
                 return render(request, 'shop/success.html', {
                     'customer_email': session.customer_details.email,
                     'customer': customer,

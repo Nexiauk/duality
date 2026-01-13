@@ -1123,6 +1123,7 @@ Key areas covered:
 * Help creating a constraint on the UserCards model to prevent owners having more than one Usercard for the same Character - [forum.djangoprojects.com](https://forum.djangoproject.com/t/how-to-make-a-django-uniqueconstraint-that-checks-fields-in-a-position-independant-way/19062)
 * Help rendering two models in one form - [forums.djangoprojects.com](https://forum.djangoproject.com/t/create-a-form-using-two-models/21234/5)
 * Help rendering form fields, while using crispy forms, as readonly. Decided not to use this method ultimately, created the form with disabled fields insteads in the view - [stackoverflow](https://stackoverflow.com/questions/21559380/django-crispy-forms-readonly)
+* Help with setting up email configuration in Django, so that allauth prints to the console for registration and passwords, and Stripe sends emails about payment [medium.com](https://medium.com/dajngo/email-configuration-in-django-3c7d9e149445)
 
 
 
