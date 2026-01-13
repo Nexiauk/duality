@@ -362,12 +362,9 @@ Authenticated users will see:
 ![Header with nav items and nav-brand](./docs/screenshots/header.jpg)
 ![Different nav-item list for logged out users](./docs/screenshots/header-loggedout.jpg)
 
-
-
 On mobile and tablet screens, the navbar collapses and is replaced with a burger icon. A dropdown of nav items appears that keeps all the same hover and active effects.
 
 ![Header on mobile with collapsible navbar](./docs/screenshots/header-mobile.jpg)
-
 
 The nav-brand consists of a customised logo and the app name in gradient colours ([see Design section](#design)), both of which link back to the home page..  
 ![Navbrand with logo and title text.](./docs/screenshots/navbrand.jpg)
@@ -522,8 +519,12 @@ The profile page features a disabled version of the edit-profile form, with an e
 * Ability to search by rarity/universe/alignment/archetype on the shop schedule items admin to allow 'type' shops. IE a Marvel only set of characters.
 * Change the shop scheduler so that instead of creating a new schedule on a visit, it is an automated task every 24 hours.
 * A timer countdown for the shop, so customers can see when the current batch of characters will be replaced.
+* Leaving soon banners to appear on characters that will be disappearing soon.
+* Separate sections for each shop schedule, pulling through the name of that schedule with its own countdown timer.
 * Fancy website colour changes relating directly to how many cards a user has that are one alignment or another.
 * Purchases section on the profile page to make the reporting of transaction errors easier.
+* A form that allows admin users to update the legends.json file when creating a new character card.
+* The ability to define sale prices per scheduled card. Currently exists on the ShopScheduleItems model, but hasn't been implemented yet.
 
 ## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
@@ -541,7 +542,7 @@ Models include:
 Each row = one character in one rotation.  
 Supports assigning any subset of characters to any rotation independently.  
 Enables per-rotation pricing or other metadata without affecting the base character record.
-* **UserCards** Stores details of the character cards that a user has purchased, including the date and time it was bought, and the purchase price at the time.
+* **UserCards** Stores details of the character cards that a user has purchased, including the date and time it was bought, and the purchase price at the time. Also holds the Stripe payment reference and a user-friendly, app-generated order reference number.
 * **UserProfile** Stores extended user details such as display name.
 
 ### *Model Relationships (ERD Notation)*
@@ -555,7 +556,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 **USER ||--o{ USER_CARDS : "purchases"**  
 * Each user can purchase zero or more user_cards.  
 * User cards belong to exactly one user.  
-* UserCards store purchase details such as which character was bought, the price paid, and the date of purchase, while the base USER holds login credentials and email address.
+* UserCards store purchase details such as which character was bought, the price paid, the payment reference number, the order reference number and the date of purchase, while the base USER holds login credentials and email address.
 
 ---
 
@@ -694,7 +695,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
   The sign up button is available in the navbar, and also features as a link on the home page in a hero card for guests. The navbar is always fixed to the top so the signup button is always available. The login form features a signup link and if a guest is viewing the shop, they will be prompted to sign up or login in the header sub-text.
 
 * **Register for an account using a logical, clearly-defined form, so that I can start building my collection.**    
-  The Registration form is simple and straightforward, and features built-in validation via allauth to ensure the correct information is filled out. It includes a Display name field, as the form has been customised to include this field from the Userprofile model.
+  The Registration form is simple and straightforward, and features built-in validation via allauth to ensure the correct information is filled out. It includes a Display name field, as the form has been customised to include this field from the Userprofile model. Form validation and feedback messages is handled by allauth. The display name will appear in a login status area in the footer but if a user account has been created by admin and doesn't include a display name, the username is a fallback.
 
   #### **Registered Users**
 **Account Management**
@@ -706,11 +707,13 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 * **View and amend my profile details, so that i can keep my account up-to-date**
   A user can view their profile by clicking on the nav-link for profile and it will show the edit-profile form but with disabled fields. There is an edit button and a change password button on the form.  the edit button takes the user to the edit-profile form where they can change their first name, last name, display name and email address, so long as they are logged in and the profile user id matches the request user id. 
 
+  Users can see each others profiles, but authorisation checks means they can only edit their own profile and change their own password. This is to account for possible future functionality for showing logged-in users for trading and battles.
+
   *Note:* I decided specifically not to pass the user's email address through to the Stripe payment system, to leave the user with control over which email address they might want to be billed to. Some users might want to use a different email address for the app, than the one they have payment receipts sent to.
 
 **Shop Interaction**
 * **Browse the available cards in the shop, so that I can decide which ones to collect.**
-  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity with power total, and Price, so users can easily decide which ones to collect.
+  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity with power total, and Price, so users can easily decide which ones to collect. If a user already owns a card that is in the shop, the buy button will be replaced with a dsiabled version that features a message to this effect, preventing the user from purchasing a card they already own, or coming up against the unique constraint error of one usercard per customer.
 
 * **Filter the available cards in the shop, so that I can easily locate heroes/villains of specific types for my collection.**
   The shop cards can be filtered by Rarity, Alignment, or Universe, or a mix of the three, allowing users to quickly locate cards they might be looking or waiting for to add to their personal collection. Future updates would include a reset button for the filters.
@@ -725,12 +728,16 @@ Enables per-rotation pricing or other metadata without affecting the base charac
   Logged-in users can see a 'Buy Now' button in an additional footer on each card The button has a pulse effect on hover making it even more obvious. The button also displays the card's price and will take the user to a page with the card's details asking for confirmation of purchase. 
 
 * **Be given the option to continue or cancel my purchase, so I can change my mind if I want.**
-  When making a purchase, the buy now button will take the logged-in user to a confirmation page, where they will be given the option to cancel if they want. The cancel button will simply take them back in the browser to the shop. The url for the card-detail page features logic in the view to ensure that only cards that are in the current shop schedule can be viewed and purchased, and the url cannot be edited manually to force a non scheduled card to show.
+  When making a purchase, the buy now button will take the logged-in user to a confirmation page, where they will be given the option to cancel if they want. The cancel button will simply take them back in the browser to the shop. 
+  
+  Cards cannot be purchased via URL tampering: there is  logic in the view to ensure that only cards that are in the current shop schedule can be viewed and purchased, and the url cannot be edited manually to force a non scheduled card to show.
 
 **Binder / Collection Management**
 
 * **Access a binder of my collected cards, so that I can view my purchases and their additional unlocked content.**
   There is a link in the navbar to a logged-in user's binder, which features a grid of their purchased/collected cards. Each card features a front and a back. The front has an image, a rarity badge with their power total and an alignment badge, as well as a universe banner. Hovering over a card flips it over to display extended information about that character. Extended details include archetype, any aliases they might have, groups that they are a part of, their first appearance, their race, and a grid of badges for each of their individual power stats.
+
+  If a user has no cards in their binder, a message will display instead telling them their binder is empty with a link to the shop.
 
 * **Filter or search my binder, so that I can quickly view cards by type, rarity, or attributes (Hero, Villain, Universe, Power Rating).**
   The binder features filters for Rarity, Alignment and Universe, which also work in conjunction with each other, allowing a user to drill down into their collection. Future updates would include a reset button for the filters.
@@ -745,38 +752,48 @@ I decided against having a basket as I wanted to follow the Epic Store method or
 
 
 #### **Admin Users**
-
 **Collection Management**
 
 * **See all cards in the Master Collection, so that I can easily review and edit their content.**
+  Admin can view all cards in the master collection by clicking on 'Characters' in the Core Admin view.  The list is sorted initially by Character name ascending and the model stores the character's associated legend id from the legends.json file.
 
 * **Add new cards to the Master Collection, so that customers have more cards to collect.**
+  Admin can use the Django admin to add new characters to the Master Collection, allowing customers to have more cards to collect. Currently, extended character data —such as images, alignment, and universe— is pulled from a legends.json file that admin users cannot access directly. Each entry in legends.json is a dictionary with nested biographical dictionaries, and is linked to the CharacterCard table via a legend_id. At this stage, creating a new CharacterCard via the admin does not fully populate a 'card' in the app, because the additional data comes from the JSON file. A future feature would provide a form in the admin interface that allows users to create new entries in legends.json without requiring access to the project files.
 
 * **Filter the Master Collection by Rarity and Universe, so that I can easily find and manage specific cards and their sub-collections.**
+  The Characters admin area can be filtered by Archetype/Rarity and a search function is included for efficiency, so that admin can search for a particular character and locate them quickly.
 
 **Shop Management**
-
 * **See what cards are currently marked for shop rotation, so I can add and remove to the rotation as desired.**
+  Admins can see which cards are currently marked for shop rotation and manage the rotation as desired. The CharacterCards model includes a boolean field, can_participate_in_rotation, which allows admins to view in the characters admin area which characters are eligible for rotation. The admin interface also includes a Shop Scheduler section, which lists all schedules in descending order by start time so that the newest schedules appear at the top. Each schedule displays a list of allocated characters, allowing admins to see at a glance which characters are assigned to it. The join table, ShopScheduleItems, has been configured inline with the Shop Scheduler, enabling admins to click on a schedule and add or remove characters directly from that schedule.
 
 * **Schedule shop rotations and set/adjust the shop refresh schedule, so that new card batches appear at predictable times or immediately when needed.**
+  Admins can schedule shop rotations and set or adjust the shop refresh schedule, allowing new batches of cards to appear at predictable intervals or immediately when needed. The Shop Scheduler interface enables admins to create, view, and manage schedules, specifying start and end times for each rotation, and a rotation type (ie Daily). By managing these schedules, admins can control which characters are available in the shop at any given time and ensure that updates to the shop occur consistently or on demand.
+
+  The shop view also checks for an active schedule and, if none exists, will create one automatically that lasts exactly 24 hours. A model constraint ensures that each start_time is unique, preventing edge cases where multiple users could either simultaneously trigger the creation of duplicate schedules, or cause errors.
 
 * **Set price bandings based on a card’s power rating, so that cards of higher rarity automatically have higher prices and shop pricing remains consistent.**
+  Card prices can bet set via the Rarity admin area. Each card is linked to a Rarity, and price is set per Rarity so that all cards of a particular Rarity are of equal economical value. Also allows admin to easily change the price banding of a whole set of card rarities quite easily.
 
 * **Adjust the prices for each rarity band or individual card, so that I can control the shop economy and run promotions without changing the underlying card power ratings.**
+  Admin has the ability to set sale prices per character card when allocating a character to a shop scheduler. This allows the functionality for special sale prices. This functionality isn't currently implemented in the templates/views, but is ready for future sales!
 
 * **Set card availability, so that I can control which cards are on sale or temporarily removed from the shop, supporting special offers and promotions.**
+  The CharacterCards model includes a boolean field, can_participate_in_rotation, which means cards can be added into, or taken out of, shop rotation. The views specifically check for this and the template won't render cards where this bollean is false. If a card is currently in the shop and the rotation status is changed, the card will disappear from the shop.
 
 **User Management**
-
 * **See a list of all registered users, so that I can support accounts as needed.**
+  All users and their inline user profiles can be viewed in the admin area. Each account will also display purchased cards.
 
 * **Track purchase history, so that I can troubleshoot issues and handle refunds.**
+  Admin users can see a Usercards admin area that lists all purchased cards by date ascending, with the Stripe payment reference and the app-generated order reference that is more user-friendly. Usercards also show inline on a user account in the admin area, so that admin can quickly verify transactions, manage a user's collection, and troubleshoot purchase issues.
 
 **Payments & Security**
-
 * **Manage Stripe payment settings and view transaction logs, so that I can ensure secure and smooth payments.**
+  Admins are able to manage Stripe payment settings and view transaction logs via the Stripe dashboard, ensuring awareness of payments and maintaining confidence in the system’s financial operations. 
 
 * **Back up the Master Collection and user data, so that content is safe in case of system failure.**
+  While direct in-app payment backup and logging aren’t implemented, the system is designed with secure Stripe integration in mind.
 
 
 ### *Automated Testing*
