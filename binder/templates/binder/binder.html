@@ -1,4 +1,8 @@
-<!--  -->
+<!--
+Binder.html renders the logged-in user's collected and purchased cards in a responsive grid layout.
+Cards are ordered by combined power value in descending order, ensuring higher-rarity cards appear first.
+The template includes filtering by rarity, alignment, and universe.
+-->
 {% extends "base.html" %}
 {% load static %}
 {% block title %}
@@ -150,6 +154,7 @@ My Team
         </div>
         {% endfor %}
         {% else %}
+        <!-- If the customer has no cards in their binder, they will see a button to go to the shop -->
         <div class="col d-flex flex-column align-items-center mt-5">
             <a href="{% url 'shop' %}" class="btn buy-button"><span class="unskew">Go to Shop</span></a></div>
         {% endif %}
