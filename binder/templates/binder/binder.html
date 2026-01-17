@@ -17,13 +17,13 @@ My Team
     <div class="row ms-xxl-6 me-xxl-6 mb-2">
         <div class="col-10 text-center mx-auto mt-3 pt-3 mt-md-4 glow mb-4" id="binder-heading">
             <h2 class="heading">{{ user.get_display_name|default:user.username }}'s Binder</h2>
-            <p>
+
                 {% if characters %}
-                View your ultimate multiversal team!
+                <p>View your ultimate multiversal team! Find additional info on the back of the cards!</p>
                 {% else %}
-                {{ user.get_display_name|default:user.username }}, your binder is empty!
+                <p>{{ user.get_display_name|default:user.username }}, your binder is empty!</p>
                 {% endif %}
-            </p>
+
         </div>
         <!-- Row for filter dropdowns -->
         <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center">

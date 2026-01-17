@@ -39,3 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
+// Grab article cards and toggle the flipped class on click, so that the cards will flip over and back again on all devices, and several can be flipped and compared at the same time.
+const cards = document.querySelectorAll('article.binder-card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+    });
+});

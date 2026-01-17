@@ -260,11 +260,33 @@ select:hover {
     display: none;
     transition: transform .2s;
     border: 2px solid transparent;
+    cursor: pointer;
+    outline: none;
 }
 
 /* Fixed size for binder card image, changes at different screen sizes */
 .binder-card img {
     height: 300px;
+}
+
+/* Transparent border on the inner container to stop layout shift on hover */
+.binder-card .card-inner {
+    border: 2px solid transparent;
+}
+
+/* Hover effects applied to all binder cards */
+.binder-card:hover .card-inner {
+    z-index: 99;
+    border-radius: 16px;
+    outline: none;
+    box-shadow: 0 0 20px #9ecaed;
+    border: 2px solid #9ecaed;
+}
+
+
+/* A horizontal flip class applied on click to all binder cards*/
+.binder-card.flipped .card-inner {
+    transform: rotateY(180deg);
 }
 
 /* Stripped back card title for better flex layout */
@@ -281,14 +303,6 @@ select:hover {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-}
-
-/* A horizontal flip when the mouse moves over the flip box container */
-.binder-card:hover .card-inner {
-    transform: rotateY(180deg);
-    border-radius: 16px;
-    outline: none;
-    box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Position the front and the back of the card */
