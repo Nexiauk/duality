@@ -648,7 +648,7 @@ select:hover {
     }
 }
 
-/* media query for screens 1440px and up*/
+/* Media query for screens 1440px and up*/
 @media screen and (min-width:1440px) {
 
     h1 {
@@ -685,7 +685,7 @@ select:hover {
     }
 }
 
-/* media query for screens 1700px and up*/
+/* Media query for screens 1700px and up*/
 @media screen and (min-width:1700px) {
 
     h1 {
@@ -706,7 +706,6 @@ select:hover {
         margin-top: 2.5rem !important;
     }
 }
-
 
 /* Media query for screens 2560px and up: scale all elements proportionally to maintain readability and spacing */
 @media screen and (min-width:2560px) {

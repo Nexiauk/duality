@@ -1,3 +1,11 @@
+/** binder.js: 
+ * Handles binder page interactions:
+ * - Shows binder cards after loader to give the DOM time to load content fully
+ * - Filters cards by rarity, alignment, and universe
+ * - Flips cards on click to view front/back
+ */
+
+// Delay UI swap in the binder: hide loader after 2s, then reveal all shop cards
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         const loader = document.querySelector(".loader");
@@ -8,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, 3000);
 
-    // Filtering for the shop
+    // Filtering for the binder based on rarity, alignment and universe.
+    // 'All' means no filter is applied for that category
+    // Hides the card and its parent column so layout collapes properly.
     const cards = document.querySelectorAll(".binder-card");
     const selects = document.querySelectorAll(".filter");
     const rarity = document.getElementById("rarities");
@@ -40,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Grab article cards and toggle the flipped class on click, so that the cards will flip over and back again on all devices, and several can be flipped and compared at the same time.
+// Grab article cards and toggle the flipped class on click, so that the cards will flip over and back again on all devices, and several can be flipped and compared at the same time. Css handles the flip animation.
 const cards = document.querySelectorAll('article.binder-card');
 cards.forEach(card => {
     card.addEventListener('click', () => {
