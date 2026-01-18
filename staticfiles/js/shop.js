@@ -1,5 +1,13 @@
 
-// Delay UI swap in the shop: hide loader after 2s, then reveal all shop cards
+/**
+ * shop.js
+ * Handles shop page interactions:
+ * - Shows shop cards after loader (waits 3 seconds for DOM/content)
+ * - Filters cards by rarity, alignment, and universe
+ * - Handles "cancel" buttons to navigate back in browser history
+ */
+
+// Delay UI swap in the shop and on the card-detail template: hide loader after 3s, then reveal all cards
 document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         const loader = document.querySelector(".loader");
@@ -10,7 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
     }, 3000);
-    // Filtering for the shop
+    
+    // Filtering for the shop based on rarity, alignment and universe.
+    // 'All' means no filter is applied for that category
+    // Hides the card and its parent column so layout collapes properly.
     const cards = document.querySelectorAll(".shop-card");
     const selects = document.querySelectorAll(".filter");
     const rarity = document.getElementById("rarities");
@@ -40,12 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
-    // A back button that navigates the browser history.
+    // A back button that navigates the browser history: acts as a cancel function on the card detail page.
     document.querySelectorAll(".cancel").forEach(button => {
         button.addEventListener("click", (e) => {
             e.preventDefault();
             history.back();
-            console.log("Hello");
         });
     });
 });
