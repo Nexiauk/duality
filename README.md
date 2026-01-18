@@ -972,7 +972,7 @@ I decided against having a basket as I wanted to follow the Epic Store method or
 ### **Manual Testing**
 
 #### **Browser Testing**
-##### Chrome
+##### **Chrome**
 Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 
 * All nav links work on all pages
@@ -995,11 +995,7 @@ Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 * Admin screen is usable and works as expected
 
 
-##### Edge
-Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
-
-
-##### FireFox
+##### **Edge**
 Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 
 * All nav links work on all pages
@@ -1022,7 +1018,30 @@ Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 * Admin screen is usable and works as expected
 
 
-##### Safari
+##### **FireFox**
+Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
+
+* All nav links work on all pages
+* All external links open in a new browser window
+* The layout reflows and changes as expected across different screen sizes
+* The hero image adjusts as it should on different screen sizes
+* The logo text always links back to the home page from every other page
+* Hover colours work as expected on laptops and desktops
+* All required form fields have to be filled in
+* The burger icon expands and collapses the nav list as expected on mobile/tablet screens. If left open, it will * disappear by itself when navigating to another page.
+* Shop card hover effects work as expected on non touch screens
+* Binder card hover effects work as expected on non touch screens
+* Button hover effects work as expected on non touch screens
+* Active effects apply as expected
+* Binder card flipping works as expected and shows the correct content.
+* Binder card content doesn't bleed through from the other side
+* Profile content can be viewed and edited
+* Loader works as expected and cards hide/display in the shop/binder/card-detail
+* Login/Register/Logout works as expected
+* Admin screen is usable and works as expected
+
+
+##### **Safari**
 Mobile 320px.
 
 * All nav links work on all pages
