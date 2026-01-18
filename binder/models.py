@@ -6,7 +6,6 @@ built-in handling for deleted users to preserve purchase
 history.
 """
 from django.db import models
-from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
 from core.models import CharacterCard
@@ -15,7 +14,7 @@ from decimal import Decimal
 
 class Usercards(models.Model):
     """
-    Represents a user card record for a single purchase.
+    Represents a usercard record for a single purchase.
 
     Stores Stripe payment id and a user-friendly
     order reference, as well as purchase date/time,
@@ -53,7 +52,7 @@ class Usercards(models.Model):
     class Meta:
         """
         Constraint added so an owner cannot have more than
-        one UserCard for the same character
+        one UserCard for the same character.
         """
         verbose_name = _("Usercards")
         verbose_name_plural = _("Usercards")

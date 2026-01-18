@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Google font import */
 @import url('https://fonts.googleapis.com/css2?family=Inder&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Racing+Sans+One&display=swap');
 
@@ -24,6 +31,17 @@ html {
 
 /* Linear gradient colour for the body using root variables, applies theme background gradient across the entire page */
 body {
+    background-image: -webkit-gradient(linear,
+            left top, right top,
+            from(var(--ecstatic-red)),
+            color-stop(20%, var(--skylla)),
+            color-stop(80%, var(--fuschia-blue)),
+            to(var(--nasturtium-shoot)));
+    background-image: -o-linear-gradient(left,
+            var(--ecstatic-red) 0%,
+            var(--skylla) 20%,
+            var(--fuschia-blue) 80%,
+            var(--nasturtium-shoot) 100%);
     background-image: linear-gradient(90deg,
             var(--ecstatic-red) 0%,
             var(--skylla) 20%,
@@ -50,8 +68,11 @@ h1 {
     font-style: italic;
     margin-bottom: 0;
     padding: 0 12px 0 0;
+    background: -webkit-gradient(linear, left top, right top, from(var(--ecstatic-red)), color-stop(45%, var(--vivid-yellow)), to(var(--skylla)));
+    background: -o-linear-gradient(left, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
     background: linear-gradient(90deg, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
-    background-clip: text;
+    -webkit-background-clip: text;
+            background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
 }
@@ -103,8 +124,11 @@ option {
 
 /* Allocates available horizontal space in the nav bar equally between nav items */
 .nav-item {
-    flex-basis: 0;
-    flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     text-align: center;
     border: 1px solid #212529;
 }
@@ -122,13 +146,18 @@ option {
 select:hover {
     background-color: var(--vivid-yellow);
     cursor: pointer;
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
     transition: 0.5s ease-in;
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    -webkit-box-shadow: 0 0 10px #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
 }
 
 .nav-link:hover {
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
     transition: 0.5s ease-in;
     font-weight: bold;
     color: #000000;
@@ -137,11 +166,13 @@ select:hover {
 /* Styling for active nav-items creates a glowing border */
 .navbar .nav-item.active {
     background-color: var(--vivid-yellow);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    -webkit-box-shadow: 0 0 10px #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Styles the nav-link text for active nav-items */
@@ -162,10 +193,13 @@ select:hover {
 .glassmorphic {
     background: var(--eclectic-transparent);
     border-radius: 16px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(5px);
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* Applies h3-like styling to the universe banners on the cards */
@@ -189,14 +223,21 @@ select:hover {
     border-radius: 0;
     border: 0;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: absolute;
     left: 0;
     right: 0;
     top: 65%;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Overlay banner for the back of binder cards */
@@ -206,14 +247,21 @@ select:hover {
     border-bottom-right-radius: 0;
     border: 0;
     padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     top: 0;
     left: 0;
     right: 0;
     position: absolute;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Remove unneeded space below h5 elements in the card banners */
@@ -226,17 +274,24 @@ select:hover {
 /* Initially hides the shop cards while the loaders are spinning */
 .shop-card {
     display: none;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
     transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
 }
 
 /* Shop cards grow on hover with a glow effect */
 .shop-card:hover {
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     z-index: 99;
     border-radius: 16px;
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    -webkit-box-shadow: 0 0 10px #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Glassmorphic style effects for shop and binder headings so they appear to glow at all times with no animation */
@@ -245,20 +300,28 @@ select:hover {
     border-radius: 16px;
     padding: 0.5rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
     z-index: 99;
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    -webkit-box-shadow: 0 0 10px #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Binder flip card container, with perspective for 3D effect */
 .binder-card {
+    -webkit-perspective: 1000px;
     perspective: 1000px;
     background-color: transparent;
     height: 452px;
     display: none;
+    -webkit-transition: -webkit-transform .2s;
+    transition: -webkit-transform .2s;
+    -o-transition: transform .2s;
     transition: transform .2s;
+    transition: transform .2s, -webkit-transform .2s;
     border: 2px solid transparent;
     cursor: pointer;
     outline: none;
@@ -279,12 +342,14 @@ select:hover {
     z-index: 99;
     border-radius: 16px;
     outline: none;
+    -webkit-box-shadow: 0 0 20px #9ecaed;
     box-shadow: 0 0 20px #9ecaed;
     border: 2px solid #9ecaed;
 }
 
 /* A horizontal flip class applied on click to all binder cards*/
 .binder-card.flipped .card-inner {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
 
@@ -300,8 +365,15 @@ select:hover {
     width: 100%;
     height: 100%;
     text-align: center;
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: -webkit-transform 0.8s;
+    -o-transition: transform 0.8s;
     transition: transform 0.8s;
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 /* Position the front and the back of the card */
@@ -310,12 +382,13 @@ select:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     /* Safari */
+    -webkit-backface-visibility: hidden;
+    /* Firefox and modern browsers */
     backface-visibility: hidden;
 }
 
-/* Styling of the back of the binder flip card */
+/* Styling of the back of the binder flip card, starts rotated. */
 .card-back {
     border-radius: 16px;
     transform: rotateY(180deg);
@@ -386,21 +459,27 @@ select:hover {
 .account-button {
     background-color: var(--vivid-yellow);
     color: black;
-    transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+        -ms-transform: skew(-30deg);
+            transform: skew(-30deg);
     border-radius: 0;
 }
 
 .cancel {
     background-color: var(--ecstatic-red);
     color: white;
-    transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+        -ms-transform: skew(-30deg);
+            transform: skew(-30deg);
     border-radius: 0;
 }
 
 .btn:disabled {
     background-color: var(--ecstatic-red);
     color: white;
-    transform: skew(-30deg);
+    -webkit-transform: skew(-30deg);
+        -ms-transform: skew(-30deg);
+            transform: skew(-30deg);
     border-radius: 0;
     opacity: 1;
     border: none;
@@ -409,7 +488,9 @@ select:hover {
 /* Unskew class applied to the skewed items so the text doesn't mutate visually */
 .unskew {
     display: inline-block;
-    transform: skew(30deg);
+    -webkit-transform: skew(30deg);
+        -ms-transform: skew(30deg);
+            transform: skew(30deg);
     font-style: italic;
     font-weight: bold;
     padding-top: 3px;
@@ -422,28 +503,68 @@ select:hover {
 .cancel:hover {
     background-color: var(--skylla);
     color: white;
-    transform: skew(-30deg);
-    animation: pulse 2s infinite;
+    -webkit-transform: skew(-30deg);
+        -ms-transform: skew(-30deg);
+            transform: skew(-30deg);
+    -webkit-animation: pulse 2s infinite;
+            animation: pulse 2s infinite;
 }
 
 /* Pulsing animation used when hovering over buttons, skewed to match the buttons and nav items */
-@keyframes pulse {
+@-webkit-keyframes pulse {
     0% {
-        transform: scale(0.95);
-        transform: skew(-30deg);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-transform: skew(-30deg);
+                transform: skew(-30deg);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
 
     70% {
-        transform: scale(1);
-        transform: skew(-30deg);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform: skew(-30deg);
+                transform: skew(-30deg);
+        -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
 
     100% {
-        transform: scale(0.95);
-        transform: skew(-30deg);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-transform: skew(-30deg);
+                transform: skew(-30deg);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+@keyframes pulse {
+    0% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-transform: skew(-30deg);
+                transform: skew(-30deg);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        -webkit-transform: skew(-30deg);
+                transform: skew(-30deg);
+        -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: scale(0.95);
+                transform: scale(0.95);
+        -webkit-transform: skew(-30deg);
+                transform: skew(-30deg);
+        -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
 
@@ -456,7 +577,8 @@ select:hover {
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
 }
 
 /* Spinning animations for screen loader on shop page. Works cross-browser. */
@@ -472,11 +594,13 @@ select:hover {
 
 @keyframes spin {
     0% {
-        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
     }
 
     100% {
-        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
     }
 }
 
@@ -485,12 +609,16 @@ select:hover {
     border-radius: 5%;
     background-color: var(--vivid-yellow);
     cursor: pointer;
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
     transition: 0.5s ease-in;
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    -webkit-box-shadow: 0 0 10px #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Hover colour for the square socials icon */
@@ -498,12 +626,16 @@ select:hover {
     background-color: var(--vivid-yellow);
     border-radius: 5%;
     cursor: pointer;
+    -webkit-transition: 0.5s ease-in;
+    -o-transition: 0.5s ease-in;
     transition: 0.5s ease-in;
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
-    box-shadow: 0 0 10px #9ecaed;
+    -webkit-box-shadow: 0 0 10px #9ecaed;
+            box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Media queries start here: adjusts card sizes, banners, fonts and content spacing across screen sizes from 320px up to 2560px */
@@ -628,12 +760,16 @@ select:hover {
     /* Skew transform applied to create forward-leaning nav items for a dynamic effect on larger screens only */
     .nav-item {
         background-color: var(--skylla);
-        transform: skew(-30deg);
+        -webkit-transform: skew(-30deg);
+            -ms-transform: skew(-30deg);
+                transform: skew(-30deg);
     }
 
     /* Opposite skew applied to the nav link so the text looks straight in the nav items, only on larger screens */
     .nav-link {
-        transform: skew(30deg);
+        -webkit-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+                transform: skew(30deg);
         display: inline-block;
         text-decoration: none;
     }
