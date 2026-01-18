@@ -122,6 +122,10 @@ option {
     margin-bottom: 0;
 }
 
+.navbar-brand {
+    margin-right: 0;
+}
+
 /* Allocates available horizontal space in the nav bar equally between nav items */
 .nav-item {
     -ms-flex-preferred-size: 0;
