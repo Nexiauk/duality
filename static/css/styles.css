@@ -22,7 +22,7 @@ html {
     overflow-y: scroll;
 }
 
-/* Linear gradient colour for the body using root variables */
+/* Linear gradient colour for the body using root variables, applies theme background gradient across the entire page */
 body {
     background-image: linear-gradient(90deg,
             var(--ecstatic-red) 0%,
@@ -64,7 +64,7 @@ h3 {
     margin: 0.5em 0;
 }
 
-/* Heading and title styling from h2-h6 plus card titles, uses a root variable for font family */
+/* Heading and title styling from h2-h6 plus card titles, uses a root variable for font family and applies italic styling. */
 h2,
 h3,
 h5,
@@ -85,18 +85,18 @@ div label {
     background-color: var(--eclectic);
 }
 
-/* Select styling to match up with the styling of other form elements*/
+/* Styling of select form inputs and select options*/
 select {
     border-radius: 16px;
     padding: 10px;
     width: 180px;
 }
 
-/* Style options inside a select so the text is larger than standard */
 option {
     font-size: 1rem;
 }
 
+/* Remove bottom-margin for alerts */
 .alert {
     margin-bottom: 0;
 }
@@ -117,7 +117,7 @@ option {
     font-style: italic;
 }
 
-/* Hover styling for nav items and nav links, and select dropdown filters */
+/* Hover styling for nav items and nav links, and select dropdown filters, applies a golden colour and a glow. */
 .nav-item:hover,
 select:hover {
     background-color: var(--vivid-yellow);
@@ -168,7 +168,7 @@ select:hover {
     box-sizing: border-box;
 }
 
-/* Styling applied to universe banner on the cards to match styling to h3 */
+/* Applies h3-like styling to the universe banners on the cards */
 .universe {
     font-size: 1.8rem;
     font-weight: 500;
@@ -239,7 +239,7 @@ select:hover {
     box-shadow: 0 0 10px #9ecaed;
 }
 
-/* Glassmorphic style effects for shop and binder headings */
+/* Glassmorphic style effects for shop and binder headings so they appear to glow at all times with no animation */
 .glow {
     background: var(--eclectic-transparent);
     border-radius: 16px;
@@ -274,7 +274,7 @@ select:hover {
     border: 2px solid transparent;
 }
 
-/* Hover effects applied to all binder cards */
+/* Glowing hover effects applied to all binder cards, set on the inner container so the effects flip when the card does. */
 .binder-card:hover .card-inner {
     z-index: 99;
     border-radius: 16px;
@@ -282,7 +282,6 @@ select:hover {
     box-shadow: 0 0 20px #9ecaed;
     border: 2px solid #9ecaed;
 }
-
 
 /* A horizontal flip class applied on click to all binder cards*/
 .binder-card.flipped .card-inner {
@@ -372,15 +371,17 @@ select:hover {
     color: black;
 }
 
+/* Text styling applied only to archetypes to keep it consistent across cards and not break layout */
 .archetype {
     font-size: medium;
 }
 
+/* Text styling applied only to badges to keep it consistent across cards and not break layout */
 .badge {
     font-size: small;
 }
 
-/* Custom buttons, skewed to match nav items */
+/* Custom buttons, skewed to match nav items for a dynamic visual effect */
 .buy-button,
 .account-button {
     background-color: var(--vivid-yellow);
@@ -405,7 +406,7 @@ select:hover {
     border: none;
 }
 
-/* Unskew class applied to the button span text to unmutate it */
+/* Unskew class applied to the skewed items so the text doesn't mutate visually */
 .unskew {
     display: inline-block;
     transform: skew(30deg);
@@ -425,7 +426,7 @@ select:hover {
     animation: pulse 2s infinite;
 }
 
-/* Pulsing animation used on hovering over the buttons, skewed to match the button */
+/* Pulsing animation used when hovering over buttons, skewed to match the buttons and nav items */
 @keyframes pulse {
     0% {
         transform: scale(0.95);
@@ -458,7 +459,7 @@ select:hover {
     animation: spin 2s linear infinite;
 }
 
-/* Spinning animations for screen loader on shop page */
+/* Spinning animations for screen loader on shop page. Works cross-browser. */
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -505,7 +506,7 @@ select:hover {
     box-shadow: 0 0 10px #9ecaed;
 }
 
-/* Media queries start here */
+/* Media queries start here: adjusts card sizes, banners, fonts and content spacing across screen sizes from 320px up to 2560px */
 /* Media query for screens 320px and up */
 @media screen and (min-width:320px) {
     footer {
@@ -534,16 +535,19 @@ select:hover {
         padding-bottom: 100px;
     }
 
+    /* Pushes the main content down so it doesn't hide behind the navbar and stops overflow */
     main {
         padding-left: 20px;
         padding-right: 20px;
         margin-top: 50px;
     }
 
+    /* Position of the banner on the front of the shop and binder cards, values calculated visually to align over card images. */
     .card-front-banner {
         top: 255px;
     }
 
+    /* Shop and binder card custom sizes to ensure content doesn't overflow at different screen sizes */
     .shop-card {
         min-width: 270px;
         min-height: 300px;
@@ -557,6 +561,7 @@ select:hover {
         height: 300px;
     }
 
+    /* Prevents layout collapse in flex containers */
     .character-card-body {
         height: 148px;
     }
@@ -568,6 +573,7 @@ select:hover {
         font-size: 2.5rem;
     }
 
+    /* Custom sizing for the navbar to give breathing room between navbar brand content and nav items */
     .navbar-nav {
         width: 40%;
     }
@@ -619,13 +625,13 @@ select:hover {
         width: 97%;
     }
 
-    /* Skew transform applied to create forward-leaning nav items */
+    /* Skew transform applied to create forward-leaning nav items for a dynamic effect on larger screens only */
     .nav-item {
         background-color: var(--skylla);
         transform: skew(-30deg);
     }
 
-    /* Opposite skew applied to the nav link so the text looks straight */
+    /* Opposite skew applied to the nav link so the text looks straight in the nav items, only on larger screens */
     .nav-link {
         transform: skew(30deg);
         display: inline-block;
@@ -702,7 +708,7 @@ select:hover {
 }
 
 
-/* Media query for screens 2560px and up */
+/* Media query for screens 2560px and up: scale all elements proportionally to maintain readability and spacing */
 @media screen and (min-width:2560px) {
     footer {
         padding-top: 1.2rem;
@@ -753,7 +759,7 @@ select:hover {
         font-size: 1.8rem;
     }
 
-   .form-control {
+    .form-control {
         font-size: 1.8rem;
     }
 
@@ -761,6 +767,7 @@ select:hover {
         font-size: 1.8rem;
     }
 
+    /* Scales hero content proportionately on large screens */
     .hero-card .card-title,
     .heading {
         font-size: 3rem;
@@ -790,11 +797,13 @@ select:hover {
         padding: 0 1.2rem 2.5rem 1.2rem;
     }
 
+    /* Scales hero-card content proportionately on larger screen sizes. */
     .hero-card {
         font-size: 1.8rem;
         padding: 2.2rem;
     }
 
+    /* Large margin on page headings to prevent crowding and give content room to breathe */
     #shop-heading,
     #binder-heading,
     #profile-heading {
