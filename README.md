@@ -100,6 +100,8 @@ That’s when I stumbled across the [Superhero API](https://www.superheroapi.com
 
 It’s not just about collecting cards. It’s about creating your own super-powered team — heroes or villains — and, maybe along the way, finding that illustrated storytelling can make reading fun again.
 
+[Back to Table of Contents](#table-of-contents)
+
 ## **Goals**
 * Build an addictive, card-collecting experience.  
 * Display hero and villain cards in a binder.  
@@ -211,6 +213,8 @@ It’s not just about collecting cards. It’s about creating your own super-pow
 
 * **Back up the Master Collection and user data**, so that content is safe in case of system failure.
 
+[Back to Table of Contents](#table-of-contents)
+
 ## **Design**
 
 ### *Colour Scheme*
@@ -275,6 +279,8 @@ The only changes made were to the layout created by Bootstrap Studio in places. 
 I added filters to the shop and the binder pages
 
 Everything else stayed pretty much the same - I hadn't added styling to the wireframes this time, I just used them to mockup a skeletal layout for each page.
+
+[Back to Table of Contents](#table-of-contents)
 
 ## **Features**
 
@@ -469,6 +475,8 @@ The profile page features a disabled version of the edit-profile form, with an e
 
 * Characters admin contains additional actions for taking characters out of rotation, and putting them back in again. It also has additional sorting options by archetype and rarity, and a searchbar so that admin can perform a quick search by character name if they want to delete/perform an action on that character.
 
+[Back to Table of Contents](#table-of-contents)
+
 ## **Security Features**
 
 ### *Authentication & User Management*
@@ -507,6 +515,7 @@ The profile page features a disabled version of the edit-profile form, with an e
 - Stripe API keys are stored securely using environment variables.
 - The application only receives non-sensitive payment information such as transaction identifiers and payment status.
 
+[Back to Table of Contents](#table-of-contents)
 
 ## **Future Features**
 * Ability to trade cards  
@@ -525,6 +534,8 @@ The profile page features a disabled version of the edit-profile form, with an e
 * Purchases section on the profile page to make the reporting of transaction errors easier.
 * A form that allows admin users to update the legends.json file when creating a new character card.
 * The ability to define sale prices per scheduled card. Currently exists on the ShopScheduleItems model, but hasn't been implemented yet.
+
+[Back to Table of Contents](#table-of-contents)
 
 ## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
@@ -681,6 +692,8 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 | can_participate_in_rotation | boolean | default=True                                       |
 | archetype                   | int     | FK → `ARCHETYPE.id`, on_delete=PROTECT             |
 | rarity                      | int     | FK → `RARITY.id`, on_delete=PROTECT, NULL=False    |
+
+[Back to Table of Contents](#table-of-contents)
 
 ## **Testing**
 
@@ -1117,7 +1130,7 @@ Key areas covered:
 - Checks string and helper methods return correct values (__str__ returns the owner's username, character_name returns the associated character name, order_ref generates the proper reference format).
 - Verifies verbose names (singular and plural) are correctly configured.
 
-
+[Back to Table of Contents](#table-of-contents)
 
 ## **Technology Used**
 
@@ -1148,6 +1161,8 @@ Key areas covered:
 * [Superhero API](https://www.superheroapi.com/)  
 * [Visual Studio Code](https://code.visualstudio.com/)  
 * [Whitenoise](https://whitenoise.readthedocs.io/en/stable/django.html)
+
+[Back to Table of Contents](#table-of-contents)
 
 ## **Coding Help**
 
@@ -1181,7 +1196,7 @@ Key areas covered:
 * Help rendering form fields, while using crispy forms, as readonly. Decided not to use this method ultimately, created the form with disabled fields insteads in the view - [stackoverflow](https://stackoverflow.com/questions/21559380/django-crispy-forms-readonly)
 * Help with setting up email configuration in Django, so that allauth prints to the console for registration and passwords, and Stripe sends emails about payment [medium.com](https://medium.com/dajngo/email-configuration-in-django-3c7d9e149445)
 
-
+[Back to Table of Contents](#table-of-contents)
 
 ## **Interesting Bugs**
 * The API I wanted to use came with a json file that would allow me to import the characters directly into the database, however there was a lot of extended information that didn't make sense to store in the database without breaching Database Normalisation. I ended up creating a basic CharacterCard model and then stored the json file in a data folder for the app to open and use the extended data.
@@ -1192,6 +1207,8 @@ Key areas covered:
     4. **fix_legend_id** to open the dumped data for the CharacterCard model, iterate through the file and for each item, grab the pk and create a legend_id field that matches the pk number, then output to a new fixture file. I was then able to flush the database and reimport from fixtures.
 * Not a bug per se, but originally I had the home view opening up the legends json file at every request, in order to iterate through it and match up with the randomly generated sample of characters from the Charactercard model. This is okay with a small amount of data for a course project, but in actual fact its not very efficent or scalable. I used various resources (Django documentation and ChatGPT) to create a ready method in AppConfig to load up the data once at startup and store it in a global variable in my project's data folder. I then removed the file opening from the home view and iterated through the data stored in the global variable instead.
 * The earlier import of json data into the CharacterCard model meant I had to create a custom pk for the model that wouldn't auto-increment, as I needed to manually assign IDs that already existed in the JSON dictionaries for each character. A  test later on reminded me that Django would no longer auto-assign and increment IDs to any future characters added to the app. This was sorted using the custom management command **fix_legend_id** to assign a separate integer field to legend_id that matches the current PK for each character, I was then able to change id to an AutoField.
+
+[Back to Table of Contents](#table-of-contents)
 
 ## **Deployment**
 
@@ -1236,7 +1253,6 @@ Key areas covered:
    os.environ['CLOUDINARY_URL'] = 'your-cloudinary-url'
    os.environ['DATABASE_URL'] = 'your-local-database-url'
 3. Ensure env.py is added to .gitignore so it is never pushed to GitHub
-
 
 ### Running Database Migrations and Collecting Static Files Locally
 1. Check database migrations by executing `python manage.py makemigrations`.
@@ -1285,14 +1301,14 @@ Key areas covered:
 - Monitor logs regularly to catch any runtime errors.  
 - Enable automatic deployment from GitHub for continuous updates.    
 
-## **Credits**
+[Back to Table of Contents](#table-of-contents)
 
+## **Credits**
 ### *Data*
 
 * Data for 731 superheroes and villains - [SuperHeroAPI](https://www.superheroapi.com/)
 
 ### *Media*
-
 * Media for 731 superheroes and villains - [SuperHeroAPI](https://www.superheroapi.com/)
 * Socials icons for the Header/Footer - [Bootstrap Icons](https://icons.getbootstrap.com/)
 * Hero image from [freepik.com](https://www.freepik.com/free-ai-image/illustrated-rendering-twin-avatar_94938018.htm#fromView=image_search&page=1&position=30&uuid=3f919ced-a2ab-4eae-9f4f-620c72eddb72&query=heroes+and+villains)
@@ -1304,3 +1320,5 @@ Key areas covered:
 ### *Code*
 * CSS Animation - The Pulse Effect [florin-pop.com](https://florin-pop.com/blog/2019/03/css-pulse-effect/)
 * CSS Button Skew -  [codepen.io](https://codepen.io/dunyung1/pen/ZEGGWwB?editors=1100)
+
+[Back to Table of Contents](#table-of-contents)
