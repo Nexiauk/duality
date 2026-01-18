@@ -713,7 +713,7 @@ select:hover {
         font-size: 2.5rem;
     }
 
-    /* Custom sizing for the navbar to give breathing room between navbar brand content and nav items */
+    /* Custom sizing for the collapsed navbar, so hover effects don't stretch full screen */
     .navbar-nav {
         width: 40%;
     }
@@ -749,9 +749,6 @@ select:hover {
 
 /* media query for screens 1024px and up*/
 @media screen and (min-width:1024px) {
-    .nav-link {
-        color: black;
-    }
 
     h1 {
         font-size: 1.8rem;
@@ -762,8 +759,20 @@ select:hover {
     }
 
     .navbar-nav {
-        width: 97%;
+        width: 40%;
     }
+
+    .shop-card {
+        min-width: 360px;
+        min-height: 320px;
+    }
+
+    .binder-card {
+        min-width: 360px;
+    }
+}
+
+@media screen and (min-width:1200px) {
 
     /* Skew transform applied to create forward-leaning nav items for a dynamic effect on larger screens only */
     .nav-item {
@@ -780,18 +789,9 @@ select:hover {
         transform: skew(30deg);
         display: inline-block;
         text-decoration: none;
-    }
-
-    .shop-card {
-        min-width: 360px;
-        min-height: 320px;
-    }
-
-    .binder-card {
-        min-width: 360px;
+        color: black;
     }
 }
-
 /* Media query for screens 1440px and up*/
 @media screen and (min-width:1440px) {
 
@@ -898,6 +898,10 @@ select:hover {
         font-size: 1rem;
     }
 
+    #id_remember {
+        font-size: 1.8rem;
+    }
+
     li {
         font-size: 1.8rem;
     }
@@ -989,6 +993,8 @@ select:hover {
         font-size: 1.6rem;
         margin-top: 10px;
         margin-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 
     #messages {

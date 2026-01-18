@@ -27,12 +27,12 @@ in read-only mode with a link to edit the profile.
                            value="{{ redirect_field_value }}" />
                 {% endif %}
             </form>
-            <!-- Link to the edit-profile page -->
+            <!-- Link to the edit-profile page and to change password -->
             <div class="col-12 gap-md-4 d-flex flex-column flex-md-row">
                 {% if user.is_authenticated and request.user.id == profile_user.id %}
                     <a href="{% url 'edit-profile' id=request.user.id %}"
-                       class="btn account-button mt-4"><span class="unskew">Edit Profile &raquo;</span></a>
-                    <a href="{% url 'account_change_password' %}" class="btn account-button mt-3 mt-md-4"><span class="unskew">Change Password &raquo;</span></a>
+                       class="btn account-button mt-4 w-100"><span class="unskew">Edit Profile &raquo;</span></a>
+                    <a href="{% url 'account_change_password' %}" class="btn account-button mt-3 mt-md-4 w-100"><span class="unskew">Change Password &raquo;</span></a>
                 {% endif %}
             </div>
         </div>
