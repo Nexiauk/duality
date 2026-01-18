@@ -818,6 +818,7 @@ I decided against having a basket as I wanted to follow the Epic Store method or
 #### **The JSHint Validation Service**
 * binder.js - No errors.
 * shop.js - No errors.
+* cancel.js - No errors.
 
 #### [**CI Python Linter**](https://pep8ci.herokuapp.com/)
 * **Core App**
