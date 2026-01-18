@@ -338,7 +338,8 @@ select:hover {
 }
 
 /* Glowing hover effects applied to all binder cards, set on the inner container so the effects flip when the card does. */
-.binder-card:hover .card-inner {
+.binder-card:hover .card-front,
+.binder-card:hover .card-back {
     z-index: 99;
     border-radius: 16px;
     outline: none;
