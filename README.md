@@ -971,56 +971,73 @@ I decided against having a basket as I wanted to follow the Epic Store method or
 ### **Manual Testing**
 
 #### **Browser Testing**
-Mobile 320px
-Chrome
-
-
-
+##### Chrome
 Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 
-All nav links work on all pages
-All external links open in a new browser window
-The layout reflows and changes as expected across different screen sizes
-The background image appears and disappears as it should on different screen sizes
-The logo text always links back to the home page from every other page
-Hover colours work as expected on laptops and desktops
-All required form fields have to be filled in
-The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+* All nav links work on all pages
+* All external links open in a new browser window
+* The layout reflows and changes as expected across different screen sizes
+* The hero image adjusts as it should on different screen sizes
+* The logo text always links back to the home page from every other page
+* Hover colours work as expected on laptops and desktops
+* All required form fields have to be filled in
+* The burger icon expands and collapses the nav list as expected on mobile/tablet screens. If left open, it will * disappear by itself when navigating to another page.
+* Shop card hover effects work as expected on non touch screens
+* Binder card hover effects work as expected on non touch screens
+* Button hover effects work as expected on non touch screens
+* Active effects apply as expected
+* Binder card flipping works as expected and shows the correct content.
+* Binder card content doesn't bleed through from the other side
+* Profile content can be viewed and edited
+* Loader works as expected and cards hide/display in the shop/binder/card-detail
+* Login/Register/Logout works as expected
+* Admin screen is usable and works as expected
 
 
-Edge
+##### Edge
 Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 
-All nav and footer links work on all pages
-All external links open in a new browser window
-The layout reflows and changes as expected across different screen sizes
-The background image appears and disappears as it should on different screen sizes
-The logo text always links back to the home page from every other page
-Hover colours work as expected on laptops and desktops
-All required form fields have to be filled in
-The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
-FireFox
+
+##### FireFox
 Mobile 320px. Tablet 768px. Laptop 1024px. Laptop L 1440px. 4k 2560px.
 
-All nav and footer links work on all pages
-All external links open in a new browser window
-The layout reflows and changes as expected across different screen sizes
-The background image appears and disappears as it should on different screen sizes
-The logo text always links back to the home page from every other page
-Hover colours work as expected on laptops and desktops
-All required form fields have to be filled in
-The burger icon expands and collapses the nav list as expected on mobile screens. If left open, it will disappear by itself when navigating to another page.
+* All nav links work on all pages
+* All external links open in a new browser window
+* The layout reflows and changes as expected across different screen sizes
+* The hero image adjusts as it should on different screen sizes
+* The logo text always links back to the home page from every other page
+* Hover colours work as expected on laptops and desktops
+* All required form fields have to be filled in
+* The burger icon expands and collapses the nav list as expected on mobile/tablet screens. If left open, it will * disappear by itself when navigating to another page.
+* Shop card hover effects work as expected on non touch screens
+* Binder card hover effects work as expected on non touch screens
+* Button hover effects work as expected on non touch screens
+* Active effects apply as expected
+* Binder card flipping works as expected and shows the correct content.
+* Binder card content doesn't bleed through from the other side
+* Profile content can be viewed and edited
+* Loader works as expected and cards hide/display in the shop/binder/card-detail
+* Login/Register/Logout works as expected
+* Admin screen is usable and works as expected
 
 
-Safari
-Tested on an iPhone SE 2023
+##### Safari
+Mobile 320px.
 
-The burger nav dropdown works as expected on all pages, expanding, collapsing and disappearing as it should
-All nav links work on all pages
-All external links open in a new browser window
-All active nav-links display in the appropriate colour on the appropriate page
-All required form fields have to be filled in
-The logo text takes you back to the home page from every page
+* All nav links work on all pages
+* All external links open in a new browser window
+* The layout reflows and changes as expected
+* The hero image adjusts as expected
+* The logo text always links back to the home page from every other page
+* All required form fields have to be filled in
+* The burger icon expands and nav menu works as expected
+* Active effects apply as expected
+* Binder card flipping works as expected and shows the correct content.
+* Binder card content doesn't bleed through from the other side
+* Profile content can be viewed and edited
+* Loader works as expected and cards hide/display in the shop/binder/card-detail
+* Login/Register/Logout works as expected
+* Admin screen is usable
 
 #### **Developer Manual Testing**
 * Tested characters imported safely after running import.py and that archetypes were allocated to all characters - checked via Django admin. Exception errors raise if the file doesn't exist at the specified path, if the JSON data is malformed, or if the OS denies permissions. Exception errors also raise if invalid values or if bad values violate database rules.
