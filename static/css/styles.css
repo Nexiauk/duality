@@ -72,7 +72,7 @@ h1 {
     background: -o-linear-gradient(left, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
     background: linear-gradient(90deg, var(--ecstatic-red) 0%, var(--vivid-yellow) 45%, var(--skylla) 100%);
     -webkit-background-clip: text;
-            background-clip: text;
+    background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
 }
@@ -125,10 +125,10 @@ option {
 /* Allocates available horizontal space in the nav bar equally between nav items */
 .nav-item {
     -ms-flex-preferred-size: 0;
-        flex-basis: 0;
+    flex-basis: 0;
     -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     text-align: center;
     border: 1px solid #212529;
 }
@@ -152,7 +152,7 @@ select:hover {
     outline: none;
     border-color: #9ecaed;
     -webkit-box-shadow: 0 0 10px #9ecaed;
-            box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .nav-link:hover {
@@ -167,12 +167,12 @@ select:hover {
 .navbar .nav-item.active {
     background-color: var(--vivid-yellow);
     -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
     -webkit-box-shadow: 0 0 10px #9ecaed;
-            box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Styles the nav-link text for active nav-items */
@@ -194,12 +194,12 @@ select:hover {
     background: var(--eclectic-transparent);
     border-radius: 16px;
     -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border: 2px solid rgba(255, 255, 255, 0.1);
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Applies h3-like styling to the universe banners on the cards */
@@ -227,17 +227,17 @@ select:hover {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     position: absolute;
     left: 0;
     right: 0;
     top: 65%;
     -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Overlay banner for the back of binder cards */
@@ -251,17 +251,17 @@ select:hover {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     top: 0;
     left: 0;
     right: 0;
     position: absolute;
     -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Remove unneeded space below h5 elements in the card banners */
@@ -284,14 +284,14 @@ select:hover {
 /* Shop cards grow on hover with a glow effect */
 .shop-card:hover {
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     z-index: 99;
     border-radius: 16px;
     outline: none;
     border-color: #9ecaed;
     -webkit-box-shadow: 0 0 10px #9ecaed;
-            box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Glassmorphic style effects for shop and binder headings so they appear to glow at all times with no animation */
@@ -301,13 +301,13 @@ select:hover {
     padding: 0.5rem;
     border: 2px solid rgba(255, 255, 255, 0.3);
     -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
     z-index: 99;
     outline: none;
     border-color: #9ecaed;
     -webkit-box-shadow: 0 0 10px #9ecaed;
-            box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Binder flip card container, with perspective for 3D effect */
@@ -461,8 +461,8 @@ select:hover {
     background-color: var(--vivid-yellow);
     color: black;
     -webkit-transform: skew(-30deg);
-        -ms-transform: skew(-30deg);
-            transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    transform: skew(-30deg);
     border-radius: 0;
 }
 
@@ -470,8 +470,8 @@ select:hover {
     background-color: var(--ecstatic-red);
     color: white;
     -webkit-transform: skew(-30deg);
-        -ms-transform: skew(-30deg);
-            transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    transform: skew(-30deg);
     border-radius: 0;
 }
 
@@ -479,8 +479,8 @@ select:hover {
     background-color: var(--ecstatic-red);
     color: white;
     -webkit-transform: skew(-30deg);
-        -ms-transform: skew(-30deg);
-            transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    transform: skew(-30deg);
     border-radius: 0;
     opacity: 1;
     border: none;
@@ -490,8 +490,8 @@ select:hover {
 .unskew {
     display: inline-block;
     -webkit-transform: skew(30deg);
-        -ms-transform: skew(30deg);
-            transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    transform: skew(30deg);
     font-style: italic;
     font-weight: bold;
     padding-top: 3px;
@@ -505,67 +505,68 @@ select:hover {
     background-color: var(--skylla);
     color: white;
     -webkit-transform: skew(-30deg);
-        -ms-transform: skew(-30deg);
-            transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    transform: skew(-30deg);
     -webkit-animation: pulse 2s infinite;
-            animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
 }
 
 /* Pulsing animation used when hovering over buttons, skewed to match the buttons and nav items */
 @-webkit-keyframes pulse {
     0% {
         -webkit-transform: scale(0.95);
-                transform: scale(0.95);
+        transform: scale(0.95);
         -webkit-transform: skew(-30deg);
-                transform: skew(-30deg);
+        transform: skew(-30deg);
         -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
 
     70% {
         -webkit-transform: scale(1);
-                transform: scale(1);
+        transform: scale(1);
         -webkit-transform: skew(-30deg);
-                transform: skew(-30deg);
+        transform: skew(-30deg);
         -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
 
     100% {
         -webkit-transform: scale(0.95);
-                transform: scale(0.95);
+        transform: scale(0.95);
         -webkit-transform: skew(-30deg);
-                transform: skew(-30deg);
+        transform: skew(-30deg);
         -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
+
 @keyframes pulse {
     0% {
         -webkit-transform: scale(0.95);
-                transform: scale(0.95);
+        transform: scale(0.95);
         -webkit-transform: skew(-30deg);
-                transform: skew(-30deg);
+        transform: skew(-30deg);
         -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
 
     70% {
         -webkit-transform: scale(1);
-                transform: scale(1);
+        transform: scale(1);
         -webkit-transform: skew(-30deg);
-                transform: skew(-30deg);
+        transform: skew(-30deg);
         -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
 
     100% {
         -webkit-transform: scale(0.95);
-                transform: scale(0.95);
+        transform: scale(0.95);
         -webkit-transform: skew(-30deg);
-                transform: skew(-30deg);
+        transform: skew(-30deg);
         -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     }
 }
 
@@ -579,7 +580,7 @@ select:hover {
     width: 120px;
     height: 120px;
     -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 /* Spinning animations for screen loader on shop page. Works cross-browser. */
@@ -596,12 +597,12 @@ select:hover {
 @keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
-                transform: rotate(0deg);
+        transform: rotate(0deg);
     }
 
     100% {
         -webkit-transform: rotate(360deg);
-                transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -614,12 +615,12 @@ select:hover {
     -o-transition: 0.5s ease-in;
     transition: 0.5s ease-in;
     -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
     -webkit-box-shadow: 0 0 10px #9ecaed;
-            box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Hover colour for the square socials icon */
@@ -631,12 +632,12 @@ select:hover {
     -o-transition: 0.5s ease-in;
     transition: 0.5s ease-in;
     -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     outline: none;
     border-color: #9ecaed;
     -webkit-box-shadow: 0 0 10px #9ecaed;
-            box-shadow: 0 0 10px #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 /* Media queries start here: adjusts card sizes, banners, fonts and content spacing across screen sizes from 320px up to 2560px */
@@ -762,15 +763,15 @@ select:hover {
     .nav-item {
         background-color: var(--skylla);
         -webkit-transform: skew(-30deg);
-            -ms-transform: skew(-30deg);
-                transform: skew(-30deg);
+        -ms-transform: skew(-30deg);
+        transform: skew(-30deg);
     }
 
     /* Opposite skew applied to the nav link so the text looks straight in the nav items, only on larger screens */
     .nav-link {
         -webkit-transform: skew(30deg);
-            -ms-transform: skew(30deg);
-                transform: skew(30deg);
+        -ms-transform: skew(30deg);
+        transform: skew(30deg);
         display: inline-block;
         text-decoration: none;
     }
