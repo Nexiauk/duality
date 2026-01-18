@@ -464,6 +464,8 @@ select:hover {
     -ms-transform: skew(-30deg);
     transform: skew(-30deg);
     border-radius: 0;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 .cancel {
