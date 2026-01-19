@@ -450,12 +450,18 @@ As per the [Card Features](#cards) section, the cards also flip on hover to prov
 ![Binder page](./docs/screenshots/binder-flip.jpg)
 
 ### *Profile Page*
-The profile page features a disabled version of the edit-profile form, with an edit button that takes the user to an editable version of the form which allows them to change their first name, last name, email address, and display name. Display name is stored on a custom model and made accessible through the User model via a shared property. The admin is customised so that the user profile information appears inline to the User admin page and both can be edited at the same time. 
+The profile page features a disabled version of the edit-profile form, with an edit button that takes the user to an editable version of the form, and a change password button that goes through to the change password form.
 
-*Note:* A custom signup form has been created and registered in settings.py, to include the display name property when a user registers with the site, allowing a user to create a UserProfile record in the database that they can edit later on.
+* The Edit Profile form allows users to change their first name, last name, email address, and display name. 
+* Display name is stored on a custom model and made accessible through the User model via a shared property. The admin is customised so that the user profile information appears inline to the User admin page and both can be edited at the same time by admins. 
+* A custom signup form has been created and registered in settings.py, to include the display name property when a user registers with the site, allowing a user to create a UserProfile record in the database that they can edit later on.
+
+Edit Profile and Change Password forms both feature cancel buttons that take the user back one step in the browser navigation history if they change their mind and don't want to make any edits to anything.
+
 
 ![Custom signup form](./docs/screenshots/signup-form.jpg)  
 ![View profile page](./docs/screenshots/view-profile.jpg)
+![Change password form](./docs/screenshots/change-password.jpg)
 ![Edit profile page](./docs/screenshots/edit-profile.jpg)
 
 ### Admin
