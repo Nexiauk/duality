@@ -7,7 +7,7 @@
 {% block content %}
     <section class="mt-4 mb-4 mx-auto p-md-4">
         <div class="glassmorphic p-4 p-md-5 pt-4 pb-4">
-            <h2 class="mb-4">Success!</h2>
+            <h2 class=" heading mb-4">Success!</h2>
             <p class="mb-4">
                 Payment successfully made, {{ display_name }}.
                 <br>
@@ -27,7 +27,7 @@
                     <b>Purchase Price:</b> £{{ purchase.price|floatformat:2 }}
                 </p>
             {% endfor %}
-            <a href="{% url 'binder' %}" class="btn buy-button"><span class="unskew">Go to Binder</span></a>
+            <a href="{% url 'binder' %}" class="btn buy-button mt-3"><span class="unskew">Go to Binder</span></a>
         </div>
     </section>
 {% endblock content %}

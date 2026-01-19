@@ -56,21 +56,20 @@ This template renders the card-detail view after pressing the buy button in the 
                                   method="post"
                                   class="d-flex flex-column flex-grow-1">
                                 {% csrf_token %}
-                                <button class="btn buy-button w-100" type="submit">
-                                    <span class="unskew">Buy now £{{ char.rarity.price }}</span>
-                                </button>
+                                <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+                                    <button class="btn buy-button w-100" type="submit">
+                                        <span class="unskew">Buy now £{{ char.rarity.price }}</span>
+                                    </button>
+                                    <!-- Cancel button goes back in the browser history -->
+                                    <button class="btn cancel w-100" type="button">
+                                        <span class="unskew">Cancel</span>
+                                    </button>
+                                </div>
                             </form>
-                            <!-- Responsive container for the cancel button to match the buy button -->
-                            <div class="d-flex flex-column flex-grow-1">
-                                <button class="btn cancel w-100">
-                                    <span class="unskew">Cancel</span>
-                                </button>
-                            </div>
-                        </div>
-                    {% else %}
-                    {% endif %}
-                </article>
+                        {% else %}
+                        {% endif %}
+                    </article>
+                </div>
             </div>
-        </div>
-</section>
-{% endblock content %}
+        </section>
+    {% endblock content %}

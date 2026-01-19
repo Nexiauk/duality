@@ -7,39 +7,35 @@ with a submit button. -->
 {% load static %}
 {% load allauth account %}
 {% block title %}
-  Edit Profile
+Edit Profile
 {% endblock title %}
 {% block extra_js %}
-    <script src="{% static 'js/cancel.js' %}"></script>
+<script src="{% static 'js/cancel.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-  <section class="mt-3 mb-3 mx-auto p-md-4">
-    <div class="glassmorphic p-4 p-md-5 pt-md-4 pb-md-4">
-      <!-- Page heading showing the user's display name -->
-      <h2 class="mb-4 heading">Edit {{ profile_user.get_display_name|default:profile_user.username }}'s Profile</h2>
-      <p class="mb-4">Edit your profile details</p>
-      <!-- Profile edit form with CSRF token and hidden redirect field if present -->
-      <form id="edit-profile-form"
-            method="post"
-            class="d-flex flex-column flex-grow-1">
-        {% csrf_token %}
-        {{ userform | crispy }}
-        {{ profileform | crispy }}
-        {% if redirect_field_value %}
-          <input type="hidden"
-                 name="{{ redirect_field_name }}"
-                 value="{{ redirect_field_value }}" />
-        {% endif %}
-        <div class="d-flex flex-column flex-md-row gap-3 mt-4">
-          <button class="btn account-button w-100" type="submit">
-            <span class="unskew">Submit &raquo;</span>
-          </button>
-          <!-- Link styled as a button so it doesn't interact with the form. -->
-          <button class="btn cancel w-100" type="button">
-            <span class="unskew">Cancel</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </section>
+<section class="mt-3 mb-3 mx-auto p-md-4">
+  <div class="glassmorphic p-4 p-md-5 pt-md-4 pb-md-4">
+    <!-- Page heading showing the user's display name -->
+    <h2 class="mb-4 heading">Edit {{ profile_user.get_display_name|default:profile_user.username }}'s Profile</h2>
+    <p class="mb-4">Edit your profile details</p>
+    <!-- Profile edit form with CSRF token and hidden redirect field if present -->
+    <form id="edit-profile-form" method="post" class="d-flex flex-column flex-grow-1">
+      {% csrf_token %}
+      {{ userform | crispy }}
+      {{ profileform | crispy }}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+      {% endif %}
+      <div class="d-flex flex-column flex-md-row gap-3 mt-4">
+        <button class="btn account-button w-100" type="submit">
+          <span class="unskew">Submit &raquo;</span>
+        </button>
+        <!-- Cancel button goes back in the browser history -->
+        <button class="btn cancel w-100" type="button">
+          <span class="unskew">Cancel</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
 {% endblock content %}
