@@ -145,7 +145,9 @@ def create_checkout(request, id):
                     'customer': request.user.username,
                 },
                 success_url=success_url,
-                cancel_url=request.build_absolute_uri(reverse('payment-cancel'))
+                cancel_url=request.build_absolute_uri(
+                    reverse('payment-cancel')
+                    )
             )
             return redirect(session.url, code=303)
         # Handles declined cards
@@ -158,7 +160,9 @@ def create_checkout(request, id):
             return render(request, cancel_template, {'error': error_msg})
         # Handles Authentication failed
         except stripe.error.AuthenticationError as e:
-            error_msg = f"Authentication with payment provider failed: {str(e)}"
+            error_msg = (
+                f"Authentication with payment provider failed: {str(e)}"
+            )
             return render(request, cancel_template, {'error': error_msg})
         # Generic Stripe errors
         except stripe.error.StripeError as e:
@@ -207,8 +211,9 @@ def payment_success(request):
                     purchase['price'] = purchase['price']/100
                     # Message variable for email text
                     message += (
-                        f"- {purchase['character_name']} | £{purchase['price']} "
-                        f"| Order Ref: {purchase['order_reference']}\n"
+                        f"- {purchase['character_name']} | "
+                        f"£{purchase['price']} | "
+                        f"Order Ref: {purchase['order_reference']}\n"
                         )
                 # Send a confirmation email - customised to purchase made.
                 try:

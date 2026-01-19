@@ -432,9 +432,8 @@ If the user continues with their purchase, the name of the character, their imag
 
 * Stripe handles the payment through its own checkout system - there is no basket or subscription service setup.
 
-Depending on if the purchase fails, is cancelled, or is successful, one of three templates will load:
-* cancel.html gives a cancel message and a button to go back to the shop
-* error.html passes the failure error as a string and gives a button to go back to the shop
+Depending on if the purchase fails, is cancelled, or is successful, one of two templates will load:
+* cancel.html will give an error if there is one, or a cancel message if the cancellation is user-initiated, and a button to go back to the shop
 * success.html gives the transaction details and a button to go to the binder
 
 *Note:* Logic has been built into the system so if two users happen to access the shop at the same time, and there is no current schedule, it won't crash trying to create two schedules when there can only be one. Instead, it will allow a schedule to be created and will retry fetching that schedule for the other request. This is handled using a constraint on the Scheduler start time, and try/except on a class method in the scheduler model that either gets or creates an active schedule.
@@ -823,6 +822,7 @@ I decided against having a basket as I wanted to follow the Epic Store method or
 * Binder Page - No errors or warnings to show.
 * View profile Page - No errors or warnings to show.
 * Edit Profile Page - No errors or warnings to show.
+* Password Change page - No errors or warnings to show.
 * Register Form - No errors or warning to show.
 * Login Form - No errors or warnings to show.
 * Logout Page - No errors or warnings to show.
