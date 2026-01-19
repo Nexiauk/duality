@@ -123,29 +123,55 @@ def create_checkout(request, id):
     price_in_pence = int(product.rarity.price * 100)
     json_data = product.get_legends_data()
     if request.method == 'POST':
-        session = stripe.checkout.Session.create(
-            line_items=[
-                {'price_data': {
-                    'currency': 'gbp',
-                    'product_data': {
-                        'name': product.name,
-                        'images': [json_data['images']['lg']],
-                        'metadata': {
-                                'character_id': product.id
-                        }
+        cancel_template = 'shop/cancel.html'
+        try:
+            session = stripe.checkout.Session.create(
+                line_items=[
+                    {'price_data': {
+                        'currency': 'gbp',
+                        'product_data': {
+                            'name': product.name,
+                            'images': [json_data['images']['lg']],
+                            'metadata': {
+                                    'character_id': product.id
+                            }
+                        },
+                        'unit_amount': price_in_pence,
                     },
-                    'unit_amount': price_in_pence,
+                        'quantity': 1}
+                ],
+                mode='payment',
+                metadata={
+                    'customer': request.user.username,
                 },
-                    'quantity': 1}
-            ],
-            mode='payment',
-            metadata={
-                'customer': request.user.username,
-            },
-            success_url=success_url,
-            cancel_url=request.build_absolute_uri(reverse('payment-cancel'))
-        )
-        return redirect(session.url, code=303)
+                success_url=success_url,
+                cancel_url=request.build_absolute_uri(reverse('payment-cancel'))
+            )
+            return redirect(session.url, code=303)
+        # Handles declined cards
+        except stripe.error.CardError as e:
+            error_msg = f"Card Error: {str(e)}"
+            return render(request, cancel_template, {'error': error_msg})
+        # Handles invalid requests
+        except stripe.error.InvalidRequestError as e:
+            error_msg = f"Invalid Request: {str(e)}"
+            return render(request, cancel_template, {'error': error_msg})
+        # Handles Authentication failed
+        except stripe.error.AuthenticationError as e:
+            error_msg = f"Authentication with payment provider failed: {str(e)}"
+            return render(request, cancel_template, {'error': error_msg})
+        # Generic Stripe errors
+        except stripe.error.StripeError as e:
+            error_msg = f"Payment Error {str(e)}"
+            return render(request, cancel_template, {'error': error_msg})
+        # Network issues
+        except stripe.error.APIConnectionError as e:
+            error_msg = f"Network error. Please try again: {str(e)}"
+            return render(request, cancel_template, {'error': error_msg})
+        # Something else happened
+        except Exception as e:
+            error_msg = f"An error occurred: {str(e)}"
+            return render(request, cancel_template, {'error': error_msg})
 
 
 @login_required
@@ -204,11 +230,11 @@ def payment_success(request):
             else:
                 return render(request, 'shop/cancel.html')
         except Exception as e:
-            return render(request, 'shop/error.html', {'error': str(e)})
+            return render(request, 'shop/cancel.html', {'error': str(e)})
     else:
         return render(
             request,
-            'shop/error.html',
+            'shop/cancel.html',
             {'error': 'No session id provided'}
         )
 
