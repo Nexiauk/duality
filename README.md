@@ -329,8 +329,11 @@ This table defines the abbreviations used in the **Quantitative Criteria** colum
 
 
 ### *Cards*
-Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations. They are responsive across screen sizes and their layout reflows as the screen changes. All cards show their publisher/universe, the character name and their total stats rarity.
+Cards have been designed using Bootstrap 5.3 card components, and customised with CSS3 styling and animations. They are responsive across screen sizes and their layout reflows as the screen changes. 
+
+All cards show their publisher/universe, the character name and their total stats rarity.
 They have a glassmorphic effect with border shadow for a lifted 3D effect, and glow around the edges on hover. 
+The image URLs are pulled from the legends.json file - these images come from a CDN so their quality varies depending on the original source. There are multiple image sizes but again, they vary so much that performance can be impacted so I chse the medium size as it seems to perform and look the best **for the most part**. As I am noticing character's with poor quality images, I am removing them from rotation so they don't appear in the shop.
 
 Card fronts show badges with Power totals and the rarity assigned to them, as well as the character's alignment to good/neutral/evil. These badges change colour based on rarity and alignment.
 
@@ -529,8 +532,9 @@ Edit Profile and Change Password forms both feature cancel buttons that take the
 * 1v1 card battles  
 * Audio effects
 * A fancier binder
-* Ability to reset all cards to their front face
-* Ability to reset all dropdown filters with a reset button.
+* Ability to reset all cards to their front face in the binder
+* Ability to reset all dropdown filters with a reset button in the shop and binder.
+* Set the character image url dynamically for different screen sizes, although a middle ground has been found for performance.
 * Search function on the Binder to easily locate cards
 * Pagination for the Binder in case a collection grows too large
 * Sort function on the Binder so it can be sorted by most recent purchase
