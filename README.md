@@ -464,7 +464,7 @@ Edit Profile and Change Password forms both feature cancel buttons that take the
 ![Edit profile page](./docs/screenshots/edit-profile.jpg)
 
 ### Admin
-* Shop Scheduler admin interface allows admin users to create new shop schedules with a start time, end time, and rotation type. This is in addition to the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items inline to the instance admin, so that they can be easily deleted, or have more items added to the scheduler. This means admin can click on a particular schedule and see at a glance which characters will be appearing in that timeframe.
+* Shop Scheduler admin interface is sorted by Schedule start time descending, so the latest schedule will be listed at the top. The admin area allows admin users to create new shop schedules with a start time, end time, and rotation type. This is in addition to the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items inline to the instance admin, so that they can be easily deleted, or have more items added to the scheduler. This means admin can click on a particular schedule and see at a glance which characters will be appearing in that timeframe.
 
 * Shop Scheduler also has a custom method to show characters allocated to each schedule as a comma separated list, so that admin doesn't have to click and open each schedule to find out who will be/was in that shop schedule.
 
@@ -478,7 +478,9 @@ Edit Profile and Change Password forms both feature cancel buttons that take the
 
 * User profile doesn't have its own admin interface, as its not necessary. User profile as an inline would also contain extended profile information in the future, such as billing address etc.
 
-* Characters admin contains additional actions for taking characters out of rotation, and putting them back in again. It also has additional sorting options by archetype and rarity, and a searchbar so that admin can perform a quick search by character name if they want to delete/perform an action on that character.
+* Characters admin is sorted by characters ascending so A through Z, and contains additional actions for taking characters out of rotation, and putting them back in again. It also has additional sorting options by archetype and rarity, and a searchbar so that admin can perform a quick search by character name if they want to delete/perform an action on that character.
+
+* Usercards admin is sorted by date purchased descending so the latest usercards show at the top. The admin has the ability to search by either character name, order reference number, or Stripe payment reference, and includes filters for date and purchase price to assist admin with locating a usercard quickly. It doesn't include a search function by user as userscards show inline on the user record.
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -527,6 +529,8 @@ Edit Profile and Change Password forms both feature cancel buttons that take the
 * 1v1 card battles  
 * Audio effects
 * A fancier binder
+* Ability to reset all cards to their front face
+* Ability to reset all dropdown filters with a reset button.
 * Search function on the Binder to easily locate cards
 * Pagination for the Binder in case a collection grows too large
 * Sort function on the Binder so it can be sorted by most recent purchase
@@ -1205,14 +1209,15 @@ Key areas covered:
 [Back to Table of Contents](#table-of-contents)
 
 ## **Interesting Bugs**
-* The API I wanted to use came with a json file that would allow me to import the characters directly into the database, however there was a lot of extended information that didn't make sense to store in the database without breaching Database Normalisation. I ended up creating a basic CharacterCard model and then stored the json file in a data folder for the app to open and use the extended data.
-* Not a bug, but something I found interesting to accomplish - creating management commands
+* The API I wanted to use came with a json file that would allow me to import the characters directly into the database, however there was a lot of extended information that didn't make sense to store in the database without breaching Database Normalisation. I ended up creating a basic CharacterCard model and then stored the json file core/data/legends.json for the app to open and use the extended data.
+* Not a bug, but something I found interesting to accomplish - creating management commands in core/management/commands
     1. **import.py** to help with my JSON data import into the CharacterCard model, and assign archetypes from the Archetype model using a map of archetypes and their IDs, when the JSON data only had a string value for archetype.
     2. **rarity_calculation** to access power stat data from inside nested dictionaries, total it up for each character and put it in a sorted list so I could figure out the range to define rarities in the Rarity model.
     3. **rarity_update** to iterate through the json file, grab the id and name of each character, use the id to grab the same character from the CharacterCard model and perform a check to see if the name matches. If so, it assigned a rarity to that character based on the sum of the character's power stats against a predefined range.
     4. **fix_legend_id** to open the dumped data for the CharacterCard model, iterate through the file and for each item, grab the pk and create a legend_id field that matches the pk number, then output to a new fixture file. I was then able to flush the database and reimport from fixtures.
-* Not a bug per se, but originally I had the home view opening up the legends json file at every request, in order to iterate through it and match up with the randomly generated sample of characters from the Charactercard model. This is okay with a small amount of data for a course project, but in actual fact its not very efficent or scalable. I used various resources (Django documentation and ChatGPT) to create a ready method in AppConfig to load up the data once at startup and store it in a global variable in my project's data folder. I then removed the file opening from the home view and iterated through the data stored in the global variable instead.
+* Not a bug per se, but originally I had the home view opening up the legends json file at every request, in order to iterate through it and match up with the randomly generated sample of characters from the Charactercard model. This is okay with a small amount of data for a course project, but in actual fact its not very efficent or scalable. I used various resources (Django documentation and ChatGPT) to create a ready method in AppConfig to load up the data once at startup and store it in a global variable in core/data/datastore.py. I then removed the file opening from the home view and iterated through the data stored in the global variable instead.
 * The earlier import of json data into the CharacterCard model meant I had to create a custom pk for the model that wouldn't auto-increment, as I needed to manually assign IDs that already existed in the JSON dictionaries for each character. A  test later on reminded me that Django would no longer auto-assign and increment IDs to any future characters added to the app. This was sorted using the custom management command **fix_legend_id** to assign a separate integer field to legend_id that matches the current PK for each character, I was then able to change id to an AutoField.
+* Django was throwing a 500 error when trying to add a searchfield by character on the usercards admin. I needed to use the foreign key field with __ notation to the name field on the CharacterCard model
 
 [Back to Table of Contents](#table-of-contents)
 

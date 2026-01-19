@@ -1,6 +1,5 @@
 """
-Custom management command to import character data
-from a json file
+Custom management command to import character data from a json file
 """
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError

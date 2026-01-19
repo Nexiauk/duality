@@ -1,6 +1,6 @@
 """
-URL configuration for the core app
-Defines URL patterns for the home view
+URL configuration for the Binder app
+Defines URL patterns for the binder view
 """
 
 from django.urls import path

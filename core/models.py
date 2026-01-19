@@ -96,9 +96,8 @@ class CharacterCard(models.Model):
 
 class Archetype(models.Model):
     """
-    Represents literary archetypes and
-    traits linked to each character in the
-    CharacterCards model.
+    Represents literary archetypes and traits linked to each
+    character in the CharacterCards model.
     """
     literary_archetype = models.CharField(
         _("Literary Archetype"),

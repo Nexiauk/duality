@@ -2,8 +2,6 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from core.models import CharacterCard, Archetype, Rarity
 from .models import Usercards
-from django.utils import timezone
-from datetime import datetime
 
 
 class BaseModelTests(TestCase):

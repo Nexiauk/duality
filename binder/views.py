@@ -1,3 +1,13 @@
+"""
+Views for the user's character binder.
+
+Provides functionality for displaying a logged-in user's
+collection of character cards, including detailed card information,
+metadata, and calculated attributes such as power, alignment, and
+rarity. The binder view prepares data for display and sorting, and
+provides filter options for alignment, universe, and rarity.
+"""
+
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from .models import Usercards

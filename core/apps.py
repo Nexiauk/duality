@@ -1,8 +1,7 @@
 """
-AppConfig for the Core app with a
-defined ready method for loading data
-into a global variable.
+Core app config: loads legends JSON data into a global datastore on startup.
 """
+
 from django.apps import AppConfig
 import json
 from pathlib import Path
@@ -19,7 +18,7 @@ class CoreConfig(AppConfig):
         stores the data on a global variable in datastore.py
         for use across all apps.
 
-        Reduces inefficency of loading data from the
+        Reduces inefficiency of loading data from the
         json file in views.
         """
         file_path = Path(__file__).parent/"data"/"legends.json"

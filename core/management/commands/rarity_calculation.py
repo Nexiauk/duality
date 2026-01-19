@@ -1,7 +1,5 @@
 """
-Custom management command to grab the nested powerstat
-dictionary of each character in the json file and calculate
-an overall power rating based on totalling their powerstats.
+Custom management command calculates totalled powerstats for characters
 """
 from django.core.management.base import BaseCommand
 from pathlib import Path

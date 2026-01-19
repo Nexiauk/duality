@@ -1,6 +1,5 @@
 """
-Custom Django management command to assign a rarity to each character
-in the CharacterCard model based on their total power.
+Custom Django management command to assign a rarity to each character.
 """
 from django.core.management.base import BaseCommand
 from django.db import IntegrityError
@@ -11,13 +10,13 @@ import json
 
 class Command(BaseCommand):
     """
-The command reads character data from `legends.json` and does the following:
+The command reads character data from legends.json and does the following:
 
 1. Iterates over each character in the JSON file.
 2. For each character, retrieves the corresponding CharacterCard record by ID.
 3. Checks that the name in the JSON matches the database record.
    - If the name doesn't match, a warning is printed and the record is skipped.
-4. Calculates the total power as the sum of all values in the `powerstats`
+4. Calculates the total power as the sum of all values in the powerstats
 dictionary.
 5. Assigns a rarity based on the total power thresholds:
    - 0–160       → Common

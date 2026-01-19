@@ -13,7 +13,6 @@ from django.contrib import admin
 from .models import CharacterCard, Archetype, Rarity
 
 
-# Register your models here.
 @admin.register(Archetype)
 class ArchetypeAdmin(admin.ModelAdmin):
     """
@@ -25,8 +24,8 @@ class ArchetypeAdmin(admin.ModelAdmin):
 @admin.action(description="Take out of rotation")
 def rotation_false(modeladmin, request, queryset):
     """
-    Admin action to approve selected Fableseed instances.
-    Sets the approval_status of the selected Fableseed objects to 0.
+    Admin action to set character rotation as false
+    and take the character out of the shop rotations.
     """
     queryset.update(can_participate_in_rotation=0)
 
@@ -34,14 +33,17 @@ def rotation_false(modeladmin, request, queryset):
 @admin.action(description="Put into rotation")
 def rotation_true(modeladmin, request, queryset):
     """
-    Admin action to approve selected Fableseed instances.
-    Sets the approval_status of the selected Fableseed objects to 1.
+    Admina ction to set character rotation as true
+    and add the character into shop rotations.
     """
     queryset.update(can_participate_in_rotation=1)
 
 
 @admin.register(CharacterCard)
 class CharacterCardAmin(admin.ModelAdmin):
+    """
+    Adminc onfiguration for the CharacterCard model
+    """
     list_display = (
         "name",
         "legend_id",
@@ -56,4 +58,7 @@ class CharacterCardAmin(admin.ModelAdmin):
 
 @admin.register(Rarity)
 class RarityAdmin(admin.ModelAdmin):
+    """
+    Admin configuration for the Rarity model
+    """
     list_display = ("name", "level", "price")

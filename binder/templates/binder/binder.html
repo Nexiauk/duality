@@ -16,14 +16,13 @@ My Team
     <!-- Centered title and description of the binder-->
     <div class="row ms-xxl-6 me-xxl-6 mb-2">
         <div class="col-10 text-center mx-auto mt-3 pt-3 mt-md-4 glow mb-4" id="binder-heading">
+            <!-- Heading will use the user's display name if they have one, or their username if they don't. -->
             <h2 class="heading">{{ user.get_display_name|default:user.username }}'s Binder</h2>
-
-                {% if characters %}
-                <p>View your ultimate multiversal team! Find additional info on the back of the cards!</p>
-                {% else %}
-                <p>{{ user.get_display_name|default:user.username }}, your binder is empty!</p>
-                {% endif %}
-
+            {% if characters %}
+            <p>View your ultimate multiversal team! Find additional info on the back of the cards!</p>
+            {% else %}
+            <p>{{ user.get_display_name|default:user.username }}, your binder is empty!</p>
+            {% endif %}
         </div>
         <!-- Row for filter dropdowns -->
         <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center">
@@ -55,7 +54,7 @@ My Team
             </div>
         </div>
     </div>
-    <!-- Loader element column -  shown while binder content is loading-->
+    <!-- Loader element column - shown for 3 seconds while card images lazy load in the background.-->
     {% if characters %}
     <div class="col d-flex justify-content-center">
         <div class="loader"></div>
@@ -75,15 +74,14 @@ My Team
                         <!-- Character image dynamically loaded from the legends.json file -->
                         <img class="object-fit-cover card-img-top w-100 d-block" loading="lazy"
                             src="{{ char.json.images.md }}" height="400" width="400" alt="{{ char.chardetails.name }}">
+                        <!-- Overlay banner with the publisher/universe sits over the bottom of the character image -->
                         <div class="card-front-banner glassmorphic">
                             <p class="universe">{{ char.universe }}</p>
                         </div>
                         <div class="card-body character-card-body d-flex flex-column justify-content-evenly">
                             <!-- Character name passed from the character model -->
                             <div class="flex-grow-1 d-flex align-items-center justify-content-center">
-                                <h3 class="text-center card-title">
-                                    {{ char.chardetails.name }}
-                                </h3>
+                                <h3 class="text-center card-title">{{ char.chardetails.name }}</h3>
                             </div>
                             <!-- Div container for the rarity and alignment badges -->
                             <div class="mb-2 mb-xxl-3 mt-2 mb-md-1">
@@ -109,13 +107,23 @@ My Team
                         <div class="card-details flex-grow-1">
                             <div class="row">
                                 <div class="col-12">
-                                    <p class="mb-0 back-text"><b>Archetype: </b>{{ char.chardetails.archetype }}</p>
-                                    <p class="mb-0 back-text"><b>Alias: </b>{{ char.json.biography.aliases.0 }}
+                                    <p class="mb-0 back-text">
+                                        <b>Archetype: </b>{{ char.chardetails.archetype }}
                                     </p>
-                                    <p class="mb-0 back-text"><b>Group: </b>{{ char.affiliation }}</p>
-                                    <p class="mb-0 back-text"><b>First Appearance:<br></b>{{ char.json.biography.firstAppearance }}
+                                    <p class="mb-0 back-text">
+                                        <b>Alias: </b>{{ char.json.biography.aliases.0 }}
                                     </p>
-                                    <p class="mb-0 back-text"><b>Race: </b>{{ char.json.appearance.race }}</p>
+                                    <p class="mb-0 back-text">
+                                        <b>Group: </b>{{ char.affiliation }}
+                                    </p>
+                                    <p class="mb-0 back-text">
+                                        <b>First Appearance:
+                                            <br>
+                                        </b>{{ char.json.biography.firstAppearance }}
+                                    </p>
+                                    <p class="mb-0 back-text">
+                                        <b>Race: </b>{{ char.json.appearance.race }}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +164,8 @@ My Team
         {% else %}
         <!-- If the customer has no cards in their binder, they will see a button to go to the shop -->
         <div class="col d-flex flex-column align-items-center mt-5">
-            <a href="{% url 'shop' %}" class="btn buy-button"><span class="unskew">Go to Shop</span></a></div>
+            <a href="{% url 'shop' %}" class="btn buy-button"><span class="unskew">Go to Shop</span></a>
+        </div>
         {% endif %}
     </div>
 </section>
