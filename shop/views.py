@@ -1,10 +1,15 @@
 """
-Views for the shop app.
+Views for the Shop app.
 
-Retrieves or creates the active shop schedule, ensures its items are set up,
-and gathers eligible characters for display. Characters are enriched with
-their data and power status, sorted by power, and rendered to the shop page.
+- Renders the shop page with scheduled characters enriched with their data, alignment,
+  universe, and calculated power status, sorted by power.
+- Provides card detail pages with eligibility checks against the active shop schedule.
+- Handles Stripe checkout creation, payment processing, and error handling for purchases.
+- Manages successful payments by creating user-owned cards and sending confirmation emails.
+- Includes utility functions for extracting purchased item details from Stripe sessions.
+- All purchase-related views require the user to be logged in.
 """
+
 
 from django.shortcuts import render, get_object_or_404, redirect
 from django.conf import settings

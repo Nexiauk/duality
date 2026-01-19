@@ -1,7 +1,11 @@
 """
-Views for the userprofile app.
-Renders a profile view and an edit-profile view.
+Views for managing user profiles in the application.
+
+- Displays a read-only view of a user's profile.
+- Allows logged-in users to edit their profile and account details.
+- Handles form rendering, validation, saving, and user feedback messages.
 """
+
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required

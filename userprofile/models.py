@@ -1,3 +1,14 @@
+"""
+Defines the UserProfile model and integrates it with Django's
+built-in User model.
+
+- Stores additional profile information for users, including a display_name.
+- Provides a string representation prioritizing display_name over username.
+- Adds a get_display_name property to both UserProfile and User.
+  safely falling back to the username if a profile does not exist.
+"""
+
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist

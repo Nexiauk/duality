@@ -1,9 +1,14 @@
 """
-Admin configuration for the core app models.
+Admin configuration for the Core app's Usercards model.
 
-This module customises the Django admin interface for the
-Binder model: UserCards.
+- Registers a custom UserCardsAdmin to display all user
+purchases in one central view.
+- Enables filtering by purchase date and price, and searching
+by order reference, Stripe payment ID, and associated character
+name.
+- Customises list display to show relevant purchase and user information.
 """
+
 from django.contrib import admin
 from .models import Usercards
 from django.contrib.auth.models import User

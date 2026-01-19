@@ -21,13 +21,13 @@ This template renders the card-detail view after pressing the buy button in the 
             </div>
         </div>
         <div class="col d-flex justify-content-center">
-            <!-- Loader element shown while card-detail content is loading-->
+            <!-- Loader element shown for 3 seconds while card images lazy load int he background-->
             <div class="loader"></div>
         </div>
         <div class="row-cols-1 ms-xxl-6 me-xxl-6 gx-0">
             <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
                 <article class="card shop-card glassmorphic">
-                    <!-- Character image dynamically loaded from the legends.json file -->
+                    <!-- Character data and image dynamically loaded from the legends.json file -->
                     <img class="object-fit-cover card-img-top w-100 d-block"
                          src="{{ json.images.md }}"
                          width="400"
@@ -39,7 +39,7 @@ This template renders the card-detail view after pressing the buy button in the 
                     </div>
                     <!-- Character name passed from the character model -->
                     <div class="card-body character-card-body d-flex flex-column align-items-center">
-                        <!-- Badges showing the character's power total, rarity and alignment -->
+                        <!-- Badges showing the character's power total, rarity and alignment with dynamic classes applied for styling -->
                         <div class="mt-2 mt-xxl-3">
                             <span class="badge {{ char.rarity|lower }}">{{ char.rarity }} {{ power }}</span> <span class="badge {{ alignment|lower }} mb-2">Alignment: {{ alignment }}</span>
                         </div>

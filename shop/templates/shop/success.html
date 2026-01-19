@@ -1,3 +1,6 @@
+<!-- - Displays confirmation message with user name and email.
+- Lists all purchased items with order reference, character details, and price.
+- Provides a button linking to the user's binder. -->
 {% extends "base.html" %}
 {% load static %}
 <!-- Dynamically sets the page title -->
@@ -13,20 +16,26 @@
                 <br>
                 An email has been sent to: <b>{{ customer_email }}</b> with details of your purchase.
             </p>
+            <!-- Loop through all purchases includes in this transaction and show details for each. -->
             {% for purchase in purchases %}
                 <p>
+                    <!-- Display order reference number -->
                     <b>Order Reference:</b> {{ purchase.order_reference }}
                 </p>
                 <p>
+                    <!-- Display purchased character's ID -->
                     <b>Character ID:</b> {{ purchase.character_id }}
                 </p>
                 <p>
+                    <!-- Display purchased character's name -->
                     <b>Character Name:</b> {{ purchase.character_name }}
                 </p>
                 <p>
+                    <!-- Display purchase price -->
                     <b>Purchase Price:</b> £{{ purchase.price|floatformat:2 }}
                 </p>
             {% endfor %}
+            <!-- Button linking to the user's binder page -->
             <a href="{% url 'binder' %}" class="btn buy-button mt-3"><span class="unskew">Go to Binder</span></a>
         </div>
     </section>

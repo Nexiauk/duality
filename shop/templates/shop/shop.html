@@ -6,113 +6,118 @@ the active shop schedules. Each character is presented as a card with:
 
 - Character image loaded from the legends.json file.
 - Character name from the CharacterCard model.
-- Total power displayed as a badge.
+- Character alignment from the legends.json file
+- Rarity and Total power displayed as a badge.
 - Responsive grid layout adapting to mobile, tablet, and desktop.
+
+Shop can be filtered by Universe, Rarity or Alignment
 -->
 {% extends "base.html" %}
 {% load static %}
 <!-- Dynamically sets the page title -->
 {% block title %}
-    Duality: Shop
+Duality: Shop
 {% endblock title %}
 <!-- Extra JS block -->
 {% block extra_js %}
-    <script src="{% static 'js/shop.js' %}"></script>
+<script src="{% static 'js/shop.js' %}"></script>
 {% endblock extra_js %}
 {% block content %}
-    <section id="shop-section" class="container mb-5 pb-4 gx-0">
-        <!-- Centered title and description of the shop -->
-        <div class="row ms-xxl-6 me-xxl-6 mb-2">
-            <div class="col-10 text-center mx-auto mt-3 pt-3 mt-md-4 glow mb-4"
-                 id="shop-heading">
-                <h2 class="heading">Build Your Team!</h2>
-                <p>
-                    {% if user.is_authenticated %}
-                        {{ user.get_display_name|default:user.username }}, mix and match your favourites heroes and villains from across the multiverse.
+<section id="shop-section" class="container mb-5 pb-4 gx-0">
+    <!-- Centered title and description of the shop -->
+    <div class="row ms-xxl-6 me-xxl-6 mb-2">
+        <div class="col-10 text-center mx-auto mt-3 pt-3 mt-md-4 glow mb-4" id="shop-heading">
+            <h2 class="heading">Build Your Team!</h2>
+            <!-- Paragraph content changes depending on user login status-->
+            <p>
+                {% if user.is_authenticated %}
+                {{ user.get_display_name|default:user.username }}, mix and match your favourites heroes and villains
+                from across the multiverse.
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="text-white">Sign up</a> or <a
+                    href="{% url 'account_login' %}" class="text-white">Login</a> to build your own collection.
+                {% endif %}
+            </p>
+        </div>
+        <!-- New row for filter dropdowns -->
+        <div
+            class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center justify-content-md-around justify-content-lg-center">
+            <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                <!-- Rarity filter, pulls on all available rarities -->
+                <label for="rarities">Filter by Rarity</label>
+                <select name="rarities" id="rarities" class="glassmorphic filter">
+                    <option value="all" selected>All</option>
+                    {% for rarity in rarities %}<option value="{{ rarity|lower }}">{{ rarity }}</option>{% endfor %}
+                </select>
+            </div>
+            <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                <!-- Alignment filter, only pulls through alignment options for the cards listed -->
+                <label for="alignment">Filter by Alignment</label>
+                <select name="alignment" id="alignment" class="glassmorphic filter">
+                    <option value="all" selected>All</option>
+                    {% for alignment in alignments %}<option value="{{ alignment|lower }}">{{ alignment|capfirst }}
+                    </option>{% endfor %}
+                </select>
+            </div>
+            <div class="col-12 col-md-3 text-center mt-2 mb-2">
+                <!-- Universe filter, only pulls through alignment options for the cards listed -->
+                <label for="universe">Filter by Universe</label>
+                <select name="universe" id="universe" class="glassmorphic filter">
+                    <option value="all" selected>All</option>
+                    {% for universe in universes %}<option value="{{ universe|lower }}">{{ universe|capfirst }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col d-flex justify-content-center">
+        <!-- Loader element shows for 3 seconds while shop content is loading-->
+        <div class="loader"></div>
+    </div>
+    <!-- Shop items grid with responsive layout at different screen sizes. -->
+    <div class="row gy-4 gy-xxl-5 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
+        <!-- Loop through all characters passed by the view -->
+        {% for char in characters %}
+        <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
+            <!-- Individual shop cards for each character -->
+            <article class="card shop-card glassmorphic" data-rarity="{{ char.model.rarity|lower }}"
+                data-alignment="{{ char.alignment|lower }}" data-universe="{{ char.universe|lower }}">
+                <!-- Character image dynamically loaded from the legends.json file -->
+                <img class="object-fit-cover card-img-top w-100 d-block" loading="lazy" src="{{ char.json.images.md }}"
+                    height="400" width="400" alt="{{ char.model.name }}">
+                <div class="card-front-banner glassmorphic">
+                    <p class="universe">{{ char.universe }}</p>
+                </div>
+                <div class="card-body character-card-body d-flex flex-column align-items-center">
+                    <!-- Badges showing the character's power total, rarity and alignment -->
+                    <div class="mt-2 mt-xxl-3">
+                        <span class="badge {{ char.model.rarity|lower }}">{{ char.model.rarity }}
+                            {{ char.power }}</span> <span class="badge {{ char.alignment|lower }} mb-2">Alignment:
+                            {{ char.alignment }}</span>
+                    </div>
+                    <!-- Character name passed from the character model -->
+                    <div class="flex-grow-1 d-flex align-items-center justify-content-center">
+                        <h3 class="text-center card-title">{{ char.model.name }}</h3>
+                    </div>
+                </div>
+                <!-- Shows the buy button only if the user is logged in, and displays a disabled button if the logged-in user already owns the card -->
+                {% if user.is_authenticated %}
+                <div class="card-footer d-flex justify-content-center">
+                    {% if char.model.id in owned_cards %}
+                    <button class="btn cancel" disabled aria-disabled="true">
+                        <span class="unskew">You already own this card</span>
+                    </button>
                     {% else %}
-                        <a href="{% url "account_signup" %}" class="text-white">Sign up</a> or <a href="{% url "account_login" %}" class="text-white">Login</a> to build your own collection.
+                    <a href="{% url 'card-detail' char.model.id %}"
+                        class="btn buy-button {{ char.model.rarity|lower }}"><span class="unskew">Buy now
+                            £{{ char.model.rarity.price }}</span></a>
                     {% endif %}
-                </p>
-            </div>
-            <!-- New row for filter dropdowns -->
-            <div class="row ms-xxl-6 me-xxl-6 mb-2 gx-0 flex justify-content-center justify-content-md-around justify-content-lg-center">
-                <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <!-- Rarity filter, pulls on all available rarities -->
-                    <label for="rarities">Filter by Rarity</label>
-                    <select name="rarities" id="rarities" class="glassmorphic filter">
-                        <option value="all" selected>All</option>
-                        {% for rarity in rarities %}<option value="{{ rarity|lower }}">{{ rarity }}</option>{% endfor %}
-                    </select>
                 </div>
-                <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <!-- Alignment filter, only pulls through alignment options for the cards listed -->
-                    <label for="alignment">Filter by Alignment</label>
-                    <select name="alignment" id="alignment" class="glassmorphic filter">
-                        <option value="all" selected>All</option>
-                        {% for alignment in alignments %}<option value="{{ alignment|lower }}">{{ alignment|capfirst }}</option>{% endfor %}
-                    </select>
-                </div>
-                <div class="col-12 col-md-3 text-center mt-2 mb-2">
-                    <!-- Universe filter, only pulls through alignment options for the cards listed -->
-                    <label for="universe">Filter by Universe</label>
-                    <select name="universe" id="universe" class="glassmorphic filter">
-                        <option value="all" selected>All</option>
-                        {% for universe in universes %}<option value="{{ universe|lower }}">{{ universe|capfirst }}</option>{% endfor %}
-                    </select>
-                </div>
-            </div>
+                {% else %}
+                {% endif %}
+            </article>
         </div>
-        <div class="col d-flex justify-content-center">
-            <!-- Loader element shown while shop content is loading-->
-            <div class="loader"></div>
-        </div>
-        <!-- Shop items grid with responsive layout at different screen sizes. -->
-        <div class="row gy-4 gy-xxl-5 row-cols-1 row-cols-md-2 row-cols-xl-3 ms-xxl-6 me-xxl-6 gx-0">
-            <!-- Loop through all characters passed by the view -->
-            {% for char in characters %}
-                <div class="col ps-md-3 ps-lg-6 ps-xl-4 me-sm-0 pe-md-3 d-flex justify-content-center">
-                    <!-- Individual shop cards for each character -->
-                    <article class="card shop-card glassmorphic"
-                             data-rarity="{{ char.model.rarity|lower }}"
-                             data-alignment="{{ char.alignment|lower }}"
-                             data-universe="{{ char.universe|lower }}">
-                        <!-- Character image dynamically loaded from the legends.json file -->
-                        <img class="object-fit-cover card-img-top w-100 d-block"
-                             loading="lazy"
-                             src="{{ char.json.images.md }}"
-                             height="400"
-                             width="400"
-                             alt="{{ char.model.name }}">
-                        <div class="card-front-banner glassmorphic">
-                            <p class="universe">{{ char.universe }}</p>
-                        </div>
-                        <div class="card-body character-card-body d-flex flex-column align-items-center">
-                            <!-- Badges showing the character's power total, rarity and alignment -->
-                            <div class="mt-2 mt-xxl-3">
-                                <span class="badge {{ char.model.rarity|lower }}">{{ char.model.rarity }} {{ char.power }}</span> <span class="badge {{ char.alignment|lower }} mb-2">Alignment: {{ char.alignment }}</span>
-                            </div>
-                            <!-- Character name passed from the character model -->
-                            <div class="flex-grow-1 d-flex align-items-center justify-content-center">
-                                <h3 class="text-center card-title">{{ char.model.name }}</h3>
-                            </div>
-                        </div>
-                        <!-- Shows the buy button only if the user is logged in, and displays a disabled button if the logged-in user already owns the card -->
-                        {% if user.is_authenticated %}
-                            <div class="card-footer d-flex justify-content-center">
-                                {% if char.model.id in owned_cards %}
-                                    <button class="btn cancel" disabled aria-disabled="true">
-                                        <span class="unskew">You already own this card</span>
-                                    </button>
-                                {% else %}
-                                    <a href="{% url 'card-detail' char.model.id %}"
-                                       class="btn buy-button {{ char.model.rarity|lower }}"><span class="unskew">Buy now £{{ char.model.rarity.price }}</span></a>
-                                {% endif %}
-                            </div>
-                        {% else %}
-                        {% endif %}
-                    </article>
-                </div>
-            {% endfor %}
-        </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>
 {% endblock content %}

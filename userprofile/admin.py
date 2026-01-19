@@ -1,3 +1,14 @@
+"""
+Custom admin configurations for user-related models.
+
+- Extends the default Django User admin to include:
+    - Inline editing of UserProfile records.
+    - Inline display of Usercards associated with each user.
+- Configures read-only fields and list displays for clarity.
+- Unregisters the default User admin and registers the customized version.
+"""
+
+
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User

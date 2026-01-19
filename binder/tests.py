@@ -1,3 +1,12 @@
+"""
+Unit tests for the Binder app's Usercards model and templates.
+
+- Verifies automatic field generation (stripe payment ID, order reference, date purchased).
+- Checks relationships between Usercards, CharacterCard, Archetype, and Rarity.
+- Confirms string representations, verbose names, and calculated methods (character_name, order_ref).
+- Sets up sample data for consistent and isolated testing of Usercards functionality.
+"""
+
 from django.test import TestCase
 from django.contrib.auth.models import User
 from core.models import CharacterCard, Archetype, Rarity

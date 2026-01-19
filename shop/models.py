@@ -98,7 +98,7 @@ class ShopScheduler(models.Model):
         return eligible_characters
 
     def create_items_for_schedule(self):
-        """Randomly assigns 12 characters to this schedule."""
+        """Randomly assigns 12 eligible characters to this schedule."""
         characters = CharacterCard.objects.filter(
             can_participate_in_rotation=True
         )

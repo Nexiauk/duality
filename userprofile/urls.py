@@ -1,6 +1,6 @@
 """
 URL configuration for the userprofile app
-Defines URL patterns for the profile view
+Defines URL patterns for the view/edit profile views
 """
 
 from django.urls import path
@@ -8,6 +8,10 @@ from . import views
 
 urlpatterns = [
     path("view-profile/<int:id>/", views.profile_view, name="profile"),
-    path("edit-profile/<int:id>", views.edit_profile_view, name="edit-profile"),
+    path(
+        "edit-profile/<int:id>",
+        views.edit_profile_view,
+        name="edit-profile"
+    ),
 
 ]

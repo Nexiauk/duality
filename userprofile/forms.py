@@ -22,6 +22,7 @@ class CustomSignupForm(SignupForm):
     def save(self, request):
         """
         Save the user and assign the display_name to the related UserProfile.
+        Creates a profile if one does not exist.
         """
         user = super().save(request)
 
@@ -37,8 +38,9 @@ class CustomSignupForm(SignupForm):
 
 class UserProfileForm(forms.ModelForm):
     """
-    Signup form extending allauth's SignupForm to include a display_name field
-    and save it to the associated UserProfile.
+    Form for editing the UserProfile model.
+    Allows users to update their display_name.
+    Uses a prefix for template namespacing.
     """
     prefix = "profiledata"
 
@@ -49,7 +51,9 @@ class UserProfileForm(forms.ModelForm):
 
 class UserForm(forms.ModelForm):
     """
-    Form for editing basic user information: first name, last name, and email.
+    Form for editing basic User fields.
+    Allows users to update first name, last name, and email.
+    Uses a prefix for template namespacing.
     """
     prefix = "userdata"
 

@@ -7,13 +7,14 @@ in read-only mode with a link to edit the profile.
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
+<!-- Dynamically sets the page's title using the user's display name if they have one, or their username if they don't. -->
 {% block title %}
     {{ user.get_display_name|default:user.username }}'s profile
 {% endblock title %}
 {% block content %}
     <section class="mt-3 mb-3 mx-auto p-md-4">
         <div class="glassmorphic p-4 p-md-5 pt-md-4 pb-md-4">
-            <!-- Page heading showing the user's display name -->
+            <!-- Page heading showing the user's display name/username -->
             <h2 class="mb-4 heading">View {{ user.get_display_name|default:user.username }}'s Profile</h2>
             <p class="mb-4">Edit your profile details and change your password.</p>
             <!-- Profile view form with CSRF token and hidden redirect field if present -->
@@ -29,9 +30,12 @@ in read-only mode with a link to edit the profile.
             </form>
             <!-- Link to the edit-profile page and to change password -->
             <div class="col-12 gap-md-4 d-flex flex-column flex-md-row">
+                <!-- Shows the buttons only if the user is logged in and the requesting user matches the profile id. -->
                 {% if user.is_authenticated and request.user.id == profile_user.id %}
+                <!-- Button to edit the user's profile and navigate to the edit form -->
                     <a href="{% url 'edit-profile' id=request.user.id %}"
                        class="btn account-button mt-4 w-100"><span class="unskew">Edit Profile &raquo;</span></a>
+                       <!-- Button linking to the change password form-->
                     <a href="{% url 'account_change_password' %}" class="btn account-button mt-3 mt-md-4 w-100"><span class="unskew">Change Password &raquo;</span></a>
                 {% endif %}
             </div>
