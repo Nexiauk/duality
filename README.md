@@ -1287,7 +1287,6 @@ Key areas covered:
 1. Check database migrations by executing `python manage.py makemigrations`.
 2. Run database migrations locally to update the database schema by executing `python manage.py migrate`.
 3. Collect static files locally so they are ready for deployment by executing `python manage.py collectstatic`.  
-*Note: `DISABLE_COLLECTSTATIC=1` is needed to skip Heroku's automatic static collection when using Cloudinary.*
 
 ### *Deploying Local Changes*
 1. Commit the changes using Git (`git add`, `git commit`).  

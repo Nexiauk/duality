@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'allauth',
     'allauth.account',
-    'cloudinary',
     'crispy_forms',
     'crispy_bootstrap5',
     'core',
