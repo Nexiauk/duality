@@ -14,6 +14,7 @@ This app has been created as a project during my [Code Institute](https://codein
   - [Reluctant Readers](#reluctant-readers)
   - [The Psychology of Collecting](#the-psychology-of-collecting)
   - [The Idea](#the-idea)
+  - [App Purpose](#app-purpose)
 - [Goals](#goals)
 - [User Experience (UX)](#user-experienceux)
   - [Types of Users](#types-of-users)
@@ -99,6 +100,9 @@ Originally, I wanted to make a fairy-tale inspired card collection with characte
 That’s when I stumbled across the [Superhero API](https://www.superheroapi.com/). It collates 731 heroes and villains from across different fictional publishers and universes. Superheroes and villains never really go out of fashion — they just get remade, recast, and reimagined for new audiences. By combining this treasure trove of illustrated characters with the psychology of collecting, and framing it in a narrative about collapsed multiversal barriers, Duality: Legends Unchained was born.  
 
 It’s not just about collecting cards. It’s about creating your own super-powered team — heroes or villains — and, maybe along the way, finding that illustrated storytelling can make reading fun again.
+
+### *App Purpose*
+Users register to become collectors, browse a rotating shop of cards, purchase individual cards via Stripe, and permanently own them in a personal binder. Admins control availability, rarity, pricing, and timing.
 
 [Back to Table of Contents](#table-of-contents)
 
@@ -466,7 +470,7 @@ Edit Profile and Change Password forms both feature cancel buttons that take the
 ![Change password form](./docs/screenshots/change-password.jpg)
 ![Edit profile page](./docs/screenshots/edit-profile.jpg)
 
-### Admin
+### *Admin*
 * Shop Scheduler admin interface is sorted by Schedule start time descending, so the latest schedule will be listed at the top. The admin area allows admin users to create new shop schedules with a start time, end time, and rotation type. This is in addition to the 24 hour schedules that the system creates as default. Each Shop Schedule contains shop schedule items inline to the instance admin, so that they can be easily deleted, or have more items added to the scheduler. This means admin can click on a particular schedule and see at a glance which characters will be appearing in that timeframe.
 
 * Shop Scheduler also has a custom method to show characters allocated to each schedule as a comma separated list, so that admin doesn't have to click and open each schedule to find out who will be/was in that shop schedule.
@@ -553,6 +557,8 @@ Edit Profile and Change Password forms both feature cancel buttons that take the
 ## **Models and Data Relationships**
 ### *Entity Relationship Diagram*
 This Entity Relationship Diagram for Duality was created using [Mermaid](https://mermaid.js.org/)’s built-in ERD diagramming tool. [ChatGPT](https://openai.com/index/chatgpt/) was used to double check my logic.
+![Duality Entity Relationship Diagram](./docs/screenshots/duality-erd.png)
+[Link to the ERD](https://mermaid.ai/d/cf40a302-e8f0-4238-b40e-1f5d85b668f9)
 
 ### *Overview*
 This section contains the Django models for the Duality LC application, a card-collecting platform where collectors can purchase Legends cards and store them in an online binder.
@@ -739,7 +745,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 
 **Shop Interaction**
 * **Browse the available cards in the shop, so that I can decide which ones to collect.**
-  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity with power total, and Price, so users can easily decide which ones to collect. If a user already owns a card that is in the shop, the buy button will be replaced with a dsiabled version that features a message to this effect, preventing the user from purchasing a card they already own, or coming up against the unique constraint error of one usercard per customer.
+  Users can browse all available cards in a grid, sorted by rarity (rarest first). Each card displays Character Name, Universe, Alignment, Rarity with power total, and Price, so users can easily decide which ones to collect. If a user already owns a card that is in the shop, the buy button will be replaced with a disabled version that features a message to this effect, preventing the user from purchasing a card they already own, or coming up against the unique constraint error of one usercard per customer.
 
 * **Filter the available cards in the shop, so that I can easily locate heroes/villains of specific types for my collection.**
   The shop cards can be filtered by Rarity, Alignment, or Universe, or a mix of the three, allowing users to quickly locate cards they might be looking or waiting for to add to their personal collection. Future updates would include a reset button for the filters.
@@ -748,7 +754,7 @@ Enables per-rotation pricing or other metadata without affecting the base charac
   Each card in the shop displays a button for logged-in users, that shows the price of the card. There are currently no free cards in the app because of Stripe limitations on the checkout requiring a positive amount. Future updates would feature the ability to insta-purchase free cards from the shop by bypassing the stripe checkout completely, for a seamless user experience.
 
 * **See at a glance the different card rarities and Universes, so I can make informed collection decisions.**
-  Each card features a badge that shows its rairty, in that rarity's colour, and a banner displaying the ficitonal universe the character belongs to. The shop can be filtered by both these pieces of data to allow users to quickly locate cards they might want to buy.
+  Each card features a badge that shows its rarity, in that rarity's colour, and a banner displaying the ficitonal universe the character belongs to. The shop can be filtered by both these pieces of data to allow users to quickly locate cards they might want to buy.
 
 * **See at a glance and easily use a 'Buy Now' button, so I can efficiently make a purchase.**
   Logged-in users can see a 'Buy Now' button in an additional footer on each card The button has a pulse effect on hover making it even more obvious. The button also displays the card's price and will take the user to a page with the card's details asking for confirmation of purchase. 
@@ -771,10 +777,10 @@ Enables per-rotation pricing or other metadata without affecting the base charac
 **Payments & Feedback**
 
 * **Make secure payments through Stripe, so that I can purchase cards without worrying about payment safety.**
-  Purchased card details are sent through to a Stripe-hosted, single-purchase checkout, where users can make secure payments. Their payment details are not stored anywhere in the Duality app. receipts and payment confirmations are handled by Stripe. After successful payment the app creates a record linking the purchased card to the user (usercards) so ownership is tracked. Usercards also store the Stripe payment reference and a custom Duality order reference in case of queries or refund requests.
+  Purchased card details are sent through to a Stripe-hosted, single-purchase checkout, where users can make secure payments. Their payment details are not stored anywhere in the Duality app. Receipts and payment confirmations are handled by Stripe. After successful payment the app creates a record linking the purchased card to the user (usercards) so ownership is tracked. Usercards also store the Stripe payment reference and a custom Duality order reference in case of queries or refund requests.
 
 * **See immediate visual cues, like animations or highlights, when I add cards to my basket or binder, so that I know my actions have been registered.**
-I decided against having a basket as I wanted to follow the Epic Store method or making purchases which is to select the item, view a confirmation page, and purchase that item. The purchasing and cancelling buttons pulse on hover to signal interactivity, and the user will be taken to a purchase confirmation page that allows them to either continue or go back. After purchasing a card, the user is taken to a success page that shows the details of the card they purchased, the amount they've paid, and the email address that's been notified of the purchase. if an error occurs, the user will see an error page with a string message and if the payment is cancelled at the Strupe checkout, the user will be redirected to a transaction cancelled page.
+I decided against having a basket as I wanted to follow the Epic Store method or making purchases which is to select the item, view a confirmation page, and purchase that item. The purchasing and cancelling buttons pulse on hover to signal interactivity, and the user will be taken to a purchase confirmation page that allows them to either continue or go back. After purchasing a card, the user is taken to a success page that shows the details of the card they purchased, the amount they've paid, and the email address that's been notified of the purchase. if an error occurs, the user will see an error page with a string message and if the payment is cancelled at the Stripe checkout, the user will be redirected to a transaction cancelled page.
 
 
 #### **Admin Users**
@@ -799,13 +805,13 @@ I decided against having a basket as I wanted to follow the Epic Store method or
   The shop view also checks for an active schedule and, if none exists, will create one automatically that lasts exactly 24 hours. A model constraint ensures that each start_time is unique, preventing edge cases where multiple users could either simultaneously trigger the creation of duplicate schedules, or cause errors.
 
 * **Set price bandings based on a card’s power rating, so that cards of higher rarity automatically have higher prices and shop pricing remains consistent.**
-  Card prices can bet set via the Rarity admin area. Each card is linked to a Rarity, and price is set per Rarity so that all cards of a particular Rarity are of equal economical value. Also allows admin to easily change the price banding of a whole set of card rarities quite easily.
+  Card prices can be set via the Rarity admin area. Each card is linked to a Rarity, and price is set per Rarity so that all cards of a particular Rarity are of equal economical value. Also allows admin to easily change the price banding of a whole set of card rarities quite easily.
 
 * **Adjust the prices for each rarity band or individual card, so that I can control the shop economy and run promotions without changing the underlying card power ratings.**
   Admin has the ability to set sale prices per character card when allocating a character to a shop scheduler. This allows the functionality for special sale prices. This functionality isn't currently implemented in the templates/views, but is ready for future sales!
 
 * **Set card availability, so that I can control which cards are on sale or temporarily removed from the shop, supporting special offers and promotions.**
-  The CharacterCards model includes a boolean field, can_participate_in_rotation, which means cards can be added into, or taken out of, shop rotation. The views specifically check for this and the template won't render cards where this bollean is false. If a card is currently in the shop and the rotation status is changed, the card will disappear from the shop.
+  The CharacterCards model includes a boolean field, can_participate_in_rotation, which means cards can be added into, or taken out of, shop rotation. The views specifically check for this and the template won't render cards where this boolean is false. If a card is currently in the shop and the rotation status is changed, the card will disappear from the shop.
 
 **User Management**
 * **See a list of all registered users, so that I can support accounts as needed.**
@@ -996,7 +1002,7 @@ I decided against having a basket as I wanted to follow the Epic Store method or
 * Password Reset Page(desktop)   
 ![Password reset page lighthouse testing on desktop](./docs/testing/password-lighthouse-desktop.png)
 
-### **Manual Testing**
+### *Manual Testing*
 
 #### **Browser Testing**
 ##### **Chrome**
@@ -1110,7 +1116,7 @@ Mobile 320px.
 * After setting up a payment confirmation email in the payment_success view in the shop, tested that it prints to the console by making a purchase.
 
 
-### **Unit Testing**
+### *Unit Testing*
 
 The project includes unit tests for models and views using Django's TestCase. 
 Key areas covered:
@@ -1227,7 +1233,7 @@ Key areas covered:
 
 ## **Deployment**
 
-### Creating a Github Fork
+### *Creating a Github Fork*
 1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).
 2. In the top-right corner of the page click on the down arrow next to the **Fork** button and select **Create a new fork**.
 3. You can change the name of the fork in **Repository name** and add an optional description.
@@ -1235,20 +1241,20 @@ Key areas covered:
 5. Click the **Create a Fork** button.
 6. A new repository should appear in your GitHub with the name you chose.
 
-### Cloning a Github Repository
+### *Cloning a Github Repository*
 1. Navigate to the [repository](https://github.com/Nexiauk/Gameracy).
 2. Click on the **Code** button on top of the repository and copy the link.
 3. Open Git Bash and change the working directory to the location where you want the cloned directory.
 4. Type git clone and then paste the link.
 5. Press Enter to create your local clone.
 
-### Installing Requirements
+### *Installing Requirements*
 1. Create a virtual environment in your local project folder.  
 2. Activate the virtual environment.  
 3. Install all required dependencies using the `requirements.txt` file using `pip install -r requirements.txt`  
 4. Verify installation by running the project locally.  
 
-### Preparing the Project
+### *Preparing the Project*
 1. Ensure your Django project has a `requirements.txt` with all dependencies listed.  
 2. Ensure your project has a `Procfile` at the root, specifying how Heroku should run the app.  
 3. Make sure `ALLOWED_HOSTS` in `settings.py` includes your Heroku app domain.  
@@ -1258,7 +1264,7 @@ Key areas covered:
   This ensures Django connects to the correct database in both local and Heroku environments.  
 7. Set `DEBUG = False` in `settings.py` for production. 
 
-### Creating an `env.py` File
+### *Creating an `env.py` File*
 1. In your local project directory, create a file named `env.py`.  
 2. Add your sensitive environment variables to the file, for example:
    ```python
@@ -1267,20 +1273,21 @@ Key areas covered:
    os.environ['SECRET_KEY'] = 'your-secret-key'
    os.environ['CLOUDINARY_URL'] = 'your-cloudinary-url'
    os.environ['DATABASE_URL'] = 'your-local-database-url'
+   os.environ['STRIPE_SECRET_KEY'] = 'your-stripe-secret-key'
 3. Ensure env.py is added to .gitignore so it is never pushed to GitHub
 
-### Running Database Migrations and Collecting Static Files Locally
+### *Running Database Migrations and Collecting Static Files Locally*
 1. Check database migrations by executing `python manage.py makemigrations`.
 2. Run database migrations locally to update the database schema by executing `python manage.py migrate`.
 3. Collect static files locally so they are ready for deployment by executing `python manage.py collectstatic`.  
 *Note: `DISABLE_COLLECTSTATIC=1` is needed to skip Heroku's automatic static collection when using Cloudinary.*
 
-### Deploying Local Changes
+### *Deploying Local Changes*
 1. Commit the changes using Git (`git add`, `git commit`).  
 2. Push the changes to GitHub (`git push origin main`).  
 3. Deploy the updated branch to Heroku using the steps in **Deploying on Heroku**.  
 
-### Creating a Heroku App
+### *Creating a Heroku App*
 1. Navigate to [Heroku](https://www.heroku.com/) and log in to your account.  
 2. Click the **New** button in the top-right corner and select **Create new app**.  
 3. Enter a unique name for your app.  
@@ -1289,7 +1296,7 @@ Key areas covered:
 6. After the app is created, you will be taken to the app dashboard where you can configure settings and deploy your project.
 
 
-### Configuring the App on Heroku
+### *Configuring the App on Heroku*
 1. Navigate to the **Settings** tab of your app.  
 2. Click **Reveal Config Vars**.  
 3. Add the following variables:  
@@ -1297,6 +1304,7 @@ Key areas covered:
    - `DISABLE_COLLECTSTATIC` → set to `1` if you want to skip automatic static collection.  
    - `DATABASE_URL` → automatically added if you enable Heroku Postgres (leave it as is).  
    - `SECRET_KEY` → your Django secret key.  
+   - `STRIPE_SECRET_KEY` → your Stripe secret key.  
 4. (Optional) Add any other third-party service keys your project needs
 
 ### Deploying on Heroku
