@@ -13,10 +13,7 @@
         <div class="glassmorphic p-4 p-md-5 pt-md-4 pb-md-4">
             <h2 class="mb-4 heading">{% trans "Sign Out" %}</h2>
             <p class="mb-4">{% blocktrans %}Are you sure you want to sign out?{% endblocktrans %}</p>
-            <form class="login"
-                  id="login_form"
-                  method="post"
-                  action="{% url 'account_logout' %}">
+            <form id="login-form" method="post" action="{% url 'account_logout' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
                 {% if redirect_field_value %}

@@ -16,7 +16,7 @@
         <div class="glassmorphic p-4 p-md-5 pt-md-4 pb-md-4 p-md-5 pt-4 pb-4">
             <h2 class="mb-4 heading">{% trans "Sign In" %}</h2>
                 <p class="mb-4">{% blocktrans %}If you have not created an account yet, then please <a class="underline text-white" href="{{ signup_url }}">sign up first</a>.{% endblocktrans %}</p>
-              <form class="login" id="login_form" method="post" action="{% url 'account_login' %}">
+              <form id="login-form" method="post" action="{% url 'account_login' %}">
                 {% csrf_token %}
                 {{ form | crispy }}
                 {% if redirect_field_value %}

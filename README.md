@@ -89,7 +89,7 @@ My son is what schools call a 'reluctant reader.' If a book doesn’t have illus
 Illustrated storytelling is not a crutch, it’s a gateway. Graphic novels and comics can pave a prettier pathway into reading for pleasure, especially for readers who find long blocks of text daunting.
 
 ### *The Psychology of Collecting*
-At the same time, I’ve seen how collecting hooks people in. My brother, for example, has a Pokémon card binder, ostensibly 'for his son' — but I remember him collecting the same cards as a kid. It’s not really about the resale value and what the collection is worth for his con in the future. It’s about the joy of owning something rare, of filling pages, of seeing a collection grow and feeling proud of it. That psychology is powerful, especially when paired with storytelling.  
+At the same time, I’ve seen how collecting hooks people in. My brother, for example, has a Pokémon card binder, ostensibly 'for his son' — but I remember him collecting the same cards as a kid. It’s not really about the resale value and what the collection is worth for his son in the future. It’s about the joy of owning something rare, of filling pages, of seeing a collection grow and feeling proud of it. That psychology is powerful, especially when paired with storytelling.  
 ![Example of a Pokemon Binder collection full of cards](./docs/screenshots/pokemon-binder.jpg)
 ![Example of a card from the same binder collection](./docs/screenshots/pokemon-card.jpg)
 
@@ -276,7 +276,7 @@ The published version of the wireframe template can be found here:
 ### *End Product Design Changes*
 The only changes made were to the layout created by Bootstrap Studio in places. Having the info cards on the main page only slightly covering the hero image looked unfinished in reality, so I had the hero image cover the whole page and added a glassmorphic effect to the cards. I also had to tweak a bit more using flex properties to get the cards to sit in the correct place. 
 
-I added filters to the shop and the binder pages
+I added filters to the shop and the binder pages, and the profile page is a little simpler in the final product.
 
 Everything else stayed pretty much the same - I hadn't added styling to the wireframes this time, I just used them to mockup a skeletal layout for each page.
 
